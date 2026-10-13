@@ -6,11 +6,11 @@ ACTOR is an open, tool-neutral security control framework for the full AI estate
 
 Its premise is simple. AI is a new class of actor. An agent acts like a user but is not a person. A model runs like software but is not deterministic. Both can be manipulated by what they read, and both change over time. Existing frameworks secure people and conventional systems, and they remain essential. ACTOR adds the controls AI needs alongside them, and governs the people who use, build, and oversee it.
 
-> **Status:** v0.1.0, confidential draft for private review. Not for distribution. Reviewers can share feedback through [issues](../../issues). Suggestions may be incorporated into ACTOR and released under CC BY 4.0.
+> **Status:** v0.1.0, confidential draft shared in confidence for review only. Not for distribution. Copyright 2026 Robert Fernandes. All rights reserved. Reviewers can share feedback through [issues](../../issues) under the terms in [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## What makes ACTOR different
 
-- **Agents are principals.** Every agent gets its own identity, delegated authority, and a human owner. Users do not sign agents in with their own credentials.
+- **Agents are security principals.** Every agent is identifiable as itself, with delegated authority and a human owner. Users do not sign agents in with their own credentials.
 - **Humans hold authority, agents hold capability.** High-impact actions need a human approval the agent cannot satisfy, up to hardware-bound approval for critical actions.
 - **Assume manipulation.** Controls limit what a manipulated AI can do, not only whether it gets manipulated.
 - **A loop, not a checklist.** A new tool, a model update, drift, or an incident sends a system back through the cycle.
@@ -19,17 +19,17 @@ Its premise is simple. AI is a new class of actor. An agent acts like a user but
 
 ## At a glance
 
-115 controls across seven functions: 39 Foundational, 60 Managed, 16 Advanced.
+119 controls across seven functions: 48 Foundational, 60 Managed, 11 Advanced.
 
 | Function | Code | Controls |
 | --- | --- | --- |
 | Govern | GVN | 22 |
 | Inventory | INV | 9 |
-| Delegate | DEL | 16 |
-| Harden | HRD | 25 |
-| Defend | DEF | 18 |
-| Monitor | MTR | 13 |
-| Respond | RSP | 12 |
+| Delegate | DEL | 17 |
+| Harden | HRD | 28 |
+| Defend | DEF | 16 |
+| Monitor | MTR | 16 |
+| Respond | RSP | 11 |
 
 ## Repository contents
 
@@ -38,6 +38,7 @@ Its premise is simple. AI is a new class of actor. An agent acts like a user but
 | [FRAMEWORK.md](FRAMEWORK.md) | The full framework: thesis, principles, all controls, tiers, and mappings |
 | [controls/actor-controls.csv](controls/actor-controls.csv) | Every control as a spreadsheet, ready for GRC tools |
 | [controls/actor-controls.json](controls/actor-controls.json) | Every control as structured JSON |
+| [TRADEMARK.md](TRADEMARK.md) | Use of the ACTOR name |
 | [ROADMAP.md](ROADMAP.md) | What is planned for v0.2 and beyond |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | How to suggest changes |
 | [CHANGELOG.md](CHANGELOG.md) | Version history |
@@ -48,7 +49,9 @@ Cite controls with the framework name before the ID, for example **ACTOR DEL-ID-
 
 ## License
 
-The ACTOR framework text and control data are licensed under [Creative Commons Attribution 4.0 International (CC BY 4.0)](LICENSE). You may use, adapt, and build on it, including commercially, with attribution.
+This review draft is not yet licensed for reuse. Copyright 2026 Robert Fernandes. All rights reserved. It is shared in confidence for review only.
+
+On public release, the author intends to license the framework text and control data under [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/), which will allow use and adaptation, including commercially, with attribution.
 
 The ACTOR name is used to identify the official framework. See [TRADEMARK.md](TRADEMARK.md).
 

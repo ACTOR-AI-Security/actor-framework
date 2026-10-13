@@ -1,6 +1,6 @@
 # Use of the ACTOR name
 
-The framework content is open under CC BY 4.0. You can adapt it freely.
+This review draft is not yet licensed for reuse. On public release, the author intends to license the framework content under CC BY 4.0, which will allow free adaptation with attribution. The name terms below will apply then.
 
 The name "ACTOR" as applied to this AI security framework identifies the official version maintained in this repository. To avoid confusion:
 

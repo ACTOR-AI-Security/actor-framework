@@ -22,8 +22,17 @@ IDs follow FUNCTION-CATEGORY-NN, such as DEL-ID-01. Published IDs are not renumb
 
 ## Pull requests
 
-The source of truth for controls is the control data. If you change a control, update FRAMEWORK.md and both files in controls/ so they stay consistent.
+The source of truth for controls is the control data. Use the defined terms in FRAMEWORK.md, such as risk rating and action risk level. No control may depend on a control at a higher tier. If you change a control, update FRAMEWORK.md and both files in controls/ so they stay consistent.
 
-## License of contributions
+## Review terms
 
-By contributing, you agree that your contributions are licensed under CC BY 4.0, the same license as the project.
+This is a confidential review draft. Please do not share it, quote it, or publish it without the author's permission.
+
+## Terms for feedback and contributions
+
+By sharing feedback, suggestions, or contributions with the author, you agree that:
+
+- You have the right to share them, and they are your own work or you have permission to share them.
+- You grant Robert Fernandes a perpetual, worldwide, royalty-free, irrevocable license to use, modify, and publish them as part of ACTOR, including under CC BY 4.0 or any later license for the project.
+- You will not include confidential information belonging to your employer, your clients, or anyone else.
+- Contributions are acknowledged in the project unless you ask not to be named.

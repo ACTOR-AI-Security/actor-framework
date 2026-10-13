@@ -2,9 +2,9 @@
 
 **AI Controls for Trust, Oversight, and Resilience**
 
-Author: Robert Fernandes. Licensed under [CC BY 4.0](LICENSE).
+Author: Robert Fernandes.
 
-**Confidential draft for private review. Not for distribution.** Suggestions shared with the author may be incorporated into ACTOR and released under CC BY 4.0.
+Copyright 2026 Robert Fernandes. All rights reserved. **Confidential draft shared in confidence for review only. Not for distribution.** The author intends to release ACTOR under CC BY 4.0 on public release. Feedback terms are in [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ACTOR starts from one premise: AI is a new class of actor. Existing frameworks secure people and conventional systems, and they remain essential. AI fits neither model, so ACTOR adds the controls AI needs and governs the people who use, build, and oversee it.
 
@@ -12,6 +12,7 @@ ACTOR starts from one premise: AI is a new class of actor. Existing frameworks s
 
 - [Purpose, audience, and thesis](#purpose-audience-and-thesis)
 - [Design principles](#design-principles)
+- [Definitions and conventions](#definitions-and-conventions)
 - [Framework at a glance](#framework-at-a-glance)
 - [Govern (GVN)](#govern-gvn)
 - [Inventory (INV)](#inventory-inv)
@@ -27,7 +28,7 @@ ACTOR starts from one premise: AI is a new class of actor. Existing frameworks s
 
 ACTOR gives organizations a practical, tool-neutral set of security controls for the full AI estate: agents, models, the data they learn from and read, AI platforms, and how people use AI. The name states the goal. Trust comes from knowing what your AI is and where it came from (Inventory, Harden). Oversight comes from accountability, delegated authority, and monitoring (Govern, Delegate, Monitor). Resilience comes from limiting damage and recovering when AI fails or is manipulated (Defend, Respond).
 
-**Audience.** Any organization that uses, buys, or builds AI and wants to secure it, regardless of size or sector. Implementation tiers let a small organization start with the Foundational controls while larger or more advanced organizations adopt the full set. ACTOR is also written for the MSPs, vCISOs, and auditors who implement and assess it for others.
+**Audience.** Any organization that uses, buys, or builds AI and wants to secure it, regardless of size or sector. Implementation tiers let a small organization start with the Foundational controls while larger or more advanced organizations adopt the full set. ACTOR is also written for the MSPs and vCISOs who implement it and the auditors who assess it.
 
 **Thesis.** Current frameworks were designed to secure people and conventional systems. Extending them to AI assumes AI behaves like one or the other. It does not:
 
@@ -36,9 +37,17 @@ ACTOR gives organizations a practical, tool-neutral set of security controls for
 - Both can be manipulated through the content they read.
 - Both change over time, through drift, model updates, and new tools.
 
-The framework therefore treats AI as its own class of actor. Agents are principals with their own identity and delegated authority. Models and agents have a lifecycle that is governed like a workforce: onboarded, supervised, changed under control, and retired. Agents are the clearest example of this premise, but it applies equally to models and the data that shapes them.
+The framework therefore treats AI as its own class of actor. Agents are security principals, in the identity sense, with their own identity and delegated authority. The term carries no legal meaning of agency. Models and agents have a lifecycle that is governed like a workforce: onboarded, supervised, changed under control, and retired. Agents are the clearest example of this premise, but it applies equally to models and the data that shapes them.
 
-**Scope.** In scope: AI agents, LLMs and other models, AI platforms and tool configurations, AI use by the workforce, and third-party AI services. Out of scope: AI used by attackers, such as deepfakes and AI-enabled social engineering (covered only where it changes a defensive control), and ethics or fairness topics outside security.
+**Scope.** In scope: AI agents, LLMs and other models, the data AI learns from and reads, AI platforms and tool configurations, AI use by the workforce, and third-party AI services.
+
+Out of scope:
+
+- AI used by attackers, such as deepfakes and AI-enabled fraud. Defenses against these belong in existing fraud and social engineering controls.
+- Fairness, bias, explainability, and consumer protection topics, including AI disclosure to customers. ACTOR is a security framework and does not address them, except where DEL-AP-04 requires that consequential decisions follow applicable law.
+- Model risk management. ACTOR complements, and does not replace, model risk management programs such as those required in financial services.
+
+Using ACTOR alone does not demonstrate compliance with any AI law or regulation. GVN-CO-01 requires organizations to identify the obligations that apply to them.
 
 **Baseline security.** ACTOR assumes foundational security practices, such as MFA, patching, and identity hygiene, are already in place through frameworks such as NIST CSF 2.0 or the CIS Controls. It does not repeat them.
 
@@ -52,8 +61,55 @@ The framework therefore treats AI as its own class of actor. Agents are principa
 6. **Know where it came from.** Verify the provenance of models, data, and agents before trusting them. What an AI learns from shapes how it behaves.
 7. **Continuous, not point-in-time.** AI behavior changes. Monitoring and evaluation run for the life of the system, and changes trigger re-review.
 8. **Plan for failure.** AI and its providers will fail or change without notice. Critical processes keep running, and models, prompts, and data can be rolled back.
-9. **Implementable in tiers.** Every control has a tier, so a small organization can start with Foundational controls and grow.
-10. **Mapped, not isolated.** Every control maps to established frameworks so organizations can reuse existing audits and evidence.
+9. **Implementable in tiers.** Every control has a tier, so a small organization can start with Foundational controls and grow. No control depends on a control at a higher tier.
+10. **Mapped, not isolated.** Controls are designed to map to established frameworks so organizations can reuse existing audits and evidence. v0.1.0 maps at the function level. Control-level mappings follow in v0.2.
+
+## Definitions and conventions
+
+These terms have the following meanings throughout ACTOR.
+
+| Term | Meaning |
+| --- | --- |
+| AI system | Any system that uses a model to generate content, predictions, or decisions, including AI features embedded in other software. |
+| Agent | An AI system that can take actions, such as calling tools, changing data, or sending messages, rather than only producing output for a person to read. |
+| Vendor assistant | An agent the vendor builds and runs, such as an AI assistant built into a productivity suite. It is registered once at platform level. |
+| Configured agent | An agent a person builds on a vendor platform, such as a custom assistant, low-code agent, or scheduled task. Each one is registered. |
+| Built AI system | An AI system or agent the organization develops or hosts itself. Controls that say "the organization builds" apply only to these. |
+| Session agent | An agent that operates inside a person's signed-in browser, desktop, or terminal session, such as a browser agent, computer-use agent, or local coding agent. |
+| In scope | The AI systems the organization has decided ACTOR applies to, recorded in the inventory (INV-AS-01). |
+| Approved | Authorized through the organization's documented process, such as the acceptable use policy (GVN-PO-01) or pre-deployment review (GVN-RK-02). |
+| Sensitive data | Data the organization classifies as requiring protection, such as personal, confidential, regulated, or secret data. |
+| Untrusted content | Any content the organization does not control, including web pages, inbound email, shared or external documents, tool and API output, and user-supplied files. |
+| Risk rating | The rating assigned to an AI use case under GVN-RK-01, based on data sensitivity, autonomy, and impact. High risk means the levels the organization's method designates as high risk. |
+| Action risk level | The level assigned to a type of agent action under DEL-AP-01. High-impact actions are those at the high or critical level. |
+| Implementation tier | Foundational, Managed, or Advanced. Describes the maturity of a control, not the risk of a system. |
+| Critical process | A business process whose disruption the organization has determined would cause significant harm, as identified in business continuity planning. |
+| Trust boundary | The edge of the systems and people authorized for a given set of data. Data crossing it reaches the outside world or people not authorized for it. |
+| Human approval and human review | Approval happens before an action runs (human in the loop). Review happens after it runs (human on the loop). |
+| Qualified person | A person the organization designates, by role and training, as able to evaluate a decision and overturn it. |
+| Materially affect | A decision that changes a person's access to credit, employment, housing, insurance, education, healthcare, essential services, or legal rights, or as defined by applicable law. |
+
+**Organization-defined values.** Where a control says "at a frequency the organization defines and documents" or "within a time the organization defines," the organization sets the value based on risk rating and records it. Where ACTOR sets a minimum, such as "at least annually," the organization may be stricter but not looser. Where a control names an event, such as a significant change or a modification that meets defined criteria, the organization documents the criteria for that event.
+
+**Every sentence is a requirement.** Each sentence of a control is a requirement and may be tested separately. Controls with lettered parts, such as (a), (b), and (c), are met only when every part is met.
+
+**Absolute requirements.** Where a control says "never," "cannot," "no," or "only," it is met by a configured preventive control plus documented verification at each review of that control.
+
+**Review records.** Every review, test, exercise, and assessment that a control requires is recorded with the date, the people involved, the scope, the findings, and the actions taken. These records are evidence under GVN-CO-03.
+
+**Implementation mode.** Each control is met in one of three ways, and the organization records which one applies to each in-scope system:
+
+- **Operated.** The organization runs the control itself.
+- **Configured.** The organization sets a vendor's admin setting and keeps evidence of the setting.
+- **Assured.** The vendor provides the control. The organization verifies it through vendor documentation, an independent attestation such as a SOC 2 Type II report or ISO/IEC 27001 or 42001 certificate, contract terms, and a functional test where possible. Assured controls are re-confirmed at each vendor reassessment under GVN-TP-03, or at least annually where that control is not in place.
+
+**Platform limits.** Where a control says "where the platform allows," or a platform cannot meet a control, the organization either does not grant the capability the control protects or records an exception under GVN-RK-03.
+
+**Existing systems and contracts.** AI systems and contracts in place before the organization adopts ACTOR are brought into conformance within a period the organization defines and documents. Gaps during that period are tracked as exceptions under GVN-RK-03.
+
+**Not applicable.** A control may be marked not applicable when its subject does not exist in the organization, for example model training controls where no models are trained. Each not-applicable decision records the rationale and the approver and is reviewed with the inventory. A justified not-applicable control does not prevent a tier claim.
+
+**Conformance.** ACTOR has no certification scheme. Alignment with a tier is self-assessed unless it has been independently assessed under GVN-AC-05. Every tier claim states its type. An "in place" claim means the controls were designed and implemented at a point in time. An "operating" claim means they ran as designed over a period of at least six months, or one full cycle of each periodic control, whichever is longer.
 
 ## Framework at a glance
 
@@ -71,7 +127,7 @@ This loop is the main structural difference from a checklist. A new tool, a wide
 
 **Control IDs** follow the pattern FUNCTION-CATEGORY-NN, for example DEL-ID-01. When citing ACTOR next to other frameworks, put the framework name before the ID, as in ACTOR DEL-ID-01, the same way practitioners cite CSF PR.AA-01. The three-letter function codes and hyphenated format avoid collisions with NIST CSF 2.0, SP 800-53, NIST AI 600-1, the CSA AI Controls Matrix, and the Secure Controls Framework.
 
-**Applies to** shows the main subject of each control: Agents, Models, Platforms (AI services and tools), Use (how people use AI), or All.
+**Applies to** shows the main subject of each control: Agents, Models, Data (training, retrieval, and memory data), Platforms (AI services and tools), Use (how people use AI), or All.
 
 ## Govern (GVN)
 
@@ -80,33 +136,33 @@ Govern sets who is accountable for AI risk, what uses are allowed, and how AI ri
 | ID | Control statement | Applies to | Tier |
 | --- | --- | --- | --- |
 | **GVN-AC Accountability** | | | |
-| GVN-AC-01 | A named executive owns AI security risk. AI risk is reported to leadership on a defined cadence. | All | Foundational |
+| GVN-AC-01 | A named executive owns AI security risk. AI risk is reported to senior management, and to the board or a board committee where one exists, at a frequency the organization defines and documents. | All | Foundational |
 | GVN-AC-02 | Every AI system and agent has a named business owner accountable for its actions and outcomes. | All | Foundational |
-| GVN-AC-03 | A cross-functional AI governance group, including security, legal, privacy, risk, and the business, operates under a documented charter. | All | Managed |
-| GVN-AC-04 | AI security metrics and key risk indicators are defined, tracked, and reported with AI risk. | All | Managed |
-| GVN-AC-05 | ACTOR controls are independently assessed on a defined cadence by internal audit or a qualified third party. | All | Managed |
+| GVN-AC-03 | A cross-functional AI governance group, including security, legal, compliance, privacy, risk, and the business, operates under a documented charter. | All | Managed |
+| GVN-AC-04 | AI security metrics and key risk indicators are defined and documented, each with a threshold. They are tracked and included in the AI risk reporting required by GVN-AC-01. | All | Managed |
+| GVN-AC-05 | ACTOR controls are independently assessed by internal audit or a qualified third party at a frequency the organization defines and documents. | All | Managed |
 | **GVN-PO Policy and acceptable use** | | | |
-| GVN-PO-01 | An AI acceptable use policy classifies approved tools by data sensitivity and use case, publishes a sanctioned path for requesting new tools, and defines prohibited uses and data that must not be entered into AI systems. | Use | Foundational |
-| GVN-PO-02 | Users do not give AI agents their passwords, session cookies, MFA tokens, or personal API keys. Agents connect to company systems only through approved, delegated access that meets the Delegate (DEL) controls. | Agents | Foundational |
-| GVN-PO-03 | AI policy is reviewed at least annually and whenever a significant new AI capability is adopted. | All | Managed |
-| GVN-PO-04 | AI-enabled security tools are inventoried and governed under ACTOR like any other agent. | Agents | Foundational |
+| GVN-PO-01 | An AI acceptable use policy classifies approved tools by data sensitivity and use case, publishes a sanctioned path for requesting new tools, and defines prohibited uses and data that must not be entered into AI systems. Users acknowledge the policy before they are given access to AI tools. | Use | Foundational |
+| GVN-PO-02 | The acceptable use policy prohibits users from giving AI agents their passwords or MFA factors, and from pasting or exporting session cookies, tokens, or personal API keys into AI tools. Agents connect to company systems only as permitted by DEL-ID-01 and DEL-ID-03. | Use | Foundational |
+| GVN-PO-03 | AI policy is reviewed at least annually and when a new AI capability is adopted that meets review criteria the organization defines and documents. | All | Managed |
+| GVN-PO-04 | AI-enabled security tools that can take actions, such as isolating hosts, disabling accounts, or changing configurations, are recorded in the agent registry and governed under ACTOR like any other agent. Other AI features in security tools are assessed under GVN-TP-01. | Agents | Foundational |
 | **GVN-RK Risk classification** | | | |
-| GVN-RK-01 | Each AI use case is assigned a risk tier based on data sensitivity, level of autonomy, and impact of its actions. | All | Foundational |
-| GVN-RK-02 | Higher-risk use cases require a documented risk assessment and approval before deployment. | All | Managed |
-| GVN-RK-03 | AI risk appetite and thresholds are defined. Exceptions are approved, documented, and time-limited. | All | Managed |
-| GVN-RK-04 | Every AI system passes a pre-deployment review against applicable ACTOR controls before production use, scaled to its risk tier. | All | Foundational |
+| GVN-RK-01 | Each AI use case is assigned a risk rating using a documented method with defined levels, based on data sensitivity, level of autonomy, and impact of its actions. The method designates which levels are high risk. | All | Foundational |
+| GVN-RK-02 | Each AI system, and each new AI feature in an existing platform, passes a documented pre-deployment review against applicable ACTOR controls before production use. The organization documents which controls apply at each risk rating. High-risk use cases also require a documented risk assessment and approval by a designated approver. | All | Foundational |
+| GVN-RK-03 | Exceptions to ACTOR controls and AI policy are approved by the system owner and the executive named under GVN-AC-01, documented with compensating controls, and given an expiry date. Expired exceptions are renewed or closed. | All | Foundational |
+| GVN-RK-04 | AI risk appetite and risk thresholds are documented, approved by the executive named under GVN-AC-01, and used to decide exceptions and pre-deployment approvals. | All | Managed |
 | **GVN-CO Compliance obligations** | | | |
-| GVN-CO-01 | An obligations register tracks the AI laws, regulations, and sector guidance that apply to each use case, and is reviewed as requirements change. | All | Foundational |
-| GVN-CO-02 | For each AI system, the organization determines its regulatory role, such as provider or deployer, and any risk classification that triggers additional obligations. | All | Managed |
-| GVN-CO-03 | Evidence that AI controls are operating, including approvals, inventories, assessments, and logs, is retained and can be produced on request for regulators, auditors, and customers. | All | Managed |
+| GVN-CO-01 | An obligations register records the AI laws, regulations, and sector guidance that apply to each use case. The register is reviewed at least annually and when a use case is added or changed. | All | Foundational |
+| GVN-CO-02 | For each AI system, the organization determines its regulatory role, such as provider or deployer, and any risk classification that triggers additional obligations. The role is reassessed when the organization fine-tunes, rebrands, or modifies a model or AI system in a way that meets criteria the organization defines and documents. | All | Foundational |
+| GVN-CO-03 | Evidence that AI controls are operating, including approvals, inventories, reviews, tests, and logs, is retained for a period the organization defines and documents that meets legal and regulatory requirements. It can be produced on request for regulators, auditors, and customers. | All | Foundational |
 | **GVN-TP Third-party AI** | | | |
-| GVN-TP-01 | AI vendors and AI features embedded in existing software are assessed before use, including data use, training on customer data, and retention. | Platforms | Foundational |
-| GVN-TP-02 | Contracts address data ownership, training on customer data, incident notification, audit rights, and access to usage logs and telemetry. | Platforms | Managed |
-| GVN-TP-03 | AI vendors are reassessed periodically, and an exit plan covers provider shutdown, acquisition, or model deprecation. | Platforms | Managed |
-| GVN-TP-04 | AI vendors disclose the model providers and subprocessors behind their service and give notice before changing them. | Platforms | Managed |
+| GVN-TP-01 | AI vendors and AI features embedded in existing software are assessed before use, including data use, training on customer data, and retention. Before purchase, the organization confirms the service plan provides the admin audit logs, conversation export, and retention controls its other ACTOR controls rely on. Vendors are rated for criticality, and concentration risk from reliance on a single provider is identified. | Platforms | Foundational |
+| GVN-TP-02 | Contracts with AI vendors signed or renewed after the organization adopts ACTOR are checked for (a) data ownership and training on customer data, (b) incident notification, (c) audit rights or independent assurance reports, and regulator access where regulation requires it, (d) access to usage logs and telemetry, (e) data location, (f) return or deletion of data at exit, (g) subcontractor obligations, and (h) responsibility for AI output, including intellectual property indemnity. Where the vendor offers only standard terms, or an existing contract falls short, gaps are recorded as exceptions under GVN-RK-03. | Platforms | Managed |
+| GVN-TP-03 | AI vendors are reassessed at least annually, or more often at a frequency the organization defines by criticality. Each vendor rated critical under GVN-TP-01 has a documented exit plan that covers (a) provider shutdown, (b) acquisition, and (c) model deprecation. | Platforms | Managed |
+| GVN-TP-04 | AI vendors disclose the model providers and subprocessors behind their service, by contract or by a published list with change notification. The organization subscribes to change notices and reviews changes under GVN-TP-03. | Platforms | Managed |
 | **GVN-WF Workforce** | | | |
-| GVN-WF-01 | People who use AI are trained on safe use, data handling, and recognizing manipulated or incorrect output. | Use | Foundational |
-| GVN-WF-02 | Developers, administrators, and security staff receive role-based training on AI-specific threats and controls. | All | Managed |
+| GVN-WF-01 | People who use AI are trained before use, and at least annually, on safe use, data handling, and recognizing manipulated or incorrect output. Completion is recorded. | Use | Foundational |
+| GVN-WF-02 | Staff who build, administer, or secure AI systems complete role-based training on AI-specific threats and controls before taking on the role and at least annually after that. Completion is recorded. | All | Managed |
 
 ## Inventory (INV)
 
@@ -115,46 +171,47 @@ Inventory establishes what AI exists, who owns it, and what it can reach. You ca
 | ID | Control statement | Applies to | Tier |
 | --- | --- | --- | --- |
 | **INV-AS AI asset inventory** | | | |
-| INV-AS-01 | An inventory lists every AI system, model, and AI feature in use, with owner, purpose, data accessed, and risk tier. | All | Foundational |
-| INV-AS-02 | The inventory records model versions, providers, and hosting location for each system. | Models | Managed |
-| INV-AS-03 | Retired models are removed from service, and their weights and associated data are disposed of or archived under policy. | Models | Managed |
+| INV-AS-01 | A maintained inventory records each AI system, model, agent platform, and AI feature enabled in existing software that processes sensitive data, with owner, purpose, data accessed, and risk rating. It is reconciled at least annually against procurement and expense records, and against discovery results where discovery is in place. Differences are resolved and recorded. | All | Foundational |
+| INV-AS-02 | The inventory records model versions, providers, and hosting location for each system. Where a provider does not disclose or fix the model version, the inventory records the product, release channel, and provider-stated model family. | Models | Managed |
+| INV-AS-03 | Retired models are removed from service. Weights and associated data the organization holds are disposed of or archived under policy. | Models | Managed |
 | **INV-AG Agent registry** | | | |
-| INV-AG-01 | Every agent is registered as a non-human identity with owner, purpose, scopes, connected systems, autonomy level, and a named halt authority with a documented halt procedure. | Agents | Foundational |
-| INV-AG-02 | The registry records each agent's tools, connectors, plugins, and scheduled tasks. | Agents | Foundational |
+| INV-AG-01 | Every agent is recorded in an agent registry with owner, purpose, scopes, connected systems, autonomy level, and a named halt authority who can order it stopped. Where the platform issues the agent its own identity, the registry records it. Agents that users build on an approved platform may be registered through the platform's admin inventory if it records owner and connected systems. | Agents | Foundational |
+| INV-AG-02 | The registry records each agent's tools, connectors, plugins, and scheduled tasks, as far as the platform exposes them to administrators. | Agents | Foundational |
 | **INV-SH Shadow AI discovery** | | | |
-| INV-SH-01 | Unapproved AI services, browser extensions, and employee-built agents are continuously discovered through network, endpoint, or SaaS monitoring, showing which tools are in use, by whom, and what data reaches them. | Use | Managed |
-| INV-SH-02 | OAuth grants and API keys issued to AI services are discovered and reviewed. | Platforms | Managed |
+| INV-SH-01 | Unapproved AI services, browser extensions, and employee-built agents are discovered through automated network, endpoint, browser, identity, or SaaS monitoring that runs at least monthly. Discovery records show which tools are in use and by whom, and, where inline inspection is in place, the data sent to them. Findings are reviewed and resolved. | Use | Managed |
+| INV-SH-02 | OAuth grants to AI services in company identity and SaaS platforms, and API keys in company AI provider accounts, code repositories, and secret stores, are discovered and reviewed at a frequency the organization defines and documents. Unapproved or unused grants and keys are revoked. | Platforms | Managed |
 | **INV-DF Data flows** | | | |
 | INV-DF-01 | For each AI system, the organization documents what data it can read, where prompts and outputs are stored, and how long they are kept. | All | Managed |
-| INV-DF-02 | AI systems and agents have a bill of materials covering models, datasets, libraries, prompts, tools, and accessible data, maintained in a standard machine-readable format such as CycloneDX or SPDX. | All | Advanced |
+| INV-DF-02 | AI systems the organization builds have a bill of materials for models, datasets, and libraries in a standard machine-readable format such as CycloneDX or SPDX. Prompts, tools, and accessible data are recorded in the same document or a linked registry. The bill of materials is updated when any listed component changes. | All | Advanced |
 
 ## Delegate (DEL)
 
-Delegate treats agents as principals. Each agent has its own identity, receives only the authority it needs, and cannot take high-impact actions without a human. This is the framework's central departure from existing guidance.
+Delegate treats agents as principals. Each agent is identifiable as itself, receives only the authority it needs, and cannot take high-impact actions without a human. Delegate consolidates emerging agent identity and authorization guidance into implementable controls.
 
 | ID | Control statement | Applies to | Tier |
 | --- | --- | --- | --- |
 | **DEL-ID Agent identity** | | | |
-| DEL-ID-01 | Each agent operates under its own identity. Agents never use a human user's credentials, session cookies, or MFA tokens. | Agents | Foundational |
-| DEL-ID-02 | Agent credentials are short-lived and narrowly scoped. No static secrets in prompts, configuration files, or code. | Agents | Managed |
+| DEL-ID-01 | Each agent accesses company systems through its own identity or through delegated access issued to the agent, such as an OAuth grant to the agent's application, as recorded in the agent registry. No agent is configured with a person's password or MFA factor. No agent uses a person's session cookie or signed-in session, except session agents permitted by DEL-ID-03. | Agents | Foundational |
+| DEL-ID-02 | Agent credentials expire within a maximum lifetime the organization defines and documents, and are scoped to the systems and actions in the agent registry, using workload identity federation, managed identities, or token exchange where the target system supports it. Where only static keys are supported, keys are scoped to the minimum, stored in a secrets manager, and rotated on a documented schedule. Prompts, configuration files, and code are scanned for secrets, and findings are remediated. | Agents | Managed |
+| DEL-ID-03 | Session agents are disabled unless approved through pre-deployment review under GVN-RK-02. Approved session agents are technically limited to approved sites and applications. They do not operate, from the person's own session, on systems the organization designates as sensitive, including financial, administrative, and HR applications. | Agents | Foundational |
+| DEL-ID-04 | Session agents that need to reach sensitive systems run in an isolated browser profile, virtual desktop, or vendor-hosted browser with separate sign-ins and no access to the person's own session. | Agents | Managed |
 | **DEL-DG Delegation** | | | |
-| DEL-DG-01 | Agents acting for a user use delegation, not impersonation, so downstream systems record both the agent and the user. | Agents | Managed |
-| DEL-DG-02 | A delegated agent's effective permissions are the intersection of the user's rights and the agent's allowed scopes, never the union. | Agents | Managed |
-| DEL-DG-03 | Agents authenticate to each other, and delegation chains between agents have a defined maximum depth. | Agents | Advanced |
-| DEL-DG-04 | Users cannot grant AI applications or agents access to company systems or data without approval. Self-service app consent, browser extension installation, and personal API key creation are restricted to approved tools. | Agents | Foundational |
+| DEL-DG-01 | Agents acting for a user use delegation, not impersonation. The agent and the user are both recorded in identity provider logs, and in downstream system logs where the downstream system supports it. Where it does not, the AI platform's logs link each action to both. | Agents | Managed |
+| DEL-DG-02 | A delegated agent can only do what both the user and the agent are allowed to do. Agents shared with users act with each user's own delegated permissions. An agent that runs under a shared or builder's credential is made available only to people already authorized for everything that credential can reach. Before production use and after scope changes, a test with a restricted account confirms the agent does not reach data or actions that account cannot reach directly. | Agents | Foundational |
+| DEL-DG-03 | In multi-agent systems the organization builds or orchestrates, (a) agents authenticate each other using workload identity, such as mutual TLS or signed tokens, before accepting instructions, (b) an agent that hands work to another passes on no more than its own authority, limited to what the task needs, through down-scoped tokens or an equivalent mechanism, (c) the person who authorized the work is recorded at every handoff, and (d) the orchestrator enforces a maximum number of handoffs or steps that the organization defines and documents. Instructions from agents outside the organization's control are treated as untrusted content. | Agents | Advanced |
+| DEL-DG-04 | Users cannot grant AI applications or agents access to company systems or data without approval. User consent to third-party apps is restricted to approved apps in the company identity platform. On managed devices, browser extension installation is restricted to approved extensions. API keys in company AI provider accounts are created only by authorized users. | Use | Foundational |
 | **DEL-LA Least agency** | | | |
-| DEL-LA-01 | Agents receive read-only access by default. Write access is granted per tool with a documented justification. | Agents | Foundational |
-| DEL-LA-02 | What an agent may do without approval is defined for each risk tier. | Agents | Foundational |
-| DEL-LA-03 | Agents cannot grant permissions to themselves or to other agents. | Agents | Managed |
-| DEL-LA-04 | Before an agent automates a process, the process is documented and the steps that require a human in or on the loop are identified. | Agents | Managed |
+| DEL-LA-01 | Agents receive read-only access by default. Write access is granted per tool, or per connector where the platform does not separate read and write, with a documented justification. | Agents | Foundational |
+| DEL-LA-02 | Agent identities hold no permission to change their own roles, scopes, or credentials, or to approve their own access requests. This is confirmed when access is granted and at each review of agent access. | Agents | Foundational |
+| DEL-LA-03 | Before an agent automates a process, the process is documented. The documentation identifies the steps that require human approval before they run and the steps that require human review after they run. | Agents | Managed |
 | **DEL-AP Human approval** | | | |
-| DEL-AP-01 | Every agent action is assigned a risk tier. High and critical actions require explicit human approval before they run. | Agents | Foundational |
-| DEL-AP-02 | Approvals for high and critical actions use phishing-resistant authentication, such as a FIDO2 hardware key, bound to the specific action being approved. Critical actions also require user verification (PIN or biometric), and keys that agents could reach require a touch for every use. | Agents | Advanced |
-| DEL-AP-03 | One approval authorizes one action. An approval never grants session-wide elevation. | Agents | Managed |
-| DEL-AP-04 | AI-assisted decisions that materially affect people can be reviewed by a human, and the basis for each decision is recorded. | All | Managed |
+| DEL-AP-01 | Each type of agent action is assigned an action risk level. The organization defines at least high and critical levels and what an agent may do without approval at each level. High and critical actions require explicit human approval before they run. Where a platform cannot require approval for an action, the agent is not given the tool or permission for that action. | Agents | Foundational |
+| DEL-AP-02 | Approvals for high and critical actions are requested on a channel the agent cannot control or read. Critical actions require phishing-resistant re-authentication, such as a FIDO2 security key with user verification. The approval record is bound on the server side to a hash of the exact action and its parameters, and is single-use. Platforms that cannot meet this are not given critical actions. | Agents | Advanced |
+| DEL-AP-03 | (a) Each approval authorizes one specific action. Session-wide or standing approval options are disabled where the platform allows, and prohibited by policy where it does not. (b) The approval request shows the action, its target, and its expected impact. (c) Where approval records are available, approval patterns are reviewed for rubber-stamping at a frequency the organization defines and documents, using criteria such as approval time and decline rate, and findings are acted on. | Agents | Managed |
+| DEL-AP-04 | For AI-assisted decisions that materially affect people, such as credit, hiring, or access to services, the organization documents the applicable legal requirements on human review, notice, explanation, and appeal, and follows them. Where law sets no requirement, decisions from high-risk use cases are reviewed before they take effect by a person the organization designates as qualified, and other decisions can be appealed to such a person. The principal reasons for each decision are recorded by the reviewer or derived from documented decision factors, not taken only from the model's own explanation, and can be given to the affected person. | All | Foundational |
 | **DEL-LC Agent lifecycle** | | | |
 | DEL-LC-01 | Agent access is reviewed on the same cadence as privileged accounts, with the owner attesting to each scope. | Agents | Managed |
-| DEL-LC-02 | Agent identities, tokens, connectors, and scheduled tasks are removed when the purpose ends or the owner leaves. | Agents | Foundational |
+| DEL-LC-02 | Agent identities, tokens, connectors, and scheduled tasks are removed within a time the organization defines and documents after the agent's purpose ends. When the owner leaves or changes role, shared agents are reassigned or removed within the same time. Where the platform does not expose these items to administrators, deprovisioning the owner's platform account through enterprise identity meets this control. | Agents | Foundational |
 
 ## Harden (HRD)
 
@@ -164,35 +221,38 @@ Harden reduces the attack surface before anything runs: secure platform configur
 | --- | --- | --- | --- |
 | **HRD-CF Secure configuration** | | | |
 | HRD-CF-01 | Each approved AI platform has a documented secure configuration baseline covering data retention, training opt-out, sharing, connectors, and admin controls. | Platforms | Foundational |
-| HRD-CF-02 | Enterprise identity (SSO, and SCIM where supported) is used for AI platforms. | Platforms | Foundational |
-| HRD-CF-03 | Configuration is checked against the baseline on a defined cadence and after vendor feature releases. | Platforms | Managed |
-| HRD-CF-04 | Self-hosted model endpoints and AI APIs require authentication and are not exposed beyond the users and systems that need them. | Platforms | Foundational |
+| HRD-CF-02 | AI platforms use enterprise identity (SSO, and SCIM where supported). Tenant-wide AI settings are changed only by named administrators. Building and sharing agents is limited to approved builders, and sharing beyond a team requires approval. Administrative changes are logged, and where the platform does not log them, changes are recorded through change management. | Platforms | Foundational |
+| HRD-CF-03 | Configuration is checked against the baseline at a frequency the organization defines and documents, and after vendor releases that add or change data handling, sharing, connector, or admin settings. Deviations are corrected or approved as exceptions. | Platforms | Managed |
+| HRD-CF-04 | Self-hosted model endpoints and AI APIs, including development and test instances, require authentication. Network access to them is limited to documented users and systems, and they are not reachable from the internet unless approved. | Platforms | Foundational |
+| HRD-CF-05 | New AI features and agents that vendors add to existing platforms are held disabled, or on a restricted release channel, until reviewed under GVN-RK-02, where the platform allows. Where it does not, the feature is reviewed within a time the organization defines and documents after release. | Platforms | Foundational |
+| HRD-CF-06 | Endpoint AI agents, such as local coding and desktop agents, are configured through managed policy that users cannot override, covering approval mode, allowed tools and MCP servers, and sandboxing. Agent instruction and configuration files from third-party repositories or workspaces are not loaded without review. | Agents | Managed |
 | **HRD-SC Supply chain** | | | |
-| HRD-SC-01 | Plugins, extensions, connectors, and MCP servers are reviewed for requested permissions and source before installation. | Agents | Foundational |
-| HRD-SC-02 | Models and datasets come from approved sources and are verified before use. | Models | Managed |
-| HRD-SC-03 | Model files and AI dependencies are scanned for malicious code and integrity-checked with hashes or signatures. | Models | Advanced |
+| HRD-SC-01 | Plugins, extensions, connectors, MCP servers, agent skills, prompt templates, and agent configurations are reviewed for requested permissions and source before installation, or users are limited to an admin-approved catalog. | Agents | Foundational |
+| HRD-SC-02 | Locally installed plugins, connectors, and MCP servers are pinned to approved versions and hashes, and updates are reviewed before use. For remote servers that cannot be pinned, tool names and descriptions are recorded at approval and changes are reviewed before use where tooling can detect them. Otherwise the server is reassessed at a frequency the organization defines and documents. | Agents | Managed |
+| HRD-SC-03 | Models and datasets come from sources on a documented approved list. Before use, each is verified for origin and integrity, and the verification is recorded. | Models | Managed |
+| HRD-SC-04 | Model files and AI dependencies are integrity-checked against published hashes, or signatures where the publisher provides them, and scanned for malicious code. Models are loaded using file formats that cannot execute code, or in isolated environments when that is not possible. | Models | Managed |
 | **HRD-DP Data protection** | | | |
-| HRD-DP-01 | Sensitive data is classified, and AI access to it is restricted by classification. | All | Managed |
-| HRD-DP-02 | Retrieval sources used by AI enforce the same access controls as the systems they come from. | Models | Managed |
-| HRD-DP-03 | A privacy impact assessment is completed for AI use cases that process personal data. | All | Foundational |
-| HRD-DP-04 | Prompt and output retention is minimized, and deletion requests are honored across retrieval stores and fine-tuning data. | All | Managed |
-| HRD-DP-05 | Before AI tools that search or summarize company data are enabled, existing permissions on files, sites, and mailboxes are reviewed and overshared access is remediated, because AI exposes whatever users can already reach. | Platforms | Foundational |
-| HRD-DP-06 | Technical controls warn on or block sensitive data sent to unapproved AI tools, enforcing the acceptable use policy where training and culture do not reach. | Use | Managed |
+| HRD-DP-01 | AI access to data is restricted according to the organization's data classification. The classifications each AI system may access are recorded in the inventory. Where a platform does not enforce classification labels, sources containing restricted data are not connected to it. | All | Managed |
+| HRD-DP-02 | AI search and retrieval systems return only content the requesting user can access in the original system. Permissions and deletions are applied at query time or synchronized within a time the organization defines and documents. Sources whose permissions the platform cannot honor are not connected, or are limited to content every user may see. This is confirmed before enablement by a test with a restricted account. | All | Foundational |
+| HRD-DP-03 | A privacy impact assessment, or a data protection impact assessment where law requires one, is completed for AI use cases that process personal data and confirms a lawful basis for the processing. | All | Foundational |
+| HRD-DP-04 | Retention periods for prompts, outputs, and AI logs are documented and meet legal, regulatory, business, and investigation requirements. (a) Legal holds override deletion, using platform eDiscovery or compliance export where available. (b) Deletion requests are honored within the time set by law or policy across logs, retrieval stores, and fine-tuning data the organization controls, and vendor retention, including abuse-monitoring retention, is confirmed under GVN-TP-01. (c) Where data cannot be removed from a trained model, the limitation is documented, and the model is retrained or retired when law, contract, or a documented risk decision requires it. | All | Managed |
+| HRD-DP-05 | Before AI tools that search or summarize company data are enabled, permissions on files, sites, and mailboxes within their reach are reviewed against criteria for overshared access that the organization defines and documents. Findings are remediated or accepted as risks before enablement. The review is repeated at a frequency the organization defines and documents. | Platforms | Foundational |
+| HRD-DP-06 | Technical controls warn on or block sensitive data sent to unapproved AI tools, using documented rules that enforce the acceptable use policy. | Use | Managed |
+| HRD-DP-07 | Access to approved AI services from company devices and networks is limited to the company's own tenant or account, using tenant restrictions, network security controls, or enterprise browser policy, so personal accounts on the same services cannot be used with company data. | Use | Managed |
+| HRD-DP-08 | Derived AI data, including embeddings, vector indexes, prompt and response caches, conversation history, and agent memory, inherits the highest classification of its sources. It is access-controlled, encrypted, separated by tenant or user where shared, and included in the data inventory and in deletion requests. | Data | Managed |
 | **HRD-PV Data provenance** | | | |
-| HRD-PV-01 | Model, dataset, and agent providers supply provenance documentation, such as model cards, data sheets, attestations, or an AI bill of materials, before procurement. | Platforms | Foundational |
-| HRD-PV-02 | Every dataset used to train, fine-tune, or evaluate a model has a recorded source, owner, usage rights, and collection date. | Models | Managed |
-| HRD-PV-03 | New data passes an intake gate before use, with checks for poisoned or anomalous samples, hidden triggers, sensitive data, and prohibited content. | Models | Managed |
-| HRD-PV-04 | Data from public or untrusted sources is quarantined and reviewed before it enters a training or fine-tuning pipeline. | Models | Managed |
-| HRD-PV-05 | Data lineage is tracked from source through each transformation to the model version it produced. | Models | Advanced |
-| HRD-PV-06 | Datasets are versioned and integrity-protected with hashes or signatures, so the exact data behind any model version can be reproduced. | Models | Advanced |
+| HRD-PV-01 | Providers of models, datasets, and agents are asked for provenance documentation, such as model cards, data sheets, attestations, or an AI bill of materials, which is reviewed before acquisition or first use. Gaps are recorded as risks. | All | Foundational |
+| HRD-PV-02 | Every dataset used to train, fine-tune, or evaluate a model has a recorded source, owner, usage rights, and collection date. | Data | Managed |
+| HRD-PV-03 | New training, fine-tuning, and evaluation data passes a documented intake gate before use. The gate checks for anomalous or duplicate samples, embedded instructions, known poisoning patterns, sensitive data, and prohibited content, and records each result. Data from public or untrusted sources is quarantined until it passes. | Data | Managed |
+| HRD-PV-04 | Datasets are versioned and integrity-protected with hashes or signatures, and lineage is tracked from source through each transformation to the model version it produced, so the exact data behind any model can be reproduced. | Data | Advanced |
 | **HRD-MP Model protection** | | | |
-| HRD-MP-01 | Model weights and fine-tuned models are access-controlled and encrypted at rest. | Models | Managed |
+| HRD-MP-01 | Model weights and fine-tuned models are access-controlled and encrypted at rest. For provider-hosted fine-tuned models, access is restricted through the provider's access controls, and customer-managed keys are used where offered. | Models | Managed |
 | **HRD-DV Secure development** | | | |
-| HRD-DV-01 | System prompts and agent instructions are version-controlled and changed through review. | Agents | Managed |
-| HRD-DV-02 | Internally built AI systems follow a secure development lifecycle that includes threat modeling for AI-specific threats. | Models | Managed |
-| HRD-DV-03 | AI systems are adversarially tested before production release. | All | Advanced |
-| HRD-DV-04 | AI-generated code goes through the same review, testing, and scanning as code written by people. | Use | Foundational |
-| HRD-DV-05 | System prompts are written on the assumption they will be disclosed. They contain no secrets and no security logic that depends on secrecy. | Agents | Foundational |
+| HRD-DV-01 | System prompts, agent instructions, and agent tool configurations are version-controlled and changed through review. Where the platform has no version history, configurations are exported or recorded before each change. | Agents | Managed |
+| HRD-DV-02 | Internally built AI systems follow a secure development lifecycle that includes threat modeling for AI-specific threats. | All | Managed |
+| HRD-DV-03 | All code, including AI-generated code, goes through the same review, testing, and scanning before merge. Automated checks confirm that each new dependency exists in an approved package registry and comes from a trusted source. | Use | Foundational |
+| HRD-DV-04 | System prompts contain no credentials, secrets, or sensitive data. Access control, authorization, and other security decisions are enforced outside the model and do not depend on the system prompt staying confidential. System prompts are reviewed for this before deployment. | Agents | Foundational |
+| HRD-DV-05 | MCP servers and other tool servers the organization exposes authenticate each client, accept only tokens issued for that server, never pass client tokens through to downstream systems, and authorize each tool call for the calling user or agent. | Agents | Managed |
 
 ## Defend (DEF)
 
@@ -201,27 +261,25 @@ Defend protects AI while it runs. It assumes manipulation will sometimes succeed
 | ID | Control statement | Applies to | Tier |
 | --- | --- | --- | --- |
 | **DEF-IN Input protection** | | | |
-| DEF-IN-01 | An agent that reads untrusted content does not hold high-impact write tools in the same session unless human approval gates those tools. | Agents | Foundational |
-| DEF-IN-02 | Untrusted content (web pages, email, documents, tool output) is treated as data and separated from instructions where the architecture allows. | All | Managed |
-| DEF-IN-03 | Inputs are screened for prompt injection before reaching models that handle sensitive data or hold tools. | All | Managed |
+| DEF-IN-01 | An agent that reads untrusted content does not hold high-impact write tools, or tools that send data outside the organization, in the same session unless human approval gates those tools. Rendering external links or images in output counts as sending data out. For vendor assistants, the organization disables the combinations it can control, such as web access or external connectors, for high-risk users and use cases, and relies for the rest on the vendor's documented exfiltration protections, confirmed under GVN-TP-01. | Agents | Foundational |
+| DEF-IN-02 | Untrusted content, such as web pages, email, documents, and tool output, is marked as data, delimited from instructions, and never placed in system or developer instructions. In agents the organization builds, designs that stop untrusted content from changing the agent's plan or tool choice are used where feasible. Because no current method fully separates data from instructions, DEF-IN-01 applies. | All | Managed |
+| DEF-IN-03 | Inputs to AI systems the organization builds that handle sensitive data or hold tools are screened for prompt injection using detection rules or classifiers. Detection and false-positive rates are measured against a test set at a frequency the organization defines and documents. For vendor platforms, the vendor's injection protections are confirmed under GVN-TP-01 and enabled where configurable. | All | Managed |
 | **DEF-OU Output handling** | | | |
-| DEF-OU-01 | Downstream systems treat model output as untrusted and validate it before executing, rendering, or storing it. | All | Managed |
-| DEF-OU-02 | Outputs are screened for sensitive data before leaving the trust boundary. | All | Managed |
-| DEF-OU-03 | Customer-facing AI output is filtered for harmful, prohibited, or off-policy content. | All | Managed |
+| DEF-OU-01 | Systems the organization builds or integrates validate model output before executing, rendering, or storing it, using documented checks such as output encoding, schema validation, allowlists, and parameterized queries. | All | Foundational |
+| DEF-OU-02 | Output from AI systems that can access sensitive data is screened with documented detection rules before it leaves the organization or reaches users not authorized for that data, using data loss prevention in the AI gateway, the platform, or the channel the output is sent through. | All | Managed |
+| DEF-OU-03 | Customer-facing AI output is filtered against a documented content policy that defines harmful, prohibited, and off-policy content. Filter actions are logged. | All | Foundational |
 | **DEF-TL Tool and action enforcement** | | | |
-| DEF-TL-01 | Agent network egress is restricted to approved destinations. | Agents | Managed |
-| DEF-TL-02 | Rate and spending limits cap runaway or abusive consumption. | All | Managed |
-| DEF-TL-03 | Tool calls pass through a policy enforcement point that checks each action against the agent's scope and risk tier. | Agents | Advanced |
-| DEF-TL-04 | Query patterns that indicate model extraction or inversion attacks are detected and throttled. | Models | Advanced |
-| DEF-TL-05 | Code that an agent writes or runs executes in an isolated sandbox. | Agents | Foundational |
-| DEF-TL-06 | Every agent can be halted immediately, and step or loop limits stop runaway agents automatically. | Agents | Foundational |
+| DEF-TL-01 | Agent network egress is restricted to approved destinations. For agents that run on vendor infrastructure, web access is disabled or limited to approved domains where the platform allows, and the remaining exposure is recorded in the risk rating. | Agents | Managed |
+| DEF-TL-02 | Documented rate and spending limits are technically enforced through provider quotas, project budgets, or an AI gateway to cap runaway or abusive consumption. Where a provider only alerts, the alert triggers the halt mechanism in DEF-TL-06. | All | Managed |
+| DEF-TL-03 | Tool calls of agents the organization builds, or whose tools it hosts, pass through a policy enforcement point that checks each action against the agent's scope and the action's risk level. | Agents | Advanced |
+| DEF-TL-04 | Models the organization exposes to external users through an API or application have per-client authentication, quotas, and rate limits. Query volume and pattern anomalies that may indicate model extraction or inversion are monitored and throttled. | Models | Advanced |
+| DEF-TL-05 | Code that an agent runs on its own executes in an isolated environment, such as a vendor sandbox, container, or virtual machine. Local agents use the tool's sandbox or require approval for each command, and are not given administrator rights or access to production credentials on the workstation. | Agents | Foundational |
+| DEF-TL-06 | (a) Every agent can be stopped within a time the organization defines and documents, through a platform kill switch, disabling the agent or its connectors, or revoking its credentials. (b) Step, loop, or run-time limits, documented for each agent, stop runaway agents automatically, configured where the platform allows and confirmed in vendor documentation where it does not. (c) The halt is demonstrated by test at least annually. | Agents | Foundational |
 | **DEF-PS Poisoning and manipulation defenses** | | | |
-| DEF-PS-01 | Retrieval sources accept content only from authorized contributors. | Models | Managed |
-| DEF-PS-02 | Changes to training data, fine-tuning data, and retrieval sources are logged and attributable. | Models | Managed |
-| DEF-PS-03 | Model behavior is re-evaluated after any training or data update before it returns to production. | Models | Advanced |
-| DEF-PS-04 | Content ingested into retrieval stores is tagged with its source and trust level, so models and downstream controls can tell trusted content from untrusted content. | Models | Managed |
-| DEF-PS-05 | Agent long-term memory is scoped to a user or task, reviewable by its owner, and cannot be written from untrusted content without validation. | Agents | Managed |
-| DEF-PS-06 | User feedback, ratings, and conversation data are reviewed for manipulation before they are used to retrain or tune a model. | Models | Advanced |
+| DEF-PS-01 | Only authorized contributors can add content to curated AI knowledge sources, such as agent knowledge bases and retrieval indexes, or change training and fine-tuning data, and every change is logged and attributable. For assistants that search the general content estate, source-system permissions and HRD-DP-05 apply. | Data | Managed |
+| DEF-PS-02 | Content ingested into retrieval stores the organization builds is tagged with its source and trust level, so retrieval filters and downstream controls can exclude or restrict untrusted content. | Data | Managed |
+| DEF-PS-03 | Agent long-term memory is scoped to a user or task, and its owner can view and delete it. In agents the organization builds, memory writes from untrusted content pass documented validation or require user confirmation. On vendor platforms that cannot do this, memory is disabled for high-risk use cases. | Agents | Managed |
+| DEF-PS-04 | User feedback, ratings, and conversation data are checked for manipulation before they are used to retrain or tune a model. Checks use documented criteria, such as volume anomalies and coordinated submissions, and results are recorded. | Models | Advanced |
 
 ## Monitor (MTR)
 
@@ -230,23 +288,26 @@ Monitor watches AI for the life of the system. It covers logging, agent behavior
 | ID | Control statement | Applies to | Tier |
 | --- | --- | --- | --- |
 | **MTR-LG Logging** | | | |
-| MTR-LG-01 | Agent actions, tool calls, approvals, and the acting identity are logged with trace IDs that link the authorizing human to the agent and each step and tool call, with retention aligned to incident response needs. | Agents | Foundational |
-| MTR-LG-02 | Prompts and outputs are logged for systems in scope, and those logs are protected like the data they contain. | All | Managed |
-| MTR-LG-03 | AI logs feed the central SIEM and are correlated with target-system logs to separate agent actions from human ones. | All | Managed |
+| MTR-LG-01 | Agent actions, tool calls, approvals, and the acting identity are logged, with retention that meets legal, regulatory, and incident response requirements. For vendor platforms, the organization enables the platform's audit logging, confirms what it captures, exports logs where platform retention is too short, and records gaps as risks. | Agents | Foundational |
+| MTR-LG-02 | Prompts and outputs are logged for AI systems the organization designates by risk rating, and the designation is documented. These logs receive the access controls and encryption required for the most sensitive data they may contain. | All | Managed |
+| MTR-LG-03 | AI logs feed the central SIEM and are correlated with target-system logs. Agent actions are distinguished from human actions where identity data allows, and gaps are recorded. | All | Managed |
+| MTR-LG-04 | In agents the organization builds, logs carry trace IDs, such as W3C Trace Context, that link the authorizing person to the agent and to each step and tool call, including across agent-to-agent handoffs within systems the organization controls. | Agents | Advanced |
 | **MTR-BH Behavior baselines** | | | |
-| MTR-BH-01 | Alerts fire on indicators of manipulation: unexpected resources, scope creep, and unprompted requests for sensitive data. | Agents | Managed |
-| MTR-BH-02 | Each agent has a behavior baseline covering systems accessed, volume, timing, and tools. Deviations generate alerts. | Agents | Advanced |
+| MTR-BH-01 | Documented detection rules alert on indicators of manipulation, such as unexpected resources, scope creep, and unprompted requests for sensitive data. Rule effectiveness is reviewed at a frequency the organization defines and documents. | Agents | Managed |
+| MTR-BH-02 | Each agent has a documented behavior baseline covering systems accessed, volume, timing, and tools. Deviations beyond documented thresholds generate alerts. | Agents | Advanced |
 | MTR-BH-03 | AI security alerts are routed to the security operations function with defined triage and escalation procedures. | All | Managed |
-| **MTR-DR Drift and evaluation** | | | |
-| MTR-DR-01 | Provider model version changes are tracked and treated as change events that trigger review. | Models | Foundational |
-| MTR-DR-02 | Production models are evaluated against a defined test set on a regular cadence and after model updates. | Models | Managed |
-| MTR-DR-03 | Thresholds for accuracy, safety, and output quality are defined. A breach triggers review or rollback. | Models | Advanced |
+| **MTR-DR Drift and integrity** | | | |
+| MTR-DR-01 | Provider model changes are tracked as change events. Where a provider allows model versions to be pinned, they are pinned and changed through review. Where it does not, provider release notes are monitored and changes are reviewed according to the system's risk rating. | Models | Foundational |
+| MTR-DR-02 | Production models the organization deploys or pins are evaluated against a defined test set at a frequency the organization defines and documents. After any model, training, or data update, the model passes the same evaluation before release to production. For vendor-managed models that change without notice, the test set is run after announced changes and on a documented schedule. | Models | Managed |
+| MTR-DR-03 | Thresholds for accuracy, safety, and output quality are defined for the MTR-DR-02 test set. A breach triggers review, and rollback where the model version is under the organization's control. | Models | Managed |
+| MTR-DR-04 | Retrieval stores, agent memory, and training data that the organization controls are scanned for injected instructions or anomalous content at a frequency the organization defines and documents, and unexpected changes generate alerts. | Data | Managed |
 | **MTR-VM Vulnerability and threat management** | | | |
 | MTR-VM-01 | Vulnerabilities in AI frameworks, models, and libraries are tracked and remediated on defined timelines. | All | Managed |
-| MTR-VM-02 | AI threat intelligence, such as MITRE ATLAS techniques, is reviewed and used to update controls. | All | Managed |
+| MTR-VM-02 | AI threat intelligence, such as MITRE ATLAS techniques, is reviewed at a frequency the organization defines and documents. Each review records relevant threats and the resulting control changes, or the decision that none are needed. | All | Managed |
 | **MTR-TS Testing and reporting** | | | |
-| MTR-TS-01 | Users have a simple way to report suspicious or unexpected AI behavior. | Use | Foundational |
-| MTR-TS-02 | AI systems are red-teamed for prompt injection, data leakage, and excessive agency on a defined cadence. | All | Advanced |
+| MTR-TS-01 | Employees and customers have a documented, published channel to report suspicious, unexpected, or harmful AI behavior. Reports are logged and triaged. Customer reports feed the complaint management process. | Use | Foundational |
+| MTR-TS-02 | Customer-facing and tool-using AI systems are tested for prompt injection, data leakage, and excessive agency before production release and after changes that meet criteria the organization defines and documents. For vendor platforms, testing covers the organization's configuration, connectors, and agents, within the vendor's published testing rules. Findings are tracked to remediation. | All | Managed |
+| MTR-TS-03 | Independent red teams, internal or external, test AI systems adversarially at a frequency based on risk rating that the organization defines and documents. | All | Advanced |
 
 ## Respond (RSP)
 
@@ -256,37 +317,36 @@ Respond adapts incident response to AI. The evidence is prompts, context, and to
 | --- | --- | --- | --- |
 | **RSP-PL Preparation** | | | |
 | RSP-PL-01 | The incident response plan defines AI incidents, including manipulation, data leakage, harmful agent actions, and model compromise. | All | Foundational |
-| RSP-PL-02 | Runbooks exist to disable any agent identity, connector, or scheduled task without affecting its owner. | Agents | Foundational |
-| RSP-PL-03 | AI incident scenarios, including halting a misbehaving agent, are exercised in tabletops at least annually. | All | Managed |
+| RSP-PL-02 | AI incident scenarios, including halting a misbehaving agent, are exercised in tabletops at least annually. | All | Managed |
 | **RSP-IV Investigation** | | | |
-| RSP-IV-01 | Investigators can reconstruct an AI incident from prompts, context, tool calls, and approvals. | All | Managed |
-| RSP-IV-02 | Evidence collection covers AI artifacts, including model versions, system prompts, and retrieval sources. | Models | Managed |
+| RSP-IV-01 | Investigators can reconstruct an AI incident from prompts, outputs, retrieved content, tool calls, and approvals, to the extent the platform records them. Gaps in what platforms record are identified before an incident and recorded as risks. Reconstruction is demonstrated at least annually in an exercise or a real investigation. | All | Managed |
+| RSP-IV-02 | Evidence collection covers AI artifacts, including model and dataset versions, system prompts, agent configurations and memory, retrieval sources, and vendor logs, where available, and preserves them before rollback or deletion. | All | Managed |
 | **RSP-CN Containment and recovery** | | | |
-| RSP-CN-01 | Containment options include revoking agent tokens, disabling tools, pausing scheduled tasks, and blocking AI services. | Agents | Foundational |
-| RSP-CN-02 | Models, prompts, and retrieval sources can be rolled back to a known-good version. | Models | Advanced |
-| RSP-CN-03 | Poisoned data is identified and removed, and its downstream effects are assessed. | Models | Advanced |
+| RSP-CN-01 | Runbooks cover containment, including invoking the halt mechanism, revoking agent tokens, disabling tools and connectors, pausing scheduled tasks, and blocking AI services. Any agent can be disabled without disabling the account of the person who owns or uses it, by disabling the agent, its connectors, or the AI feature for that user. Where a platform cannot do this, the runbook states the fallback. | Agents | Foundational |
+| RSP-CN-02 | AI assets the organization controls, including models, configurations, system prompts, retrieval indexes, and agent memory, are versioned and backed up, and can be rolled back to a known-good version or restored within defined recovery objectives. Restoration is demonstrated by test at least annually. | All | Managed |
+| RSP-CN-03 | A documented procedure identifies poisoned data and removes it from datasets, retrieval stores, and memory, traces it to affected models and outputs, rolls back or retrains affected models, and assesses downstream effects. The procedure is exercised at least annually. | Data | Advanced |
 | **RSP-BC Business continuity** | | | |
-| RSP-BC-01 | Critical processes that depend on AI have documented fallback procedures for when the AI or its provider is unavailable. | All | Foundational |
-| RSP-BC-02 | Fallback procedures are tested, including a provider outage and a forced model change. | All | Managed |
+| RSP-BC-01 | Critical processes that depend on AI are identified with recovery objectives. Each has documented fallback procedures for when the AI or its provider is unavailable, and named people trained to run them. | All | Foundational |
+| RSP-BC-02 | Fallback procedures are tested at least annually, including a provider outage and a forced model change. | All | Managed |
 | **RSP-IM Improvement and notification** | | | |
-| RSP-IM-01 | AI incidents are reported to vendors, customers, and regulators as contracts and law require. | All | Foundational |
-| RSP-IM-02 | Lessons learned update controls, baselines, risk tiers, and evaluation test sets. | All | Managed |
+| RSP-IM-01 | Legal and compliance determine whether an AI incident must be reported to regulators, customers, or vendors under law and contract. Notifications meet the shortest applicable deadline, and notification decisions are documented. | All | Foundational |
+| RSP-IM-02 | After each AI incident and exercise, a lessons-learned review is recorded within a time the organization defines and documents. Resulting updates to controls, baselines, risk ratings, and evaluation test sets are tracked to completion. | All | Managed |
 
 ## Implementation tiers
 
-Every control carries a tier, so organizations adopt the framework in stages. v0.1.0 has 115 controls: 39 Foundational, 60 Managed, and 16 Advanced.
+Every control carries a tier, so organizations adopt the framework in stages. v0.1.0 has 119 controls: 48 Foundational, 60 Managed, and 11 Advanced.
 
 | Tier | Intended for | What it achieves |
 | --- | --- | --- |
-| Foundational | Every organization using AI, including small firms with no dedicated security staff | Ownership, acceptable use, an inventory, agents off shared credentials, human approval for high-risk actions, an AI-aware incident plan, and fallbacks for when AI is unavailable |
-| Managed | Organizations with a security function or an MSP or vCISO partner, and most regulated firms | Delegation instead of impersonation, configuration baselines, injection and output defenses, SIEM integration, and drift evaluation |
-| Advanced | Organizations building their own AI systems or running high-autonomy agents | Hardware-bound approvals, policy enforcement on every tool call, behavior baselines, model integrity checks, red teaming, and rollback |
+| Foundational | Every organization using AI, including small firms with an IT administrator or MSP but no dedicated security staff | Ownership, acceptable use, an inventory, an exception process, agents off shared credentials, controlled session agents, new vendor AI features held for review, human approval for high-impact actions, basic logging, retained evidence, a tested halt mechanism, an AI-aware incident plan, and fallbacks for when AI is unavailable |
+| Managed | Organizations with a security function or an MSP or vCISO partner | Delegation instead of impersonation, configuration baselines, injection and output defenses, model integrity checks, tenant restrictions, protection of derived AI data, managed endpoint agents, SIEM integration, drift evaluation with quality thresholds, pre-release testing, and backup and rollback |
+| Advanced | Organizations building their own AI systems or running high-autonomy agents | Hardware-bound approvals, policy enforcement on every tool call, behavior baselines, trace IDs across agents, dataset lineage, multi-agent delegation controls, and independent red teaming |
 
-Tiers are cumulative. An organization claims a tier only when every control at that tier and below is in place for in-scope systems.
+Tiers are cumulative. An organization claims a tier only when every control at that tier and below is in place for in-scope systems, or is justified as not applicable. Tier selection depends on the organization's risk, not only its size. Regulated organizations should expect to need many Managed controls.
 
 ## Standards mapping
 
-v0.1.0 maps at the function level. Control-level mappings follow in v0.2. OWASP references use the 2025 LLM Top 10 numbering and will be updated to the 2026 edition in v0.2.
+v0.1.0 maps at the function level. Control-level mappings follow in v0.2. Mappings are informative. They show topical alignment, not equivalence, and meeting an ACTOR control does not by itself satisfy a mapped requirement. OWASP references use the 2025 LLM Top 10 numbering and will be updated to the 2026 edition in v0.2.
 
 | Function | NIST CSF 2.0 | NIST AI RMF | OWASP LLM Top 10 (2025) |
 | --- | --- | --- | --- |
@@ -298,4 +358,4 @@ v0.1.0 maps at the function level. Control-level mappings follow in v0.2. OWASP 
 | Monitor (MTR) | Detect (DE.CM continuous monitoring) | Measure | LLM01 Prompt Injection, LLM09 Misinformation |
 | Respond (RSP) | Respond (RS), Recover (RC) | Manage | Supports all |
 
-Planned for v0.2: control-level mappings to the NIST Cyber AI Profile (IR 8596), NIST COSAiS overlays, the CSA AI Controls Matrix, ISO/IEC 42001, MITRE ATLAS, the ISACA AAISM job practice, the OWASP Agent Control Standard (ACS), the SANS Critical AI Security Guidelines, the SANS AI Security Maturity Model, and the AI Defense Matrix. The Delegate function will also be aligned with the NIST NCCoE Software and AI Agent Identity and Authorization project as it matures.
+Planned for v0.2: control-level mappings to the NIST Cyber AI Profile (IR 8596), NIST COSAiS overlays, the CSA AI Controls Matrix, ISO/IEC 42001, MITRE ATLAS, the ISACA AAISM job practice, the EU AI Act, the OWASP Agent Control Standard (ACS), the SANS Critical AI Security Guidelines, the SANS AI Security Maturity Model, and the AI Defense Matrix. The Delegate function will also be aligned with the NIST NCCoE Software and AI Agent Identity and Authorization project as it matures.
