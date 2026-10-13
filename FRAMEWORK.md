@@ -87,7 +87,7 @@ Govern sets who is accountable for AI risk, what uses are allowed, and how AI ri
 | GVN-AC-05 | ACTOR controls are independently assessed on a defined cadence by internal audit or a qualified third party. | All | Managed |
 | **GVN-PO Policy and acceptable use** | | | |
 | GVN-PO-01 | An AI acceptable use policy classifies approved tools by data sensitivity and use case, publishes a sanctioned path for requesting new tools, and defines prohibited uses and data that must not be entered into AI systems. | Use | Foundational |
-| GVN-PO-02 | Users do not connect AI agents to company systems with their own credentials unless the Delegate (DEL) controls are in place. | Agents | Foundational |
+| GVN-PO-02 | Users do not give AI agents their passwords, session cookies, MFA tokens, or personal API keys. Agents connect to company systems only through approved, delegated access that meets the Delegate (DEL) controls. | Agents | Foundational |
 | GVN-PO-03 | AI policy is reviewed at least annually and whenever a significant new AI capability is adopted. | All | Managed |
 | GVN-PO-04 | AI-enabled security tools are inventoried and governed under ACTOR like any other agent. | Agents | Foundational |
 | **GVN-RK Risk classification** | | | |
@@ -139,6 +139,7 @@ Delegate treats agents as principals. Each agent has its own identity, receives 
 | DEL-DG-01 | Agents acting for a user use delegation, not impersonation, so downstream systems record both the agent and the user. | Agents | Managed |
 | DEL-DG-02 | A delegated agent's effective permissions are the intersection of the user's rights and the agent's allowed scopes, never the union. | Agents | Managed |
 | DEL-DG-03 | Agents authenticate to each other, and delegation chains between agents have a defined maximum depth. | Agents | Advanced |
+| DEL-DG-04 | Users cannot grant AI applications or agents access to company systems or data without approval. Self-service app consent, browser extension installation, and personal API key creation are restricted to approved tools. | Agents | Foundational |
 | **DEL-LA Least agency** | | | |
 | DEL-LA-01 | Agents receive read-only access by default. Write access is granted per tool with a documented justification. | Agents | Foundational |
 | DEL-LA-02 | What an agent may do without approval is defined for each risk tier. | Agents | Foundational |
@@ -271,7 +272,7 @@ Respond adapts incident response to AI. The evidence is prompts, context, and to
 
 ## Implementation tiers
 
-Every control carries a tier, so organizations adopt the framework in stages. v0.1.0 has 112 controls: 38 Foundational, 58 Managed, and 16 Advanced.
+Every control carries a tier, so organizations adopt the framework in stages. v0.1.0 has 113 controls: 39 Foundational, 58 Managed, and 16 Advanced.
 
 | Tier | Intended for | What it achieves |
 | --- | --- | --- |

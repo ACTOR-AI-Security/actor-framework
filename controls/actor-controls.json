@@ -86,7 +86,7 @@
               "function": "Govern",
               "category_code": "GVN-PO",
               "category": "Policy and acceptable use",
-              "statement": "Users do not connect AI agents to company systems with their own credentials unless the Delegate (DEL) controls are in place.",
+              "statement": "Users do not give AI agents their passwords, session cookies, MFA tokens, or personal API keys. Agents connect to company systems only through approved, delegated access that meets the Delegate (DEL) controls.",
               "applies_to": "Agents",
               "tier": "Foundational"
             },
@@ -433,6 +433,16 @@
               "statement": "Agents authenticate to each other, and delegation chains between agents have a defined maximum depth.",
               "applies_to": "Agents",
               "tier": "Advanced"
+            },
+            {
+              "id": "DEL-DG-04",
+              "function_code": "DEL",
+              "function": "Delegate",
+              "category_code": "DEL-DG",
+              "category": "Delegation",
+              "statement": "Users cannot grant AI applications or agents access to company systems or data without approval. Self-service app consent, browser extension installation, and personal API key creation are restricted to approved tools.",
+              "applies_to": "Agents",
+              "tier": "Foundational"
             }
           ]
         },

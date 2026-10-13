@@ -5,7 +5,7 @@ GVN-AC-03,GVN,Govern,GVN-AC,Accountability,"A cross-functional AI governance gro
 GVN-AC-04,GVN,Govern,GVN-AC,Accountability,"AI security metrics and key risk indicators are defined, tracked, and reported with AI risk.",All,Managed
 GVN-AC-05,GVN,Govern,GVN-AC,Accountability,ACTOR controls are independently assessed on a defined cadence by internal audit or a qualified third party.,All,Managed
 GVN-PO-01,GVN,Govern,GVN-PO,Policy and acceptable use,"An AI acceptable use policy classifies approved tools by data sensitivity and use case, publishes a sanctioned path for requesting new tools, and defines prohibited uses and data that must not be entered into AI systems.",Use,Foundational
-GVN-PO-02,GVN,Govern,GVN-PO,Policy and acceptable use,Users do not connect AI agents to company systems with their own credentials unless the Delegate (DEL) controls are in place.,Agents,Foundational
+GVN-PO-02,GVN,Govern,GVN-PO,Policy and acceptable use,"Users do not give AI agents their passwords, session cookies, MFA tokens, or personal API keys. Agents connect to company systems only through approved, delegated access that meets the Delegate (DEL) controls.",Agents,Foundational
 GVN-PO-03,GVN,Govern,GVN-PO,Policy and acceptable use,AI policy is reviewed at least annually and whenever a significant new AI capability is adopted.,All,Managed
 GVN-PO-04,GVN,Govern,GVN-PO,Policy and acceptable use,AI-enabled security tools are inventoried and governed under ACTOR like any other agent.,Agents,Foundational
 GVN-RK-01,GVN,Govern,GVN-RK,Risk classification,"Each AI use case is assigned a risk tier based on data sensitivity, level of autonomy, and impact of its actions.",All,Foundational
@@ -33,6 +33,7 @@ DEL-ID-02,DEL,Delegate,DEL-ID,Agent identity,"Agent credentials are short-lived 
 DEL-DG-01,DEL,Delegate,DEL-DG,Delegation,"Agents acting for a user use delegation, not impersonation, so downstream systems record both the agent and the user.",Agents,Managed
 DEL-DG-02,DEL,Delegate,DEL-DG,Delegation,"A delegated agent's effective permissions are the intersection of the user's rights and the agent's allowed scopes, never the union.",Agents,Managed
 DEL-DG-03,DEL,Delegate,DEL-DG,Delegation,"Agents authenticate to each other, and delegation chains between agents have a defined maximum depth.",Agents,Advanced
+DEL-DG-04,DEL,Delegate,DEL-DG,Delegation,"Users cannot grant AI applications or agents access to company systems or data without approval. Self-service app consent, browser extension installation, and personal API key creation are restricted to approved tools.",Agents,Foundational
 DEL-LA-01,DEL,Delegate,DEL-LA,Least agency,Agents receive read-only access by default. Write access is granted per tool with a documented justification.,Agents,Foundational
 DEL-LA-02,DEL,Delegate,DEL-LA,Least agency,What an agent may do without approval is defined for each risk tier.,Agents,Foundational
 DEL-LA-03,DEL,Delegate,DEL-LA,Least agency,Agents cannot grant permissions to themselves or to other agents.,Agents,Managed
