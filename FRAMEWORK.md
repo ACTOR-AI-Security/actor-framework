@@ -84,7 +84,7 @@ Govern sets who is accountable for AI risk, what uses are allowed, and how AI ri
 | GVN-AC-04 | AI security metrics and key risk indicators are defined, tracked, and reported with AI risk. | All | Managed |
 | GVN-AC-05 | ACTOR controls are independently assessed on a defined cadence by internal audit or a qualified third party. | All | Managed |
 | **GVN-PO Policy and acceptable use** | | | |
-| GVN-PO-01 | An AI acceptable use policy defines approved tools, prohibited uses, and data that must not be entered into AI systems. | Use | Foundational |
+| GVN-PO-01 | An AI acceptable use policy classifies approved tools by data sensitivity and use case, publishes a sanctioned path for requesting new tools, and defines prohibited uses and data that must not be entered into AI systems. | Use | Foundational |
 | GVN-PO-02 | Users do not connect AI agents to company systems with their own credentials unless the Delegate (DEL) controls are in place. | Agents | Foundational |
 | GVN-PO-03 | AI policy is reviewed at least annually and whenever a significant new AI capability is adopted. | All | Managed |
 | GVN-PO-04 | AI-enabled security tools are inventoried and governed under ACTOR like any other agent. | Agents | Foundational |
@@ -97,7 +97,7 @@ Govern sets who is accountable for AI risk, what uses are allowed, and how AI ri
 | GVN-CO-01 | An obligations register tracks the AI laws, regulations, and sector guidance that apply to each use case. | All | Foundational |
 | **GVN-TP Third-party AI** | | | |
 | GVN-TP-01 | AI vendors and AI features embedded in existing software are assessed before use, including data use, training on customer data, and retention. | Platforms | Foundational |
-| GVN-TP-02 | Contracts address data ownership, training on customer data, incident notification, and audit rights. | Platforms | Managed |
+| GVN-TP-02 | Contracts address data ownership, training on customer data, incident notification, audit rights, and access to usage logs and telemetry. | Platforms | Managed |
 | GVN-TP-03 | AI vendors are reassessed periodically, and an exit plan covers provider shutdown, acquisition, or model deprecation. | Platforms | Managed |
 | GVN-TP-04 | AI vendors disclose the model providers and subprocessors behind their service and give notice before changing them. | Platforms | Managed |
 | **GVN-WF Workforce** | | | |
@@ -115,10 +115,10 @@ Inventory establishes what AI exists, who owns it, and what it can reach. You ca
 | INV-AS-02 | The inventory records model versions, providers, and hosting location for each system. | Models | Managed |
 | INV-AS-03 | Retired models are removed from service, and their weights and associated data are disposed of or archived under policy. | Models | Managed |
 | **INV-AG Agent registry** | | | |
-| INV-AG-01 | Every agent is registered as a non-human identity with owner, purpose, scopes, connected systems, and autonomy level. | Agents | Foundational |
+| INV-AG-01 | Every agent is registered as a non-human identity with owner, purpose, scopes, connected systems, autonomy level, and a named halt authority with a documented halt procedure. | Agents | Foundational |
 | INV-AG-02 | The registry records each agent's tools, connectors, plugins, and scheduled tasks. | Agents | Foundational |
 | **INV-SH Shadow AI discovery** | | | |
-| INV-SH-01 | Unapproved AI services and browser extensions are detected through network, endpoint, or SaaS discovery. | Use | Managed |
+| INV-SH-01 | Unapproved AI services, browser extensions, and employee-built agents are continuously discovered through network, endpoint, or SaaS monitoring, showing which tools are in use, by whom, and what data reaches them. | Use | Managed |
 | INV-SH-02 | OAuth grants and API keys issued to AI services are discovered and reviewed. | Platforms | Managed |
 | **INV-DF Data flows** | | | |
 | INV-DF-01 | For each AI system, the organization documents what data it can read, where prompts and outputs are stored, and how long they are kept. | All | Managed |
@@ -141,6 +141,7 @@ Delegate treats agents as principals. Each agent has its own identity, receives 
 | DEL-LA-01 | Agents receive read-only access by default. Write access is granted per tool with a documented justification. | Agents | Foundational |
 | DEL-LA-02 | What an agent may do without approval is defined for each risk tier. | Agents | Foundational |
 | DEL-LA-03 | Agents cannot grant permissions to themselves or to other agents. | Agents | Managed |
+| DEL-LA-04 | Before an agent automates a process, the process is documented and the steps that require a human in or on the loop are identified. | Agents | Managed |
 | **DEL-AP Human approval** | | | |
 | DEL-AP-01 | Every agent action is assigned a risk tier. High and critical actions require explicit human approval before they run. | Agents | Foundational |
 | DEL-AP-02 | Approvals for high and critical actions use phishing-resistant authentication, such as a FIDO2 hardware key, bound to the specific action being approved. Critical actions also require user verification (PIN or biometric), and keys that agents could reach require a touch for every use. | Agents | Advanced |
@@ -171,6 +172,7 @@ Harden reduces the attack surface before anything runs: secure platform configur
 | HRD-DP-03 | A privacy impact assessment is completed for AI use cases that process personal data. | All | Foundational |
 | HRD-DP-04 | Prompt and output retention is minimized, and deletion requests are honored across retrieval stores and fine-tuning data. | All | Managed |
 | HRD-DP-05 | Before AI tools that search or summarize company data are enabled, existing permissions on files, sites, and mailboxes are reviewed and overshared access is remediated, because AI exposes whatever users can already reach. | Platforms | Foundational |
+| HRD-DP-06 | Technical controls warn on or block sensitive data sent to unapproved AI tools, enforcing the acceptable use policy where training and culture do not reach. | Use | Managed |
 | **HRD-PV Data provenance** | | | |
 | HRD-PV-01 | Model, dataset, and agent providers supply provenance documentation, such as model cards, data sheets, attestations, or an AI bill of materials, before procurement. | Platforms | Foundational |
 | HRD-PV-02 | Every dataset used to train, fine-tune, or evaluate a model has a recorded source, owner, usage rights, and collection date. | Models | Managed |
@@ -223,7 +225,7 @@ Monitor watches AI for the life of the system. It covers logging, agent behavior
 | ID | Control statement | Applies to | Tier |
 | --- | --- | --- | --- |
 | **MTR-LG Logging** | | | |
-| MTR-LG-01 | Agent actions, tool calls, approvals, and the acting identity are logged, with retention aligned to incident response needs. | Agents | Foundational |
+| MTR-LG-01 | Agent actions, tool calls, approvals, and the acting identity are logged with trace IDs that link the authorizing human to the agent and each step and tool call, with retention aligned to incident response needs. | Agents | Foundational |
 | MTR-LG-02 | Prompts and outputs are logged for systems in scope, and those logs are protected like the data they contain. | All | Managed |
 | MTR-LG-03 | AI logs feed the central SIEM and are correlated with target-system logs to separate agent actions from human ones. | All | Managed |
 | **MTR-BH Behavior baselines** | | | |
@@ -250,7 +252,7 @@ Respond adapts incident response to AI. The evidence is prompts, context, and to
 | **RSP-PL Preparation** | | | |
 | RSP-PL-01 | The incident response plan defines AI incidents, including manipulation, data leakage, harmful agent actions, and model compromise. | All | Foundational |
 | RSP-PL-02 | Runbooks exist to disable any agent identity, connector, or scheduled task without affecting its owner. | Agents | Foundational |
-| RSP-PL-03 | AI incident scenarios are exercised in tabletops at least annually. | All | Managed |
+| RSP-PL-03 | AI incident scenarios, including halting a misbehaving agent, are exercised in tabletops at least annually. | All | Managed |
 | **RSP-IV Investigation** | | | |
 | RSP-IV-01 | Investigators can reconstruct an AI incident from prompts, context, tool calls, and approvals. | All | Managed |
 | RSP-IV-02 | Evidence collection covers AI artifacts, including model versions, system prompts, and retrieval sources. | Models | Managed |
@@ -267,7 +269,7 @@ Respond adapts incident response to AI. The evidence is prompts, context, and to
 
 ## Implementation tiers
 
-Every control carries a tier, so organizations adopt the framework in stages. v0.1.0 has 110 controls: 38 Foundational, 56 Managed, and 16 Advanced.
+Every control carries a tier, so organizations adopt the framework in stages. v0.1.0 has 112 controls: 38 Foundational, 58 Managed, and 16 Advanced.
 
 | Tier | Intended for | What it achieves |
 | --- | --- | --- |
@@ -291,4 +293,4 @@ v0.1.0 maps at the function level. Control-level mappings follow in v0.2. OWASP 
 | Monitor (MTR) | Detect (DE.CM continuous monitoring) | Measure | LLM01 Prompt Injection, LLM09 Misinformation |
 | Respond (RSP) | Respond (RS), Recover (RC) | Manage | Supports all |
 
-Planned for v0.2: control-level mappings to the NIST Cyber AI Profile (IR 8596), NIST COSAiS overlays, the CSA AI Controls Matrix, ISO/IEC 42001, MITRE ATLAS, the ISACA AAISM job practice, and the OWASP Agent Control Standard (ACS). The Delegate function will also be aligned with the NIST NCCoE Software and AI Agent Identity and Authorization project as it matures.
+Planned for v0.2: control-level mappings to the NIST Cyber AI Profile (IR 8596), NIST COSAiS overlays, the CSA AI Controls Matrix, ISO/IEC 42001, MITRE ATLAS, the ISACA AAISM job practice, the OWASP Agent Control Standard (ACS), the SANS Critical AI Security Guidelines, the SANS AI Security Maturity Model, and the AI Defense Matrix. The Delegate function will also be aligned with the NIST NCCoE Software and AI Agent Identity and Authorization project as it matures.

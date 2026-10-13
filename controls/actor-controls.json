@@ -76,7 +76,7 @@
               "function": "Govern",
               "category_code": "GVN-PO",
               "category": "Policy and acceptable use",
-              "statement": "An AI acceptable use policy defines approved tools, prohibited uses, and data that must not be entered into AI systems.",
+              "statement": "An AI acceptable use policy classifies approved tools by data sensitivity and use case, publishes a sanctioned path for requesting new tools, and defines prohibited uses and data that must not be entered into AI systems.",
               "applies_to": "Use",
               "tier": "Foundational"
             },
@@ -194,7 +194,7 @@
               "function": "Govern",
               "category_code": "GVN-TP",
               "category": "Third-party AI",
-              "statement": "Contracts address data ownership, training on customer data, incident notification, and audit rights.",
+              "statement": "Contracts address data ownership, training on customer data, incident notification, audit rights, and access to usage logs and telemetry.",
               "applies_to": "Platforms",
               "tier": "Managed"
             },
@@ -299,7 +299,7 @@
               "function": "Inventory",
               "category_code": "INV-AG",
               "category": "Agent registry",
-              "statement": "Every agent is registered as a non-human identity with owner, purpose, scopes, connected systems, and autonomy level.",
+              "statement": "Every agent is registered as a non-human identity with owner, purpose, scopes, connected systems, autonomy level, and a named halt authority with a documented halt procedure.",
               "applies_to": "Agents",
               "tier": "Foundational"
             },
@@ -325,7 +325,7 @@
               "function": "Inventory",
               "category_code": "INV-SH",
               "category": "Shadow AI discovery",
-              "statement": "Unapproved AI services and browser extensions are detected through network, endpoint, or SaaS discovery.",
+              "statement": "Unapproved AI services, browser extensions, and employee-built agents are continuously discovered through network, endpoint, or SaaS monitoring, showing which tools are in use, by whom, and what data reaches them.",
               "applies_to": "Use",
               "tier": "Managed"
             },
@@ -467,6 +467,16 @@
               "category_code": "DEL-LA",
               "category": "Least agency",
               "statement": "Agents cannot grant permissions to themselves or to other agents.",
+              "applies_to": "Agents",
+              "tier": "Managed"
+            },
+            {
+              "id": "DEL-LA-04",
+              "function_code": "DEL",
+              "function": "Delegate",
+              "category_code": "DEL-LA",
+              "category": "Least agency",
+              "statement": "Before an agent automates a process, the process is documented and the steps that require a human in or on the loop are identified.",
               "applies_to": "Agents",
               "tier": "Managed"
             }
@@ -686,6 +696,16 @@
               "statement": "Before AI tools that search or summarize company data are enabled, existing permissions on files, sites, and mailboxes are reviewed and overshared access is remediated, because AI exposes whatever users can already reach.",
               "applies_to": "Platforms",
               "tier": "Foundational"
+            },
+            {
+              "id": "HRD-DP-06",
+              "function_code": "HRD",
+              "function": "Harden",
+              "category_code": "HRD-DP",
+              "category": "Data protection",
+              "statement": "Technical controls warn on or block sensitive data sent to unapproved AI tools, enforcing the acceptable use policy where training and culture do not reach.",
+              "applies_to": "Use",
+              "tier": "Managed"
             }
           ]
         },
@@ -1055,7 +1075,7 @@
               "function": "Monitor",
               "category_code": "MTR-LG",
               "category": "Logging",
-              "statement": "Agent actions, tool calls, approvals, and the acting identity are logged, with retention aligned to incident response needs.",
+              "statement": "Agent actions, tool calls, approvals, and the acting identity are logged with trace IDs that link the authorizing human to the agent and each step and tool call, with retention aligned to incident response needs.",
               "applies_to": "Agents",
               "tier": "Foundational"
             },
@@ -1242,7 +1262,7 @@
               "function": "Respond",
               "category_code": "RSP-PL",
               "category": "Preparation",
-              "statement": "AI incident scenarios are exercised in tabletops at least annually.",
+              "statement": "AI incident scenarios, including halting a misbehaving agent, are exercised in tabletops at least annually.",
               "applies_to": "All",
               "tier": "Managed"
             }

@@ -2,7 +2,8 @@
 
 ## v0.2
 
-- Control-level mappings: NIST Cyber AI Profile (IR 8596), NIST COSAiS overlays, CSA AI Controls Matrix, ISO/IEC 42001, MITRE ATLAS, ISACA AAISM job practice, and the OWASP Agent Control Standard.
+- Control-level mappings: NIST Cyber AI Profile (IR 8596), NIST COSAiS overlays, CSA AI Controls Matrix, ISO/IEC 42001, MITRE ATLAS, ISACA AAISM job practice, the OWASP Agent Control Standard, the SANS Critical AI Security Guidelines, the SANS AI Security Maturity Model, and the AI Defense Matrix.
+- Evidence-based assessment method: a rating for each control based on documented evidence of implementation, not self-report.
 - Update OWASP references to the LLM Top 10 2026 edition.
 - Implementation guidance and evidence examples for every Foundational control.
 - Named peer reviewers and contributors.
@@ -11,6 +12,6 @@
 
 ## Later
 
-- Assessment questionnaire and scoring guide.
+- Assessment questionnaire built on the v0.2 assessment method.
 - Implementation notes for common AI platforms, kept separate from the tool-neutral controls.
 - Evaluate hosting with an established community, such as an OWASP project.
