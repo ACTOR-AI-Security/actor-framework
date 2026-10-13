@@ -19,16 +19,16 @@ Its premise is simple. AI is a new class of actor. An agent acts like a user but
 
 ## At a glance
 
-106 controls across seven functions: 36 Foundational, 54 Managed, 16 Advanced.
+108 controls across seven functions: 36 Foundational, 56 Managed, 16 Advanced.
 
 | Function | Code | Controls |
 | --- | --- | --- |
-| Govern | GVN | 18 |
+| Govern | GVN | 19 |
 | Inventory | INV | 9 |
 | Delegate | DEL | 14 |
 | Harden | HRD | 23 |
 | Defend | DEF | 18 |
-| Monitor | MTR | 12 |
+| Monitor | MTR | 13 |
 | Respond | RSP | 12 |
 
 ## Repository contents

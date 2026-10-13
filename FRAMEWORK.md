@@ -96,6 +96,7 @@ Govern sets who is accountable for AI risk, what uses are allowed, and how AI ri
 | GVN-TP-01 | AI vendors and AI features embedded in existing software are assessed before use, including data use, training on customer data, and retention. | Platforms | Foundational |
 | GVN-TP-02 | Contracts address data ownership, training on customer data, incident notification, and audit rights. | Platforms | Managed |
 | GVN-TP-03 | AI vendors are reassessed periodically, and an exit plan covers provider shutdown, acquisition, or model deprecation. | Platforms | Managed |
+| GVN-TP-04 | AI vendors disclose the model providers and subprocessors behind their service and give notice before changing them. | Platforms | Managed |
 | **GVN-WF Workforce** | | | |
 | GVN-WF-01 | People who use AI are trained on safe use, data handling, and recognizing manipulated or incorrect output. | Use | Foundational |
 | GVN-WF-02 | Developers, administrators, and security staff receive role-based training on AI-specific threats and controls. | All | Managed |
@@ -224,6 +225,7 @@ Monitor watches AI for the life of the system. It covers logging, agent behavior
 | **MTR-BH Behavior baselines** | | | |
 | MTR-BH-01 | Alerts fire on indicators of manipulation: unexpected resources, scope creep, and unprompted requests for sensitive data. | Agents | Managed |
 | MTR-BH-02 | Each agent has a behavior baseline covering systems accessed, volume, timing, and tools. Deviations generate alerts. | Agents | Advanced |
+| MTR-BH-03 | AI security alerts are routed to the security operations function with defined triage and escalation procedures. | All | Managed |
 | **MTR-DR Drift and evaluation** | | | |
 | MTR-DR-01 | Provider model version changes are tracked and treated as change events that trigger review. | Models | Foundational |
 | MTR-DR-02 | Production models are evaluated against a defined test set on a regular cadence and after model updates. | Models | Managed |
@@ -261,7 +263,7 @@ Respond adapts incident response to AI. The evidence is prompts, context, and to
 
 ## Implementation tiers
 
-Every control carries a tier, so organizations adopt the framework in stages. v0.1.0 has 106 controls: 36 Foundational, 54 Managed, and 16 Advanced.
+Every control carries a tier, so organizations adopt the framework in stages. v0.1.0 has 108 controls: 36 Foundational, 56 Managed, and 16 Advanced.
 
 | Tier | Intended for | What it achieves |
 | --- | --- | --- |

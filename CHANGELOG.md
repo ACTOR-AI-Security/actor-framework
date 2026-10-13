@@ -5,6 +5,6 @@
 Initial public draft.
 
 - Seven functions: Govern, Inventory, Delegate, Harden, Defend, Monitor, Respond.
-- 106 controls: 36 Foundational, 54 Managed, 16 Advanced.
+- 108 controls: 36 Foundational, 56 Managed, 16 Advanced.
 - Function-level mapping to NIST CSF 2.0, NIST AI RMF, and the OWASP LLM Top 10 (2025).
 - Machine-readable control data in CSV and JSON.

@@ -15,6 +15,7 @@ GVN-CO-01,GVN,Govern,GVN-CO,Compliance obligations,"An obligations register trac
 GVN-TP-01,GVN,Govern,GVN-TP,Third-party AI,"AI vendors and AI features embedded in existing software are assessed before use, including data use, training on customer data, and retention.",Platforms,Foundational
 GVN-TP-02,GVN,Govern,GVN-TP,Third-party AI,"Contracts address data ownership, training on customer data, incident notification, and audit rights.",Platforms,Managed
 GVN-TP-03,GVN,Govern,GVN-TP,Third-party AI,"AI vendors are reassessed periodically, and an exit plan covers provider shutdown, acquisition, or model deprecation.",Platforms,Managed
+GVN-TP-04,GVN,Govern,GVN-TP,Third-party AI,AI vendors disclose the model providers and subprocessors behind their service and give notice before changing them.,Platforms,Managed
 GVN-WF-01,GVN,Govern,GVN-WF,Workforce,"People who use AI are trained on safe use, data handling, and recognizing manipulated or incorrect output.",Use,Foundational
 GVN-WF-02,GVN,Govern,GVN-WF,Workforce,"Developers, administrators, and security staff receive role-based training on AI-specific threats and controls.",All,Managed
 INV-AS-01,INV,Inventory,INV-AS,AI asset inventory,"An inventory lists every AI system, model, and AI feature in use, with owner, purpose, data accessed, and risk tier.",All,Foundational
@@ -86,6 +87,7 @@ MTR-LG-02,MTR,Monitor,MTR-LG,Logging,"Prompts and outputs are logged for systems
 MTR-LG-03,MTR,Monitor,MTR-LG,Logging,AI logs feed the central SIEM and are correlated with target-system logs to separate agent actions from human ones.,All,Managed
 MTR-BH-01,MTR,Monitor,MTR-BH,Behavior baselines,"Alerts fire on indicators of manipulation: unexpected resources, scope creep, and unprompted requests for sensitive data.",Agents,Managed
 MTR-BH-02,MTR,Monitor,MTR-BH,Behavior baselines,"Each agent has a behavior baseline covering systems accessed, volume, timing, and tools. Deviations generate alerts.",Agents,Advanced
+MTR-BH-03,MTR,Monitor,MTR-BH,Behavior baselines,AI security alerts are routed to the security operations function with defined triage and escalation procedures.,All,Managed
 MTR-DR-01,MTR,Monitor,MTR-DR,Drift and evaluation,Provider model version changes are tracked and treated as change events that trigger review.,Models,Foundational
 MTR-DR-02,MTR,Monitor,MTR-DR,Drift and evaluation,Production models are evaluated against a defined test set on a regular cadence and after model updates.,Models,Managed
 MTR-DR-03,MTR,Monitor,MTR-DR,Drift and evaluation,"Thresholds for accuracy, safety, and output quality are defined. A breach triggers review or rollback.",Models,Advanced

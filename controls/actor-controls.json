@@ -197,6 +197,16 @@
               "statement": "AI vendors are reassessed periodically, and an exit plan covers provider shutdown, acquisition, or model deprecation.",
               "applies_to": "Platforms",
               "tier": "Managed"
+            },
+            {
+              "id": "GVN-TP-04",
+              "function_code": "GVN",
+              "function": "Govern",
+              "category_code": "GVN-TP",
+              "category": "Third-party AI",
+              "statement": "AI vendors disclose the model providers and subprocessors behind their service and give notice before changing them.",
+              "applies_to": "Platforms",
+              "tier": "Managed"
             }
           ]
         },
@@ -1074,6 +1084,16 @@
               "statement": "Each agent has a behavior baseline covering systems accessed, volume, timing, and tools. Deviations generate alerts.",
               "applies_to": "Agents",
               "tier": "Advanced"
+            },
+            {
+              "id": "MTR-BH-03",
+              "function_code": "MTR",
+              "function": "Monitor",
+              "category_code": "MTR-BH",
+              "category": "Behavior baselines",
+              "statement": "AI security alerts are routed to the security operations function with defined triage and escalation procedures.",
+              "applies_to": "All",
+              "tier": "Managed"
             }
           ]
         },
