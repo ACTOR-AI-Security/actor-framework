@@ -2,7 +2,9 @@
 
 **AI Controls for Trust, Oversight, and Resilience**
 
-Author: Robert Fernandes. Licensed under [CC BY 4.0](LICENSE). Draft for public comment.
+Author: Robert Fernandes. Licensed under [CC BY 4.0](LICENSE).
+
+**Confidential draft for private review. Not for distribution.** Suggestions shared with the author may be incorporated into ACTOR and released under CC BY 4.0.
 
 ACTOR starts from one premise: AI is a new class of actor. Existing frameworks secure people and conventional systems, and they remain essential. AI fits neither model, so ACTOR adds the controls AI needs and governs the people who use, build, and oversee it.
 
