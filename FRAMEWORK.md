@@ -38,6 +38,8 @@ The framework therefore treats AI as its own class of actor. Agents are principa
 
 **Scope.** In scope: AI agents, LLMs and other models, AI platforms and tool configurations, AI use by the workforce, and third-party AI services. Out of scope: AI used by attackers, such as deepfakes and AI-enabled social engineering (covered only where it changes a defensive control), and ethics or fairness topics outside security.
 
+**Baseline security.** ACTOR assumes foundational security practices, such as MFA, patching, and identity hygiene, are already in place through frameworks such as NIST CSF 2.0 or the CIS Controls. It does not repeat them.
+
 ## Design principles
 
 1. **Tool-neutral.** Controls describe outcomes and mechanisms, never a specific product. Product guidance lives in separate implementation notes.
@@ -90,6 +92,7 @@ Govern sets who is accountable for AI risk, what uses are allowed, and how AI ri
 | GVN-RK-01 | Each AI use case is assigned a risk tier based on data sensitivity, level of autonomy, and impact of its actions. | All | Foundational |
 | GVN-RK-02 | Higher-risk use cases require a documented risk assessment and approval before deployment. | All | Managed |
 | GVN-RK-03 | AI risk appetite and thresholds are defined. Exceptions are approved, documented, and time-limited. | All | Managed |
+| GVN-RK-04 | Every AI system passes a pre-deployment review against applicable ACTOR controls before production use, scaled to its risk tier. | All | Foundational |
 | **GVN-CO Compliance obligations** | | | |
 | GVN-CO-01 | An obligations register tracks the AI laws, regulations, and sector guidance that apply to each use case. | All | Foundational |
 | **GVN-TP Third-party AI** | | | |
@@ -140,7 +143,7 @@ Delegate treats agents as principals. Each agent has its own identity, receives 
 | DEL-LA-03 | Agents cannot grant permissions to themselves or to other agents. | Agents | Managed |
 | **DEL-AP Human approval** | | | |
 | DEL-AP-01 | Every agent action is assigned a risk tier. High and critical actions require explicit human approval before they run. | Agents | Foundational |
-| DEL-AP-02 | Approvals for high and critical actions use phishing-resistant authentication, such as a FIDO2 hardware key, bound to the specific action being approved. | Agents | Advanced |
+| DEL-AP-02 | Approvals for high and critical actions use phishing-resistant authentication, such as a FIDO2 hardware key, bound to the specific action being approved. Critical actions also require user verification (PIN or biometric), and keys that agents could reach require a touch for every use. | Agents | Advanced |
 | DEL-AP-03 | One approval authorizes one action. An approval never grants session-wide elevation. | Agents | Managed |
 | DEL-AP-04 | AI-assisted decisions that materially affect people can be reviewed by a human, and the basis for each decision is recorded. | All | Managed |
 | **DEL-LC Agent lifecycle** | | | |
@@ -167,6 +170,7 @@ Harden reduces the attack surface before anything runs: secure platform configur
 | HRD-DP-02 | Retrieval sources used by AI enforce the same access controls as the systems they come from. | Models | Managed |
 | HRD-DP-03 | A privacy impact assessment is completed for AI use cases that process personal data. | All | Foundational |
 | HRD-DP-04 | Prompt and output retention is minimized, and deletion requests are honored across retrieval stores and fine-tuning data. | All | Managed |
+| HRD-DP-05 | Before AI tools that search or summarize company data are enabled, existing permissions on files, sites, and mailboxes are reviewed and overshared access is remediated, because AI exposes whatever users can already reach. | Platforms | Foundational |
 | **HRD-PV Data provenance** | | | |
 | HRD-PV-01 | Model, dataset, and agent providers supply provenance documentation, such as model cards, data sheets, attestations, or an AI bill of materials, before procurement. | Platforms | Foundational |
 | HRD-PV-02 | Every dataset used to train, fine-tune, or evaluate a model has a recorded source, owner, usage rights, and collection date. | Models | Managed |
@@ -263,7 +267,7 @@ Respond adapts incident response to AI. The evidence is prompts, context, and to
 
 ## Implementation tiers
 
-Every control carries a tier, so organizations adopt the framework in stages. v0.1.0 has 108 controls: 36 Foundational, 56 Managed, and 16 Advanced.
+Every control carries a tier, so organizations adopt the framework in stages. v0.1.0 has 110 controls: 38 Foundational, 56 Managed, and 16 Advanced.
 
 | Tier | Intended for | What it achieves |
 | --- | --- | --- |

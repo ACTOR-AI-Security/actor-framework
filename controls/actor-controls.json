@@ -145,6 +145,16 @@
               "statement": "AI risk appetite and thresholds are defined. Exceptions are approved, documented, and time-limited.",
               "applies_to": "All",
               "tier": "Managed"
+            },
+            {
+              "id": "GVN-RK-04",
+              "function_code": "GVN",
+              "function": "Govern",
+              "category_code": "GVN-RK",
+              "category": "Risk classification",
+              "statement": "Every AI system passes a pre-deployment review against applicable ACTOR controls before production use, scaled to its risk tier.",
+              "applies_to": "All",
+              "tier": "Foundational"
             }
           ]
         },
@@ -482,7 +492,7 @@
               "function": "Delegate",
               "category_code": "DEL-AP",
               "category": "Human approval",
-              "statement": "Approvals for high and critical actions use phishing-resistant authentication, such as a FIDO2 hardware key, bound to the specific action being approved.",
+              "statement": "Approvals for high and critical actions use phishing-resistant authentication, such as a FIDO2 hardware key, bound to the specific action being approved. Critical actions also require user verification (PIN or biometric), and keys that agents could reach require a touch for every use.",
               "applies_to": "Agents",
               "tier": "Advanced"
             },
@@ -666,6 +676,16 @@
               "statement": "Prompt and output retention is minimized, and deletion requests are honored across retrieval stores and fine-tuning data.",
               "applies_to": "All",
               "tier": "Managed"
+            },
+            {
+              "id": "HRD-DP-05",
+              "function_code": "HRD",
+              "function": "Harden",
+              "category_code": "HRD-DP",
+              "category": "Data protection",
+              "statement": "Before AI tools that search or summarize company data are enabled, existing permissions on files, sites, and mailboxes are reviewed and overshared access is remediated, because AI exposes whatever users can already reach.",
+              "applies_to": "Platforms",
+              "tier": "Foundational"
             }
           ]
         },
