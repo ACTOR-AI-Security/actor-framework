@@ -1,0 +1,1328 @@
+{
+  "framework": "ACTOR",
+  "title": "AI Controls for Trust, Oversight, and Resilience",
+  "version": "0.1.0",
+  "license": "CC-BY-4.0",
+  "author": "Robert Fernandes",
+  "functions": [
+    {
+      "code": "GVN",
+      "name": "Govern",
+      "description": "Govern sets who is accountable for AI risk, what uses are allowed, and how AI risk is classified. It applies across every other function.",
+      "categories": [
+        {
+          "code": "GVN-AC",
+          "name": "Accountability",
+          "controls": [
+            {
+              "id": "GVN-AC-01",
+              "function_code": "GVN",
+              "function": "Govern",
+              "category_code": "GVN-AC",
+              "category": "Accountability",
+              "statement": "A named executive owns AI security risk. AI risk is reported to leadership on a defined cadence.",
+              "applies_to": "All",
+              "tier": "Foundational"
+            },
+            {
+              "id": "GVN-AC-02",
+              "function_code": "GVN",
+              "function": "Govern",
+              "category_code": "GVN-AC",
+              "category": "Accountability",
+              "statement": "Every AI system and agent has a named business owner accountable for its actions and outcomes.",
+              "applies_to": "All",
+              "tier": "Foundational"
+            },
+            {
+              "id": "GVN-AC-03",
+              "function_code": "GVN",
+              "function": "Govern",
+              "category_code": "GVN-AC",
+              "category": "Accountability",
+              "statement": "A cross-functional AI governance group, including security, legal, privacy, risk, and the business, operates under a documented charter.",
+              "applies_to": "All",
+              "tier": "Managed"
+            },
+            {
+              "id": "GVN-AC-04",
+              "function_code": "GVN",
+              "function": "Govern",
+              "category_code": "GVN-AC",
+              "category": "Accountability",
+              "statement": "AI security metrics and key risk indicators are defined, tracked, and reported with AI risk.",
+              "applies_to": "All",
+              "tier": "Managed"
+            },
+            {
+              "id": "GVN-AC-05",
+              "function_code": "GVN",
+              "function": "Govern",
+              "category_code": "GVN-AC",
+              "category": "Accountability",
+              "statement": "ACTOR controls are independently assessed on a defined cadence by internal audit or a qualified third party.",
+              "applies_to": "All",
+              "tier": "Managed"
+            }
+          ]
+        },
+        {
+          "code": "GVN-PO",
+          "name": "Policy and acceptable use",
+          "controls": [
+            {
+              "id": "GVN-PO-01",
+              "function_code": "GVN",
+              "function": "Govern",
+              "category_code": "GVN-PO",
+              "category": "Policy and acceptable use",
+              "statement": "An AI acceptable use policy defines approved tools, prohibited uses, and data that must not be entered into AI systems.",
+              "applies_to": "Use",
+              "tier": "Foundational"
+            },
+            {
+              "id": "GVN-PO-02",
+              "function_code": "GVN",
+              "function": "Govern",
+              "category_code": "GVN-PO",
+              "category": "Policy and acceptable use",
+              "statement": "Users do not connect AI agents to company systems with their own credentials unless the Delegate (DEL) controls are in place.",
+              "applies_to": "Agents",
+              "tier": "Foundational"
+            },
+            {
+              "id": "GVN-PO-03",
+              "function_code": "GVN",
+              "function": "Govern",
+              "category_code": "GVN-PO",
+              "category": "Policy and acceptable use",
+              "statement": "AI policy is reviewed at least annually and whenever a significant new AI capability is adopted.",
+              "applies_to": "All",
+              "tier": "Managed"
+            },
+            {
+              "id": "GVN-PO-04",
+              "function_code": "GVN",
+              "function": "Govern",
+              "category_code": "GVN-PO",
+              "category": "Policy and acceptable use",
+              "statement": "AI-enabled security tools are inventoried and governed under ACTOR like any other agent.",
+              "applies_to": "Agents",
+              "tier": "Foundational"
+            }
+          ]
+        },
+        {
+          "code": "GVN-RK",
+          "name": "Risk classification",
+          "controls": [
+            {
+              "id": "GVN-RK-01",
+              "function_code": "GVN",
+              "function": "Govern",
+              "category_code": "GVN-RK",
+              "category": "Risk classification",
+              "statement": "Each AI use case is assigned a risk tier based on data sensitivity, level of autonomy, and impact of its actions.",
+              "applies_to": "All",
+              "tier": "Foundational"
+            },
+            {
+              "id": "GVN-RK-02",
+              "function_code": "GVN",
+              "function": "Govern",
+              "category_code": "GVN-RK",
+              "category": "Risk classification",
+              "statement": "Higher-risk use cases require a documented risk assessment and approval before deployment.",
+              "applies_to": "All",
+              "tier": "Managed"
+            },
+            {
+              "id": "GVN-RK-03",
+              "function_code": "GVN",
+              "function": "Govern",
+              "category_code": "GVN-RK",
+              "category": "Risk classification",
+              "statement": "AI risk appetite and thresholds are defined. Exceptions are approved, documented, and time-limited.",
+              "applies_to": "All",
+              "tier": "Managed"
+            }
+          ]
+        },
+        {
+          "code": "GVN-CO",
+          "name": "Compliance obligations",
+          "controls": [
+            {
+              "id": "GVN-CO-01",
+              "function_code": "GVN",
+              "function": "Govern",
+              "category_code": "GVN-CO",
+              "category": "Compliance obligations",
+              "statement": "An obligations register tracks the AI laws, regulations, and sector guidance that apply to each use case.",
+              "applies_to": "All",
+              "tier": "Foundational"
+            }
+          ]
+        },
+        {
+          "code": "GVN-TP",
+          "name": "Third-party AI",
+          "controls": [
+            {
+              "id": "GVN-TP-01",
+              "function_code": "GVN",
+              "function": "Govern",
+              "category_code": "GVN-TP",
+              "category": "Third-party AI",
+              "statement": "AI vendors and AI features embedded in existing software are assessed before use, including data use, training on customer data, and retention.",
+              "applies_to": "Platforms",
+              "tier": "Foundational"
+            },
+            {
+              "id": "GVN-TP-02",
+              "function_code": "GVN",
+              "function": "Govern",
+              "category_code": "GVN-TP",
+              "category": "Third-party AI",
+              "statement": "Contracts address data ownership, training on customer data, incident notification, and audit rights.",
+              "applies_to": "Platforms",
+              "tier": "Managed"
+            },
+            {
+              "id": "GVN-TP-03",
+              "function_code": "GVN",
+              "function": "Govern",
+              "category_code": "GVN-TP",
+              "category": "Third-party AI",
+              "statement": "AI vendors are reassessed periodically, and an exit plan covers provider shutdown, acquisition, or model deprecation.",
+              "applies_to": "Platforms",
+              "tier": "Managed"
+            }
+          ]
+        },
+        {
+          "code": "GVN-WF",
+          "name": "Workforce",
+          "controls": [
+            {
+              "id": "GVN-WF-01",
+              "function_code": "GVN",
+              "function": "Govern",
+              "category_code": "GVN-WF",
+              "category": "Workforce",
+              "statement": "People who use AI are trained on safe use, data handling, and recognizing manipulated or incorrect output.",
+              "applies_to": "Use",
+              "tier": "Foundational"
+            },
+            {
+              "id": "GVN-WF-02",
+              "function_code": "GVN",
+              "function": "Govern",
+              "category_code": "GVN-WF",
+              "category": "Workforce",
+              "statement": "Developers, administrators, and security staff receive role-based training on AI-specific threats and controls.",
+              "applies_to": "All",
+              "tier": "Managed"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "INV",
+      "name": "Inventory",
+      "description": "Inventory establishes what AI exists, who owns it, and what it can reach. You cannot delegate, harden, or monitor what you have not found.",
+      "categories": [
+        {
+          "code": "INV-AS",
+          "name": "AI asset inventory",
+          "controls": [
+            {
+              "id": "INV-AS-01",
+              "function_code": "INV",
+              "function": "Inventory",
+              "category_code": "INV-AS",
+              "category": "AI asset inventory",
+              "statement": "An inventory lists every AI system, model, and AI feature in use, with owner, purpose, data accessed, and risk tier.",
+              "applies_to": "All",
+              "tier": "Foundational"
+            },
+            {
+              "id": "INV-AS-02",
+              "function_code": "INV",
+              "function": "Inventory",
+              "category_code": "INV-AS",
+              "category": "AI asset inventory",
+              "statement": "The inventory records model versions, providers, and hosting location for each system.",
+              "applies_to": "Models",
+              "tier": "Managed"
+            },
+            {
+              "id": "INV-AS-03",
+              "function_code": "INV",
+              "function": "Inventory",
+              "category_code": "INV-AS",
+              "category": "AI asset inventory",
+              "statement": "Retired models are removed from service, and their weights and associated data are disposed of or archived under policy.",
+              "applies_to": "Models",
+              "tier": "Managed"
+            }
+          ]
+        },
+        {
+          "code": "INV-AG",
+          "name": "Agent registry",
+          "controls": [
+            {
+              "id": "INV-AG-01",
+              "function_code": "INV",
+              "function": "Inventory",
+              "category_code": "INV-AG",
+              "category": "Agent registry",
+              "statement": "Every agent is registered as a non-human identity with owner, purpose, scopes, connected systems, and autonomy level.",
+              "applies_to": "Agents",
+              "tier": "Foundational"
+            },
+            {
+              "id": "INV-AG-02",
+              "function_code": "INV",
+              "function": "Inventory",
+              "category_code": "INV-AG",
+              "category": "Agent registry",
+              "statement": "The registry records each agent's tools, connectors, plugins, and scheduled tasks.",
+              "applies_to": "Agents",
+              "tier": "Foundational"
+            }
+          ]
+        },
+        {
+          "code": "INV-SH",
+          "name": "Shadow AI discovery",
+          "controls": [
+            {
+              "id": "INV-SH-01",
+              "function_code": "INV",
+              "function": "Inventory",
+              "category_code": "INV-SH",
+              "category": "Shadow AI discovery",
+              "statement": "Unapproved AI services and browser extensions are detected through network, endpoint, or SaaS discovery.",
+              "applies_to": "Use",
+              "tier": "Managed"
+            },
+            {
+              "id": "INV-SH-02",
+              "function_code": "INV",
+              "function": "Inventory",
+              "category_code": "INV-SH",
+              "category": "Shadow AI discovery",
+              "statement": "OAuth grants and API keys issued to AI services are discovered and reviewed.",
+              "applies_to": "Platforms",
+              "tier": "Managed"
+            }
+          ]
+        },
+        {
+          "code": "INV-DF",
+          "name": "Data flows",
+          "controls": [
+            {
+              "id": "INV-DF-01",
+              "function_code": "INV",
+              "function": "Inventory",
+              "category_code": "INV-DF",
+              "category": "Data flows",
+              "statement": "For each AI system, the organization documents what data it can read, where prompts and outputs are stored, and how long they are kept.",
+              "applies_to": "All",
+              "tier": "Managed"
+            },
+            {
+              "id": "INV-DF-02",
+              "function_code": "INV",
+              "function": "Inventory",
+              "category_code": "INV-DF",
+              "category": "Data flows",
+              "statement": "AI systems and agents have a bill of materials covering models, datasets, libraries, prompts, tools, and accessible data, maintained in a standard machine-readable format such as CycloneDX or SPDX.",
+              "applies_to": "All",
+              "tier": "Advanced"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "DEL",
+      "name": "Delegate",
+      "description": "Delegate treats agents as principals. Each agent has its own identity, receives only the authority it needs, and cannot take high-impact actions without a human. This is the framework's central departure from existing guidance.",
+      "categories": [
+        {
+          "code": "DEL-ID",
+          "name": "Agent identity",
+          "controls": [
+            {
+              "id": "DEL-ID-01",
+              "function_code": "DEL",
+              "function": "Delegate",
+              "category_code": "DEL-ID",
+              "category": "Agent identity",
+              "statement": "Each agent operates under its own identity. Agents never use a human user's credentials, session cookies, or MFA tokens.",
+              "applies_to": "Agents",
+              "tier": "Foundational"
+            },
+            {
+              "id": "DEL-ID-02",
+              "function_code": "DEL",
+              "function": "Delegate",
+              "category_code": "DEL-ID",
+              "category": "Agent identity",
+              "statement": "Agent credentials are short-lived and narrowly scoped. No static secrets in prompts, configuration files, or code.",
+              "applies_to": "Agents",
+              "tier": "Managed"
+            }
+          ]
+        },
+        {
+          "code": "DEL-DG",
+          "name": "Delegation",
+          "controls": [
+            {
+              "id": "DEL-DG-01",
+              "function_code": "DEL",
+              "function": "Delegate",
+              "category_code": "DEL-DG",
+              "category": "Delegation",
+              "statement": "Agents acting for a user use delegation, not impersonation, so downstream systems record both the agent and the user.",
+              "applies_to": "Agents",
+              "tier": "Managed"
+            },
+            {
+              "id": "DEL-DG-02",
+              "function_code": "DEL",
+              "function": "Delegate",
+              "category_code": "DEL-DG",
+              "category": "Delegation",
+              "statement": "A delegated agent's effective permissions are the intersection of the user's rights and the agent's allowed scopes, never the union.",
+              "applies_to": "Agents",
+              "tier": "Managed"
+            },
+            {
+              "id": "DEL-DG-03",
+              "function_code": "DEL",
+              "function": "Delegate",
+              "category_code": "DEL-DG",
+              "category": "Delegation",
+              "statement": "Agents authenticate to each other, and delegation chains between agents have a defined maximum depth.",
+              "applies_to": "Agents",
+              "tier": "Advanced"
+            }
+          ]
+        },
+        {
+          "code": "DEL-LA",
+          "name": "Least agency",
+          "controls": [
+            {
+              "id": "DEL-LA-01",
+              "function_code": "DEL",
+              "function": "Delegate",
+              "category_code": "DEL-LA",
+              "category": "Least agency",
+              "statement": "Agents receive read-only access by default. Write access is granted per tool with a documented justification.",
+              "applies_to": "Agents",
+              "tier": "Foundational"
+            },
+            {
+              "id": "DEL-LA-02",
+              "function_code": "DEL",
+              "function": "Delegate",
+              "category_code": "DEL-LA",
+              "category": "Least agency",
+              "statement": "What an agent may do without approval is defined for each risk tier.",
+              "applies_to": "Agents",
+              "tier": "Foundational"
+            },
+            {
+              "id": "DEL-LA-03",
+              "function_code": "DEL",
+              "function": "Delegate",
+              "category_code": "DEL-LA",
+              "category": "Least agency",
+              "statement": "Agents cannot grant permissions to themselves or to other agents.",
+              "applies_to": "Agents",
+              "tier": "Managed"
+            }
+          ]
+        },
+        {
+          "code": "DEL-AP",
+          "name": "Human approval",
+          "controls": [
+            {
+              "id": "DEL-AP-01",
+              "function_code": "DEL",
+              "function": "Delegate",
+              "category_code": "DEL-AP",
+              "category": "Human approval",
+              "statement": "Every agent action is assigned a risk tier. High and critical actions require explicit human approval before they run.",
+              "applies_to": "Agents",
+              "tier": "Foundational"
+            },
+            {
+              "id": "DEL-AP-02",
+              "function_code": "DEL",
+              "function": "Delegate",
+              "category_code": "DEL-AP",
+              "category": "Human approval",
+              "statement": "Approvals for high and critical actions use phishing-resistant authentication, such as a FIDO2 hardware key, bound to the specific action being approved.",
+              "applies_to": "Agents",
+              "tier": "Advanced"
+            },
+            {
+              "id": "DEL-AP-03",
+              "function_code": "DEL",
+              "function": "Delegate",
+              "category_code": "DEL-AP",
+              "category": "Human approval",
+              "statement": "One approval authorizes one action. An approval never grants session-wide elevation.",
+              "applies_to": "Agents",
+              "tier": "Managed"
+            },
+            {
+              "id": "DEL-AP-04",
+              "function_code": "DEL",
+              "function": "Delegate",
+              "category_code": "DEL-AP",
+              "category": "Human approval",
+              "statement": "AI-assisted decisions that materially affect people can be reviewed by a human, and the basis for each decision is recorded.",
+              "applies_to": "All",
+              "tier": "Managed"
+            }
+          ]
+        },
+        {
+          "code": "DEL-LC",
+          "name": "Agent lifecycle",
+          "controls": [
+            {
+              "id": "DEL-LC-01",
+              "function_code": "DEL",
+              "function": "Delegate",
+              "category_code": "DEL-LC",
+              "category": "Agent lifecycle",
+              "statement": "Agent access is reviewed on the same cadence as privileged accounts, with the owner attesting to each scope.",
+              "applies_to": "Agents",
+              "tier": "Managed"
+            },
+            {
+              "id": "DEL-LC-02",
+              "function_code": "DEL",
+              "function": "Delegate",
+              "category_code": "DEL-LC",
+              "category": "Agent lifecycle",
+              "statement": "Agent identities, tokens, connectors, and scheduled tasks are removed when the purpose ends or the owner leaves.",
+              "applies_to": "Agents",
+              "tier": "Foundational"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HRD",
+      "name": "Harden",
+      "description": "Harden reduces the attack surface before anything runs: secure platform configuration, a trusted supply chain, protected data with known provenance, and secure development. What a model learns from shapes how it behaves, so training data is gated like any other privileged input.",
+      "categories": [
+        {
+          "code": "HRD-CF",
+          "name": "Secure configuration",
+          "controls": [
+            {
+              "id": "HRD-CF-01",
+              "function_code": "HRD",
+              "function": "Harden",
+              "category_code": "HRD-CF",
+              "category": "Secure configuration",
+              "statement": "Each approved AI platform has a documented secure configuration baseline covering data retention, training opt-out, sharing, connectors, and admin controls.",
+              "applies_to": "Platforms",
+              "tier": "Foundational"
+            },
+            {
+              "id": "HRD-CF-02",
+              "function_code": "HRD",
+              "function": "Harden",
+              "category_code": "HRD-CF",
+              "category": "Secure configuration",
+              "statement": "Enterprise identity (SSO, and SCIM where supported) is used for AI platforms.",
+              "applies_to": "Platforms",
+              "tier": "Foundational"
+            },
+            {
+              "id": "HRD-CF-03",
+              "function_code": "HRD",
+              "function": "Harden",
+              "category_code": "HRD-CF",
+              "category": "Secure configuration",
+              "statement": "Configuration is checked against the baseline on a defined cadence and after vendor feature releases.",
+              "applies_to": "Platforms",
+              "tier": "Managed"
+            },
+            {
+              "id": "HRD-CF-04",
+              "function_code": "HRD",
+              "function": "Harden",
+              "category_code": "HRD-CF",
+              "category": "Secure configuration",
+              "statement": "Self-hosted model endpoints and AI APIs require authentication and are not exposed beyond the users and systems that need them.",
+              "applies_to": "Platforms",
+              "tier": "Foundational"
+            }
+          ]
+        },
+        {
+          "code": "HRD-SC",
+          "name": "Supply chain",
+          "controls": [
+            {
+              "id": "HRD-SC-01",
+              "function_code": "HRD",
+              "function": "Harden",
+              "category_code": "HRD-SC",
+              "category": "Supply chain",
+              "statement": "Plugins, extensions, connectors, and MCP servers are reviewed for requested permissions and source before installation.",
+              "applies_to": "Agents",
+              "tier": "Foundational"
+            },
+            {
+              "id": "HRD-SC-02",
+              "function_code": "HRD",
+              "function": "Harden",
+              "category_code": "HRD-SC",
+              "category": "Supply chain",
+              "statement": "Models and datasets come from approved sources and are verified before use.",
+              "applies_to": "Models",
+              "tier": "Managed"
+            },
+            {
+              "id": "HRD-SC-03",
+              "function_code": "HRD",
+              "function": "Harden",
+              "category_code": "HRD-SC",
+              "category": "Supply chain",
+              "statement": "Model files and AI dependencies are scanned for malicious code and integrity-checked with hashes or signatures.",
+              "applies_to": "Models",
+              "tier": "Advanced"
+            }
+          ]
+        },
+        {
+          "code": "HRD-DP",
+          "name": "Data protection",
+          "controls": [
+            {
+              "id": "HRD-DP-01",
+              "function_code": "HRD",
+              "function": "Harden",
+              "category_code": "HRD-DP",
+              "category": "Data protection",
+              "statement": "Sensitive data is classified, and AI access to it is restricted by classification.",
+              "applies_to": "All",
+              "tier": "Managed"
+            },
+            {
+              "id": "HRD-DP-02",
+              "function_code": "HRD",
+              "function": "Harden",
+              "category_code": "HRD-DP",
+              "category": "Data protection",
+              "statement": "Retrieval sources used by AI enforce the same access controls as the systems they come from.",
+              "applies_to": "Models",
+              "tier": "Managed"
+            },
+            {
+              "id": "HRD-DP-03",
+              "function_code": "HRD",
+              "function": "Harden",
+              "category_code": "HRD-DP",
+              "category": "Data protection",
+              "statement": "A privacy impact assessment is completed for AI use cases that process personal data.",
+              "applies_to": "All",
+              "tier": "Foundational"
+            },
+            {
+              "id": "HRD-DP-04",
+              "function_code": "HRD",
+              "function": "Harden",
+              "category_code": "HRD-DP",
+              "category": "Data protection",
+              "statement": "Prompt and output retention is minimized, and deletion requests are honored across retrieval stores and fine-tuning data.",
+              "applies_to": "All",
+              "tier": "Managed"
+            }
+          ]
+        },
+        {
+          "code": "HRD-PV",
+          "name": "Data provenance",
+          "controls": [
+            {
+              "id": "HRD-PV-01",
+              "function_code": "HRD",
+              "function": "Harden",
+              "category_code": "HRD-PV",
+              "category": "Data provenance",
+              "statement": "Model, dataset, and agent providers supply provenance documentation, such as model cards, data sheets, attestations, or an AI bill of materials, before procurement.",
+              "applies_to": "Platforms",
+              "tier": "Foundational"
+            },
+            {
+              "id": "HRD-PV-02",
+              "function_code": "HRD",
+              "function": "Harden",
+              "category_code": "HRD-PV",
+              "category": "Data provenance",
+              "statement": "Every dataset used to train, fine-tune, or evaluate a model has a recorded source, owner, usage rights, and collection date.",
+              "applies_to": "Models",
+              "tier": "Managed"
+            },
+            {
+              "id": "HRD-PV-03",
+              "function_code": "HRD",
+              "function": "Harden",
+              "category_code": "HRD-PV",
+              "category": "Data provenance",
+              "statement": "New data passes an intake gate before use, with checks for poisoned or anomalous samples, hidden triggers, sensitive data, and prohibited content.",
+              "applies_to": "Models",
+              "tier": "Managed"
+            },
+            {
+              "id": "HRD-PV-04",
+              "function_code": "HRD",
+              "function": "Harden",
+              "category_code": "HRD-PV",
+              "category": "Data provenance",
+              "statement": "Data from public or untrusted sources is quarantined and reviewed before it enters a training or fine-tuning pipeline.",
+              "applies_to": "Models",
+              "tier": "Managed"
+            },
+            {
+              "id": "HRD-PV-05",
+              "function_code": "HRD",
+              "function": "Harden",
+              "category_code": "HRD-PV",
+              "category": "Data provenance",
+              "statement": "Data lineage is tracked from source through each transformation to the model version it produced.",
+              "applies_to": "Models",
+              "tier": "Advanced"
+            },
+            {
+              "id": "HRD-PV-06",
+              "function_code": "HRD",
+              "function": "Harden",
+              "category_code": "HRD-PV",
+              "category": "Data provenance",
+              "statement": "Datasets are versioned and integrity-protected with hashes or signatures, so the exact data behind any model version can be reproduced.",
+              "applies_to": "Models",
+              "tier": "Advanced"
+            }
+          ]
+        },
+        {
+          "code": "HRD-MP",
+          "name": "Model protection",
+          "controls": [
+            {
+              "id": "HRD-MP-01",
+              "function_code": "HRD",
+              "function": "Harden",
+              "category_code": "HRD-MP",
+              "category": "Model protection",
+              "statement": "Model weights and fine-tuned models are access-controlled and encrypted at rest.",
+              "applies_to": "Models",
+              "tier": "Managed"
+            }
+          ]
+        },
+        {
+          "code": "HRD-DV",
+          "name": "Secure development",
+          "controls": [
+            {
+              "id": "HRD-DV-01",
+              "function_code": "HRD",
+              "function": "Harden",
+              "category_code": "HRD-DV",
+              "category": "Secure development",
+              "statement": "System prompts and agent instructions are version-controlled and changed through review.",
+              "applies_to": "Agents",
+              "tier": "Managed"
+            },
+            {
+              "id": "HRD-DV-02",
+              "function_code": "HRD",
+              "function": "Harden",
+              "category_code": "HRD-DV",
+              "category": "Secure development",
+              "statement": "Internally built AI systems follow a secure development lifecycle that includes threat modeling for AI-specific threats.",
+              "applies_to": "Models",
+              "tier": "Managed"
+            },
+            {
+              "id": "HRD-DV-03",
+              "function_code": "HRD",
+              "function": "Harden",
+              "category_code": "HRD-DV",
+              "category": "Secure development",
+              "statement": "AI systems are adversarially tested before production release.",
+              "applies_to": "All",
+              "tier": "Advanced"
+            },
+            {
+              "id": "HRD-DV-04",
+              "function_code": "HRD",
+              "function": "Harden",
+              "category_code": "HRD-DV",
+              "category": "Secure development",
+              "statement": "AI-generated code goes through the same review, testing, and scanning as code written by people.",
+              "applies_to": "Use",
+              "tier": "Foundational"
+            },
+            {
+              "id": "HRD-DV-05",
+              "function_code": "HRD",
+              "function": "Harden",
+              "category_code": "HRD-DV",
+              "category": "Secure development",
+              "statement": "System prompts are written on the assumption they will be disclosed. They contain no secrets and no security logic that depends on secrecy.",
+              "applies_to": "Agents",
+              "tier": "Foundational"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "DEF",
+      "name": "Defend",
+      "description": "Defend protects AI while it runs. It assumes manipulation will sometimes succeed, so it limits what a manipulated model or agent can reach and do.",
+      "categories": [
+        {
+          "code": "DEF-IN",
+          "name": "Input protection",
+          "controls": [
+            {
+              "id": "DEF-IN-01",
+              "function_code": "DEF",
+              "function": "Defend",
+              "category_code": "DEF-IN",
+              "category": "Input protection",
+              "statement": "An agent that reads untrusted content does not hold high-impact write tools in the same session unless human approval gates those tools.",
+              "applies_to": "Agents",
+              "tier": "Foundational"
+            },
+            {
+              "id": "DEF-IN-02",
+              "function_code": "DEF",
+              "function": "Defend",
+              "category_code": "DEF-IN",
+              "category": "Input protection",
+              "statement": "Untrusted content (web pages, email, documents, tool output) is treated as data and separated from instructions where the architecture allows.",
+              "applies_to": "All",
+              "tier": "Managed"
+            },
+            {
+              "id": "DEF-IN-03",
+              "function_code": "DEF",
+              "function": "Defend",
+              "category_code": "DEF-IN",
+              "category": "Input protection",
+              "statement": "Inputs are screened for prompt injection before reaching models that handle sensitive data or hold tools.",
+              "applies_to": "All",
+              "tier": "Managed"
+            }
+          ]
+        },
+        {
+          "code": "DEF-OU",
+          "name": "Output handling",
+          "controls": [
+            {
+              "id": "DEF-OU-01",
+              "function_code": "DEF",
+              "function": "Defend",
+              "category_code": "DEF-OU",
+              "category": "Output handling",
+              "statement": "Downstream systems treat model output as untrusted and validate it before executing, rendering, or storing it.",
+              "applies_to": "All",
+              "tier": "Managed"
+            },
+            {
+              "id": "DEF-OU-02",
+              "function_code": "DEF",
+              "function": "Defend",
+              "category_code": "DEF-OU",
+              "category": "Output handling",
+              "statement": "Outputs are screened for sensitive data before leaving the trust boundary.",
+              "applies_to": "All",
+              "tier": "Managed"
+            },
+            {
+              "id": "DEF-OU-03",
+              "function_code": "DEF",
+              "function": "Defend",
+              "category_code": "DEF-OU",
+              "category": "Output handling",
+              "statement": "Customer-facing AI output is filtered for harmful, prohibited, or off-policy content.",
+              "applies_to": "All",
+              "tier": "Managed"
+            }
+          ]
+        },
+        {
+          "code": "DEF-TL",
+          "name": "Tool and action enforcement",
+          "controls": [
+            {
+              "id": "DEF-TL-01",
+              "function_code": "DEF",
+              "function": "Defend",
+              "category_code": "DEF-TL",
+              "category": "Tool and action enforcement",
+              "statement": "Agent network egress is restricted to approved destinations.",
+              "applies_to": "Agents",
+              "tier": "Managed"
+            },
+            {
+              "id": "DEF-TL-02",
+              "function_code": "DEF",
+              "function": "Defend",
+              "category_code": "DEF-TL",
+              "category": "Tool and action enforcement",
+              "statement": "Rate and spending limits cap runaway or abusive consumption.",
+              "applies_to": "All",
+              "tier": "Managed"
+            },
+            {
+              "id": "DEF-TL-03",
+              "function_code": "DEF",
+              "function": "Defend",
+              "category_code": "DEF-TL",
+              "category": "Tool and action enforcement",
+              "statement": "Tool calls pass through a policy enforcement point that checks each action against the agent's scope and risk tier.",
+              "applies_to": "Agents",
+              "tier": "Advanced"
+            },
+            {
+              "id": "DEF-TL-04",
+              "function_code": "DEF",
+              "function": "Defend",
+              "category_code": "DEF-TL",
+              "category": "Tool and action enforcement",
+              "statement": "Query patterns that indicate model extraction or inversion attacks are detected and throttled.",
+              "applies_to": "Models",
+              "tier": "Advanced"
+            },
+            {
+              "id": "DEF-TL-05",
+              "function_code": "DEF",
+              "function": "Defend",
+              "category_code": "DEF-TL",
+              "category": "Tool and action enforcement",
+              "statement": "Code that an agent writes or runs executes in an isolated sandbox.",
+              "applies_to": "Agents",
+              "tier": "Foundational"
+            },
+            {
+              "id": "DEF-TL-06",
+              "function_code": "DEF",
+              "function": "Defend",
+              "category_code": "DEF-TL",
+              "category": "Tool and action enforcement",
+              "statement": "Every agent can be halted immediately, and step or loop limits stop runaway agents automatically.",
+              "applies_to": "Agents",
+              "tier": "Foundational"
+            }
+          ]
+        },
+        {
+          "code": "DEF-PS",
+          "name": "Poisoning and manipulation defenses",
+          "controls": [
+            {
+              "id": "DEF-PS-01",
+              "function_code": "DEF",
+              "function": "Defend",
+              "category_code": "DEF-PS",
+              "category": "Poisoning and manipulation defenses",
+              "statement": "Retrieval sources accept content only from authorized contributors.",
+              "applies_to": "Models",
+              "tier": "Managed"
+            },
+            {
+              "id": "DEF-PS-02",
+              "function_code": "DEF",
+              "function": "Defend",
+              "category_code": "DEF-PS",
+              "category": "Poisoning and manipulation defenses",
+              "statement": "Changes to training data, fine-tuning data, and retrieval sources are logged and attributable.",
+              "applies_to": "Models",
+              "tier": "Managed"
+            },
+            {
+              "id": "DEF-PS-03",
+              "function_code": "DEF",
+              "function": "Defend",
+              "category_code": "DEF-PS",
+              "category": "Poisoning and manipulation defenses",
+              "statement": "Model behavior is re-evaluated after any training or data update before it returns to production.",
+              "applies_to": "Models",
+              "tier": "Advanced"
+            },
+            {
+              "id": "DEF-PS-04",
+              "function_code": "DEF",
+              "function": "Defend",
+              "category_code": "DEF-PS",
+              "category": "Poisoning and manipulation defenses",
+              "statement": "Content ingested into retrieval stores is tagged with its source and trust level, so models and downstream controls can tell trusted content from untrusted content.",
+              "applies_to": "Models",
+              "tier": "Managed"
+            },
+            {
+              "id": "DEF-PS-05",
+              "function_code": "DEF",
+              "function": "Defend",
+              "category_code": "DEF-PS",
+              "category": "Poisoning and manipulation defenses",
+              "statement": "Agent long-term memory is scoped to a user or task, reviewable by its owner, and cannot be written from untrusted content without validation.",
+              "applies_to": "Agents",
+              "tier": "Managed"
+            },
+            {
+              "id": "DEF-PS-06",
+              "function_code": "DEF",
+              "function": "Defend",
+              "category_code": "DEF-PS",
+              "category": "Poisoning and manipulation defenses",
+              "statement": "User feedback, ratings, and conversation data are reviewed for manipulation before they are used to retrain or tune a model.",
+              "applies_to": "Models",
+              "tier": "Advanced"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "MTR",
+      "name": "Monitor",
+      "description": "Monitor watches AI for the life of the system. It covers logging, agent behavior baselines, model drift, vulnerability management, and ongoing adversarial testing.",
+      "categories": [
+        {
+          "code": "MTR-LG",
+          "name": "Logging",
+          "controls": [
+            {
+              "id": "MTR-LG-01",
+              "function_code": "MTR",
+              "function": "Monitor",
+              "category_code": "MTR-LG",
+              "category": "Logging",
+              "statement": "Agent actions, tool calls, approvals, and the acting identity are logged, with retention aligned to incident response needs.",
+              "applies_to": "Agents",
+              "tier": "Foundational"
+            },
+            {
+              "id": "MTR-LG-02",
+              "function_code": "MTR",
+              "function": "Monitor",
+              "category_code": "MTR-LG",
+              "category": "Logging",
+              "statement": "Prompts and outputs are logged for systems in scope, and those logs are protected like the data they contain.",
+              "applies_to": "All",
+              "tier": "Managed"
+            },
+            {
+              "id": "MTR-LG-03",
+              "function_code": "MTR",
+              "function": "Monitor",
+              "category_code": "MTR-LG",
+              "category": "Logging",
+              "statement": "AI logs feed the central SIEM and are correlated with target-system logs to separate agent actions from human ones.",
+              "applies_to": "All",
+              "tier": "Managed"
+            }
+          ]
+        },
+        {
+          "code": "MTR-BH",
+          "name": "Behavior baselines",
+          "controls": [
+            {
+              "id": "MTR-BH-01",
+              "function_code": "MTR",
+              "function": "Monitor",
+              "category_code": "MTR-BH",
+              "category": "Behavior baselines",
+              "statement": "Alerts fire on indicators of manipulation: unexpected resources, scope creep, and unprompted requests for sensitive data.",
+              "applies_to": "Agents",
+              "tier": "Managed"
+            },
+            {
+              "id": "MTR-BH-02",
+              "function_code": "MTR",
+              "function": "Monitor",
+              "category_code": "MTR-BH",
+              "category": "Behavior baselines",
+              "statement": "Each agent has a behavior baseline covering systems accessed, volume, timing, and tools. Deviations generate alerts.",
+              "applies_to": "Agents",
+              "tier": "Advanced"
+            }
+          ]
+        },
+        {
+          "code": "MTR-DR",
+          "name": "Drift and evaluation",
+          "controls": [
+            {
+              "id": "MTR-DR-01",
+              "function_code": "MTR",
+              "function": "Monitor",
+              "category_code": "MTR-DR",
+              "category": "Drift and evaluation",
+              "statement": "Provider model version changes are tracked and treated as change events that trigger review.",
+              "applies_to": "Models",
+              "tier": "Foundational"
+            },
+            {
+              "id": "MTR-DR-02",
+              "function_code": "MTR",
+              "function": "Monitor",
+              "category_code": "MTR-DR",
+              "category": "Drift and evaluation",
+              "statement": "Production models are evaluated against a defined test set on a regular cadence and after model updates.",
+              "applies_to": "Models",
+              "tier": "Managed"
+            },
+            {
+              "id": "MTR-DR-03",
+              "function_code": "MTR",
+              "function": "Monitor",
+              "category_code": "MTR-DR",
+              "category": "Drift and evaluation",
+              "statement": "Thresholds for accuracy, safety, and output quality are defined. A breach triggers review or rollback.",
+              "applies_to": "Models",
+              "tier": "Advanced"
+            }
+          ]
+        },
+        {
+          "code": "MTR-VM",
+          "name": "Vulnerability and threat management",
+          "controls": [
+            {
+              "id": "MTR-VM-01",
+              "function_code": "MTR",
+              "function": "Monitor",
+              "category_code": "MTR-VM",
+              "category": "Vulnerability and threat management",
+              "statement": "Vulnerabilities in AI frameworks, models, and libraries are tracked and remediated on defined timelines.",
+              "applies_to": "All",
+              "tier": "Managed"
+            },
+            {
+              "id": "MTR-VM-02",
+              "function_code": "MTR",
+              "function": "Monitor",
+              "category_code": "MTR-VM",
+              "category": "Vulnerability and threat management",
+              "statement": "AI threat intelligence, such as MITRE ATLAS techniques, is reviewed and used to update controls.",
+              "applies_to": "All",
+              "tier": "Managed"
+            }
+          ]
+        },
+        {
+          "code": "MTR-TS",
+          "name": "Testing and reporting",
+          "controls": [
+            {
+              "id": "MTR-TS-01",
+              "function_code": "MTR",
+              "function": "Monitor",
+              "category_code": "MTR-TS",
+              "category": "Testing and reporting",
+              "statement": "Users have a simple way to report suspicious or unexpected AI behavior.",
+              "applies_to": "Use",
+              "tier": "Foundational"
+            },
+            {
+              "id": "MTR-TS-02",
+              "function_code": "MTR",
+              "function": "Monitor",
+              "category_code": "MTR-TS",
+              "category": "Testing and reporting",
+              "statement": "AI systems are red-teamed for prompt injection, data leakage, and excessive agency on a defined cadence.",
+              "applies_to": "All",
+              "tier": "Advanced"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "RSP",
+      "name": "Respond",
+      "description": "Respond adapts incident response to AI. The evidence is prompts, context, and tool calls. Containment means revoking agent authority and rolling back models, prompts, or data. Respond also keeps critical processes running when AI is unavailable.",
+      "categories": [
+        {
+          "code": "RSP-PL",
+          "name": "Preparation",
+          "controls": [
+            {
+              "id": "RSP-PL-01",
+              "function_code": "RSP",
+              "function": "Respond",
+              "category_code": "RSP-PL",
+              "category": "Preparation",
+              "statement": "The incident response plan defines AI incidents, including manipulation, data leakage, harmful agent actions, and model compromise.",
+              "applies_to": "All",
+              "tier": "Foundational"
+            },
+            {
+              "id": "RSP-PL-02",
+              "function_code": "RSP",
+              "function": "Respond",
+              "category_code": "RSP-PL",
+              "category": "Preparation",
+              "statement": "Runbooks exist to disable any agent identity, connector, or scheduled task without affecting its owner.",
+              "applies_to": "Agents",
+              "tier": "Foundational"
+            },
+            {
+              "id": "RSP-PL-03",
+              "function_code": "RSP",
+              "function": "Respond",
+              "category_code": "RSP-PL",
+              "category": "Preparation",
+              "statement": "AI incident scenarios are exercised in tabletops at least annually.",
+              "applies_to": "All",
+              "tier": "Managed"
+            }
+          ]
+        },
+        {
+          "code": "RSP-IV",
+          "name": "Investigation",
+          "controls": [
+            {
+              "id": "RSP-IV-01",
+              "function_code": "RSP",
+              "function": "Respond",
+              "category_code": "RSP-IV",
+              "category": "Investigation",
+              "statement": "Investigators can reconstruct an AI incident from prompts, context, tool calls, and approvals.",
+              "applies_to": "All",
+              "tier": "Managed"
+            },
+            {
+              "id": "RSP-IV-02",
+              "function_code": "RSP",
+              "function": "Respond",
+              "category_code": "RSP-IV",
+              "category": "Investigation",
+              "statement": "Evidence collection covers AI artifacts, including model versions, system prompts, and retrieval sources.",
+              "applies_to": "Models",
+              "tier": "Managed"
+            }
+          ]
+        },
+        {
+          "code": "RSP-CN",
+          "name": "Containment and recovery",
+          "controls": [
+            {
+              "id": "RSP-CN-01",
+              "function_code": "RSP",
+              "function": "Respond",
+              "category_code": "RSP-CN",
+              "category": "Containment and recovery",
+              "statement": "Containment options include revoking agent tokens, disabling tools, pausing scheduled tasks, and blocking AI services.",
+              "applies_to": "Agents",
+              "tier": "Foundational"
+            },
+            {
+              "id": "RSP-CN-02",
+              "function_code": "RSP",
+              "function": "Respond",
+              "category_code": "RSP-CN",
+              "category": "Containment and recovery",
+              "statement": "Models, prompts, and retrieval sources can be rolled back to a known-good version.",
+              "applies_to": "Models",
+              "tier": "Advanced"
+            },
+            {
+              "id": "RSP-CN-03",
+              "function_code": "RSP",
+              "function": "Respond",
+              "category_code": "RSP-CN",
+              "category": "Containment and recovery",
+              "statement": "Poisoned data is identified and removed, and its downstream effects are assessed.",
+              "applies_to": "Models",
+              "tier": "Advanced"
+            }
+          ]
+        },
+        {
+          "code": "RSP-BC",
+          "name": "Business continuity",
+          "controls": [
+            {
+              "id": "RSP-BC-01",
+              "function_code": "RSP",
+              "function": "Respond",
+              "category_code": "RSP-BC",
+              "category": "Business continuity",
+              "statement": "Critical processes that depend on AI have documented fallback procedures for when the AI or its provider is unavailable.",
+              "applies_to": "All",
+              "tier": "Foundational"
+            },
+            {
+              "id": "RSP-BC-02",
+              "function_code": "RSP",
+              "function": "Respond",
+              "category_code": "RSP-BC",
+              "category": "Business continuity",
+              "statement": "Fallback procedures are tested, including a provider outage and a forced model change.",
+              "applies_to": "All",
+              "tier": "Managed"
+            }
+          ]
+        },
+        {
+          "code": "RSP-IM",
+          "name": "Improvement and notification",
+          "controls": [
+            {
+              "id": "RSP-IM-01",
+              "function_code": "RSP",
+              "function": "Respond",
+              "category_code": "RSP-IM",
+              "category": "Improvement and notification",
+              "statement": "AI incidents are reported to vendors, customers, and regulators as contracts and law require.",
+              "applies_to": "All",
+              "tier": "Foundational"
+            },
+            {
+              "id": "RSP-IM-02",
+              "function_code": "RSP",
+              "function": "Respond",
+              "category_code": "RSP-IM",
+              "category": "Improvement and notification",
+              "statement": "Lessons learned update controls, baselines, risk tiers, and evaluation test sets.",
+              "applies_to": "All",
+              "tier": "Managed"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

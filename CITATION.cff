@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use ACTOR, please cite it as below."
+title: "ACTOR: AI Controls for Trust, Oversight, and Resilience"
+version: "0.1.0"
+date-released: "2026-10-13"
+license: CC-BY-4.0
+authors:
+  - family-names: Fernandes
+    given-names: Robert
