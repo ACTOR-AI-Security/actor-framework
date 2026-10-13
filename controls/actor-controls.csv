@@ -12,7 +12,9 @@ GVN-RK-01,GVN,Govern,GVN-RK,Risk classification,"Each AI use case is assigned a 
 GVN-RK-02,GVN,Govern,GVN-RK,Risk classification,Higher-risk use cases require a documented risk assessment and approval before deployment.,All,Managed
 GVN-RK-03,GVN,Govern,GVN-RK,Risk classification,"AI risk appetite and thresholds are defined. Exceptions are approved, documented, and time-limited.",All,Managed
 GVN-RK-04,GVN,Govern,GVN-RK,Risk classification,"Every AI system passes a pre-deployment review against applicable ACTOR controls before production use, scaled to its risk tier.",All,Foundational
-GVN-CO-01,GVN,Govern,GVN-CO,Compliance obligations,"An obligations register tracks the AI laws, regulations, and sector guidance that apply to each use case.",All,Foundational
+GVN-CO-01,GVN,Govern,GVN-CO,Compliance obligations,"An obligations register tracks the AI laws, regulations, and sector guidance that apply to each use case, and is reviewed as requirements change.",All,Foundational
+GVN-CO-02,GVN,Govern,GVN-CO,Compliance obligations,"For each AI system, the organization determines its regulatory role, such as provider or deployer, and any risk classification that triggers additional obligations.",All,Managed
+GVN-CO-03,GVN,Govern,GVN-CO,Compliance obligations,"Evidence that AI controls are operating, including approvals, inventories, assessments, and logs, is retained and can be produced on request for regulators, auditors, and customers.",All,Managed
 GVN-TP-01,GVN,Govern,GVN-TP,Third-party AI,"AI vendors and AI features embedded in existing software are assessed before use, including data use, training on customer data, and retention.",Platforms,Foundational
 GVN-TP-02,GVN,Govern,GVN-TP,Third-party AI,"Contracts address data ownership, training on customer data, incident notification, audit rights, and access to usage logs and telemetry.",Platforms,Managed
 GVN-TP-03,GVN,Govern,GVN-TP,Third-party AI,"AI vendors are reassessed periodically, and an exit plan covers provider shutdown, acquisition, or model deprecation.",Platforms,Managed

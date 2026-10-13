@@ -96,7 +96,9 @@ Govern sets who is accountable for AI risk, what uses are allowed, and how AI ri
 | GVN-RK-03 | AI risk appetite and thresholds are defined. Exceptions are approved, documented, and time-limited. | All | Managed |
 | GVN-RK-04 | Every AI system passes a pre-deployment review against applicable ACTOR controls before production use, scaled to its risk tier. | All | Foundational |
 | **GVN-CO Compliance obligations** | | | |
-| GVN-CO-01 | An obligations register tracks the AI laws, regulations, and sector guidance that apply to each use case. | All | Foundational |
+| GVN-CO-01 | An obligations register tracks the AI laws, regulations, and sector guidance that apply to each use case, and is reviewed as requirements change. | All | Foundational |
+| GVN-CO-02 | For each AI system, the organization determines its regulatory role, such as provider or deployer, and any risk classification that triggers additional obligations. | All | Managed |
+| GVN-CO-03 | Evidence that AI controls are operating, including approvals, inventories, assessments, and logs, is retained and can be produced on request for regulators, auditors, and customers. | All | Managed |
 | **GVN-TP Third-party AI** | | | |
 | GVN-TP-01 | AI vendors and AI features embedded in existing software are assessed before use, including data use, training on customer data, and retention. | Platforms | Foundational |
 | GVN-TP-02 | Contracts address data ownership, training on customer data, incident notification, audit rights, and access to usage logs and telemetry. | Platforms | Managed |
@@ -272,7 +274,7 @@ Respond adapts incident response to AI. The evidence is prompts, context, and to
 
 ## Implementation tiers
 
-Every control carries a tier, so organizations adopt the framework in stages. v0.1.0 has 113 controls: 39 Foundational, 58 Managed, and 16 Advanced.
+Every control carries a tier, so organizations adopt the framework in stages. v0.1.0 has 115 controls: 39 Foundational, 60 Managed, and 16 Advanced.
 
 | Tier | Intended for | What it achieves |
 | --- | --- | --- |

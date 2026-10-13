@@ -168,9 +168,29 @@
               "function": "Govern",
               "category_code": "GVN-CO",
               "category": "Compliance obligations",
-              "statement": "An obligations register tracks the AI laws, regulations, and sector guidance that apply to each use case.",
+              "statement": "An obligations register tracks the AI laws, regulations, and sector guidance that apply to each use case, and is reviewed as requirements change.",
               "applies_to": "All",
               "tier": "Foundational"
+            },
+            {
+              "id": "GVN-CO-02",
+              "function_code": "GVN",
+              "function": "Govern",
+              "category_code": "GVN-CO",
+              "category": "Compliance obligations",
+              "statement": "For each AI system, the organization determines its regulatory role, such as provider or deployer, and any risk classification that triggers additional obligations.",
+              "applies_to": "All",
+              "tier": "Managed"
+            },
+            {
+              "id": "GVN-CO-03",
+              "function_code": "GVN",
+              "function": "Govern",
+              "category_code": "GVN-CO",
+              "category": "Compliance obligations",
+              "statement": "Evidence that AI controls are operating, including approvals, inventories, assessments, and logs, is retained and can be produced on request for regulators, auditors, and customers.",
+              "applies_to": "All",
+              "tier": "Managed"
             }
           ]
         },
