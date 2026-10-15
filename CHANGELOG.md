@@ -23,6 +23,13 @@ After a second review for auditability and technical feasibility:
 - New controls: holding new vendor AI features for review (HRD-CF-05), managed configuration of endpoint AI agents (HRD-CF-06), tenant restrictions on approved AI services (HRD-DP-07), protection of derived AI data such as embeddings and memory (HRD-DP-08), and security of MCP and tool servers the organization exposes (HRD-DV-05).
 - Moved GVN-CO-03 and DEF-OU-03 to Foundational, MTR-DR-03 to Managed, and MTR-LG-04 to Advanced.
 
+To make adoption proportional:
+
+- Added ACTOR Essentials, a starting set of Foundational controls for organizations that mainly use vendor AI.
+- Added deployment profiles (Consumed, Configured, Built) so controls that do not apply drop out without a separate rationale.
+- Marked each control as New or Extends, naming the existing practice it extends.
+- Added relation, extends, profiles, and essentials fields to the control data.
+
 Before review, overlapping controls were consolidated so each requirement appears once and can be assessed once. Merges: pre-deployment review and risk assessment (GVN-RK-02), action risk levels and approval thresholds (DEL-AP-01), single-action approvals and approval fatigue (DEL-AP-03), platform identity and administrator access (HRD-CF-02), model integrity and safe loading (HRD-SC-04), data intake and quarantine (HRD-PV-03), dataset versioning and lineage (HRD-PV-04), contributor control and change logging (DEF-PS-01), evaluation after updates (MTR-DR-02), pre-release and ongoing adversarial testing (MTR-TS-02, later split into MTR-TS-02 and MTR-TS-03), containment runbooks (RSP-CN-01), and backup, rollback, and restore (RSP-CN-02).
 
 - Seven functions: Govern, Inventory, Delegate, Harden, Defend, Monitor, Respond.

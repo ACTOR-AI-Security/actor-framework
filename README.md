@@ -21,6 +21,8 @@ Its premise is simple. AI is a new class of actor. An agent acts like a user but
 
 119 controls across seven functions: 48 Foundational, 60 Managed, 11 Advanced.
 
+ACTOR is an overlay on your existing framework, not a separate program. Start with the 18 **ACTOR Essentials** controls. Deployment profiles (Consumed, Configured, Built) remove controls that do not apply, and most remaining controls extend practices you already run. See [Adopting ACTOR](FRAMEWORK.md#adopting-actor-alongside-your-existing-program).
+
 | Function | Code | Controls |
 | --- | --- | --- |
 | Govern | GVN | 22 |

@@ -22,6 +22,7 @@ ACTOR starts from one premise: AI is a new class of actor. Existing frameworks s
 - [Monitor (MTR)](#monitor-mtr)
 - [Respond (RSP)](#respond-rsp)
 - [Implementation tiers](#implementation-tiers)
+- [Adopting ACTOR alongside your existing program](#adopting-actor-alongside-your-existing-program)
 - [Standards mapping](#standards-mapping)
 
 ## Purpose, audience, and thesis
@@ -343,6 +344,74 @@ Every control carries a tier, so organizations adopt the framework in stages. v0
 | Advanced | Organizations building their own AI systems or running high-autonomy agents | Hardware-bound approvals, policy enforcement on every tool call, behavior baselines, trace IDs across agents, dataset lineage, multi-agent delegation controls, and independent red teaming |
 
 Tiers are cumulative. An organization claims a tier only when every control at that tier and below is in place for in-scope systems, or is justified as not applicable. Tier selection depends on the organization's risk, not only its size. Regulated organizations should expect to need many Managed controls.
+
+## Adopting ACTOR alongside your existing program
+
+ACTOR is an overlay. It is designed to be added to the framework an organization already uses, such as NIST CSF 2.0, ISO/IEC 27001, or the CIS Controls, not run as a separate program. Three tools keep the effort proportional.
+
+**ACTOR Essentials.** A starting set of 18 Foundational controls that remove the most AI risk for an organization that mainly uses vendor AI. Essentials is a starting point, not a tier. Claiming the Foundational tier still requires every Foundational control.
+
+| ID | What it achieves |
+| --- | --- |
+| GVN-AC-02 | Someone owns every AI system and agent. |
+| GVN-PO-01 | People know which AI tools are approved and what data stays out. |
+| GVN-TP-01 | AI vendors are checked before data reaches them. |
+| GVN-WF-01 | People who use AI know the risks. |
+| INV-AS-01 | You know what AI is in use. |
+| INV-AG-01 | You know which agents can act, and who can stop them. |
+| DEL-ID-01 | Agents never use people's passwords or sessions. |
+| DEL-ID-03 | Browser, desktop, and coding agents are off until approved. |
+| DEL-DG-04 | Users cannot connect AI apps to company data on their own. |
+| DEL-AP-01 | A person approves high-impact agent actions. |
+| HRD-CF-01 | Each AI platform has a secure baseline configuration. |
+| HRD-CF-05 | New vendor AI features stay off until reviewed. |
+| HRD-DP-02 | AI search only shows people what they could already open. |
+| HRD-DP-05 | Overshared files are fixed before AI search is turned on. |
+| DEF-IN-01 | Agents that read untrusted content cannot also act or send data out freely. |
+| DEF-TL-06 | Every agent can be stopped quickly, and the stop is tested. |
+| MTR-LG-01 | Agent actions and approvals are logged. |
+| RSP-PL-01 | The incident response plan covers AI incidents. |
+
+**Deployment profiles.** Organizations select every profile that describes them. A control applies when the organization has any profile the control lists. Controls outside the organization's profiles are not applicable and need no separate rationale.
+
+| Profile | Description | Controls that apply |
+| --- | --- | --- |
+| Consumed | Uses vendor AI products as delivered, such as AI assistants in productivity suites, chat assistants, and AI features in existing software | 88 |
+| Configured | Also builds agents, assistants, knowledge bases, or workflows on a vendor platform | 98 |
+| Built | Also develops or hosts its own AI systems, including applications on model APIs, retrieval pipelines, self-hosted models, and tool servers | 119 |
+
+An organization that only consumes vendor AI has 88 applicable controls, 45 of them Foundational.
+
+**New and Extends.** Each control is marked as New, meaning AI-specific work with no usual equivalent, or Extends, meaning it adds AI scope to a practice most security programs already run. For a Consumed organization, 66 of its 88 applicable controls extend existing practices, and 29 of its 45 Foundational controls do. Extends controls are best implemented by updating the existing policy, procedure, or control rather than creating a new one.
+
+| Existing practice | ACTOR controls that extend it |
+| --- | --- |
+| Acceptable use policy | GVN-PO-01, GVN-PO-02, GVN-PO-03 |
+| Asset inventory | GVN-AC-02, INV-AS-01, INV-AS-02, INV-AS-03, INV-SH-01 |
+| Business continuity and disaster recovery | RSP-CN-02, RSP-BC-01, RSP-BC-02 |
+| Change management | MTR-DR-01 |
+| Compliance management | GVN-CO-01, GVN-CO-03 |
+| Data protection | INV-DF-01, HRD-DP-01, HRD-DP-04, HRD-DP-06, HRD-DP-07, HRD-DP-08, HRD-MP-01, DEF-OU-02 |
+| Identity and access management | INV-SH-02, DEL-ID-02, DEL-DG-04, DEL-LA-01, DEL-LA-02, DEL-LC-01, DEL-LC-02, HRD-CF-02 |
+| Incident response | MTR-TS-01, RSP-PL-01, RSP-PL-02, RSP-IV-01, RSP-IV-02, RSP-CN-01, RSP-IM-01, RSP-IM-02 |
+| Internal audit and assurance | GVN-AC-05 |
+| Logging and monitoring | MTR-LG-01, MTR-LG-02, MTR-LG-03, MTR-BH-01, MTR-BH-03 |
+| Network security | DEF-TL-01 |
+| Privacy program | HRD-DP-03 |
+| Risk management and exceptions | GVN-RK-01, GVN-RK-02, GVN-RK-03, GVN-RK-04 |
+| Secure configuration management | HRD-CF-01, HRD-CF-03, HRD-CF-04, HRD-CF-06 |
+| Secure development lifecycle | HRD-DV-01, HRD-DV-02, HRD-DV-03, HRD-DV-05, DEF-OU-01 |
+| Security awareness and training | GVN-WF-01, GVN-WF-02 |
+| Security governance and reporting | GVN-AC-01, GVN-AC-03, GVN-AC-04 |
+| Security testing | MTR-TS-02, MTR-TS-03 |
+| Software supply chain security | INV-DF-02, HRD-SC-01, HRD-SC-02, HRD-SC-03, HRD-SC-04 |
+| Third-party risk management | GVN-TP-01, GVN-TP-02, GVN-TP-03, GVN-TP-04, HRD-PV-01 |
+| Threat intelligence | MTR-VM-02 |
+| Vulnerability management | MTR-VM-01 |
+
+New controls: GVN-PO-04, GVN-CO-02, INV-AG-01, INV-AG-02, DEL-ID-01, DEL-ID-03, DEL-ID-04, DEL-DG-01, DEL-DG-02, DEL-DG-03, DEL-LA-03, DEL-AP-01, DEL-AP-02, DEL-AP-03, DEL-AP-04, HRD-CF-05, HRD-DP-02, HRD-DP-05, HRD-PV-02, HRD-PV-03, HRD-PV-04, HRD-DV-04, DEF-IN-01, DEF-IN-02, DEF-IN-03, DEF-OU-03, DEF-TL-02, DEF-TL-03, DEF-TL-04, DEF-TL-05, DEF-TL-06, DEF-PS-01, DEF-PS-02, DEF-PS-03, DEF-PS-04, MTR-LG-04, MTR-BH-02, MTR-DR-02, MTR-DR-03, MTR-DR-04, RSP-CN-03.
+
+The control data files carry these as the relation, extends, profiles, and essentials fields.
 
 ## Standards mapping
 

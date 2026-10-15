@@ -22,7 +22,11 @@
               "category": "Accountability",
               "statement": "A named executive owns AI security risk. AI risk is reported to senior management, and to the board or a board committee where one exists, at a frequency the organization defines and documents.",
               "applies_to": "All",
-              "tier": "Foundational"
+              "tier": "Foundational",
+              "relation": "Extends",
+              "extends": "Security governance and reporting",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "GVN-AC-02",
@@ -32,7 +36,11 @@
               "category": "Accountability",
               "statement": "Every AI system and agent has a named business owner accountable for its actions and outcomes.",
               "applies_to": "All",
-              "tier": "Foundational"
+              "tier": "Foundational",
+              "relation": "Extends",
+              "extends": "Asset inventory",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "Yes"
             },
             {
               "id": "GVN-AC-03",
@@ -42,7 +50,11 @@
               "category": "Accountability",
               "statement": "A cross-functional AI governance group, including security, legal, compliance, privacy, risk, and the business, operates under a documented charter.",
               "applies_to": "All",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "Extends",
+              "extends": "Security governance and reporting",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "GVN-AC-04",
@@ -52,7 +64,11 @@
               "category": "Accountability",
               "statement": "AI security metrics and key risk indicators are defined and documented, each with a threshold. They are tracked and included in the AI risk reporting required by GVN-AC-01.",
               "applies_to": "All",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "Extends",
+              "extends": "Security governance and reporting",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "GVN-AC-05",
@@ -62,7 +78,11 @@
               "category": "Accountability",
               "statement": "ACTOR controls are independently assessed by internal audit or a qualified third party at a frequency the organization defines and documents.",
               "applies_to": "All",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "Extends",
+              "extends": "Internal audit and assurance",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             }
           ]
         },
@@ -78,7 +98,11 @@
               "category": "Policy and acceptable use",
               "statement": "An AI acceptable use policy classifies approved tools by data sensitivity and use case, publishes a sanctioned path for requesting new tools, and defines prohibited uses and data that must not be entered into AI systems. Users acknowledge the policy before they are given access to AI tools.",
               "applies_to": "Use",
-              "tier": "Foundational"
+              "tier": "Foundational",
+              "relation": "Extends",
+              "extends": "Acceptable use policy",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "Yes"
             },
             {
               "id": "GVN-PO-02",
@@ -88,7 +112,11 @@
               "category": "Policy and acceptable use",
               "statement": "The acceptable use policy prohibits users from giving AI agents their passwords or MFA factors, and from pasting or exporting session cookies, tokens, or personal API keys into AI tools. Agents connect to company systems only as permitted by DEL-ID-01 and DEL-ID-03.",
               "applies_to": "Use",
-              "tier": "Foundational"
+              "tier": "Foundational",
+              "relation": "Extends",
+              "extends": "Acceptable use policy",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "GVN-PO-03",
@@ -98,7 +126,11 @@
               "category": "Policy and acceptable use",
               "statement": "AI policy is reviewed at least annually and when a new AI capability is adopted that meets review criteria the organization defines and documents.",
               "applies_to": "All",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "Extends",
+              "extends": "Acceptable use policy",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "GVN-PO-04",
@@ -108,7 +140,11 @@
               "category": "Policy and acceptable use",
               "statement": "AI-enabled security tools that can take actions, such as isolating hosts, disabling accounts, or changing configurations, are recorded in the agent registry and governed under ACTOR like any other agent. Other AI features in security tools are assessed under GVN-TP-01.",
               "applies_to": "Agents",
-              "tier": "Foundational"
+              "tier": "Foundational",
+              "relation": "New",
+              "extends": "",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             }
           ]
         },
@@ -124,7 +160,11 @@
               "category": "Risk classification",
               "statement": "Each AI use case is assigned a risk rating using a documented method with defined levels, based on data sensitivity, level of autonomy, and impact of its actions. The method designates which levels are high risk.",
               "applies_to": "All",
-              "tier": "Foundational"
+              "tier": "Foundational",
+              "relation": "Extends",
+              "extends": "Risk management and exceptions",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "GVN-RK-02",
@@ -134,7 +174,11 @@
               "category": "Risk classification",
               "statement": "Each AI system, and each new AI feature in an existing platform, passes a documented pre-deployment review against applicable ACTOR controls before production use. The organization documents which controls apply at each risk rating. High-risk use cases also require a documented risk assessment and approval by a designated approver.",
               "applies_to": "All",
-              "tier": "Foundational"
+              "tier": "Foundational",
+              "relation": "Extends",
+              "extends": "Risk management and exceptions",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "GVN-RK-03",
@@ -144,7 +188,11 @@
               "category": "Risk classification",
               "statement": "Exceptions to ACTOR controls and AI policy are approved by the system owner and the executive named under GVN-AC-01, documented with compensating controls, and given an expiry date. Expired exceptions are renewed or closed.",
               "applies_to": "All",
-              "tier": "Foundational"
+              "tier": "Foundational",
+              "relation": "Extends",
+              "extends": "Risk management and exceptions",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "GVN-RK-04",
@@ -154,7 +202,11 @@
               "category": "Risk classification",
               "statement": "AI risk appetite and risk thresholds are documented, approved by the executive named under GVN-AC-01, and used to decide exceptions and pre-deployment approvals.",
               "applies_to": "All",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "Extends",
+              "extends": "Risk management and exceptions",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             }
           ]
         },
@@ -170,7 +222,11 @@
               "category": "Compliance obligations",
               "statement": "An obligations register records the AI laws, regulations, and sector guidance that apply to each use case. The register is reviewed at least annually and when a use case is added or changed.",
               "applies_to": "All",
-              "tier": "Foundational"
+              "tier": "Foundational",
+              "relation": "Extends",
+              "extends": "Compliance management",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "GVN-CO-02",
@@ -180,7 +236,11 @@
               "category": "Compliance obligations",
               "statement": "For each AI system, the organization determines its regulatory role, such as provider or deployer, and any risk classification that triggers additional obligations. The role is reassessed when the organization fine-tunes, rebrands, or modifies a model or AI system in a way that meets criteria the organization defines and documents.",
               "applies_to": "All",
-              "tier": "Foundational"
+              "tier": "Foundational",
+              "relation": "New",
+              "extends": "",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "GVN-CO-03",
@@ -190,7 +250,11 @@
               "category": "Compliance obligations",
               "statement": "Evidence that AI controls are operating, including approvals, inventories, reviews, tests, and logs, is retained for a period the organization defines and documents that meets legal and regulatory requirements. It can be produced on request for regulators, auditors, and customers.",
               "applies_to": "All",
-              "tier": "Foundational"
+              "tier": "Foundational",
+              "relation": "Extends",
+              "extends": "Compliance management",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             }
           ]
         },
@@ -206,7 +270,11 @@
               "category": "Third-party AI",
               "statement": "AI vendors and AI features embedded in existing software are assessed before use, including data use, training on customer data, and retention. Before purchase, the organization confirms the service plan provides the admin audit logs, conversation export, and retention controls its other ACTOR controls rely on. Vendors are rated for criticality, and concentration risk from reliance on a single provider is identified.",
               "applies_to": "Platforms",
-              "tier": "Foundational"
+              "tier": "Foundational",
+              "relation": "Extends",
+              "extends": "Third-party risk management",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "Yes"
             },
             {
               "id": "GVN-TP-02",
@@ -216,7 +284,11 @@
               "category": "Third-party AI",
               "statement": "Contracts with AI vendors signed or renewed after the organization adopts ACTOR are checked for (a) data ownership and training on customer data, (b) incident notification, (c) audit rights or independent assurance reports, and regulator access where regulation requires it, (d) access to usage logs and telemetry, (e) data location, (f) return or deletion of data at exit, (g) subcontractor obligations, and (h) responsibility for AI output, including intellectual property indemnity. Where the vendor offers only standard terms, or an existing contract falls short, gaps are recorded as exceptions under GVN-RK-03.",
               "applies_to": "Platforms",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "Extends",
+              "extends": "Third-party risk management",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "GVN-TP-03",
@@ -226,7 +298,11 @@
               "category": "Third-party AI",
               "statement": "AI vendors are reassessed at least annually, or more often at a frequency the organization defines by criticality. Each vendor rated critical under GVN-TP-01 has a documented exit plan that covers (a) provider shutdown, (b) acquisition, and (c) model deprecation.",
               "applies_to": "Platforms",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "Extends",
+              "extends": "Third-party risk management",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "GVN-TP-04",
@@ -236,7 +312,11 @@
               "category": "Third-party AI",
               "statement": "AI vendors disclose the model providers and subprocessors behind their service, by contract or by a published list with change notification. The organization subscribes to change notices and reviews changes under GVN-TP-03.",
               "applies_to": "Platforms",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "Extends",
+              "extends": "Third-party risk management",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             }
           ]
         },
@@ -252,7 +332,11 @@
               "category": "Workforce",
               "statement": "People who use AI are trained before use, and at least annually, on safe use, data handling, and recognizing manipulated or incorrect output. Completion is recorded.",
               "applies_to": "Use",
-              "tier": "Foundational"
+              "tier": "Foundational",
+              "relation": "Extends",
+              "extends": "Security awareness and training",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "Yes"
             },
             {
               "id": "GVN-WF-02",
@@ -262,7 +346,11 @@
               "category": "Workforce",
               "statement": "Staff who build, administer, or secure AI systems complete role-based training on AI-specific threats and controls before taking on the role and at least annually after that. Completion is recorded.",
               "applies_to": "All",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "Extends",
+              "extends": "Security awareness and training",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             }
           ]
         }
@@ -285,7 +373,11 @@
               "category": "AI asset inventory",
               "statement": "A maintained inventory records each AI system, model, agent platform, and AI feature enabled in existing software that processes sensitive data, with owner, purpose, data accessed, and risk rating. It is reconciled at least annually against procurement and expense records, and against discovery results where discovery is in place. Differences are resolved and recorded.",
               "applies_to": "All",
-              "tier": "Foundational"
+              "tier": "Foundational",
+              "relation": "Extends",
+              "extends": "Asset inventory",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "Yes"
             },
             {
               "id": "INV-AS-02",
@@ -295,7 +387,11 @@
               "category": "AI asset inventory",
               "statement": "The inventory records model versions, providers, and hosting location for each system. Where a provider does not disclose or fix the model version, the inventory records the product, release channel, and provider-stated model family.",
               "applies_to": "Models",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "Extends",
+              "extends": "Asset inventory",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "INV-AS-03",
@@ -305,7 +401,11 @@
               "category": "AI asset inventory",
               "statement": "Retired models are removed from service. Weights and associated data the organization holds are disposed of or archived under policy.",
               "applies_to": "Models",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "Extends",
+              "extends": "Asset inventory",
+              "profiles": "Built",
+              "essentials": "No"
             }
           ]
         },
@@ -321,7 +421,11 @@
               "category": "Agent registry",
               "statement": "Every agent is recorded in an agent registry with owner, purpose, scopes, connected systems, autonomy level, and a named halt authority who can order it stopped. Where the platform issues the agent its own identity, the registry records it. Agents that users build on an approved platform may be registered through the platform's admin inventory if it records owner and connected systems.",
               "applies_to": "Agents",
-              "tier": "Foundational"
+              "tier": "Foundational",
+              "relation": "New",
+              "extends": "",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "Yes"
             },
             {
               "id": "INV-AG-02",
@@ -331,7 +435,11 @@
               "category": "Agent registry",
               "statement": "The registry records each agent's tools, connectors, plugins, and scheduled tasks, as far as the platform exposes them to administrators.",
               "applies_to": "Agents",
-              "tier": "Foundational"
+              "tier": "Foundational",
+              "relation": "New",
+              "extends": "",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             }
           ]
         },
@@ -347,7 +455,11 @@
               "category": "Shadow AI discovery",
               "statement": "Unapproved AI services, browser extensions, and employee-built agents are discovered through automated network, endpoint, browser, identity, or SaaS monitoring that runs at least monthly. Discovery records show which tools are in use and by whom, and, where inline inspection is in place, the data sent to them. Findings are reviewed and resolved.",
               "applies_to": "Use",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "Extends",
+              "extends": "Asset inventory",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "INV-SH-02",
@@ -357,7 +469,11 @@
               "category": "Shadow AI discovery",
               "statement": "OAuth grants to AI services in company identity and SaaS platforms, and API keys in company AI provider accounts, code repositories, and secret stores, are discovered and reviewed at a frequency the organization defines and documents. Unapproved or unused grants and keys are revoked.",
               "applies_to": "Platforms",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "Extends",
+              "extends": "Identity and access management",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             }
           ]
         },
@@ -373,7 +489,11 @@
               "category": "Data flows",
               "statement": "For each AI system, the organization documents what data it can read, where prompts and outputs are stored, and how long they are kept.",
               "applies_to": "All",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "Extends",
+              "extends": "Data protection",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "INV-DF-02",
@@ -383,7 +503,11 @@
               "category": "Data flows",
               "statement": "AI systems the organization builds have a bill of materials for models, datasets, and libraries in a standard machine-readable format such as CycloneDX or SPDX. Prompts, tools, and accessible data are recorded in the same document or a linked registry. The bill of materials is updated when any listed component changes.",
               "applies_to": "All",
-              "tier": "Advanced"
+              "tier": "Advanced",
+              "relation": "Extends",
+              "extends": "Software supply chain security",
+              "profiles": "Built",
+              "essentials": "No"
             }
           ]
         }
@@ -406,7 +530,11 @@
               "category": "Agent identity",
               "statement": "Each agent accesses company systems through its own identity or through delegated access issued to the agent, such as an OAuth grant to the agent's application, as recorded in the agent registry. No agent is configured with a person's password or MFA factor. No agent uses a person's session cookie or signed-in session, except session agents permitted by DEL-ID-03.",
               "applies_to": "Agents",
-              "tier": "Foundational"
+              "tier": "Foundational",
+              "relation": "New",
+              "extends": "",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "Yes"
             },
             {
               "id": "DEL-ID-02",
@@ -416,7 +544,11 @@
               "category": "Agent identity",
               "statement": "Agent credentials expire within a maximum lifetime the organization defines and documents, and are scoped to the systems and actions in the agent registry, using workload identity federation, managed identities, or token exchange where the target system supports it. Where only static keys are supported, keys are scoped to the minimum, stored in a secrets manager, and rotated on a documented schedule. Prompts, configuration files, and code are scanned for secrets, and findings are remediated.",
               "applies_to": "Agents",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "Extends",
+              "extends": "Identity and access management",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "DEL-ID-03",
@@ -426,7 +558,11 @@
               "category": "Agent identity",
               "statement": "Session agents are disabled unless approved through pre-deployment review under GVN-RK-02. Approved session agents are technically limited to approved sites and applications. They do not operate, from the person's own session, on systems the organization designates as sensitive, including financial, administrative, and HR applications.",
               "applies_to": "Agents",
-              "tier": "Foundational"
+              "tier": "Foundational",
+              "relation": "New",
+              "extends": "",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "Yes"
             },
             {
               "id": "DEL-ID-04",
@@ -436,7 +572,11 @@
               "category": "Agent identity",
               "statement": "Session agents that need to reach sensitive systems run in an isolated browser profile, virtual desktop, or vendor-hosted browser with separate sign-ins and no access to the person's own session.",
               "applies_to": "Agents",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "New",
+              "extends": "",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             }
           ]
         },
@@ -452,7 +592,11 @@
               "category": "Delegation",
               "statement": "Agents acting for a user use delegation, not impersonation. The agent and the user are both recorded in identity provider logs, and in downstream system logs where the downstream system supports it. Where it does not, the AI platform's logs link each action to both.",
               "applies_to": "Agents",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "New",
+              "extends": "",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "DEL-DG-02",
@@ -462,7 +606,11 @@
               "category": "Delegation",
               "statement": "A delegated agent can only do what both the user and the agent are allowed to do. Agents shared with users act with each user's own delegated permissions. An agent that runs under a shared or builder's credential is made available only to people already authorized for everything that credential can reach. Before production use and after scope changes, a test with a restricted account confirms the agent does not reach data or actions that account cannot reach directly.",
               "applies_to": "Agents",
-              "tier": "Foundational"
+              "tier": "Foundational",
+              "relation": "New",
+              "extends": "",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "DEL-DG-03",
@@ -472,7 +620,11 @@
               "category": "Delegation",
               "statement": "In multi-agent systems the organization builds or orchestrates, (a) agents authenticate each other using workload identity, such as mutual TLS or signed tokens, before accepting instructions, (b) an agent that hands work to another passes on no more than its own authority, limited to what the task needs, through down-scoped tokens or an equivalent mechanism, (c) the person who authorized the work is recorded at every handoff, and (d) the orchestrator enforces a maximum number of handoffs or steps that the organization defines and documents. Instructions from agents outside the organization's control are treated as untrusted content.",
               "applies_to": "Agents",
-              "tier": "Advanced"
+              "tier": "Advanced",
+              "relation": "New",
+              "extends": "",
+              "profiles": "Built",
+              "essentials": "No"
             },
             {
               "id": "DEL-DG-04",
@@ -482,7 +634,11 @@
               "category": "Delegation",
               "statement": "Users cannot grant AI applications or agents access to company systems or data without approval. User consent to third-party apps is restricted to approved apps in the company identity platform. On managed devices, browser extension installation is restricted to approved extensions. API keys in company AI provider accounts are created only by authorized users.",
               "applies_to": "Use",
-              "tier": "Foundational"
+              "tier": "Foundational",
+              "relation": "Extends",
+              "extends": "Identity and access management",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "Yes"
             }
           ]
         },
@@ -498,7 +654,11 @@
               "category": "Least agency",
               "statement": "Agents receive read-only access by default. Write access is granted per tool, or per connector where the platform does not separate read and write, with a documented justification.",
               "applies_to": "Agents",
-              "tier": "Foundational"
+              "tier": "Foundational",
+              "relation": "Extends",
+              "extends": "Identity and access management",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "DEL-LA-02",
@@ -508,7 +668,11 @@
               "category": "Least agency",
               "statement": "Agent identities hold no permission to change their own roles, scopes, or credentials, or to approve their own access requests. This is confirmed when access is granted and at each review of agent access.",
               "applies_to": "Agents",
-              "tier": "Foundational"
+              "tier": "Foundational",
+              "relation": "Extends",
+              "extends": "Identity and access management",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "DEL-LA-03",
@@ -518,7 +682,11 @@
               "category": "Least agency",
               "statement": "Before an agent automates a process, the process is documented. The documentation identifies the steps that require human approval before they run and the steps that require human review after they run.",
               "applies_to": "Agents",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "New",
+              "extends": "",
+              "profiles": "Configured, Built",
+              "essentials": "No"
             }
           ]
         },
@@ -534,7 +702,11 @@
               "category": "Human approval",
               "statement": "Each type of agent action is assigned an action risk level. The organization defines at least high and critical levels and what an agent may do without approval at each level. High and critical actions require explicit human approval before they run. Where a platform cannot require approval for an action, the agent is not given the tool or permission for that action.",
               "applies_to": "Agents",
-              "tier": "Foundational"
+              "tier": "Foundational",
+              "relation": "New",
+              "extends": "",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "Yes"
             },
             {
               "id": "DEL-AP-02",
@@ -544,7 +716,11 @@
               "category": "Human approval",
               "statement": "Approvals for high and critical actions are requested on a channel the agent cannot control or read. Critical actions require phishing-resistant re-authentication, such as a FIDO2 security key with user verification. The approval record is bound on the server side to a hash of the exact action and its parameters, and is single-use. Platforms that cannot meet this are not given critical actions.",
               "applies_to": "Agents",
-              "tier": "Advanced"
+              "tier": "Advanced",
+              "relation": "New",
+              "extends": "",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "DEL-AP-03",
@@ -554,7 +730,11 @@
               "category": "Human approval",
               "statement": "(a) Each approval authorizes one specific action. Session-wide or standing approval options are disabled where the platform allows, and prohibited by policy where it does not. (b) The approval request shows the action, its target, and its expected impact. (c) Where approval records are available, approval patterns are reviewed for rubber-stamping at a frequency the organization defines and documents, using criteria such as approval time and decline rate, and findings are acted on.",
               "applies_to": "Agents",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "New",
+              "extends": "",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "DEL-AP-04",
@@ -564,7 +744,11 @@
               "category": "Human approval",
               "statement": "For AI-assisted decisions that materially affect people, such as credit, hiring, or access to services, the organization documents the applicable legal requirements on human review, notice, explanation, and appeal, and follows them. Where law sets no requirement, decisions from high-risk use cases are reviewed before they take effect by a person the organization designates as qualified, and other decisions can be appealed to such a person. The principal reasons for each decision are recorded by the reviewer or derived from documented decision factors, not taken only from the model's own explanation, and can be given to the affected person.",
               "applies_to": "All",
-              "tier": "Foundational"
+              "tier": "Foundational",
+              "relation": "New",
+              "extends": "",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             }
           ]
         },
@@ -580,7 +764,11 @@
               "category": "Agent lifecycle",
               "statement": "Agent access is reviewed on the same cadence as privileged accounts, with the owner attesting to each scope.",
               "applies_to": "Agents",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "Extends",
+              "extends": "Identity and access management",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "DEL-LC-02",
@@ -590,7 +778,11 @@
               "category": "Agent lifecycle",
               "statement": "Agent identities, tokens, connectors, and scheduled tasks are removed within a time the organization defines and documents after the agent's purpose ends. When the owner leaves or changes role, shared agents are reassigned or removed within the same time. Where the platform does not expose these items to administrators, deprovisioning the owner's platform account through enterprise identity meets this control.",
               "applies_to": "Agents",
-              "tier": "Foundational"
+              "tier": "Foundational",
+              "relation": "Extends",
+              "extends": "Identity and access management",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             }
           ]
         }
@@ -613,7 +805,11 @@
               "category": "Secure configuration",
               "statement": "Each approved AI platform has a documented secure configuration baseline covering data retention, training opt-out, sharing, connectors, and admin controls.",
               "applies_to": "Platforms",
-              "tier": "Foundational"
+              "tier": "Foundational",
+              "relation": "Extends",
+              "extends": "Secure configuration management",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "Yes"
             },
             {
               "id": "HRD-CF-02",
@@ -623,7 +819,11 @@
               "category": "Secure configuration",
               "statement": "AI platforms use enterprise identity (SSO, and SCIM where supported). Tenant-wide AI settings are changed only by named administrators. Building and sharing agents is limited to approved builders, and sharing beyond a team requires approval. Administrative changes are logged, and where the platform does not log them, changes are recorded through change management.",
               "applies_to": "Platforms",
-              "tier": "Foundational"
+              "tier": "Foundational",
+              "relation": "Extends",
+              "extends": "Identity and access management",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "HRD-CF-03",
@@ -633,7 +833,11 @@
               "category": "Secure configuration",
               "statement": "Configuration is checked against the baseline at a frequency the organization defines and documents, and after vendor releases that add or change data handling, sharing, connector, or admin settings. Deviations are corrected or approved as exceptions.",
               "applies_to": "Platforms",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "Extends",
+              "extends": "Secure configuration management",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "HRD-CF-04",
@@ -643,7 +847,11 @@
               "category": "Secure configuration",
               "statement": "Self-hosted model endpoints and AI APIs, including development and test instances, require authentication. Network access to them is limited to documented users and systems, and they are not reachable from the internet unless approved.",
               "applies_to": "Platforms",
-              "tier": "Foundational"
+              "tier": "Foundational",
+              "relation": "Extends",
+              "extends": "Secure configuration management",
+              "profiles": "Built",
+              "essentials": "No"
             },
             {
               "id": "HRD-CF-05",
@@ -653,7 +861,11 @@
               "category": "Secure configuration",
               "statement": "New AI features and agents that vendors add to existing platforms are held disabled, or on a restricted release channel, until reviewed under GVN-RK-02, where the platform allows. Where it does not, the feature is reviewed within a time the organization defines and documents after release.",
               "applies_to": "Platforms",
-              "tier": "Foundational"
+              "tier": "Foundational",
+              "relation": "New",
+              "extends": "",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "Yes"
             },
             {
               "id": "HRD-CF-06",
@@ -663,7 +875,11 @@
               "category": "Secure configuration",
               "statement": "Endpoint AI agents, such as local coding and desktop agents, are configured through managed policy that users cannot override, covering approval mode, allowed tools and MCP servers, and sandboxing. Agent instruction and configuration files from third-party repositories or workspaces are not loaded without review.",
               "applies_to": "Agents",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "Extends",
+              "extends": "Secure configuration management",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             }
           ]
         },
@@ -679,7 +895,11 @@
               "category": "Supply chain",
               "statement": "Plugins, extensions, connectors, MCP servers, agent skills, prompt templates, and agent configurations are reviewed for requested permissions and source before installation, or users are limited to an admin-approved catalog.",
               "applies_to": "Agents",
-              "tier": "Foundational"
+              "tier": "Foundational",
+              "relation": "Extends",
+              "extends": "Software supply chain security",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "HRD-SC-02",
@@ -689,7 +909,11 @@
               "category": "Supply chain",
               "statement": "Locally installed plugins, connectors, and MCP servers are pinned to approved versions and hashes, and updates are reviewed before use. For remote servers that cannot be pinned, tool names and descriptions are recorded at approval and changes are reviewed before use where tooling can detect them. Otherwise the server is reassessed at a frequency the organization defines and documents.",
               "applies_to": "Agents",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "Extends",
+              "extends": "Software supply chain security",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "HRD-SC-03",
@@ -699,7 +923,11 @@
               "category": "Supply chain",
               "statement": "Models and datasets come from sources on a documented approved list. Before use, each is verified for origin and integrity, and the verification is recorded.",
               "applies_to": "Models",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "Extends",
+              "extends": "Software supply chain security",
+              "profiles": "Built",
+              "essentials": "No"
             },
             {
               "id": "HRD-SC-04",
@@ -709,7 +937,11 @@
               "category": "Supply chain",
               "statement": "Model files and AI dependencies are integrity-checked against published hashes, or signatures where the publisher provides them, and scanned for malicious code. Models are loaded using file formats that cannot execute code, or in isolated environments when that is not possible.",
               "applies_to": "Models",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "Extends",
+              "extends": "Software supply chain security",
+              "profiles": "Built",
+              "essentials": "No"
             }
           ]
         },
@@ -725,7 +957,11 @@
               "category": "Data protection",
               "statement": "AI access to data is restricted according to the organization's data classification. The classifications each AI system may access are recorded in the inventory. Where a platform does not enforce classification labels, sources containing restricted data are not connected to it.",
               "applies_to": "All",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "Extends",
+              "extends": "Data protection",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "HRD-DP-02",
@@ -735,7 +971,11 @@
               "category": "Data protection",
               "statement": "AI search and retrieval systems return only content the requesting user can access in the original system. Permissions and deletions are applied at query time or synchronized within a time the organization defines and documents. Sources whose permissions the platform cannot honor are not connected, or are limited to content every user may see. This is confirmed before enablement by a test with a restricted account.",
               "applies_to": "All",
-              "tier": "Foundational"
+              "tier": "Foundational",
+              "relation": "New",
+              "extends": "",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "Yes"
             },
             {
               "id": "HRD-DP-03",
@@ -745,7 +985,11 @@
               "category": "Data protection",
               "statement": "A privacy impact assessment, or a data protection impact assessment where law requires one, is completed for AI use cases that process personal data and confirms a lawful basis for the processing.",
               "applies_to": "All",
-              "tier": "Foundational"
+              "tier": "Foundational",
+              "relation": "Extends",
+              "extends": "Privacy program",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "HRD-DP-04",
@@ -755,7 +999,11 @@
               "category": "Data protection",
               "statement": "Retention periods for prompts, outputs, and AI logs are documented and meet legal, regulatory, business, and investigation requirements. (a) Legal holds override deletion, using platform eDiscovery or compliance export where available. (b) Deletion requests are honored within the time set by law or policy across logs, retrieval stores, and fine-tuning data the organization controls, and vendor retention, including abuse-monitoring retention, is confirmed under GVN-TP-01. (c) Where data cannot be removed from a trained model, the limitation is documented, and the model is retrained or retired when law, contract, or a documented risk decision requires it.",
               "applies_to": "All",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "Extends",
+              "extends": "Data protection",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "HRD-DP-05",
@@ -765,7 +1013,11 @@
               "category": "Data protection",
               "statement": "Before AI tools that search or summarize company data are enabled, permissions on files, sites, and mailboxes within their reach are reviewed against criteria for overshared access that the organization defines and documents. Findings are remediated or accepted as risks before enablement. The review is repeated at a frequency the organization defines and documents.",
               "applies_to": "Platforms",
-              "tier": "Foundational"
+              "tier": "Foundational",
+              "relation": "New",
+              "extends": "",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "Yes"
             },
             {
               "id": "HRD-DP-06",
@@ -775,7 +1027,11 @@
               "category": "Data protection",
               "statement": "Technical controls warn on or block sensitive data sent to unapproved AI tools, using documented rules that enforce the acceptable use policy.",
               "applies_to": "Use",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "Extends",
+              "extends": "Data protection",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "HRD-DP-07",
@@ -785,7 +1041,11 @@
               "category": "Data protection",
               "statement": "Access to approved AI services from company devices and networks is limited to the company's own tenant or account, using tenant restrictions, network security controls, or enterprise browser policy, so personal accounts on the same services cannot be used with company data.",
               "applies_to": "Use",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "Extends",
+              "extends": "Data protection",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "HRD-DP-08",
@@ -795,7 +1055,11 @@
               "category": "Data protection",
               "statement": "Derived AI data, including embeddings, vector indexes, prompt and response caches, conversation history, and agent memory, inherits the highest classification of its sources. It is access-controlled, encrypted, separated by tenant or user where shared, and included in the data inventory and in deletion requests.",
               "applies_to": "Data",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "Extends",
+              "extends": "Data protection",
+              "profiles": "Configured, Built",
+              "essentials": "No"
             }
           ]
         },
@@ -811,7 +1075,11 @@
               "category": "Data provenance",
               "statement": "Providers of models, datasets, and agents are asked for provenance documentation, such as model cards, data sheets, attestations, or an AI bill of materials, which is reviewed before acquisition or first use. Gaps are recorded as risks.",
               "applies_to": "All",
-              "tier": "Foundational"
+              "tier": "Foundational",
+              "relation": "Extends",
+              "extends": "Third-party risk management",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "HRD-PV-02",
@@ -821,7 +1089,11 @@
               "category": "Data provenance",
               "statement": "Every dataset used to train, fine-tune, or evaluate a model has a recorded source, owner, usage rights, and collection date.",
               "applies_to": "Data",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "New",
+              "extends": "",
+              "profiles": "Built",
+              "essentials": "No"
             },
             {
               "id": "HRD-PV-03",
@@ -831,7 +1103,11 @@
               "category": "Data provenance",
               "statement": "New training, fine-tuning, and evaluation data passes a documented intake gate before use. The gate checks for anomalous or duplicate samples, embedded instructions, known poisoning patterns, sensitive data, and prohibited content, and records each result. Data from public or untrusted sources is quarantined until it passes.",
               "applies_to": "Data",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "New",
+              "extends": "",
+              "profiles": "Built",
+              "essentials": "No"
             },
             {
               "id": "HRD-PV-04",
@@ -841,7 +1117,11 @@
               "category": "Data provenance",
               "statement": "Datasets are versioned and integrity-protected with hashes or signatures, and lineage is tracked from source through each transformation to the model version it produced, so the exact data behind any model can be reproduced.",
               "applies_to": "Data",
-              "tier": "Advanced"
+              "tier": "Advanced",
+              "relation": "New",
+              "extends": "",
+              "profiles": "Built",
+              "essentials": "No"
             }
           ]
         },
@@ -857,7 +1137,11 @@
               "category": "Model protection",
               "statement": "Model weights and fine-tuned models are access-controlled and encrypted at rest. For provider-hosted fine-tuned models, access is restricted through the provider's access controls, and customer-managed keys are used where offered.",
               "applies_to": "Models",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "Extends",
+              "extends": "Data protection",
+              "profiles": "Built",
+              "essentials": "No"
             }
           ]
         },
@@ -873,7 +1157,11 @@
               "category": "Secure development",
               "statement": "System prompts, agent instructions, and agent tool configurations are version-controlled and changed through review. Where the platform has no version history, configurations are exported or recorded before each change.",
               "applies_to": "Agents",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "Extends",
+              "extends": "Secure development lifecycle",
+              "profiles": "Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "HRD-DV-02",
@@ -883,7 +1171,11 @@
               "category": "Secure development",
               "statement": "Internally built AI systems follow a secure development lifecycle that includes threat modeling for AI-specific threats.",
               "applies_to": "All",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "Extends",
+              "extends": "Secure development lifecycle",
+              "profiles": "Built",
+              "essentials": "No"
             },
             {
               "id": "HRD-DV-03",
@@ -893,7 +1185,11 @@
               "category": "Secure development",
               "statement": "All code, including AI-generated code, goes through the same review, testing, and scanning before merge. Automated checks confirm that each new dependency exists in an approved package registry and comes from a trusted source.",
               "applies_to": "Use",
-              "tier": "Foundational"
+              "tier": "Foundational",
+              "relation": "Extends",
+              "extends": "Secure development lifecycle",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "HRD-DV-04",
@@ -903,7 +1199,11 @@
               "category": "Secure development",
               "statement": "System prompts contain no credentials, secrets, or sensitive data. Access control, authorization, and other security decisions are enforced outside the model and do not depend on the system prompt staying confidential. System prompts are reviewed for this before deployment.",
               "applies_to": "Agents",
-              "tier": "Foundational"
+              "tier": "Foundational",
+              "relation": "New",
+              "extends": "",
+              "profiles": "Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "HRD-DV-05",
@@ -913,7 +1213,11 @@
               "category": "Secure development",
               "statement": "MCP servers and other tool servers the organization exposes authenticate each client, accept only tokens issued for that server, never pass client tokens through to downstream systems, and authorize each tool call for the calling user or agent.",
               "applies_to": "Agents",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "Extends",
+              "extends": "Secure development lifecycle",
+              "profiles": "Built",
+              "essentials": "No"
             }
           ]
         }
@@ -936,7 +1240,11 @@
               "category": "Input protection",
               "statement": "An agent that reads untrusted content does not hold high-impact write tools, or tools that send data outside the organization, in the same session unless human approval gates those tools. Rendering external links or images in output counts as sending data out. For vendor assistants, the organization disables the combinations it can control, such as web access or external connectors, for high-risk users and use cases, and relies for the rest on the vendor's documented exfiltration protections, confirmed under GVN-TP-01.",
               "applies_to": "Agents",
-              "tier": "Foundational"
+              "tier": "Foundational",
+              "relation": "New",
+              "extends": "",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "Yes"
             },
             {
               "id": "DEF-IN-02",
@@ -946,7 +1254,11 @@
               "category": "Input protection",
               "statement": "Untrusted content, such as web pages, email, documents, and tool output, is marked as data, delimited from instructions, and never placed in system or developer instructions. In agents the organization builds, designs that stop untrusted content from changing the agent's plan or tool choice are used where feasible. Because no current method fully separates data from instructions, DEF-IN-01 applies.",
               "applies_to": "All",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "New",
+              "extends": "",
+              "profiles": "Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "DEF-IN-03",
@@ -956,7 +1268,11 @@
               "category": "Input protection",
               "statement": "Inputs to AI systems the organization builds that handle sensitive data or hold tools are screened for prompt injection using detection rules or classifiers. Detection and false-positive rates are measured against a test set at a frequency the organization defines and documents. For vendor platforms, the vendor's injection protections are confirmed under GVN-TP-01 and enabled where configurable.",
               "applies_to": "All",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "New",
+              "extends": "",
+              "profiles": "Built",
+              "essentials": "No"
             }
           ]
         },
@@ -972,7 +1288,11 @@
               "category": "Output handling",
               "statement": "Systems the organization builds or integrates validate model output before executing, rendering, or storing it, using documented checks such as output encoding, schema validation, allowlists, and parameterized queries.",
               "applies_to": "All",
-              "tier": "Foundational"
+              "tier": "Foundational",
+              "relation": "Extends",
+              "extends": "Secure development lifecycle",
+              "profiles": "Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "DEF-OU-02",
@@ -982,7 +1302,11 @@
               "category": "Output handling",
               "statement": "Output from AI systems that can access sensitive data is screened with documented detection rules before it leaves the organization or reaches users not authorized for that data, using data loss prevention in the AI gateway, the platform, or the channel the output is sent through.",
               "applies_to": "All",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "Extends",
+              "extends": "Data protection",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "DEF-OU-03",
@@ -992,7 +1316,11 @@
               "category": "Output handling",
               "statement": "Customer-facing AI output is filtered against a documented content policy that defines harmful, prohibited, and off-policy content. Filter actions are logged.",
               "applies_to": "All",
-              "tier": "Foundational"
+              "tier": "Foundational",
+              "relation": "New",
+              "extends": "",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             }
           ]
         },
@@ -1008,7 +1336,11 @@
               "category": "Tool and action enforcement",
               "statement": "Agent network egress is restricted to approved destinations. For agents that run on vendor infrastructure, web access is disabled or limited to approved domains where the platform allows, and the remaining exposure is recorded in the risk rating.",
               "applies_to": "Agents",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "Extends",
+              "extends": "Network security",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "DEF-TL-02",
@@ -1018,7 +1350,11 @@
               "category": "Tool and action enforcement",
               "statement": "Documented rate and spending limits are technically enforced through provider quotas, project budgets, or an AI gateway to cap runaway or abusive consumption. Where a provider only alerts, the alert triggers the halt mechanism in DEF-TL-06.",
               "applies_to": "All",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "New",
+              "extends": "",
+              "profiles": "Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "DEF-TL-03",
@@ -1028,7 +1364,11 @@
               "category": "Tool and action enforcement",
               "statement": "Tool calls of agents the organization builds, or whose tools it hosts, pass through a policy enforcement point that checks each action against the agent's scope and the action's risk level.",
               "applies_to": "Agents",
-              "tier": "Advanced"
+              "tier": "Advanced",
+              "relation": "New",
+              "extends": "",
+              "profiles": "Built",
+              "essentials": "No"
             },
             {
               "id": "DEF-TL-04",
@@ -1038,7 +1378,11 @@
               "category": "Tool and action enforcement",
               "statement": "Models the organization exposes to external users through an API or application have per-client authentication, quotas, and rate limits. Query volume and pattern anomalies that may indicate model extraction or inversion are monitored and throttled.",
               "applies_to": "Models",
-              "tier": "Advanced"
+              "tier": "Advanced",
+              "relation": "New",
+              "extends": "",
+              "profiles": "Built",
+              "essentials": "No"
             },
             {
               "id": "DEF-TL-05",
@@ -1048,7 +1392,11 @@
               "category": "Tool and action enforcement",
               "statement": "Code that an agent runs on its own executes in an isolated environment, such as a vendor sandbox, container, or virtual machine. Local agents use the tool's sandbox or require approval for each command, and are not given administrator rights or access to production credentials on the workstation.",
               "applies_to": "Agents",
-              "tier": "Foundational"
+              "tier": "Foundational",
+              "relation": "New",
+              "extends": "",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "DEF-TL-06",
@@ -1058,7 +1406,11 @@
               "category": "Tool and action enforcement",
               "statement": "(a) Every agent can be stopped within a time the organization defines and documents, through a platform kill switch, disabling the agent or its connectors, or revoking its credentials. (b) Step, loop, or run-time limits, documented for each agent, stop runaway agents automatically, configured where the platform allows and confirmed in vendor documentation where it does not. (c) The halt is demonstrated by test at least annually.",
               "applies_to": "Agents",
-              "tier": "Foundational"
+              "tier": "Foundational",
+              "relation": "New",
+              "extends": "",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "Yes"
             }
           ]
         },
@@ -1074,7 +1426,11 @@
               "category": "Poisoning and manipulation defenses",
               "statement": "Only authorized contributors can add content to curated AI knowledge sources, such as agent knowledge bases and retrieval indexes, or change training and fine-tuning data, and every change is logged and attributable. For assistants that search the general content estate, source-system permissions and HRD-DP-05 apply.",
               "applies_to": "Data",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "New",
+              "extends": "",
+              "profiles": "Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "DEF-PS-02",
@@ -1084,7 +1440,11 @@
               "category": "Poisoning and manipulation defenses",
               "statement": "Content ingested into retrieval stores the organization builds is tagged with its source and trust level, so retrieval filters and downstream controls can exclude or restrict untrusted content.",
               "applies_to": "Data",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "New",
+              "extends": "",
+              "profiles": "Built",
+              "essentials": "No"
             },
             {
               "id": "DEF-PS-03",
@@ -1094,7 +1454,11 @@
               "category": "Poisoning and manipulation defenses",
               "statement": "Agent long-term memory is scoped to a user or task, and its owner can view and delete it. In agents the organization builds, memory writes from untrusted content pass documented validation or require user confirmation. On vendor platforms that cannot do this, memory is disabled for high-risk use cases.",
               "applies_to": "Agents",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "New",
+              "extends": "",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "DEF-PS-04",
@@ -1104,7 +1468,11 @@
               "category": "Poisoning and manipulation defenses",
               "statement": "User feedback, ratings, and conversation data are checked for manipulation before they are used to retrain or tune a model. Checks use documented criteria, such as volume anomalies and coordinated submissions, and results are recorded.",
               "applies_to": "Models",
-              "tier": "Advanced"
+              "tier": "Advanced",
+              "relation": "New",
+              "extends": "",
+              "profiles": "Built",
+              "essentials": "No"
             }
           ]
         }
@@ -1127,7 +1495,11 @@
               "category": "Logging",
               "statement": "Agent actions, tool calls, approvals, and the acting identity are logged, with retention that meets legal, regulatory, and incident response requirements. For vendor platforms, the organization enables the platform's audit logging, confirms what it captures, exports logs where platform retention is too short, and records gaps as risks.",
               "applies_to": "Agents",
-              "tier": "Foundational"
+              "tier": "Foundational",
+              "relation": "Extends",
+              "extends": "Logging and monitoring",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "Yes"
             },
             {
               "id": "MTR-LG-02",
@@ -1137,7 +1509,11 @@
               "category": "Logging",
               "statement": "Prompts and outputs are logged for AI systems the organization designates by risk rating, and the designation is documented. These logs receive the access controls and encryption required for the most sensitive data they may contain.",
               "applies_to": "All",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "Extends",
+              "extends": "Logging and monitoring",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "MTR-LG-03",
@@ -1147,7 +1523,11 @@
               "category": "Logging",
               "statement": "AI logs feed the central SIEM and are correlated with target-system logs. Agent actions are distinguished from human actions where identity data allows, and gaps are recorded.",
               "applies_to": "All",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "Extends",
+              "extends": "Logging and monitoring",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "MTR-LG-04",
@@ -1157,7 +1537,11 @@
               "category": "Logging",
               "statement": "In agents the organization builds, logs carry trace IDs, such as W3C Trace Context, that link the authorizing person to the agent and to each step and tool call, including across agent-to-agent handoffs within systems the organization controls.",
               "applies_to": "Agents",
-              "tier": "Advanced"
+              "tier": "Advanced",
+              "relation": "New",
+              "extends": "",
+              "profiles": "Built",
+              "essentials": "No"
             }
           ]
         },
@@ -1173,7 +1557,11 @@
               "category": "Behavior baselines",
               "statement": "Documented detection rules alert on indicators of manipulation, such as unexpected resources, scope creep, and unprompted requests for sensitive data. Rule effectiveness is reviewed at a frequency the organization defines and documents.",
               "applies_to": "Agents",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "Extends",
+              "extends": "Logging and monitoring",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "MTR-BH-02",
@@ -1183,7 +1571,11 @@
               "category": "Behavior baselines",
               "statement": "Each agent has a documented behavior baseline covering systems accessed, volume, timing, and tools. Deviations beyond documented thresholds generate alerts.",
               "applies_to": "Agents",
-              "tier": "Advanced"
+              "tier": "Advanced",
+              "relation": "New",
+              "extends": "",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "MTR-BH-03",
@@ -1193,7 +1585,11 @@
               "category": "Behavior baselines",
               "statement": "AI security alerts are routed to the security operations function with defined triage and escalation procedures.",
               "applies_to": "All",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "Extends",
+              "extends": "Logging and monitoring",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             }
           ]
         },
@@ -1209,7 +1605,11 @@
               "category": "Drift and integrity",
               "statement": "Provider model changes are tracked as change events. Where a provider allows model versions to be pinned, they are pinned and changed through review. Where it does not, provider release notes are monitored and changes are reviewed according to the system's risk rating.",
               "applies_to": "Models",
-              "tier": "Foundational"
+              "tier": "Foundational",
+              "relation": "Extends",
+              "extends": "Change management",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "MTR-DR-02",
@@ -1219,7 +1619,11 @@
               "category": "Drift and integrity",
               "statement": "Production models the organization deploys or pins are evaluated against a defined test set at a frequency the organization defines and documents. After any model, training, or data update, the model passes the same evaluation before release to production. For vendor-managed models that change without notice, the test set is run after announced changes and on a documented schedule.",
               "applies_to": "Models",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "New",
+              "extends": "",
+              "profiles": "Built",
+              "essentials": "No"
             },
             {
               "id": "MTR-DR-03",
@@ -1229,7 +1633,11 @@
               "category": "Drift and integrity",
               "statement": "Thresholds for accuracy, safety, and output quality are defined for the MTR-DR-02 test set. A breach triggers review, and rollback where the model version is under the organization's control.",
               "applies_to": "Models",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "New",
+              "extends": "",
+              "profiles": "Built",
+              "essentials": "No"
             },
             {
               "id": "MTR-DR-04",
@@ -1239,7 +1647,11 @@
               "category": "Drift and integrity",
               "statement": "Retrieval stores, agent memory, and training data that the organization controls are scanned for injected instructions or anomalous content at a frequency the organization defines and documents, and unexpected changes generate alerts.",
               "applies_to": "Data",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "New",
+              "extends": "",
+              "profiles": "Configured, Built",
+              "essentials": "No"
             }
           ]
         },
@@ -1255,7 +1667,11 @@
               "category": "Vulnerability and threat management",
               "statement": "Vulnerabilities in AI frameworks, models, and libraries are tracked and remediated on defined timelines.",
               "applies_to": "All",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "Extends",
+              "extends": "Vulnerability management",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "MTR-VM-02",
@@ -1265,7 +1681,11 @@
               "category": "Vulnerability and threat management",
               "statement": "AI threat intelligence, such as MITRE ATLAS techniques, is reviewed at a frequency the organization defines and documents. Each review records relevant threats and the resulting control changes, or the decision that none are needed.",
               "applies_to": "All",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "Extends",
+              "extends": "Threat intelligence",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             }
           ]
         },
@@ -1281,7 +1701,11 @@
               "category": "Testing and reporting",
               "statement": "Employees and customers have a documented, published channel to report suspicious, unexpected, or harmful AI behavior. Reports are logged and triaged. Customer reports feed the complaint management process.",
               "applies_to": "Use",
-              "tier": "Foundational"
+              "tier": "Foundational",
+              "relation": "Extends",
+              "extends": "Incident response",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "MTR-TS-02",
@@ -1291,7 +1715,11 @@
               "category": "Testing and reporting",
               "statement": "Customer-facing and tool-using AI systems are tested for prompt injection, data leakage, and excessive agency before production release and after changes that meet criteria the organization defines and documents. For vendor platforms, testing covers the organization's configuration, connectors, and agents, within the vendor's published testing rules. Findings are tracked to remediation.",
               "applies_to": "All",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "Extends",
+              "extends": "Security testing",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "MTR-TS-03",
@@ -1301,7 +1729,11 @@
               "category": "Testing and reporting",
               "statement": "Independent red teams, internal or external, test AI systems adversarially at a frequency based on risk rating that the organization defines and documents.",
               "applies_to": "All",
-              "tier": "Advanced"
+              "tier": "Advanced",
+              "relation": "Extends",
+              "extends": "Security testing",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             }
           ]
         }
@@ -1324,7 +1756,11 @@
               "category": "Preparation",
               "statement": "The incident response plan defines AI incidents, including manipulation, data leakage, harmful agent actions, and model compromise.",
               "applies_to": "All",
-              "tier": "Foundational"
+              "tier": "Foundational",
+              "relation": "Extends",
+              "extends": "Incident response",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "Yes"
             },
             {
               "id": "RSP-PL-02",
@@ -1334,7 +1770,11 @@
               "category": "Preparation",
               "statement": "AI incident scenarios, including halting a misbehaving agent, are exercised in tabletops at least annually.",
               "applies_to": "All",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "Extends",
+              "extends": "Incident response",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             }
           ]
         },
@@ -1350,7 +1790,11 @@
               "category": "Investigation",
               "statement": "Investigators can reconstruct an AI incident from prompts, outputs, retrieved content, tool calls, and approvals, to the extent the platform records them. Gaps in what platforms record are identified before an incident and recorded as risks. Reconstruction is demonstrated at least annually in an exercise or a real investigation.",
               "applies_to": "All",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "Extends",
+              "extends": "Incident response",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "RSP-IV-02",
@@ -1360,7 +1804,11 @@
               "category": "Investigation",
               "statement": "Evidence collection covers AI artifacts, including model and dataset versions, system prompts, agent configurations and memory, retrieval sources, and vendor logs, where available, and preserves them before rollback or deletion.",
               "applies_to": "All",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "Extends",
+              "extends": "Incident response",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             }
           ]
         },
@@ -1376,7 +1824,11 @@
               "category": "Containment and recovery",
               "statement": "Runbooks cover containment, including invoking the halt mechanism, revoking agent tokens, disabling tools and connectors, pausing scheduled tasks, and blocking AI services. Any agent can be disabled without disabling the account of the person who owns or uses it, by disabling the agent, its connectors, or the AI feature for that user. Where a platform cannot do this, the runbook states the fallback.",
               "applies_to": "Agents",
-              "tier": "Foundational"
+              "tier": "Foundational",
+              "relation": "Extends",
+              "extends": "Incident response",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "RSP-CN-02",
@@ -1386,7 +1838,11 @@
               "category": "Containment and recovery",
               "statement": "AI assets the organization controls, including models, configurations, system prompts, retrieval indexes, and agent memory, are versioned and backed up, and can be rolled back to a known-good version or restored within defined recovery objectives. Restoration is demonstrated by test at least annually.",
               "applies_to": "All",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "Extends",
+              "extends": "Business continuity and disaster recovery",
+              "profiles": "Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "RSP-CN-03",
@@ -1396,7 +1852,11 @@
               "category": "Containment and recovery",
               "statement": "A documented procedure identifies poisoned data and removes it from datasets, retrieval stores, and memory, traces it to affected models and outputs, rolls back or retrains affected models, and assesses downstream effects. The procedure is exercised at least annually.",
               "applies_to": "Data",
-              "tier": "Advanced"
+              "tier": "Advanced",
+              "relation": "New",
+              "extends": "",
+              "profiles": "Built",
+              "essentials": "No"
             }
           ]
         },
@@ -1412,7 +1872,11 @@
               "category": "Business continuity",
               "statement": "Critical processes that depend on AI are identified with recovery objectives. Each has documented fallback procedures for when the AI or its provider is unavailable, and named people trained to run them.",
               "applies_to": "All",
-              "tier": "Foundational"
+              "tier": "Foundational",
+              "relation": "Extends",
+              "extends": "Business continuity and disaster recovery",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "RSP-BC-02",
@@ -1422,7 +1886,11 @@
               "category": "Business continuity",
               "statement": "Fallback procedures are tested at least annually, including a provider outage and a forced model change.",
               "applies_to": "All",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "Extends",
+              "extends": "Business continuity and disaster recovery",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             }
           ]
         },
@@ -1438,7 +1906,11 @@
               "category": "Improvement and notification",
               "statement": "Legal and compliance determine whether an AI incident must be reported to regulators, customers, or vendors under law and contract. Notifications meet the shortest applicable deadline, and notification decisions are documented.",
               "applies_to": "All",
-              "tier": "Foundational"
+              "tier": "Foundational",
+              "relation": "Extends",
+              "extends": "Incident response",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             },
             {
               "id": "RSP-IM-02",
@@ -1448,7 +1920,11 @@
               "category": "Improvement and notification",
               "statement": "After each AI incident and exercise, a lessons-learned review is recorded within a time the organization defines and documents. Resulting updates to controls, baselines, risk ratings, and evaluation test sets are tracked to completion.",
               "applies_to": "All",
-              "tier": "Managed"
+              "tier": "Managed",
+              "relation": "Extends",
+              "extends": "Incident response",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             }
           ]
         }
