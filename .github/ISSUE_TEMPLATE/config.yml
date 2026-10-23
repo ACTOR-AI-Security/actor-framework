@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Questions and open discussion
+    url: https://github.com/ACTOR-AI-Security/Framework/discussions
+    about: Ask questions or discuss ideas about ACTOR.
