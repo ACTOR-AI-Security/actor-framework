@@ -4,7 +4,7 @@ title: "ACTOR: AI Controls for Trust, Oversight, and Resilience"
 version: "0.1.0"
 date-released: "2026-10-23"
 license: CC-BY-4.0
-repository-code: "https://github.com/ACTOR-AI-Security/Framework"
+repository-code: "https://github.com/ACTOR-AI-Security/actor-framework"
 authors:
   - family-names: Fernandes
     given-names: Robert
