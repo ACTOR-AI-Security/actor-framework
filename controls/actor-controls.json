@@ -2,7 +2,8 @@
   "framework": "ACTOR",
   "title": "AI Controls for Trust, Oversight, and Resilience",
   "version": "0.1.0",
-  "license": "All rights reserved (review draft). CC-BY-4.0 planned on public release.",
+  "license": "CC-BY-4.0",
+  "status": "Public draft for comment",
   "author": "Robert Fernandes",
   "functions": [
     {
@@ -686,6 +687,20 @@
               "relation": "New",
               "extends": "",
               "profiles": "Configured, Built",
+              "essentials": "No"
+            },
+            {
+              "id": "DEL-LA-04",
+              "function_code": "DEL",
+              "function": "Delegate",
+              "category_code": "DEL-LA",
+              "category": "Least agency",
+              "statement": "Agents cannot create scheduled tasks, new credentials, startup items, or copies of models or data outside approved locations unless that capability is approved and recorded in the agent registry, where the platform allows. Persistence that agents create is detected and reviewed.",
+              "applies_to": "Agents",
+              "tier": "Managed",
+              "relation": "New",
+              "extends": "",
+              "profiles": "Consumed, Configured, Built",
               "essentials": "No"
             }
           ]
@@ -1404,7 +1419,7 @@
               "function": "Defend",
               "category_code": "DEF-TL",
               "category": "Tool and action enforcement",
-              "statement": "(a) Every agent can be stopped within a time the organization defines and documents, through a platform kill switch, disabling the agent or its connectors, or revoking its credentials. (b) Step, loop, or run-time limits, documented for each agent, stop runaway agents automatically, configured where the platform allows and confirmed in vendor documentation where it does not. (c) The halt is demonstrated by test at least annually.",
+              "statement": "(a) Every agent can be stopped within a time the organization defines and documents, through a platform kill switch, disabling the agent or its connectors, or revoking its credentials. (b) Step, loop, or run-time limits, documented for each agent, stop runaway agents automatically, configured where the platform allows and confirmed in vendor documentation where it does not. (c) Agents in high-risk use cases stop, or are restricted to read-only, when monitoring they rely on fails or a control failure is detected, where the platform allows. (d) The halt is demonstrated by test at least annually.",
               "applies_to": "Agents",
               "tier": "Foundational",
               "relation": "New",
@@ -1541,6 +1556,20 @@
               "relation": "New",
               "extends": "",
               "profiles": "Built",
+              "essentials": "No"
+            },
+            {
+              "id": "MTR-LG-05",
+              "function_code": "MTR",
+              "function": "Monitor",
+              "category_code": "MTR-LG",
+              "category": "Logging",
+              "statement": "Agents cannot read, change, or disable the logs and monitors that observe them. Agent logs are written to storage the agent's identity cannot modify, and monitoring treats agent output as possibly crafted to evade or exploit the monitor.",
+              "applies_to": "Agents",
+              "tier": "Managed",
+              "relation": "Extends",
+              "extends": "Logging and monitoring",
+              "profiles": "Consumed, Configured, Built",
               "essentials": "No"
             }
           ]
@@ -1754,7 +1783,7 @@
               "function": "Respond",
               "category_code": "RSP-PL",
               "category": "Preparation",
-              "statement": "The incident response plan defines AI incidents, including manipulation, data leakage, harmful agent actions, and model compromise.",
+              "statement": "The incident response plan defines AI incidents, including manipulation, data leakage, harmful agent actions, agent actions taken beyond their instructions, and model compromise. It defines near-misses and severity criteria for both, and near-misses are recorded and reviewed.",
               "applies_to": "All",
               "tier": "Foundational",
               "relation": "Extends",
@@ -1857,6 +1886,20 @@
               "extends": "",
               "profiles": "Built",
               "essentials": "No"
+            },
+            {
+              "id": "RSP-CN-04",
+              "function_code": "RSP",
+              "function": "Respond",
+              "category_code": "RSP-CN",
+              "category": "Containment and recovery",
+              "statement": "A halted or contained agent resumes only after the cause is addressed and its monitoring, logging, halt mechanism, and permission limits are verified to work. The owner documents the resume decision and remaining risks. Agents built or configured the same way are checked for the same failure.",
+              "applies_to": "Agents",
+              "tier": "Foundational",
+              "relation": "New",
+              "extends": "",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No"
             }
           ]
         },
@@ -1904,7 +1947,7 @@
               "function": "Respond",
               "category_code": "RSP-IM",
               "category": "Improvement and notification",
-              "statement": "Legal and compliance determine whether an AI incident must be reported to regulators, customers, or vendors under law and contract. Notifications meet the shortest applicable deadline, and notification decisions are documented.",
+              "statement": "Legal and compliance determine whether an AI incident must be reported to regulators, customers, vendors, or other parties whose systems an agent affected, under law and contract. Notifications meet the shortest applicable deadline, and notification decisions are documented.",
               "applies_to": "All",
               "tier": "Foundational",
               "relation": "Extends",

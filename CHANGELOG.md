@@ -1,8 +1,10 @@
 # Changelog
 
-## v0.1.0 (2026-10-13)
+## v0.1.0 public draft for comment (2026-10-23)
 
-Initial draft for private review.
+Published for public comment under CC BY 4.0. The comment period is open until December 15, 2026.
+
+Before publication, the draft went through private review and the changes below.
 
 After an internal review from CISO, compliance, and audit perspectives:
 
@@ -23,6 +25,14 @@ After a second review for auditability and technical feasibility:
 - New controls: holding new vendor AI features for review (HRD-CF-05), managed configuration of endpoint AI agents (HRD-CF-06), tenant restrictions on approved AI services (HRD-DP-07), protection of derived AI data such as embeddings and memory (HRD-DP-08), and security of MCP and tool servers the organization exposes (HRD-DV-05).
 - Moved GVN-CO-03 and DEF-OU-03 to Foundational, MTR-DR-03 to Managed, and MTR-LG-04 to Advanced.
 
+Aligned with NIST's key practices for incident readiness and response in highly capable AI agents (October 2026):
+
+- Added agent misbehavior without an attacker to the thesis and to design principle 5.
+- RSP-PL-01 now covers actions beyond instructions, near-misses, and severity criteria.
+- DEF-TL-06 now stops high-risk agents when monitoring fails.
+- RSP-IM-01 now includes other parties an agent affected.
+- New controls: restricting agent-created persistence (DEL-LA-04), protecting logs and monitors from agents (MTR-LG-05), and verifying controls before a halted agent resumes (RSP-CN-04).
+
 To make adoption proportional:
 
 - Added ACTOR Essentials, a starting set of Foundational controls for organizations that mainly use vendor AI.
@@ -33,6 +43,6 @@ To make adoption proportional:
 Before review, overlapping controls were consolidated so each requirement appears once and can be assessed once. Merges: pre-deployment review and risk assessment (GVN-RK-02), action risk levels and approval thresholds (DEL-AP-01), single-action approvals and approval fatigue (DEL-AP-03), platform identity and administrator access (HRD-CF-02), model integrity and safe loading (HRD-SC-04), data intake and quarantine (HRD-PV-03), dataset versioning and lineage (HRD-PV-04), contributor control and change logging (DEF-PS-01), evaluation after updates (MTR-DR-02), pre-release and ongoing adversarial testing (MTR-TS-02, later split into MTR-TS-02 and MTR-TS-03), containment runbooks (RSP-CN-01), and backup, rollback, and restore (RSP-CN-02).
 
 - Seven functions: Govern, Inventory, Delegate, Harden, Defend, Monitor, Respond.
-- 119 controls: 48 Foundational, 60 Managed, 11 Advanced.
+- 122 controls: 49 Foundational, 62 Managed, 11 Advanced.
 - Function-level mapping to NIST CSF 2.0, NIST AI RMF, and the OWASP LLM Top 10 (2025).
 - Machine-readable control data in CSV and JSON.

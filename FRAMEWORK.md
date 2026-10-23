@@ -4,7 +4,7 @@
 
 Author: Robert Fernandes.
 
-Copyright 2026 Robert Fernandes. All rights reserved. **Confidential draft shared in confidence for review only. Not for distribution.** The author intends to release ACTOR under CC BY 4.0 on public release. Feedback terms are in [CONTRIBUTING.md](CONTRIBUTING.md).
+Licensed under [CC BY 4.0](LICENSE). **Public draft for comment until December 15, 2026.** See [CONTRIBUTING.md](CONTRIBUTING.md) to comment.
 
 ACTOR starts from one premise: AI is a new class of actor. Existing frameworks secure people and conventional systems, and they remain essential. AI fits neither model, so ACTOR adds the controls AI needs and governs the people who use, build, and oversee it.
 
@@ -38,7 +38,7 @@ ACTOR gives organizations a practical, tool-neutral set of security controls for
 - Both can be manipulated through the content they read.
 - Both change over time, through drift, model updates, and new tools.
 
-The framework therefore treats AI as its own class of actor. Agents are security principals, in the identity sense, with their own identity and delegated authority. The term carries no legal meaning of agency. Models and agents have a lifecycle that is governed like a workforce: onboarded, supervised, changed under control, and retired. Agents are the clearest example of this premise, but it applies equally to models and the data that shapes them.
+The framework therefore treats AI as its own class of actor. Agents can also go wrong without any attacker, by acting beyond their instructions, so controls assume both manipulation and misbehavior. Agents are security principals, in the identity sense, with their own identity and delegated authority. The term carries no legal meaning of agency. Models and agents have a lifecycle that is governed like a workforce: onboarded, supervised, changed under control, and retired. Agents are the clearest example of this premise, but it applies equally to models and the data that shapes them.
 
 **Scope.** In scope: AI agents, LLMs and other models, the data AI learns from and reads, AI platforms and tool configurations, AI use by the workforce, and third-party AI services.
 
@@ -58,7 +58,7 @@ Using ACTOR alone does not demonstrate compliance with any AI law or regulation.
 2. **AI as an actor.** Agents get identity, delegated authority, supervision, and offboarding, the same disciplines applied to people.
 3. **Least agency.** Grant the minimum data, tools, and autonomy a task needs. Expand only with justification.
 4. **Humans hold authority.** Agents hold capability. High-impact actions require a human approval that the agent cannot satisfy.
-5. **Assume manipulation.** Any content an AI reads may be hostile. Controls limit what a manipulated AI can do, not only whether it gets manipulated.
+5. **Assume manipulation and misbehavior.** Any content an AI reads may be hostile, and an agent may act beyond its instructions with no attacker involved. Controls limit what a manipulated or misbehaving AI can do, not only whether it happens.
 6. **Know where it came from.** Verify the provenance of models, data, and agents before trusting them. What an AI learns from shapes how it behaves.
 7. **Continuous, not point-in-time.** AI behavior changes. Monitoring and evaluation run for the life of the system, and changes trigger re-review.
 8. **Plan for failure.** AI and its providers will fail or change without notice. Critical processes keep running, and models, prompts, and data can be rolled back.
@@ -205,6 +205,7 @@ Delegate treats agents as principals. Each agent is identifiable as itself, rece
 | DEL-LA-01 | Agents receive read-only access by default. Write access is granted per tool, or per connector where the platform does not separate read and write, with a documented justification. | Agents | Foundational |
 | DEL-LA-02 | Agent identities hold no permission to change their own roles, scopes, or credentials, or to approve their own access requests. This is confirmed when access is granted and at each review of agent access. | Agents | Foundational |
 | DEL-LA-03 | Before an agent automates a process, the process is documented. The documentation identifies the steps that require human approval before they run and the steps that require human review after they run. | Agents | Managed |
+| DEL-LA-04 | Agents cannot create scheduled tasks, new credentials, startup items, or copies of models or data outside approved locations unless that capability is approved and recorded in the agent registry, where the platform allows. Persistence that agents create is detected and reviewed. | Agents | Managed |
 | **DEL-AP Human approval** | | | |
 | DEL-AP-01 | Each type of agent action is assigned an action risk level. The organization defines at least high and critical levels and what an agent may do without approval at each level. High and critical actions require explicit human approval before they run. Where a platform cannot require approval for an action, the agent is not given the tool or permission for that action. | Agents | Foundational |
 | DEL-AP-02 | Approvals for high and critical actions are requested on a channel the agent cannot control or read. Critical actions require phishing-resistant re-authentication, such as a FIDO2 security key with user verification. The approval record is bound on the server side to a hash of the exact action and its parameters, and is single-use. Platforms that cannot meet this are not given critical actions. | Agents | Advanced |
@@ -275,7 +276,7 @@ Defend protects AI while it runs. It assumes manipulation will sometimes succeed
 | DEF-TL-03 | Tool calls of agents the organization builds, or whose tools it hosts, pass through a policy enforcement point that checks each action against the agent's scope and the action's risk level. | Agents | Advanced |
 | DEF-TL-04 | Models the organization exposes to external users through an API or application have per-client authentication, quotas, and rate limits. Query volume and pattern anomalies that may indicate model extraction or inversion are monitored and throttled. | Models | Advanced |
 | DEF-TL-05 | Code that an agent runs on its own executes in an isolated environment, such as a vendor sandbox, container, or virtual machine. Local agents use the tool's sandbox or require approval for each command, and are not given administrator rights or access to production credentials on the workstation. | Agents | Foundational |
-| DEF-TL-06 | (a) Every agent can be stopped within a time the organization defines and documents, through a platform kill switch, disabling the agent or its connectors, or revoking its credentials. (b) Step, loop, or run-time limits, documented for each agent, stop runaway agents automatically, configured where the platform allows and confirmed in vendor documentation where it does not. (c) The halt is demonstrated by test at least annually. | Agents | Foundational |
+| DEF-TL-06 | (a) Every agent can be stopped within a time the organization defines and documents, through a platform kill switch, disabling the agent or its connectors, or revoking its credentials. (b) Step, loop, or run-time limits, documented for each agent, stop runaway agents automatically, configured where the platform allows and confirmed in vendor documentation where it does not. (c) Agents in high-risk use cases stop, or are restricted to read-only, when monitoring they rely on fails or a control failure is detected, where the platform allows. (d) The halt is demonstrated by test at least annually. | Agents | Foundational |
 | **DEF-PS Poisoning and manipulation defenses** | | | |
 | DEF-PS-01 | Only authorized contributors can add content to curated AI knowledge sources, such as agent knowledge bases and retrieval indexes, or change training and fine-tuning data, and every change is logged and attributable. For assistants that search the general content estate, source-system permissions and HRD-DP-05 apply. | Data | Managed |
 | DEF-PS-02 | Content ingested into retrieval stores the organization builds is tagged with its source and trust level, so retrieval filters and downstream controls can exclude or restrict untrusted content. | Data | Managed |
@@ -293,6 +294,7 @@ Monitor watches AI for the life of the system. It covers logging, agent behavior
 | MTR-LG-02 | Prompts and outputs are logged for AI systems the organization designates by risk rating, and the designation is documented. These logs receive the access controls and encryption required for the most sensitive data they may contain. | All | Managed |
 | MTR-LG-03 | AI logs feed the central SIEM and are correlated with target-system logs. Agent actions are distinguished from human actions where identity data allows, and gaps are recorded. | All | Managed |
 | MTR-LG-04 | In agents the organization builds, logs carry trace IDs, such as W3C Trace Context, that link the authorizing person to the agent and to each step and tool call, including across agent-to-agent handoffs within systems the organization controls. | Agents | Advanced |
+| MTR-LG-05 | Agents cannot read, change, or disable the logs and monitors that observe them. Agent logs are written to storage the agent's identity cannot modify, and monitoring treats agent output as possibly crafted to evade or exploit the monitor. | Agents | Managed |
 | **MTR-BH Behavior baselines** | | | |
 | MTR-BH-01 | Documented detection rules alert on indicators of manipulation, such as unexpected resources, scope creep, and unprompted requests for sensitive data. Rule effectiveness is reviewed at a frequency the organization defines and documents. | Agents | Managed |
 | MTR-BH-02 | Each agent has a documented behavior baseline covering systems accessed, volume, timing, and tools. Deviations beyond documented thresholds generate alerts. | Agents | Advanced |
@@ -317,7 +319,7 @@ Respond adapts incident response to AI. The evidence is prompts, context, and to
 | ID | Control statement | Applies to | Tier |
 | --- | --- | --- | --- |
 | **RSP-PL Preparation** | | | |
-| RSP-PL-01 | The incident response plan defines AI incidents, including manipulation, data leakage, harmful agent actions, and model compromise. | All | Foundational |
+| RSP-PL-01 | The incident response plan defines AI incidents, including manipulation, data leakage, harmful agent actions, agent actions taken beyond their instructions, and model compromise. It defines near-misses and severity criteria for both, and near-misses are recorded and reviewed. | All | Foundational |
 | RSP-PL-02 | AI incident scenarios, including halting a misbehaving agent, are exercised in tabletops at least annually. | All | Managed |
 | **RSP-IV Investigation** | | | |
 | RSP-IV-01 | Investigators can reconstruct an AI incident from prompts, outputs, retrieved content, tool calls, and approvals, to the extent the platform records them. Gaps in what platforms record are identified before an incident and recorded as risks. Reconstruction is demonstrated at least annually in an exercise or a real investigation. | All | Managed |
@@ -326,16 +328,17 @@ Respond adapts incident response to AI. The evidence is prompts, context, and to
 | RSP-CN-01 | Runbooks cover containment, including invoking the halt mechanism, revoking agent tokens, disabling tools and connectors, pausing scheduled tasks, and blocking AI services. Any agent can be disabled without disabling the account of the person who owns or uses it, by disabling the agent, its connectors, or the AI feature for that user. Where a platform cannot do this, the runbook states the fallback. | Agents | Foundational |
 | RSP-CN-02 | AI assets the organization controls, including models, configurations, system prompts, retrieval indexes, and agent memory, are versioned and backed up, and can be rolled back to a known-good version or restored within defined recovery objectives. Restoration is demonstrated by test at least annually. | All | Managed |
 | RSP-CN-03 | A documented procedure identifies poisoned data and removes it from datasets, retrieval stores, and memory, traces it to affected models and outputs, rolls back or retrains affected models, and assesses downstream effects. The procedure is exercised at least annually. | Data | Advanced |
+| RSP-CN-04 | A halted or contained agent resumes only after the cause is addressed and its monitoring, logging, halt mechanism, and permission limits are verified to work. The owner documents the resume decision and remaining risks. Agents built or configured the same way are checked for the same failure. | Agents | Foundational |
 | **RSP-BC Business continuity** | | | |
 | RSP-BC-01 | Critical processes that depend on AI are identified with recovery objectives. Each has documented fallback procedures for when the AI or its provider is unavailable, and named people trained to run them. | All | Foundational |
 | RSP-BC-02 | Fallback procedures are tested at least annually, including a provider outage and a forced model change. | All | Managed |
 | **RSP-IM Improvement and notification** | | | |
-| RSP-IM-01 | Legal and compliance determine whether an AI incident must be reported to regulators, customers, or vendors under law and contract. Notifications meet the shortest applicable deadline, and notification decisions are documented. | All | Foundational |
+| RSP-IM-01 | Legal and compliance determine whether an AI incident must be reported to regulators, customers, vendors, or other parties whose systems an agent affected, under law and contract. Notifications meet the shortest applicable deadline, and notification decisions are documented. | All | Foundational |
 | RSP-IM-02 | After each AI incident and exercise, a lessons-learned review is recorded within a time the organization defines and documents. Resulting updates to controls, baselines, risk ratings, and evaluation test sets are tracked to completion. | All | Managed |
 
 ## Implementation tiers
 
-Every control carries a tier, so organizations adopt the framework in stages. v0.1.0 has 119 controls: 48 Foundational, 60 Managed, and 11 Advanced.
+Every control carries a tier, so organizations adopt the framework in stages. v0.1.0 has 122 controls: 49 Foundational, 62 Managed, and 11 Advanced.
 
 | Tier | Intended for | What it achieves |
 | --- | --- | --- |
@@ -376,13 +379,13 @@ ACTOR is an overlay. It is designed to be added to the framework an organization
 
 | Profile | Description | Controls that apply |
 | --- | --- | --- |
-| Consumed | Uses vendor AI products as delivered, such as AI assistants in productivity suites, chat assistants, and AI features in existing software | 88 |
-| Configured | Also builds agents, assistants, knowledge bases, or workflows on a vendor platform | 98 |
-| Built | Also develops or hosts its own AI systems, including applications on model APIs, retrieval pipelines, self-hosted models, and tool servers | 119 |
+| Consumed | Uses vendor AI products as delivered, such as AI assistants in productivity suites, chat assistants, and AI features in existing software | 91 |
+| Configured | Also builds agents, assistants, knowledge bases, or workflows on a vendor platform | 101 |
+| Built | Also develops or hosts its own AI systems, including applications on model APIs, retrieval pipelines, self-hosted models, and tool servers | 122 |
 
-An organization that only consumes vendor AI has 88 applicable controls, 45 of them Foundational.
+An organization that only consumes vendor AI has 91 applicable controls, 46 of them Foundational.
 
-**New and Extends.** Each control is marked as New, meaning AI-specific work with no usual equivalent, or Extends, meaning it adds AI scope to a practice most security programs already run. For a Consumed organization, 66 of its 88 applicable controls extend existing practices, and 29 of its 45 Foundational controls do. Extends controls are best implemented by updating the existing policy, procedure, or control rather than creating a new one.
+**New and Extends.** Each control is marked as New, meaning AI-specific work with no usual equivalent, or Extends, meaning it adds AI scope to a practice most security programs already run. For a Consumed organization, 67 of its 91 applicable controls extend existing practices, and 29 of its 46 Foundational controls do. Extends controls are best implemented by updating the existing policy, procedure, or control rather than creating a new one.
 
 | Existing practice | ACTOR controls that extend it |
 | --- | --- |
@@ -395,7 +398,7 @@ An organization that only consumes vendor AI has 88 applicable controls, 45 of t
 | Identity and access management | INV-SH-02, DEL-ID-02, DEL-DG-04, DEL-LA-01, DEL-LA-02, DEL-LC-01, DEL-LC-02, HRD-CF-02 |
 | Incident response | MTR-TS-01, RSP-PL-01, RSP-PL-02, RSP-IV-01, RSP-IV-02, RSP-CN-01, RSP-IM-01, RSP-IM-02 |
 | Internal audit and assurance | GVN-AC-05 |
-| Logging and monitoring | MTR-LG-01, MTR-LG-02, MTR-LG-03, MTR-BH-01, MTR-BH-03 |
+| Logging and monitoring | MTR-LG-01, MTR-LG-02, MTR-LG-03, MTR-LG-05, MTR-BH-01, MTR-BH-03 |
 | Network security | DEF-TL-01 |
 | Privacy program | HRD-DP-03 |
 | Risk management and exceptions | GVN-RK-01, GVN-RK-02, GVN-RK-03, GVN-RK-04 |
@@ -409,7 +412,7 @@ An organization that only consumes vendor AI has 88 applicable controls, 45 of t
 | Threat intelligence | MTR-VM-02 |
 | Vulnerability management | MTR-VM-01 |
 
-New controls: GVN-PO-04, GVN-CO-02, INV-AG-01, INV-AG-02, DEL-ID-01, DEL-ID-03, DEL-ID-04, DEL-DG-01, DEL-DG-02, DEL-DG-03, DEL-LA-03, DEL-AP-01, DEL-AP-02, DEL-AP-03, DEL-AP-04, HRD-CF-05, HRD-DP-02, HRD-DP-05, HRD-PV-02, HRD-PV-03, HRD-PV-04, HRD-DV-04, DEF-IN-01, DEF-IN-02, DEF-IN-03, DEF-OU-03, DEF-TL-02, DEF-TL-03, DEF-TL-04, DEF-TL-05, DEF-TL-06, DEF-PS-01, DEF-PS-02, DEF-PS-03, DEF-PS-04, MTR-LG-04, MTR-BH-02, MTR-DR-02, MTR-DR-03, MTR-DR-04, RSP-CN-03.
+New controls: GVN-PO-04, GVN-CO-02, INV-AG-01, INV-AG-02, DEL-ID-01, DEL-ID-03, DEL-ID-04, DEL-DG-01, DEL-DG-02, DEL-DG-03, DEL-LA-03, DEL-LA-04, DEL-AP-01, DEL-AP-02, DEL-AP-03, DEL-AP-04, HRD-CF-05, HRD-DP-02, HRD-DP-05, HRD-PV-02, HRD-PV-03, HRD-PV-04, HRD-DV-04, DEF-IN-01, DEF-IN-02, DEF-IN-03, DEF-OU-03, DEF-TL-02, DEF-TL-03, DEF-TL-04, DEF-TL-05, DEF-TL-06, DEF-PS-01, DEF-PS-02, DEF-PS-03, DEF-PS-04, MTR-LG-04, MTR-BH-02, MTR-DR-02, MTR-DR-03, MTR-DR-04, RSP-CN-03, RSP-CN-04.
 
 The control data files carry these as the relation, extends, profiles, and essentials fields.
 
@@ -427,4 +430,4 @@ v0.1.0 maps at the function level. Control-level mappings follow in v0.2. Mappin
 | Monitor (MTR) | Detect (DE.CM continuous monitoring) | Measure | LLM01 Prompt Injection, LLM09 Misinformation |
 | Respond (RSP) | Respond (RS), Recover (RC) | Manage | Supports all |
 
-Planned for v0.2: control-level mappings to the NIST Cyber AI Profile (IR 8596), NIST COSAiS overlays, the CSA AI Controls Matrix, ISO/IEC 42001, MITRE ATLAS, the ISACA AAISM job practice, the EU AI Act, the OWASP Agent Control Standard (ACS), the SANS Critical AI Security Guidelines, the SANS AI Security Maturity Model, and the AI Defense Matrix. The Delegate function will also be aligned with the NIST NCCoE Software and AI Agent Identity and Authorization project as it matures.
+Planned for v0.2: control-level mappings to the NIST Cyber AI Profile (IR 8596), NIST COSAiS overlays, the CSA AI Controls Matrix, ISO/IEC 42001, MITRE ATLAS, the ISACA AAISM job practice, the EU AI Act, NIST's key practices for AI incident readiness and response, the OWASP Agent Control Standard (ACS), the SANS Critical AI Security Guidelines, the SANS AI Security Maturity Model, and the AI Defense Matrix. The Delegate function will also be aligned with the NIST NCCoE Software and AI Agent Identity and Authorization project as it matures.
