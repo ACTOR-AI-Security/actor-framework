@@ -40,6 +40,7 @@ After publication:
 - Thanks to an early reviewer for raising non-human identities and locally hosted agents.
 - DEL-DG-02 now limits delegated agents to the access their task requires, not the user's full access, and adds a test that the agent cannot reach beyond its task.
 - DEL-LA-02 now requires an administrator, not the agent's user or builder, to approve any expansion of an agent's permissions.
+- New DEL-AP-05 (Foundational): approvals for critical actions, and high actions the organization designates, require phishing-resistant MFA at the time of approval and are recorded as evidence. DEL-AP-02 now covers only the out-of-band channel and server-side binding.
 
 To make adoption proportional:
 
@@ -51,6 +52,6 @@ To make adoption proportional:
 Before review, overlapping controls were consolidated so each requirement appears once and can be assessed once. Merges: pre-deployment review and risk assessment (GVN-RK-02), action risk levels and approval thresholds (DEL-AP-01), single-action approvals and approval fatigue (DEL-AP-03), platform identity and administrator access (HRD-CF-02), model integrity and safe loading (HRD-SC-04), data intake and quarantine (HRD-PV-03), dataset versioning and lineage (HRD-PV-04), contributor control and change logging (DEF-PS-01), evaluation after updates (MTR-DR-02), pre-release and ongoing adversarial testing (MTR-TS-02, later split into MTR-TS-02 and MTR-TS-03), containment runbooks (RSP-CN-01), and backup, rollback, and restore (RSP-CN-02).
 
 - Seven functions: Govern, Inventory, Delegate, Harden, Defend, Monitor, Respond.
-- 122 controls: 49 Foundational, 62 Managed, 11 Advanced.
+- 123 controls: 50 Foundational, 62 Managed, 11 Advanced.
 - Function-level mapping to NIST CSF 2.0, NIST AI RMF, and the OWASP LLM Top 10 (2025).
 - Machine-readable control data in CSV and JSON.

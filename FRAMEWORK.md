@@ -209,9 +209,10 @@ Delegate treats agents as principals. Each agent is identifiable as itself, rece
 | DEL-LA-04 | Agents cannot create scheduled tasks, new credentials, startup items, or copies of models or data outside approved locations unless that capability is approved and recorded in the agent registry, where the platform allows. Persistence that agents create is detected and reviewed. | Agents | Managed |
 | **DEL-AP Human approval** | | | |
 | DEL-AP-01 | Each type of agent action is assigned an action risk level. The organization defines at least high and critical levels and what an agent may do without approval at each level. High and critical actions require explicit human approval before they run. Where a platform cannot require approval for an action, the agent is not given the tool or permission for that action. | Agents | Foundational |
-| DEL-AP-02 | Approvals for high and critical actions are requested on a channel the agent cannot control or read. Critical actions require phishing-resistant re-authentication, such as a FIDO2 security key with user verification. The approval record is bound on the server side to a hash of the exact action and its parameters, and is single-use. Platforms that cannot meet this are not given critical actions. | Agents | Advanced |
+| DEL-AP-02 | Approvals for high and critical actions are requested on a channel the agent cannot control or read. The approval record is bound on the server side to a hash of the exact action and its parameters, and is single-use. Platforms that cannot meet this are not given critical actions. | Agents | Advanced |
 | DEL-AP-03 | (a) Each approval authorizes one specific action. Session-wide or standing approval options are disabled where the platform allows, and prohibited by policy where it does not. (b) The approval request shows the action, its target, and its expected impact. (c) Where approval records are available, approval patterns are reviewed for rubber-stamping at a frequency the organization defines and documents, using criteria such as approval time and decline rate, and findings are acted on. | Agents | Managed |
 | DEL-AP-04 | For AI-assisted decisions that materially affect people, such as credit, hiring, or access to services, the organization documents the applicable legal requirements on human review, notice, explanation, and appeal, and follows them. Where law sets no requirement, decisions from high-risk use cases are reviewed before they take effect by a person the organization designates as qualified, and other decisions can be appealed to such a person. The principal reasons for each decision are recorded by the reviewer or derived from documented decision factors, not taken only from the model's own explanation, and can be given to the affected person. | All | Foundational |
+| DEL-AP-05 | Approvals for critical actions, and for high actions the organization designates, require the approver to authenticate with phishing-resistant MFA, such as a FIDO2 security key or passkey, at the time of approval. Each approval is recorded with the approver's identity, the authentication method, the time, and the action approved. Where a platform cannot require this, those actions are not given to the agent. | Agents | Foundational |
 | **DEL-LC Agent lifecycle** | | | |
 | DEL-LC-01 | Access for agents and other AI workload identities is reviewed on the same cadence as privileged accounts, with the owner attesting to each scope. | All | Managed |
 | DEL-LC-02 | Agent identities, other AI workload identities, tokens, connectors, and scheduled tasks are removed within a time the organization defines and documents after the agent's purpose ends. When the owner leaves or changes role, shared agents are reassigned or removed within the same time. Where the platform does not expose these items to administrators, deprovisioning the owner's platform account through enterprise identity meets this control. | All | Foundational |
@@ -339,7 +340,7 @@ Respond adapts incident response to AI. The evidence is prompts, context, and to
 
 ## Implementation tiers
 
-Every control carries a tier, so organizations adopt the framework in stages. v0.1.0 has 122 controls: 49 Foundational, 62 Managed, and 11 Advanced.
+Every control carries a tier, so organizations adopt the framework in stages. v0.1.0 has 123 controls: 50 Foundational, 62 Managed, and 11 Advanced.
 
 | Tier | Intended for | What it achieves |
 | --- | --- | --- |
@@ -380,13 +381,13 @@ ACTOR is an overlay. It is designed to be added to the framework an organization
 
 | Profile | Description | Controls that apply |
 | --- | --- | --- |
-| Consumed | Uses vendor AI products as delivered, such as AI assistants in productivity suites, chat assistants, and AI features in existing software | 91 |
-| Configured | Also builds agents, assistants, knowledge bases, or workflows on a vendor platform | 101 |
-| Built | Also develops or hosts its own AI systems, including applications on model APIs, retrieval pipelines, self-hosted models, and tool servers | 122 |
+| Consumed | Uses vendor AI products as delivered, such as AI assistants in productivity suites, chat assistants, and AI features in existing software | 92 |
+| Configured | Also builds agents, assistants, knowledge bases, or workflows on a vendor platform | 102 |
+| Built | Also develops or hosts its own AI systems, including applications on model APIs, retrieval pipelines, self-hosted models, and tool servers | 123 |
 
-An organization that only consumes vendor AI has 91 applicable controls, 46 of them Foundational.
+An organization that only consumes vendor AI has 92 applicable controls, 47 of them Foundational.
 
-**New and Extends.** Each control is marked as New, meaning AI-specific work with no usual equivalent, or Extends, meaning it adds AI scope to a practice most security programs already run. For a Consumed organization, 67 of its 91 applicable controls extend existing practices, and 29 of its 46 Foundational controls do. Extends controls are best implemented by updating the existing policy, procedure, or control rather than creating a new one.
+**New and Extends.** Each control is marked as New, meaning AI-specific work with no usual equivalent, or Extends, meaning it adds AI scope to a practice most security programs already run. For a Consumed organization, 67 of its 92 applicable controls extend existing practices, and 29 of its 47 Foundational controls do. Extends controls are best implemented by updating the existing policy, procedure, or control rather than creating a new one.
 
 | Existing practice | ACTOR controls that extend it |
 | --- | --- |
@@ -413,7 +414,7 @@ An organization that only consumes vendor AI has 91 applicable controls, 46 of t
 | Threat intelligence | MTR-VM-02 |
 | Vulnerability management | MTR-VM-01 |
 
-New controls: GVN-PO-04, GVN-CO-02, INV-AG-01, INV-AG-02, DEL-ID-01, DEL-ID-03, DEL-ID-04, DEL-DG-01, DEL-DG-02, DEL-DG-03, DEL-LA-03, DEL-LA-04, DEL-AP-01, DEL-AP-02, DEL-AP-03, DEL-AP-04, HRD-CF-05, HRD-DP-02, HRD-DP-05, HRD-PV-02, HRD-PV-03, HRD-PV-04, HRD-DV-04, DEF-IN-01, DEF-IN-02, DEF-IN-03, DEF-OU-03, DEF-TL-02, DEF-TL-03, DEF-TL-04, DEF-TL-05, DEF-TL-06, DEF-PS-01, DEF-PS-02, DEF-PS-03, DEF-PS-04, MTR-LG-04, MTR-BH-02, MTR-DR-02, MTR-DR-03, MTR-DR-04, RSP-CN-03, RSP-CN-04.
+New controls: GVN-PO-04, GVN-CO-02, INV-AG-01, INV-AG-02, DEL-ID-01, DEL-ID-03, DEL-ID-04, DEL-DG-01, DEL-DG-02, DEL-DG-03, DEL-LA-03, DEL-LA-04, DEL-AP-01, DEL-AP-02, DEL-AP-03, DEL-AP-04, DEL-AP-05, HRD-CF-05, HRD-DP-02, HRD-DP-05, HRD-PV-02, HRD-PV-03, HRD-PV-04, HRD-DV-04, DEF-IN-01, DEF-IN-02, DEF-IN-03, DEF-OU-03, DEF-TL-02, DEF-TL-03, DEF-TL-04, DEF-TL-05, DEF-TL-06, DEF-PS-01, DEF-PS-02, DEF-PS-03, DEF-PS-04, MTR-LG-04, MTR-BH-02, MTR-DR-02, MTR-DR-03, MTR-DR-04, RSP-CN-03, RSP-CN-04.
 
 The control data files carry these as the relation, extends, profiles, and essentials fields.
 
