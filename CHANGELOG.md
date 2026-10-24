@@ -33,6 +33,12 @@ Aligned with NIST's key practices for incident readiness and response in highly 
 - RSP-IM-01 now includes other parties an agent affected.
 - New controls: restricting agent-created persistence (DEL-LA-04), protecting logs and monitors from agents (MTR-LG-05), and verifying controls before a halted agent resumes (RSP-CN-04).
 
+After publication:
+
+- INV-SH-01 now names models and AI runtimes installed on endpoints, which network monitoring cannot see.
+- DEL-ID-02, DEL-LC-01, and DEL-LC-02 now cover AI workload identities, such as service accounts and API keys used by AI pipelines, not only agents. Added a definition of AI workload identity.
+- Thanks to an early reviewer for raising non-human identities and locally hosted agents.
+
 To make adoption proportional:
 
 - Added ACTOR Essentials, a starting set of Foundational controls for organizations that mainly use vendor AI.
