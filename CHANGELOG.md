@@ -38,6 +38,8 @@ After publication:
 - INV-SH-01 now names models and AI runtimes installed on endpoints, which network monitoring cannot see.
 - DEL-ID-02, DEL-LC-01, and DEL-LC-02 now cover AI workload identities, such as service accounts and API keys used by AI pipelines, not only agents. Added a definition of AI workload identity.
 - Thanks to an early reviewer for raising non-human identities and locally hosted agents.
+- DEL-DG-02 now limits delegated agents to the access their task requires, not the user's full access, and adds a test that the agent cannot reach beyond its task.
+- DEL-LA-02 now requires an administrator, not the agent's user or builder, to approve any expansion of an agent's permissions.
 
 To make adoption proportional:
 
