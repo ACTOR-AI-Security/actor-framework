@@ -1212,7 +1212,7 @@
               "function": "Harden",
               "category_code": "HRD-DV",
               "category": "Secure development",
-              "statement": "All code, including AI-generated code, goes through the same review, testing, and scanning before merge. Automated checks confirm that each new dependency exists in an approved package registry and comes from a trusted source.",
+              "statement": "All code, including AI-generated code, goes through the same review, testing, and scanning before merge. Automated checks confirm that each new dependency exists in an approved package registry and comes from a trusted source. Applications and scripts built with AI by people outside a development team are reviewed by a qualified person before they process company data, connect to company systems, or are shared beyond their creator.",
               "applies_to": "Use",
               "tier": "Foundational",
               "relation": "Extends",

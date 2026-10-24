@@ -41,6 +41,7 @@ After publication:
 - DEL-DG-02 now limits delegated agents to the access their task requires, not the user's full access, and adds a test that the agent cannot reach beyond its task.
 - DEL-LA-02 now requires an administrator, not the agent's user or builder, to approve any expansion of an agent's permissions.
 - New DEL-AP-05 (Foundational): approvals for critical actions, and high actions the organization designates, require phishing-resistant MFA at the time of approval and are recorded as evidence. DEL-AP-02 now covers only the out-of-band channel and server-side binding.
+- HRD-DV-03 now requires qualified review of applications and scripts that people outside a development team build with AI, before they process company data, connect to company systems, or are shared.
 
 To make adoption proportional:
 
