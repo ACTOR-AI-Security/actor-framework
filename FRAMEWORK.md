@@ -4,7 +4,7 @@
 
 Author: Robert Fernandes.
 
-Licensed under [CC BY 4.0](LICENSE). **Public draft for comment until December 15, 2026.** See [CONTRIBUTING.md](CONTRIBUTING.md) to comment.
+Licensed under [CC BY 4.0](LICENSE). **Public draft for comment until January 15, 2027.** See [CONTRIBUTING.md](CONTRIBUTING.md) to comment.
 
 ACTOR starts from one premise: AI is a new class of actor. Existing frameworks secure people and conventional systems, and they remain essential. AI fits neither model, so ACTOR adds the controls AI needs and governs the people who use, build, and oversee it.
 

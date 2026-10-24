@@ -2,7 +2,7 @@
 
 ## v0.1.0 public draft for comment (2026-10-23)
 
-Published for public comment under CC BY 4.0. The comment period is open until December 15, 2026.
+Published for public comment under CC BY 4.0. The comment period is open until January 15, 2027.
 
 Before publication, the draft went through private review and the changes below.
 

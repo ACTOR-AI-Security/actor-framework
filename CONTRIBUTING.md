@@ -2,7 +2,7 @@
 
 ACTOR is a public draft for comment. It improves through practitioner feedback, and every comment is read. Thank you for helping.
 
-The comment period for v0.1.0 is open until **December 15, 2026**. Comments received after that date are still welcome and are considered for later versions.
+The comment period for v0.1.0 is open until **January 15, 2027**. Comments received after that date are still welcome and are considered for later versions.
 
 ## Who should comment
 

@@ -6,7 +6,11 @@ ACTOR is an open, tool-neutral security control framework for the full AI estate
 
 Its premise is simple. AI is a new class of actor. An agent acts like a user but is not a person. A model runs like software but is not deterministic. Both can be manipulated by what they read, agents can act beyond their instructions, and both change over time. Existing frameworks secure people and conventional systems, and they remain essential. ACTOR adds the controls AI needs alongside them, and governs the people who use, build, and oversee it.
 
-> **Status: v0.1.0 public draft for comment.** The comment period is open until **December 15, 2026**. Feedback received by then will shape v0.2. See [How to comment](#how-to-comment).
+> **Status: v0.1.0 public draft for comment.** The comment period is open until **January 15, 2027**. Feedback received by then will shape v0.2. See [How to comment](#how-to-comment).
+
+### [Read the full framework](FRAMEWORK.md)
+
+[Control spreadsheet (CSV)](controls/actor-controls.csv) | [Control data (JSON)](controls/actor-controls.json) | [How to comment](#how-to-comment)
 
 ## What makes ACTOR different
 
