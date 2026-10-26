@@ -42,6 +42,8 @@ After publication:
 - DEL-LA-02 now requires an administrator, not the agent's user or builder, to approve any expansion of an agent's permissions.
 - New DEL-AP-05 (Foundational): approvals for critical actions, and high actions the organization designates, require phishing-resistant MFA at the time of approval and are recorded as evidence. DEL-AP-02 now covers only the out-of-band channel and server-side binding.
 - HRD-DV-03 now requires qualified review of applications and scripts that people outside a development team build with AI, before they process company data, connect to company systems, or are shared.
+- DEL-AP-05 now distinguishes platforms that can require phishing-resistant MFA per approval from those that cannot. Where per-action authentication is unavailable, approvers authenticate with phishing-resistant MFA at platform sign-in with short session lifetimes, and per-action authentication is adopted when supported. This keeps the control achievable on current vendor platforms.
+- DEL-AP-01 now states that an approval issued by another agent or automated system is not human approval, and that approvals do not carry over to agents the approved agent invokes.
 
 To make adoption proportional:
 
