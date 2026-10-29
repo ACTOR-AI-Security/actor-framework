@@ -44,6 +44,7 @@ After publication:
 - HRD-DV-03 now requires qualified review of applications and scripts that people outside a development team build with AI, before they process company data, connect to company systems, or are shared.
 - DEL-AP-05 now distinguishes platforms that can require phishing-resistant MFA per approval from those that cannot. Where per-action authentication is unavailable, approvers authenticate with phishing-resistant MFA at platform sign-in with short session lifetimes, and per-action authentication is adopted when supported. This keeps the control achievable on current vendor platforms.
 - DEL-AP-01 now states that an approval issued by another agent or automated system is not human approval, and that approvals do not carry over to agents the approved agent invokes.
+- DEL-LC-02 now requires that a retired agent's identity be disabled first and deleted after a defined waiting period, so undocumented dependencies surface while the agent can still be restored.
 
 To make adoption proportional:
 

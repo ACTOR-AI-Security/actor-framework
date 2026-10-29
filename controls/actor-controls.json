@@ -805,7 +805,7 @@
               "function": "Delegate",
               "category_code": "DEL-LC",
               "category": "Agent lifecycle",
-              "statement": "Agent identities, other AI workload identities, tokens, connectors, and scheduled tasks are removed within a time the organization defines and documents after the agent's purpose ends. When the owner leaves or changes role, shared agents are reassigned or removed within the same time. Where the platform does not expose these items to administrators, deprovisioning the owner's platform account through enterprise identity meets this control.",
+              "statement": "Agent identities, other AI workload identities, tokens, connectors, and scheduled tasks are removed within a time the organization defines and documents after the agent's purpose ends. The identity is disabled first and deleted after a defined waiting period, so that undocumented dependencies surface while the agent can still be restored. When the owner leaves or changes role, shared agents are reassigned or removed within the same time. Where the platform does not expose these items to administrators, deprovisioning the owner's platform account through enterprise identity meets this control.",
               "applies_to": "All",
               "tier": "Foundational",
               "relation": "Extends",
