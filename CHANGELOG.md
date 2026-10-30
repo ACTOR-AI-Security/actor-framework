@@ -1,5 +1,21 @@
 # Changelog
 
+## v0.1.1 (2026-10-30)
+
+A maintenance release during the comment period. No control IDs changed and no controls were removed, so references to v0.1.0 IDs remain valid. Changes came from an independent practitioner review of the public draft.
+
+- New DEF-OU-04 (Managed): model-generated code, queries, and commands inside applications and pipelines are reviewed by a person or run in a documented, tested sandbox before they touch production. DEF-TL-05 already covered code run by agents.
+- New DEF-OU-05 (Managed): input-side screening for customer-facing AI, against the same content policy DEF-OU-03 applies to output.
+- HRD-SC-02 now requires that a detected change to a remote MCP server's tool names, descriptions, or parameters blocks the tool until it is re-approved, since a changed description can carry new instructions to the model.
+- GVN-RK-01 now states a floor for high risk: health, money, employment, legal rights, and write access to systems of record.
+- New "Recommended values" section and a recommended_value column in the control data, giving reference frequencies and thresholds for every organization-defined value. Guidance, not requirements.
+- Compound controls DEL-AP-04 and HRD-DV-03 are now lettered into separately testable parts, with the same IDs.
+- Overlapping controls now state their scope and cross-reference each other instead of restating a requirement: DEF-TL-01 and DEF-IN-01; RSP-CN-01, RSP-CN-04, and DEF-TL-06; RSP-IV-02 and RSP-CN-02; MTR-DR-01 and HRD-DV-01; MTR-LG-03 and MTR-LG-01; DEL-LA-01 and DEL-DG-02; GVN-PO-01 and HRD-CF-02.
+- INV-AS-01 states that reconciliation uses INV-SH-01 discovery results where they exist but does not depend on them. Design principle 9 now says the same in general.
+- The Assured implementation mode now says re-confirmation happens at each GVN-TP-03 reassessment, or annually where GVN-TP-03 is not in place.
+- The Advanced tier description now includes organizations seeking independent assurance of any AI system, which is why MTR-TS-03 applies to all.
+- Control count is 125: 50 Foundational, 64 Managed, 11 Advanced. Profiles: Consumed 92, Configured 104, Built 125.
+
 ## v0.1.0 public draft for comment (2026-10-23)
 
 Published for public comment under CC BY 4.0. The comment period is open until January 15, 2027.
@@ -56,6 +72,6 @@ To make adoption proportional:
 Before review, overlapping controls were consolidated so each requirement appears once and can be assessed once. Merges: pre-deployment review and risk assessment (GVN-RK-02), action risk levels and approval thresholds (DEL-AP-01), single-action approvals and approval fatigue (DEL-AP-03), platform identity and administrator access (HRD-CF-02), model integrity and safe loading (HRD-SC-04), data intake and quarantine (HRD-PV-03), dataset versioning and lineage (HRD-PV-04), contributor control and change logging (DEF-PS-01), evaluation after updates (MTR-DR-02), pre-release and ongoing adversarial testing (MTR-TS-02, later split into MTR-TS-02 and MTR-TS-03), containment runbooks (RSP-CN-01), and backup, rollback, and restore (RSP-CN-02).
 
 - Seven functions: Govern, Inventory, Delegate, Harden, Defend, Monitor, Respond.
-- 123 controls: 50 Foundational, 62 Managed, 11 Advanced.
+- 125 controls: 50 Foundational, 64 Managed, 11 Advanced.
 - Function-level mapping to NIST CSF 2.0, NIST AI RMF, and the OWASP LLM Top 10 (2025).
 - Machine-readable control data in CSV and JSON.

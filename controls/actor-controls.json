@@ -1,7 +1,7 @@
 {
   "framework": "ACTOR",
   "title": "AI Controls for Trust, Oversight, and Resilience",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "CC-BY-4.0",
   "status": "Public draft for comment",
   "author": "Robert Fernandes",
@@ -27,7 +27,8 @@
               "relation": "Extends",
               "extends": "Security governance and reporting",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": "AI risk reported to senior management quarterly and to the board at least annually."
             },
             {
               "id": "GVN-AC-02",
@@ -41,7 +42,8 @@
               "relation": "Extends",
               "extends": "Asset inventory",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "Yes"
+              "essentials": "Yes",
+              "recommended_value": ""
             },
             {
               "id": "GVN-AC-03",
@@ -55,7 +57,8 @@
               "relation": "Extends",
               "extends": "Security governance and reporting",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "GVN-AC-04",
@@ -69,7 +72,8 @@
               "relation": "Extends",
               "extends": "Security governance and reporting",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "GVN-AC-05",
@@ -83,7 +87,8 @@
               "relation": "Extends",
               "extends": "Internal audit and assurance",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": "Policy and control set reviewed at least annually and after any AI incident."
             }
           ]
         },
@@ -97,13 +102,14 @@
               "function": "Govern",
               "category_code": "GVN-PO",
               "category": "Policy and acceptable use",
-              "statement": "An AI acceptable use policy classifies approved tools by data sensitivity and use case, publishes a sanctioned path for requesting new tools, and defines prohibited uses and data that must not be entered into AI systems. Users acknowledge the policy before they are given access to AI tools.",
+              "statement": "An AI acceptable use policy classifies approved tools by data sensitivity and use case, publishes a sanctioned path for requesting new tools, and defines prohibited uses and data that must not be entered into AI systems. Users acknowledge the policy before they are given access to AI tools. Enforcement of the approved tool list in platform settings is covered by HRD-CF-02 and DEL-DG-04.",
               "applies_to": "Use",
               "tier": "Foundational",
               "relation": "Extends",
               "extends": "Acceptable use policy",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "Yes"
+              "essentials": "Yes",
+              "recommended_value": ""
             },
             {
               "id": "GVN-PO-02",
@@ -117,7 +123,8 @@
               "relation": "Extends",
               "extends": "Acceptable use policy",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "GVN-PO-03",
@@ -131,7 +138,8 @@
               "relation": "Extends",
               "extends": "Acceptable use policy",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "GVN-PO-04",
@@ -145,7 +153,8 @@
               "relation": "New",
               "extends": "",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             }
           ]
         },
@@ -159,13 +168,14 @@
               "function": "Govern",
               "category_code": "GVN-RK",
               "category": "Risk classification",
-              "statement": "Each AI use case is assigned a risk rating using a documented method with defined levels, based on data sensitivity, level of autonomy, and impact of its actions. The method designates which levels are high risk.",
+              "statement": "Each AI use case is assigned a risk rating using a documented method with defined levels, based on data sensitivity, level of autonomy, and impact of its actions. The method designates which levels are high risk. At minimum, use cases whose outputs or actions affect a person's health, money, employment, or legal rights, or that hold write access to systems of record, are designated high risk.",
               "applies_to": "All",
               "tier": "Foundational",
               "relation": "Extends",
               "extends": "Risk management and exceptions",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": "Floor stated in the control: health, money, employment, legal rights, and write access to systems of record are high risk."
             },
             {
               "id": "GVN-RK-02",
@@ -179,7 +189,8 @@
               "relation": "Extends",
               "extends": "Risk management and exceptions",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "GVN-RK-03",
@@ -193,7 +204,8 @@
               "relation": "Extends",
               "extends": "Risk management and exceptions",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "GVN-RK-04",
@@ -207,7 +219,8 @@
               "relation": "Extends",
               "extends": "Risk management and exceptions",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             }
           ]
         },
@@ -227,7 +240,8 @@
               "relation": "Extends",
               "extends": "Compliance management",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "GVN-CO-02",
@@ -241,7 +255,8 @@
               "relation": "New",
               "extends": "",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "GVN-CO-03",
@@ -255,7 +270,8 @@
               "relation": "Extends",
               "extends": "Compliance management",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             }
           ]
         },
@@ -275,7 +291,8 @@
               "relation": "Extends",
               "extends": "Third-party risk management",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "Yes"
+              "essentials": "Yes",
+              "recommended_value": ""
             },
             {
               "id": "GVN-TP-02",
@@ -289,7 +306,8 @@
               "relation": "Extends",
               "extends": "Third-party risk management",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "GVN-TP-03",
@@ -303,7 +321,8 @@
               "relation": "Extends",
               "extends": "Third-party risk management",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": "Critical vendors reassessed every six months; others annually."
             },
             {
               "id": "GVN-TP-04",
@@ -317,7 +336,8 @@
               "relation": "Extends",
               "extends": "Third-party risk management",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             }
           ]
         },
@@ -337,7 +357,8 @@
               "relation": "Extends",
               "extends": "Security awareness and training",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "Yes"
+              "essentials": "Yes",
+              "recommended_value": ""
             },
             {
               "id": "GVN-WF-02",
@@ -351,7 +372,8 @@
               "relation": "Extends",
               "extends": "Security awareness and training",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             }
           ]
         }
@@ -372,13 +394,14 @@
               "function": "Inventory",
               "category_code": "INV-AS",
               "category": "AI asset inventory",
-              "statement": "A maintained inventory records each AI system, model, agent platform, and AI feature enabled in existing software that processes sensitive data, with owner, purpose, data accessed, and risk rating. It is reconciled at least annually against procurement and expense records, and against discovery results where discovery is in place. Differences are resolved and recorded.",
+              "statement": "A maintained inventory records each AI system, model, agent platform, and AI feature enabled in existing software that processes sensitive data, with owner, purpose, data accessed, and risk rating. It is reconciled at least annually against procurement and expense records, and, where INV-SH-01 discovery is in place, against its results; the reconciliation does not depend on INV-SH-01. Differences are resolved and recorded.",
               "applies_to": "All",
               "tier": "Foundational",
               "relation": "Extends",
               "extends": "Asset inventory",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "Yes"
+              "essentials": "Yes",
+              "recommended_value": ""
             },
             {
               "id": "INV-AS-02",
@@ -392,7 +415,8 @@
               "relation": "Extends",
               "extends": "Asset inventory",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "INV-AS-03",
@@ -406,7 +430,8 @@
               "relation": "Extends",
               "extends": "Asset inventory",
               "profiles": "Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             }
           ]
         },
@@ -426,7 +451,8 @@
               "relation": "New",
               "extends": "",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "Yes"
+              "essentials": "Yes",
+              "recommended_value": ""
             },
             {
               "id": "INV-AG-02",
@@ -440,7 +466,8 @@
               "relation": "New",
               "extends": "",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             }
           ]
         },
@@ -460,7 +487,8 @@
               "relation": "Extends",
               "extends": "Asset inventory",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "INV-SH-02",
@@ -474,7 +502,8 @@
               "relation": "Extends",
               "extends": "Identity and access management",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": "Discovery results reviewed monthly; unapproved tools blocked or approved within 30 days."
             }
           ]
         },
@@ -494,7 +523,8 @@
               "relation": "Extends",
               "extends": "Data protection",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "INV-DF-02",
@@ -508,7 +538,8 @@
               "relation": "Extends",
               "extends": "Software supply chain security",
               "profiles": "Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             }
           ]
         }
@@ -535,7 +566,8 @@
               "relation": "New",
               "extends": "",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "Yes"
+              "essentials": "Yes",
+              "recommended_value": ""
             },
             {
               "id": "DEL-ID-02",
@@ -549,7 +581,8 @@
               "relation": "Extends",
               "extends": "Identity and access management",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "DEL-ID-03",
@@ -563,7 +596,8 @@
               "relation": "New",
               "extends": "",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "Yes"
+              "essentials": "Yes",
+              "recommended_value": ""
             },
             {
               "id": "DEL-ID-04",
@@ -577,7 +611,8 @@
               "relation": "New",
               "extends": "",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             }
           ]
         },
@@ -597,7 +632,8 @@
               "relation": "New",
               "extends": "",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "DEL-DG-02",
@@ -611,7 +647,8 @@
               "relation": "New",
               "extends": "",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "DEL-DG-03",
@@ -625,7 +662,8 @@
               "relation": "New",
               "extends": "",
               "profiles": "Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "DEL-DG-04",
@@ -639,7 +677,8 @@
               "relation": "Extends",
               "extends": "Identity and access management",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "Yes"
+              "essentials": "Yes",
+              "recommended_value": ""
             }
           ]
         },
@@ -653,13 +692,14 @@
               "function": "Delegate",
               "category_code": "DEL-LA",
               "category": "Least agency",
-              "statement": "Agents receive read-only access by default. Write access is granted per tool, or per connector where the platform does not separate read and write, with a documented justification.",
+              "statement": "Agents receive read-only access by default. Write access is granted per tool, or per connector where the platform does not separate read and write, with a documented justification. DEL-DG-02 sets the outer limit of what a delegated agent may reach; this control sets the default within it.",
               "applies_to": "Agents",
               "tier": "Foundational",
               "relation": "Extends",
               "extends": "Identity and access management",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "DEL-LA-02",
@@ -673,7 +713,8 @@
               "relation": "Extends",
               "extends": "Identity and access management",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "DEL-LA-03",
@@ -687,7 +728,8 @@
               "relation": "New",
               "extends": "",
               "profiles": "Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "DEL-LA-04",
@@ -701,7 +743,8 @@
               "relation": "New",
               "extends": "",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             }
           ]
         },
@@ -721,7 +764,8 @@
               "relation": "New",
               "extends": "",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "Yes"
+              "essentials": "Yes",
+              "recommended_value": ""
             },
             {
               "id": "DEL-AP-02",
@@ -735,7 +779,8 @@
               "relation": "New",
               "extends": "",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "DEL-AP-03",
@@ -749,7 +794,8 @@
               "relation": "New",
               "extends": "",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": "Approval records reviewed quarterly for rubber-stamping; any approver above 95 percent approval rate is sampled."
             },
             {
               "id": "DEL-AP-04",
@@ -757,13 +803,14 @@
               "function": "Delegate",
               "category_code": "DEL-AP",
               "category": "Human approval",
-              "statement": "For AI-assisted decisions that materially affect people, such as credit, hiring, or access to services, the organization documents the applicable legal requirements on human review, notice, explanation, and appeal, and follows them. Where law sets no requirement, decisions from high-risk use cases are reviewed before they take effect by a person the organization designates as qualified, and other decisions can be appealed to such a person. The principal reasons for each decision are recorded by the reviewer or derived from documented decision factors, not taken only from the model's own explanation, and can be given to the affected person.",
+              "statement": "For AI-assisted decisions that materially affect people, such as credit, hiring, or access to services, (a) the organization documents the applicable legal requirements on human review, notice, explanation, and appeal, and follows them. (b) Where law sets no requirement, decisions from high-risk use cases are reviewed before they take effect by a person the organization designates as qualified. (c) Other decisions can be appealed to such a person. (d) The principal reasons for each decision are recorded by the reviewer or derived from documented decision factors, not taken only from the model's own explanation, and can be given to the affected person.",
               "applies_to": "All",
               "tier": "Foundational",
               "relation": "New",
               "extends": "",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "DEL-AP-05",
@@ -777,7 +824,8 @@
               "relation": "New",
               "extends": "",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": "Approver sessions expire within one working day and after 30 minutes idle."
             }
           ]
         },
@@ -797,7 +845,8 @@
               "relation": "Extends",
               "extends": "Identity and access management",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "DEL-LC-02",
@@ -811,7 +860,8 @@
               "relation": "Extends",
               "extends": "Identity and access management",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": "Identity disabled within 24 hours of purpose end or owner departure; deleted after 30 days."
             }
           ]
         }
@@ -838,7 +888,8 @@
               "relation": "Extends",
               "extends": "Secure configuration management",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "Yes"
+              "essentials": "Yes",
+              "recommended_value": ""
             },
             {
               "id": "HRD-CF-02",
@@ -852,7 +903,8 @@
               "relation": "Extends",
               "extends": "Identity and access management",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "HRD-CF-03",
@@ -866,7 +918,8 @@
               "relation": "Extends",
               "extends": "Secure configuration management",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": "Platform settings compared to baseline quarterly and within one week of a vendor release note that touches sharing, data, connectors, or admin settings."
             },
             {
               "id": "HRD-CF-04",
@@ -880,7 +933,8 @@
               "relation": "Extends",
               "extends": "Secure configuration management",
               "profiles": "Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "HRD-CF-05",
@@ -894,7 +948,8 @@
               "relation": "New",
               "extends": "",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "Yes"
+              "essentials": "Yes",
+              "recommended_value": ""
             },
             {
               "id": "HRD-CF-06",
@@ -908,7 +963,8 @@
               "relation": "Extends",
               "extends": "Secure configuration management",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             }
           ]
         },
@@ -928,7 +984,8 @@
               "relation": "Extends",
               "extends": "Software supply chain security",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "HRD-SC-02",
@@ -936,13 +993,14 @@
               "function": "Harden",
               "category_code": "HRD-SC",
               "category": "Supply chain",
-              "statement": "Locally installed plugins, connectors, and MCP servers are pinned to approved versions and hashes, and updates are reviewed before use. For remote servers that cannot be pinned, tool names and descriptions are recorded at approval and changes are reviewed before use where tooling can detect them. Otherwise the server is reassessed at a frequency the organization defines and documents.",
+              "statement": "Locally installed plugins, connectors, and MCP servers are pinned to approved versions and hashes, and updates are reviewed before use. For remote servers that cannot be pinned, tool names, descriptions, and parameters are recorded at approval. Where tooling can detect a change to any of them, the changed tool is blocked until it is re-approved, because a changed description can carry new instructions to the model. Where tooling cannot detect changes, the server is reassessed at a frequency the organization defines and documents.",
               "applies_to": "Agents",
               "tier": "Managed",
               "relation": "Extends",
               "extends": "Software supply chain security",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": "Unpinnable remote servers reassessed quarterly."
             },
             {
               "id": "HRD-SC-03",
@@ -956,7 +1014,8 @@
               "relation": "Extends",
               "extends": "Software supply chain security",
               "profiles": "Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "HRD-SC-04",
@@ -970,7 +1029,8 @@
               "relation": "Extends",
               "extends": "Software supply chain security",
               "profiles": "Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             }
           ]
         },
@@ -990,7 +1050,8 @@
               "relation": "Extends",
               "extends": "Data protection",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "HRD-DP-02",
@@ -1004,7 +1065,8 @@
               "relation": "New",
               "extends": "",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "Yes"
+              "essentials": "Yes",
+              "recommended_value": "Restricted-account test before enablement and after any permission model change."
             },
             {
               "id": "HRD-DP-03",
@@ -1018,7 +1080,8 @@
               "relation": "Extends",
               "extends": "Privacy program",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "HRD-DP-04",
@@ -1032,7 +1095,8 @@
               "relation": "Extends",
               "extends": "Data protection",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "HRD-DP-05",
@@ -1046,7 +1110,8 @@
               "relation": "New",
               "extends": "",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "Yes"
+              "essentials": "Yes",
+              "recommended_value": "Overshared means shared with the whole organization or by anyone-with-link and containing HR, finance, legal, executive, or client data. Review repeated quarterly."
             },
             {
               "id": "HRD-DP-06",
@@ -1060,7 +1125,8 @@
               "relation": "Extends",
               "extends": "Data protection",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "HRD-DP-07",
@@ -1074,7 +1140,8 @@
               "relation": "Extends",
               "extends": "Data protection",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "HRD-DP-08",
@@ -1088,7 +1155,8 @@
               "relation": "Extends",
               "extends": "Data protection",
               "profiles": "Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             }
           ]
         },
@@ -1108,7 +1176,8 @@
               "relation": "Extends",
               "extends": "Third-party risk management",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "HRD-PV-02",
@@ -1122,7 +1191,8 @@
               "relation": "New",
               "extends": "",
               "profiles": "Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "HRD-PV-03",
@@ -1136,7 +1206,8 @@
               "relation": "New",
               "extends": "",
               "profiles": "Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "HRD-PV-04",
@@ -1150,7 +1221,8 @@
               "relation": "New",
               "extends": "",
               "profiles": "Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             }
           ]
         },
@@ -1170,7 +1242,8 @@
               "relation": "Extends",
               "extends": "Data protection",
               "profiles": "Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             }
           ]
         },
@@ -1190,7 +1263,8 @@
               "relation": "Extends",
               "extends": "Secure development lifecycle",
               "profiles": "Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "HRD-DV-02",
@@ -1204,7 +1278,8 @@
               "relation": "Extends",
               "extends": "Secure development lifecycle",
               "profiles": "Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "HRD-DV-03",
@@ -1212,13 +1287,14 @@
               "function": "Harden",
               "category_code": "HRD-DV",
               "category": "Secure development",
-              "statement": "All code, including AI-generated code, goes through the same review, testing, and scanning before merge. Automated checks confirm that each new dependency exists in an approved package registry and comes from a trusted source. Applications and scripts built with AI by people outside a development team are reviewed by a qualified person before they process company data, connect to company systems, or are shared beyond their creator.",
+              "statement": "(a) All code, including AI-generated code, goes through the same review, testing, and scanning before merge. (b) Automated checks confirm that each new dependency exists in an approved package registry and comes from a trusted source. (c) Applications and scripts built with AI by people outside a development team are reviewed by a qualified person before they process company data, connect to company systems, or are shared beyond their creator.",
               "applies_to": "Use",
               "tier": "Foundational",
               "relation": "Extends",
               "extends": "Secure development lifecycle",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "HRD-DV-04",
@@ -1232,7 +1308,8 @@
               "relation": "New",
               "extends": "",
               "profiles": "Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "HRD-DV-05",
@@ -1246,7 +1323,8 @@
               "relation": "Extends",
               "extends": "Secure development lifecycle",
               "profiles": "Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             }
           ]
         }
@@ -1273,7 +1351,8 @@
               "relation": "New",
               "extends": "",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "Yes"
+              "essentials": "Yes",
+              "recommended_value": ""
             },
             {
               "id": "DEF-IN-02",
@@ -1287,7 +1366,8 @@
               "relation": "New",
               "extends": "",
               "profiles": "Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "DEF-IN-03",
@@ -1301,7 +1381,8 @@
               "relation": "New",
               "extends": "",
               "profiles": "Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": "Injection pattern lists updated monthly."
             }
           ]
         },
@@ -1321,7 +1402,8 @@
               "relation": "Extends",
               "extends": "Secure development lifecycle",
               "profiles": "Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "DEF-OU-02",
@@ -1335,7 +1417,8 @@
               "relation": "Extends",
               "extends": "Data protection",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "DEF-OU-03",
@@ -1349,7 +1432,38 @@
               "relation": "New",
               "extends": "",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
+            },
+            {
+              "id": "DEF-OU-04",
+              "function_code": "DEF",
+              "function": "Defend",
+              "category_code": "DEF-OU",
+              "category": "Output handling",
+              "statement": "Applications and pipelines the organization builds do not execute model-generated code, queries, or commands against production systems unless (a) a person reviews them before execution, or (b) they run in a sandbox with no access to production data or credentials, and the sandbox, its permissions, and the data it can reach are documented and tested. DEF-TL-05 covers code run by agents; this control covers code generated inside an application flow.",
+              "applies_to": "Use",
+              "tier": "Managed",
+              "relation": "New",
+              "extends": "",
+              "profiles": "Configured, Built",
+              "essentials": "No",
+              "recommended_value": ""
+            },
+            {
+              "id": "DEF-OU-05",
+              "function_code": "DEF",
+              "function": "Defend",
+              "category_code": "DEF-OU",
+              "category": "Output handling",
+              "statement": "Inputs to customer-facing AI are screened against the documented content policy before they reach the model, to detect prohibited requests, abuse, and attempts to extract system instructions or data. Screening actions are logged. DEF-OU-03 covers the output side.",
+              "applies_to": "All",
+              "tier": "Managed",
+              "relation": "New",
+              "extends": "",
+              "profiles": "Configured, Built",
+              "essentials": "No",
+              "recommended_value": ""
             }
           ]
         },
@@ -1363,13 +1477,14 @@
               "function": "Defend",
               "category_code": "DEF-TL",
               "category": "Tool and action enforcement",
-              "statement": "Agent network egress is restricted to approved destinations. For agents that run on vendor infrastructure, web access is disabled or limited to approved domains where the platform allows, and the remaining exposure is recorded in the risk rating.",
+              "statement": "Agent network egress is restricted to approved destinations. For agents that run on vendor infrastructure, web access is disabled or limited to approved domains where the platform allows, and the remaining exposure is recorded in the risk rating. DEF-IN-01 governs which tools an agent may hold while reading untrusted content; this control governs where it may connect.",
               "applies_to": "Agents",
               "tier": "Managed",
               "relation": "Extends",
               "extends": "Network security",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "DEF-TL-02",
@@ -1383,7 +1498,8 @@
               "relation": "New",
               "extends": "",
               "profiles": "Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "DEF-TL-03",
@@ -1397,7 +1513,8 @@
               "relation": "New",
               "extends": "",
               "profiles": "Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "DEF-TL-04",
@@ -1411,7 +1528,8 @@
               "relation": "New",
               "extends": "",
               "profiles": "Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "DEF-TL-05",
@@ -1425,7 +1543,8 @@
               "relation": "New",
               "extends": "",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "DEF-TL-06",
@@ -1439,7 +1558,8 @@
               "relation": "New",
               "extends": "",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "Yes"
+              "essentials": "Yes",
+              "recommended_value": "Halt within 15 minutes for high-risk agents, one hour for others; step limit at 10 times normal run length; halt test annually."
             }
           ]
         },
@@ -1459,7 +1579,8 @@
               "relation": "New",
               "extends": "",
               "profiles": "Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "DEF-PS-02",
@@ -1473,7 +1594,8 @@
               "relation": "New",
               "extends": "",
               "profiles": "Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "DEF-PS-03",
@@ -1487,7 +1609,8 @@
               "relation": "New",
               "extends": "",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "DEF-PS-04",
@@ -1501,7 +1624,8 @@
               "relation": "New",
               "extends": "",
               "profiles": "Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             }
           ]
         }
@@ -1528,7 +1652,8 @@
               "relation": "Extends",
               "extends": "Logging and monitoring",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "Yes"
+              "essentials": "Yes",
+              "recommended_value": ""
             },
             {
               "id": "MTR-LG-02",
@@ -1542,7 +1667,8 @@
               "relation": "Extends",
               "extends": "Logging and monitoring",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "MTR-LG-03",
@@ -1550,13 +1676,14 @@
               "function": "Monitor",
               "category_code": "MTR-LG",
               "category": "Logging",
-              "statement": "AI logs feed the central SIEM and are correlated with target-system logs. Agent actions are distinguished from human actions where identity data allows, and gaps are recorded.",
+              "statement": "The logs required by MTR-LG-01 and MTR-LG-02 feed the central SIEM and are correlated with target-system logs. Agent actions are distinguished from human actions where identity data allows, and gaps are recorded.",
               "applies_to": "All",
               "tier": "Managed",
               "relation": "Extends",
               "extends": "Logging and monitoring",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "MTR-LG-04",
@@ -1570,7 +1697,8 @@
               "relation": "New",
               "extends": "",
               "profiles": "Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "MTR-LG-05",
@@ -1584,7 +1712,8 @@
               "relation": "Extends",
               "extends": "Logging and monitoring",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             }
           ]
         },
@@ -1604,7 +1733,8 @@
               "relation": "Extends",
               "extends": "Logging and monitoring",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": "Baselines refreshed quarterly and after any change to an agent's tools or scope."
             },
             {
               "id": "MTR-BH-02",
@@ -1618,7 +1748,8 @@
               "relation": "New",
               "extends": "",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "MTR-BH-03",
@@ -1632,7 +1763,8 @@
               "relation": "Extends",
               "extends": "Logging and monitoring",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             }
           ]
         },
@@ -1646,13 +1778,14 @@
               "function": "Monitor",
               "category_code": "MTR-DR",
               "category": "Drift and integrity",
-              "statement": "Provider model changes are tracked as change events. Where a provider allows model versions to be pinned, they are pinned and changed through review. Where it does not, provider release notes are monitored and changes are reviewed according to the system's risk rating.",
+              "statement": "Provider model changes are tracked as change events. Where a provider allows model versions to be pinned, they are pinned and changed through review. Where it does not, provider release notes are monitored and changes are reviewed according to the system's risk rating. Changes to the organization's own prompts, instructions, and tool configurations are covered by HRD-DV-01.",
               "applies_to": "Models",
               "tier": "Foundational",
               "relation": "Extends",
               "extends": "Change management",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "MTR-DR-02",
@@ -1666,7 +1799,8 @@
               "relation": "New",
               "extends": "",
               "profiles": "Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": "Test set run monthly and after any model or prompt change."
             },
             {
               "id": "MTR-DR-03",
@@ -1680,7 +1814,8 @@
               "relation": "New",
               "extends": "",
               "profiles": "Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "MTR-DR-04",
@@ -1694,7 +1829,8 @@
               "relation": "New",
               "extends": "",
               "profiles": "Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": "Retrieval sources scanned weekly."
             }
           ]
         },
@@ -1714,7 +1850,8 @@
               "relation": "Extends",
               "extends": "Vulnerability management",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "MTR-VM-02",
@@ -1728,7 +1865,8 @@
               "relation": "Extends",
               "extends": "Threat intelligence",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": "AI vulnerability advisories reviewed weekly."
             }
           ]
         },
@@ -1748,7 +1886,8 @@
               "relation": "Extends",
               "extends": "Incident response",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "MTR-TS-02",
@@ -1762,7 +1901,8 @@
               "relation": "Extends",
               "extends": "Security testing",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "MTR-TS-03",
@@ -1776,7 +1916,8 @@
               "relation": "Extends",
               "extends": "Security testing",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": "High-risk systems red-teamed annually; others every two years."
             }
           ]
         }
@@ -1803,7 +1944,8 @@
               "relation": "Extends",
               "extends": "Incident response",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "Yes"
+              "essentials": "Yes",
+              "recommended_value": ""
             },
             {
               "id": "RSP-PL-02",
@@ -1817,7 +1959,8 @@
               "relation": "Extends",
               "extends": "Incident response",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             }
           ]
         },
@@ -1837,7 +1980,8 @@
               "relation": "Extends",
               "extends": "Incident response",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "RSP-IV-02",
@@ -1845,13 +1989,14 @@
               "function": "Respond",
               "category_code": "RSP-IV",
               "category": "Investigation",
-              "statement": "Evidence collection covers AI artifacts, including model and dataset versions, system prompts, agent configurations and memory, retrieval sources, and vendor logs, where available, and preserves them before rollback or deletion.",
+              "statement": "Evidence collection covers AI artifacts, including model and dataset versions, system prompts, agent configurations and memory, retrieval sources, and vendor logs, where available, and preserves them before any rollback under RSP-CN-02 or deletion.",
               "applies_to": "All",
               "tier": "Managed",
               "relation": "Extends",
               "extends": "Incident response",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             }
           ]
         },
@@ -1865,13 +2010,14 @@
               "function": "Respond",
               "category_code": "RSP-CN",
               "category": "Containment and recovery",
-              "statement": "Runbooks cover containment, including invoking the halt mechanism, revoking agent tokens, disabling tools and connectors, pausing scheduled tasks, and blocking AI services. Any agent can be disabled without disabling the account of the person who owns or uses it, by disabling the agent, its connectors, or the AI feature for that user. Where a platform cannot do this, the runbook states the fallback.",
+              "statement": "Runbooks cover containment, including invoking the halt mechanism required by DEF-TL-06, revoking agent tokens, disabling tools and connectors, pausing scheduled tasks, and blocking AI services. Any agent can be disabled without disabling the account of the person who owns or uses it, by disabling the agent, its connectors, or the AI feature for that user. Where a platform cannot do this, the runbook states the fallback.",
               "applies_to": "Agents",
               "tier": "Foundational",
               "relation": "Extends",
               "extends": "Incident response",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "RSP-CN-02",
@@ -1885,7 +2031,8 @@
               "relation": "Extends",
               "extends": "Business continuity and disaster recovery",
               "profiles": "Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "RSP-CN-03",
@@ -1899,7 +2046,8 @@
               "relation": "New",
               "extends": "",
               "profiles": "Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "RSP-CN-04",
@@ -1907,13 +2055,14 @@
               "function": "Respond",
               "category_code": "RSP-CN",
               "category": "Containment and recovery",
-              "statement": "A halted or contained agent resumes only after the cause is addressed and its monitoring, logging, halt mechanism, and permission limits are verified to work. The owner documents the resume decision and remaining risks. Agents built or configured the same way are checked for the same failure.",
+              "statement": "A halted or contained agent resumes only after the cause is addressed and its monitoring, logging, halt mechanism, and permission limits are verified to work. The owner documents the resume decision and remaining risks. Agents built or configured the same way are checked for the same failure. The halt mechanism itself is defined in DEF-TL-06.",
               "applies_to": "Agents",
               "tier": "Foundational",
               "relation": "New",
               "extends": "",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             }
           ]
         },
@@ -1933,7 +2082,8 @@
               "relation": "Extends",
               "extends": "Business continuity and disaster recovery",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "RSP-BC-02",
@@ -1947,7 +2097,8 @@
               "relation": "Extends",
               "extends": "Business continuity and disaster recovery",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             }
           ]
         },
@@ -1967,7 +2118,8 @@
               "relation": "Extends",
               "extends": "Incident response",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             },
             {
               "id": "RSP-IM-02",
@@ -1981,7 +2133,8 @@
               "relation": "Extends",
               "extends": "Incident response",
               "profiles": "Consumed, Configured, Built",
-              "essentials": "No"
+              "essentials": "No",
+              "recommended_value": ""
             }
           ]
         }

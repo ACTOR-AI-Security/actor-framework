@@ -6,7 +6,7 @@ ACTOR is an open, tool-neutral security control framework for the full AI estate
 
 Its premise is simple. AI is a new class of actor. An agent acts like a user but is not a person. A model runs like software but is not deterministic. Both can be manipulated by what they read, agents can act beyond their instructions, and both change over time. Existing frameworks secure people and conventional systems, and they remain essential. ACTOR adds the controls AI needs alongside them, and governs the people who use, build, and oversee it.
 
-> **Status: v0.1.0 public draft for comment.** The comment period is open until **January 15, 2027**. Feedback received by then will shape v0.2. See [How to comment](#how-to-comment).
+> **Status: v0.1.1 public draft for comment.** The comment period is open until **January 15, 2027**. Feedback received by then will shape v0.2. See [How to comment](#how-to-comment).
 
 ### [Read the full framework](FRAMEWORK.md)
 
@@ -24,7 +24,7 @@ Its premise is simple. AI is a new class of actor. An agent acts like a user but
 
 ## At a glance
 
-123 controls across seven functions: 50 Foundational, 62 Managed, 11 Advanced.
+125 controls across seven functions: 50 Foundational, 64 Managed, 11 Advanced.
 
 | Function | Code | Controls |
 | --- | --- | --- |
@@ -32,7 +32,7 @@ Its premise is simple. AI is a new class of actor. An agent acts like a user but
 | Inventory | INV | 9 |
 | Delegate | DEL | 19 |
 | Harden | HRD | 28 |
-| Defend | DEF | 16 |
+| Defend | DEF | 18 |
 | Monitor | MTR | 17 |
 | Respond | RSP | 12 |
 
