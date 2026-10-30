@@ -62,6 +62,7 @@ Read [CONTRIBUTING.md](CONTRIBUTING.md) before commenting. It explains what make
 | [FRAMEWORK.md](FRAMEWORK.md) | The full framework: thesis, principles, definitions, all controls, tiers, adoption guidance, and mappings |
 | [controls/actor-controls.csv](controls/actor-controls.csv) | Every control as a spreadsheet, ready for GRC tools |
 | [controls/actor-controls.json](controls/actor-controls.json) | Every control as structured JSON |
+| [controls/actor-crosswalk.csv](controls/actor-crosswalk.csv) | Control-level mapping to NIST CSF 2.0, SP 800-53, AI RMF, and OWASP |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | How to comment and contribute |
 | [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) | Expected behavior in this project |
 | [ROADMAP.md](ROADMAP.md) | What is planned for v0.2 and beyond |

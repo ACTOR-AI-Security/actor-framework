@@ -64,7 +64,7 @@ Using ACTOR alone does not demonstrate compliance with any AI law or regulation.
 7. **Continuous, not point-in-time.** AI behavior changes. Monitoring and evaluation run for the life of the system, and changes trigger re-review.
 8. **Plan for failure.** AI and its providers will fail or change without notice. Critical processes keep running, and models, prompts, and data can be rolled back.
 9. **Implementable in tiers.** Every control has a tier, so a small organization can start with Foundational controls and grow. No control depends on a control at a higher tier. A lower-tier control may use the output of a higher-tier control where it exists, such as discovery results feeding the inventory, but never requires it.
-10. **Mapped, not isolated.** Controls are designed to map to established frameworks so organizations can reuse existing audits and evidence. v0.1.1 maps at the function level. Control-level mappings follow in v0.2.
+10. **Mapped, not isolated.** Controls are designed to map to established frameworks so organizations can reuse existing audits and evidence. v0.1.1 maps every control to NIST CSF 2.0, SP 800-53 Rev 5, the NIST AI RMF, and the OWASP LLM and Agentic Top 10 lists. Mappings to further frameworks follow in v0.2.
 
 ## Definitions and conventions
 
@@ -449,7 +449,7 @@ Many controls leave a frequency, time limit, or threshold to the organization, b
 
 ## Standards mapping
 
-v0.1.1 maps at the function level. Control-level mappings follow in v0.2. Mappings are informative. They show topical alignment, not equivalence, and meeting an ACTOR control does not by itself satisfy a mapped requirement. OWASP references use the 2025 LLM Top 10 numbering and will be updated to the 2026 edition in v0.2.
+Mappings are informative. They show topical alignment, not equivalence, and meeting an ACTOR control does not by itself satisfy a mapped requirement. The function-level table gives the overall shape. The control-level crosswalk below it, also published as [controls/actor-crosswalk.csv](controls/actor-crosswalk.csv) and as columns in the control data, maps each control to NIST CSF 2.0 subcategories, NIST SP 800-53 Rev 5 controls, NIST AI RMF 1.0 subcategories, the OWASP Top 10 for LLM Applications (2025), and the OWASP Top 10 for Agentic Applications (2026). "none" in an OWASP column means the control is governance, detection, or response work that does not mitigate a specific listed weakness. Where CSF 2.0 or SP 800-53 has no concept for an AI-specific requirement, such as human approval of agent actions or appeal of automated decisions, the nearest control is given and the AI RMF entry carries the real alignment.
 
 | Function | NIST CSF 2.0 | NIST AI RMF | OWASP LLM Top 10 (2025) |
 | --- | --- | --- | --- |
@@ -461,4 +461,134 @@ v0.1.1 maps at the function level. Control-level mappings follow in v0.2. Mappin
 | Monitor (MTR) | Detect (DE.CM continuous monitoring) | Measure | LLM01 Prompt Injection, LLM09 Misinformation |
 | Respond (RSP) | Respond (RS), Recover (RC) | Manage | Supports all |
 
-Planned for v0.2: control-level mappings to the NIST Cyber AI Profile (IR 8596), NIST COSAiS overlays, the CSA AI Controls Matrix, ISO/IEC 42001, MITRE ATLAS, the ISACA AAISM job practice, the EU AI Act, NIST's key practices for AI incident readiness and response, the OWASP Agent Control Standard (ACS), the SANS Critical AI Security Guidelines, the SANS AI Security Maturity Model, and the AI Defense Matrix. The Delegate function will also be aligned with the NIST NCCoE Software and AI Agent Identity and Authorization project as it matures.
+### Control-level crosswalk
+
+| ACTOR | NIST CSF 2.0 | SP 800-53 Rev 5 | NIST AI RMF | OWASP LLM 2025 | OWASP Agentic 2026 |
+| --- | --- | --- | --- | --- | --- |
+| GVN-AC-01 | GV.RR-01, GV.OV-01 | PM-2, PM-9 | GOVERN 2.3, GOVERN 2.1 | none | none |
+| GVN-AC-02 | GV.RR-02, ID.AM-01 | CM-8, PM-10 | GOVERN 2.1 | none | none |
+| GVN-AC-03 | GV.RR-02, GV.RM-03 | PM-2, PM-29 | GOVERN 2.1, GOVERN 3.1 | none | none |
+| GVN-AC-04 | GV.OV-03, GV.OV-01 | PM-6, CA-7 | MEASURE 1.1, GOVERN 1.5 | none | none |
+| GVN-AC-05 | ID.IM-01, GV.OV-02 | CA-2, CA-7 | MEASURE 1.3, GOVERN 1.5 | none | none |
+| GVN-PO-01 | GV.PO-01, PR.AT-01 | PL-4, AC-20 | GOVERN 1.2 | LLM02 | none |
+| GVN-PO-02 | GV.PO-01, PR.AA-01 | PL-4, IA-5 | GOVERN 1.2 | none | ASI03 |
+| GVN-PO-03 | GV.PO-02 | PL-1 | GOVERN 1.5, GOVERN 1.2 | none | none |
+| GVN-PO-04 | ID.AM-01, ID.AM-02 | CM-8, PM-5 | GOVERN 1.6 | LLM06 | ASI10 |
+| GVN-RK-01 | ID.RA-04, ID.RA-05 | RA-2, RA-3 | MAP 1.5, MAP 5.1 | none | none |
+| GVN-RK-02 | ID.RA-07, ID.RA-05 | CA-6, RA-3 | MAP 5.1, MANAGE 1.3 | none | none |
+| GVN-RK-03 | ID.RA-07 | CA-5, RA-7 | MANAGE 1.4 | none | none |
+| GVN-RK-04 | GV.RM-02, GV.RM-01 | PM-9, PM-28 | GOVERN 1.3, MAP 1.5 | none | none |
+| GVN-CO-01 | GV.OC-03 | PM-9, PM-28 | GOVERN 1.1 | none | none |
+| GVN-CO-02 | GV.OC-03, GV.OC-02 | PM-9, PM-28 | GOVERN 1.1, MAP 1.1 | none | none |
+| GVN-CO-03 | GV.OC-03, PR.PS-04 | AU-11, CA-7 | GOVERN 1.4 | none | none |
+| GVN-TP-01 | GV.SC-06, GV.SC-04 | SR-6, SA-9 | GOVERN 6.1, MAP 4.1 | LLM03 | none |
+| GVN-TP-02 | GV.SC-05 | SA-4, SA-9 | GOVERN 6.1, MAP 4.1 | LLM03 | none |
+| GVN-TP-03 | GV.SC-07, GV.SC-10 | SR-6, SA-9, CP-2 | GOVERN 6.2, MANAGE 3.1 | LLM03 | none |
+| GVN-TP-04 | GV.SC-07 | SR-4, SR-8 | MAP 4.1, MANAGE 3.1 | LLM03 | none |
+| GVN-WF-01 | PR.AT-01 | AT-2, AT-4 | GOVERN 2.2 | LLM09 | ASI09 |
+| GVN-WF-02 | PR.AT-02 | AT-3, AT-4 | GOVERN 2.2 | none | none |
+| INV-AS-01 | ID.AM-01, ID.AM-02 | CM-8, PM-5 | GOVERN 1.6 | none | none |
+| INV-AS-02 | ID.AM-02, ID.AM-04 | CM-8, SR-4 | GOVERN 1.6 | LLM03 | none |
+| INV-AS-03 | ID.AM-08 | MP-6, SI-12 | GOVERN 1.7 | none | none |
+| INV-AG-01 | ID.AM-01, ID.AM-02 | CM-8, AC-2 | GOVERN 1.6, MANAGE 2.4 | none | ASI10 |
+| INV-AG-02 | ID.AM-02 | CM-8 | GOVERN 1.6 | none | ASI04 |
+| INV-SH-01 | DE.CM-01, DE.CM-09 | CM-8, SI-4, AC-20 | GOVERN 1.6 | LLM02 | ASI10 |
+| INV-SH-02 | PR.AA-01, PR.AA-05 | AC-2, IA-5 | GOVERN 1.6, MEASURE 2.7 | none | ASI03 |
+| INV-DF-01 | ID.AM-03, ID.AM-07 | PL-2, SI-12 | MAP 1.1, GOVERN 1.6 | LLM02 | none |
+| INV-DF-02 | ID.AM-02, ID.AM-03 | CM-8, SR-4 | GOVERN 1.6, MAP 4.1 | LLM03 | ASI04 |
+| DEL-ID-01 | PR.AA-01, PR.AA-03 | IA-9, AC-2, IA-5 | MEASURE 2.7 | none | ASI03 |
+| DEL-ID-02 | PR.AA-01 | IA-5, IA-9, AC-6 | MEASURE 2.7 | LLM07 | ASI03 |
+| DEL-ID-03 | PR.AA-05, PR.PS-01 | CM-7, AC-6 | MEASURE 2.7 | LLM06 | ASI03 |
+| DEL-ID-04 | PR.IR-01 | SC-39, SC-7 | MEASURE 2.7 | LLM06 | ASI03 |
+| DEL-DG-01 | PR.AA-01, PR.PS-04 | AU-2, AU-3, IA-9 | MEASURE 2.8, MEASURE 2.7 | none | ASI03 |
+| DEL-DG-02 | PR.AA-05 | AC-3, AC-6, CA-2 | MEASURE 2.7 | LLM06 | ASI03 |
+| DEL-DG-03 | PR.AA-03, PR.AA-05 | IA-9, SC-8, AC-6 | MEASURE 2.7 | LLM06, LLM01 | ASI07, ASI08 |
+| DEL-DG-04 | PR.AA-05, PR.PS-05 | CM-11, AC-20, AC-6 | MEASURE 2.7 | none | ASI03 |
+| DEL-LA-01 | PR.AA-05 | AC-6, AC-3 | MEASURE 2.7, MAP 3.5 | LLM06 | ASI03, ASI02 |
+| DEL-LA-02 | PR.AA-05, PR.AA-01 | AC-5, AC-6, AC-2 | MEASURE 2.7 | LLM06 | ASI03, ASI10 |
+| DEL-LA-03 | GV.PO-01, PR.AA-05 | PL-2, AC-6 | MAP 3.5, GOVERN 3.2 | LLM06 | ASI02 |
+| DEL-LA-04 | PR.PS-05, DE.CM-09 | CM-7, SI-4 | MEASURE 2.7, MANAGE 2.4 | LLM06 | ASI10 |
+| DEL-AP-01 | PR.AA-05, GV.PO-01 | AC-6, AC-3, CM-7 | MAP 3.5, GOVERN 3.2 | LLM06 | ASI02, ASI08 |
+| DEL-AP-02 | PR.AA-03, PR.AA-05 | AU-10, SC-23, AC-3 | MAP 3.5, MEASURE 2.7 | LLM01, LLM06 | ASI09, ASI01 |
+| DEL-AP-03 | PR.AA-05, DE.CM-03 | AC-6, AU-6, AC-3 | MAP 3.5, GOVERN 3.2 | LLM06 | ASI09 |
+| DEL-AP-04 | GV.OC-03 | PM-22, PM-28 | GOVERN 5.2, MAP 3.5 | none | none |
+| DEL-AP-05 | PR.AA-03, PR.AA-05 | IA-2, IA-11, AU-3 | MEASURE 2.7, MAP 3.5 | LLM06 | ASI09, ASI03 |
+| DEL-LC-01 | PR.AA-05 | AC-2, AC-6 | GOVERN 1.5, MEASURE 2.7 | none | ASI03 |
+| DEL-LC-02 | PR.AA-01, ID.AM-08 | AC-2, PS-4, PS-5 | GOVERN 1.7, MANAGE 2.4 | none | ASI10, ASI03 |
+| HRD-CF-01 | PR.PS-01 | CM-6, CM-2 | MEASURE 2.7, MEASURE 2.10 | LLM02 | none |
+| HRD-CF-02 | PR.AA-01, PR.AA-05, PR.PS-04 | IA-2, CM-5, AU-2 | MEASURE 2.7 | none | ASI03 |
+| HRD-CF-03 | PR.PS-01, DE.CM-09 | CM-6, CA-7 | MEASURE 2.7, MANAGE 4.1 | none | none |
+| HRD-CF-04 | PR.AA-03, PR.IR-01 | IA-2, SC-7, AC-3 | MEASURE 2.7 | LLM10 | none |
+| HRD-CF-05 | PR.PS-01, ID.RA-07 | CM-7, CM-3 | MANAGE 3.1, MAP 4.2 | none | none |
+| HRD-CF-06 | PR.PS-01, PR.PS-05 | CM-6, CM-7, CM-11 | MEASURE 2.7 | LLM01, LLM06 | ASI05, ASI04 |
+| HRD-SC-01 | PR.PS-05, GV.SC-06 | CM-11, CM-7, SR-6 | MAP 4.1, MAP 4.2 | LLM03 | ASI04 |
+| HRD-SC-02 | PR.PS-01, PR.PS-02 | SI-7, CM-14, CM-3 | MANAGE 3.1, MEASURE 2.7 | LLM03, LLM01 | ASI04, ASI01 |
+| HRD-SC-03 | GV.SC-06, PR.PS-02 | SR-4, SR-11, SI-7 | MAP 4.1, MANAGE 3.2 | LLM03, LLM04 | ASI04 |
+| HRD-SC-04 | PR.PS-02, DE.CM-09 | SI-7, SI-3, SC-39 | MEASURE 2.7, MANAGE 3.2 | LLM03 | ASI04, ASI05 |
+| HRD-DP-01 | PR.AA-05, ID.AM-07 | AC-3, AC-16 | MEASURE 2.7, MEASURE 2.10 | LLM02 | none |
+| HRD-DP-02 | PR.AA-05 | AC-3, AC-6 | MEASURE 2.7, MEASURE 2.10 | LLM02, LLM08 | none |
+| HRD-DP-03 | GV.OC-03, ID.RA-05 | RA-8, PT-2 | MEASURE 2.10, GOVERN 1.1 | LLM02 | none |
+| HRD-DP-04 | GV.OC-03, ID.AM-08 | SI-12, AU-11, MP-6 | MEASURE 2.10, GOVERN 1.7 | LLM02 | none |
+| HRD-DP-05 | PR.AA-05 | AC-6, AC-3 | MEASURE 2.10, MEASURE 2.7 | LLM02, LLM08 | none |
+| HRD-DP-06 | PR.DS-02, DE.CM-01 | AC-4, SC-7, SI-4 | MEASURE 2.10 | LLM02 | none |
+| HRD-DP-07 | PR.IR-01, PR.AA-05 | AC-20, SC-7, AC-4 | MEASURE 2.10 | LLM02 | none |
+| HRD-DP-08 | PR.DS-01, PR.AA-05, ID.AM-07 | SC-28, AC-3, SC-4 | MEASURE 2.10, MEASURE 2.7 | LLM08, LLM02 | ASI06 |
+| HRD-PV-01 | GV.SC-06 | SR-4, SA-4 | MAP 4.1, GOVERN 6.1 | LLM03 | ASI04 |
+| HRD-PV-02 | ID.AM-07, GV.OC-03 | SR-4, CM-8 | MAP 4.1, GOVERN 1.6 | LLM04, LLM03 | none |
+| HRD-PV-03 | PR.DS-01, PR.PS-06 | SI-10, SI-7 | MEASURE 2.7, MEASURE 2.1 | LLM04, LLM01 | none |
+| HRD-PV-04 | PR.DS-01, ID.AM-07 | SR-4, SI-7, CM-2 | MEASURE 2.8, MAP 2.3 | LLM04, LLM03 | none |
+| HRD-MP-01 | PR.DS-01, PR.AA-05 | SC-28, AC-3, SC-12 | MEASURE 2.7 | none | none |
+| HRD-DV-01 | PR.PS-01 | CM-3, CM-2 | MEASURE 2.7, GOVERN 1.4 | none | none |
+| HRD-DV-02 | PR.PS-06, ID.RA-03 | SA-3, SA-11, SA-15 | MEASURE 2.7, MAP 5.1 | none | none |
+| HRD-DV-03 | PR.PS-06, PR.PS-05 | SA-11, SR-3, SA-15 | MEASURE 2.7 | LLM03, LLM05 | ASI04 |
+| HRD-DV-04 | PR.AA-05, PR.PS-06 | IA-5, AC-3, SA-11 | MEASURE 2.7 | LLM07, LLM06 | ASI03 |
+| HRD-DV-05 | PR.AA-03, PR.AA-05 | IA-9, AC-3, AC-6 | MEASURE 2.7 | none | ASI03, ASI07 |
+| DEF-IN-01 | PR.AA-05, PR.PS-01 | AC-6, CM-7, AC-5 | MEASURE 2.7, MANAGE 1.3 | LLM01, LLM06 | ASI01, ASI02 |
+| DEF-IN-02 | PR.PS-06, PR.PS-01 | SI-10, SA-8 | MEASURE 2.7, MANAGE 1.3 | LLM01 | ASI01 |
+| DEF-IN-03 | DE.CM-09, ID.IM-02 | SI-10, SI-4 | MEASURE 2.7, MEASURE 2.13 | LLM01 | ASI01 |
+| DEF-OU-01 | PR.PS-06 | SI-10, SI-15, SA-8 | MEASURE 2.7 | LLM05 | ASI05 |
+| DEF-OU-02 | PR.DS-02, DE.CM-09 | SI-15, AC-4 | MEASURE 2.10, MEASURE 2.7 | LLM02 | none |
+| DEF-OU-03 | GV.PO-01, PR.PS-01 | SI-15, AU-2 | MEASURE 2.6, MANAGE 2.2 | none | none |
+| DEF-OU-04 | PR.PS-01, PR.IR-01, PR.AA-05 | SC-39, SI-10, AC-6 | MANAGE 1.3, MEASURE 2.7 | LLM05, LLM06 | ASI05 |
+| DEF-OU-05 | DE.CM-09, GV.PO-01 | SI-10, SI-4, AU-2 | MEASURE 2.7, MEASURE 2.6 | LLM07, LLM01 | none |
+| DEF-TL-01 | PR.IR-01 | SC-7, AC-4, CM-7 | MEASURE 2.7, MANAGE 1.3 | LLM06 | ASI02 |
+| DEF-TL-02 | PR.IR-04, PR.PS-01 | SC-5, SC-6 | MEASURE 2.7, MANAGE 2.2 | LLM10 | ASI08 |
+| DEF-TL-03 | PR.AA-05, PR.PS-01 | AC-3, AC-6 | MEASURE 2.7, MANAGE 1.3 | LLM06 | ASI02, ASI03 |
+| DEF-TL-04 | PR.AA-03, PR.IR-04, DE.CM-09 | IA-8, SC-5, SI-4 | MEASURE 2.7, MEASURE 2.4 | LLM10 | none |
+| DEF-TL-05 | PR.IR-01, PR.AA-05, PR.PS-01 | SC-39, AC-6, CM-7 | MEASURE 2.7, MANAGE 1.3 | LLM06 | ASI05 |
+| DEF-TL-06 | PR.PS-01, RS.MI-01, ID.IM-02 | SI-17, SC-24, IR-4 | MANAGE 2.4, MANAGE 2.3 | LLM06, LLM10 | ASI10, ASI08 |
+| DEF-PS-01 | PR.AA-05, PR.DS-01 | AC-3, CM-5, AU-2 | MEASURE 2.7, MAP 2.3 | LLM04, LLM08 | ASI06 |
+| DEF-PS-02 | ID.AM-07, PR.DS-01 | AC-16, SR-4 | MAP 2.3, MEASURE 2.7 | LLM08, LLM04 | ASI06 |
+| DEF-PS-03 | PR.AA-05, PR.DS-01 | AC-3, SI-10 | MEASURE 2.7, MEASURE 2.10 | LLM01 | ASI06 |
+| DEF-PS-04 | PR.DS-01, DE.AE-02 | SI-7, SI-10 | MEASURE 2.7, MEASURE 3.3 | LLM04 | none |
+| MTR-LG-01 | PR.PS-04, DE.CM-09 | AU-2, AU-11, AU-12 | MEASURE 2.8, MANAGE 4.1 | none | none |
+| MTR-LG-02 | PR.PS-04, PR.DS-01 | AU-2, AU-9 | MEASURE 2.8, MEASURE 2.10 | none | none |
+| MTR-LG-03 | DE.AE-03, PR.PS-04 | AU-6, SI-4 | MEASURE 2.4, MANAGE 4.1 | none | none |
+| MTR-LG-04 | PR.PS-04, PR.AA-01 | AU-3, AU-10, AU-12 | MEASURE 2.8 | none | ASI03, ASI07 |
+| MTR-LG-05 | PR.PS-04, PR.AA-05 | AU-9, AC-6 | MEASURE 2.7, MEASURE 2.8 | none | ASI10, ASI03 |
+| MTR-BH-01 | DE.CM-09, DE.AE-02 | SI-4, AU-6 | MEASURE 2.4, MANAGE 4.1 | LLM01 | ASI01, ASI10 |
+| MTR-BH-02 | DE.CM-09, DE.CM-03 | SI-4, AU-6 | MEASURE 2.4, MEASURE 3.1 | LLM06 | ASI10, ASI02 |
+| MTR-BH-03 | DE.AE-06, RS.MA-02 | IR-4, IR-5, SI-4 | MANAGE 4.1 | none | none |
+| MTR-DR-01 | ID.RA-07, PR.PS-02 | CM-3, CM-2 | MANAGE 3.2, MANAGE 4.1 | LLM03 | ASI04 |
+| MTR-DR-02 | ID.IM-02, ID.RA-07 | SA-11, CM-4 | MEASURE 2.3, MEASURE 2.5 | LLM09 | none |
+| MTR-DR-03 | ID.IM-02, PR.PS-01 | CA-7, CM-3 | MEASURE 2.3, MANAGE 2.3 | LLM09 | none |
+| MTR-DR-04 | DE.CM-09, PR.DS-01 | SI-7, SI-4 | MEASURE 2.7, MEASURE 2.4 | LLM04, LLM08 | ASI06 |
+| MTR-VM-01 | ID.RA-01, PR.PS-02 | RA-5, SI-2 | MEASURE 2.7, MANAGE 3.1 | LLM03 | ASI04 |
+| MTR-VM-02 | ID.RA-02, ID.RA-03 | PM-16, RA-3 | MEASURE 3.1, MAP 5.1 | none | none |
+| MTR-TS-01 | ID.RA-08, RS.MA-02 | IR-6, IR-5 | GOVERN 5.1, MEASURE 3.3 | none | none |
+| MTR-TS-02 | ID.IM-02, PR.PS-06 | SA-11, CA-8 | MEASURE 2.7, MEASURE 1.1 | LLM01, LLM06 | ASI01, ASI02 |
+| MTR-TS-03 | ID.IM-02, ID.RA-01 | CA-8, CA-2 | MEASURE 1.3, MEASURE 2.7 | none | none |
+| RSP-PL-01 | ID.IM-04, RS.MA-03, DE.AE-08 | IR-8, IR-4, IR-5 | MANAGE 4.1, MANAGE 4.3 | none | none |
+| RSP-PL-02 | ID.IM-02 | IR-3, IR-2 | MANAGE 4.1, MANAGE 2.4 | none | ASI10 |
+| RSP-IV-01 | RS.AN-03, PR.PS-04 | IR-4, AU-6, AU-3 | MEASURE 2.8, MANAGE 4.1 | none | none |
+| RSP-IV-02 | RS.AN-07, RS.AN-06 | IR-4, AU-9, AU-11 | MEASURE 2.8, MANAGE 4.1 | none | none |
+| RSP-CN-01 | RS.MI-01, RS.MI-02, ID.IM-04 | IR-4, AC-2 | MANAGE 2.4, MANAGE 4.1 | LLM06 | ASI10, ASI03 |
+| RSP-CN-02 | PR.DS-11, RC.RP-01 | CP-9, CP-10, CM-2 | MANAGE 2.3, MANAGE 4.1 | none | none |
+| RSP-CN-03 | RS.MI-02, RC.RP-02 | IR-4, CP-10, SI-7 | MANAGE 2.3, MANAGE 4.1 | LLM04, LLM08 | ASI06 |
+| RSP-CN-04 | RC.RP-05, RC.RP-04 | IR-4, CP-10, CA-7 | MANAGE 2.3, MANAGE 4.1 | none | ASI10, ASI08 |
+| RSP-BC-01 | GV.OC-04, ID.AM-05, PR.IR-03 | CP-2, CP-3, RA-9 | GOVERN 6.2, MANAGE 2.3 | none | none |
+| RSP-BC-02 | ID.IM-02, PR.IR-03 | CP-4, CP-2 | GOVERN 6.2, MANAGE 2.3 | none | none |
+| RSP-IM-01 | RS.CO-02, GV.OC-03 | IR-6, SR-8 | MANAGE 4.3, GOVERN 4.3 | none | none |
+| RSP-IM-02 | ID.IM-03, ID.IM-02 | IR-4, CA-5 | MANAGE 4.2, MANAGE 4.1 | none | none |
+
+Planned for v0.2: mappings to the NIST Cyber AI Profile (IR 8596), NIST COSAiS overlays, the CSA AI Controls Matrix, ISO/IEC 42001, MITRE ATLAS, the ISACA AAISM job practice, the EU AI Act, NIST's key practices for AI incident readiness and response, the OWASP Agent Control Standard (ACS), the SANS Critical AI Security Guidelines, the SANS AI Security Maturity Model, and the AI Defense Matrix. The Delegate function will also be aligned with the NIST NCCoE Software and AI Agent Identity and Authorization project as it matures.

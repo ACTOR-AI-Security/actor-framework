@@ -14,6 +14,7 @@ A maintenance release during the comment period. No control IDs changed and no c
 - INV-AS-01 states that reconciliation uses INV-SH-01 discovery results where they exist but does not depend on them. Design principle 9 now says the same in general.
 - The Assured implementation mode now says re-confirmation happens at each GVN-TP-03 reassessment, or annually where GVN-TP-03 is not in place.
 - The Advanced tier description now includes organizations seeking independent assurance of any AI system, which is why MTR-TS-03 applies to all.
+- Control-level crosswalk to NIST CSF 2.0, SP 800-53 Rev 5, NIST AI RMF 1.0, OWASP LLM Top 10 (2025), and OWASP Agentic Top 10 (2026), in FRAMEWORK.md, in controls/actor-crosswalk.csv, and as columns in the control data. Informative, not equivalence.
 - Control count is 125: 50 Foundational, 64 Managed, 11 Advanced. Profiles: Consumed 92, Configured 104, Built 125.
 
 ## v0.1.0 public draft for comment (2026-10-23)

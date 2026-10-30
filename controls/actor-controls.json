@@ -28,7 +28,12 @@
               "extends": "Security governance and reporting",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": "AI risk reported to senior management quarterly and to the board at least annually."
+              "recommended_value": "AI risk reported to senior management quarterly and to the board at least annually.",
+              "map_nist_csf2": "GV.RR-01, GV.OV-01",
+              "map_nist_sp800_53": "PM-2, PM-9",
+              "map_nist_ai_rmf": "GOVERN 2.3, GOVERN 2.1",
+              "map_owasp_llm_2025": "none",
+              "map_owasp_agentic_2026": "none"
             },
             {
               "id": "GVN-AC-02",
@@ -43,7 +48,12 @@
               "extends": "Asset inventory",
               "profiles": "Consumed, Configured, Built",
               "essentials": "Yes",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "GV.RR-02, ID.AM-01",
+              "map_nist_sp800_53": "CM-8, PM-10",
+              "map_nist_ai_rmf": "GOVERN 2.1",
+              "map_owasp_llm_2025": "none",
+              "map_owasp_agentic_2026": "none"
             },
             {
               "id": "GVN-AC-03",
@@ -58,7 +68,12 @@
               "extends": "Security governance and reporting",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "GV.RR-02, GV.RM-03",
+              "map_nist_sp800_53": "PM-2, PM-29",
+              "map_nist_ai_rmf": "GOVERN 2.1, GOVERN 3.1",
+              "map_owasp_llm_2025": "none",
+              "map_owasp_agentic_2026": "none"
             },
             {
               "id": "GVN-AC-04",
@@ -73,7 +88,12 @@
               "extends": "Security governance and reporting",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "GV.OV-03, GV.OV-01",
+              "map_nist_sp800_53": "PM-6, CA-7",
+              "map_nist_ai_rmf": "MEASURE 1.1, GOVERN 1.5",
+              "map_owasp_llm_2025": "none",
+              "map_owasp_agentic_2026": "none"
             },
             {
               "id": "GVN-AC-05",
@@ -88,7 +108,12 @@
               "extends": "Internal audit and assurance",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": "Policy and control set reviewed at least annually and after any AI incident."
+              "recommended_value": "Policy and control set reviewed at least annually and after any AI incident.",
+              "map_nist_csf2": "ID.IM-01, GV.OV-02",
+              "map_nist_sp800_53": "CA-2, CA-7",
+              "map_nist_ai_rmf": "MEASURE 1.3, GOVERN 1.5",
+              "map_owasp_llm_2025": "none",
+              "map_owasp_agentic_2026": "none"
             }
           ]
         },
@@ -109,7 +134,12 @@
               "extends": "Acceptable use policy",
               "profiles": "Consumed, Configured, Built",
               "essentials": "Yes",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "GV.PO-01, PR.AT-01",
+              "map_nist_sp800_53": "PL-4, AC-20",
+              "map_nist_ai_rmf": "GOVERN 1.2",
+              "map_owasp_llm_2025": "LLM02",
+              "map_owasp_agentic_2026": "none"
             },
             {
               "id": "GVN-PO-02",
@@ -124,7 +154,12 @@
               "extends": "Acceptable use policy",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "GV.PO-01, PR.AA-01",
+              "map_nist_sp800_53": "PL-4, IA-5",
+              "map_nist_ai_rmf": "GOVERN 1.2",
+              "map_owasp_llm_2025": "none",
+              "map_owasp_agentic_2026": "ASI03"
             },
             {
               "id": "GVN-PO-03",
@@ -139,7 +174,12 @@
               "extends": "Acceptable use policy",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "GV.PO-02",
+              "map_nist_sp800_53": "PL-1",
+              "map_nist_ai_rmf": "GOVERN 1.5, GOVERN 1.2",
+              "map_owasp_llm_2025": "none",
+              "map_owasp_agentic_2026": "none"
             },
             {
               "id": "GVN-PO-04",
@@ -154,7 +194,12 @@
               "extends": "",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "ID.AM-01, ID.AM-02",
+              "map_nist_sp800_53": "CM-8, PM-5",
+              "map_nist_ai_rmf": "GOVERN 1.6",
+              "map_owasp_llm_2025": "LLM06",
+              "map_owasp_agentic_2026": "ASI10"
             }
           ]
         },
@@ -175,7 +220,12 @@
               "extends": "Risk management and exceptions",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": "Floor stated in the control: health, money, employment, legal rights, and write access to systems of record are high risk."
+              "recommended_value": "Floor stated in the control: health, money, employment, legal rights, and write access to systems of record are high risk.",
+              "map_nist_csf2": "ID.RA-04, ID.RA-05",
+              "map_nist_sp800_53": "RA-2, RA-3",
+              "map_nist_ai_rmf": "MAP 1.5, MAP 5.1",
+              "map_owasp_llm_2025": "none",
+              "map_owasp_agentic_2026": "none"
             },
             {
               "id": "GVN-RK-02",
@@ -190,7 +240,12 @@
               "extends": "Risk management and exceptions",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "ID.RA-07, ID.RA-05",
+              "map_nist_sp800_53": "CA-6, RA-3",
+              "map_nist_ai_rmf": "MAP 5.1, MANAGE 1.3",
+              "map_owasp_llm_2025": "none",
+              "map_owasp_agentic_2026": "none"
             },
             {
               "id": "GVN-RK-03",
@@ -205,7 +260,12 @@
               "extends": "Risk management and exceptions",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "ID.RA-07",
+              "map_nist_sp800_53": "CA-5, RA-7",
+              "map_nist_ai_rmf": "MANAGE 1.4",
+              "map_owasp_llm_2025": "none",
+              "map_owasp_agentic_2026": "none"
             },
             {
               "id": "GVN-RK-04",
@@ -220,7 +280,12 @@
               "extends": "Risk management and exceptions",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "GV.RM-02, GV.RM-01",
+              "map_nist_sp800_53": "PM-9, PM-28",
+              "map_nist_ai_rmf": "GOVERN 1.3, MAP 1.5",
+              "map_owasp_llm_2025": "none",
+              "map_owasp_agentic_2026": "none"
             }
           ]
         },
@@ -241,7 +306,12 @@
               "extends": "Compliance management",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "GV.OC-03",
+              "map_nist_sp800_53": "PM-9, PM-28",
+              "map_nist_ai_rmf": "GOVERN 1.1",
+              "map_owasp_llm_2025": "none",
+              "map_owasp_agentic_2026": "none"
             },
             {
               "id": "GVN-CO-02",
@@ -256,7 +326,12 @@
               "extends": "",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "GV.OC-03, GV.OC-02",
+              "map_nist_sp800_53": "PM-9, PM-28",
+              "map_nist_ai_rmf": "GOVERN 1.1, MAP 1.1",
+              "map_owasp_llm_2025": "none",
+              "map_owasp_agentic_2026": "none"
             },
             {
               "id": "GVN-CO-03",
@@ -271,7 +346,12 @@
               "extends": "Compliance management",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "GV.OC-03, PR.PS-04",
+              "map_nist_sp800_53": "AU-11, CA-7",
+              "map_nist_ai_rmf": "GOVERN 1.4",
+              "map_owasp_llm_2025": "none",
+              "map_owasp_agentic_2026": "none"
             }
           ]
         },
@@ -292,7 +372,12 @@
               "extends": "Third-party risk management",
               "profiles": "Consumed, Configured, Built",
               "essentials": "Yes",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "GV.SC-06, GV.SC-04",
+              "map_nist_sp800_53": "SR-6, SA-9",
+              "map_nist_ai_rmf": "GOVERN 6.1, MAP 4.1",
+              "map_owasp_llm_2025": "LLM03",
+              "map_owasp_agentic_2026": "none"
             },
             {
               "id": "GVN-TP-02",
@@ -307,7 +392,12 @@
               "extends": "Third-party risk management",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "GV.SC-05",
+              "map_nist_sp800_53": "SA-4, SA-9",
+              "map_nist_ai_rmf": "GOVERN 6.1, MAP 4.1",
+              "map_owasp_llm_2025": "LLM03",
+              "map_owasp_agentic_2026": "none"
             },
             {
               "id": "GVN-TP-03",
@@ -322,7 +412,12 @@
               "extends": "Third-party risk management",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": "Critical vendors reassessed every six months; others annually."
+              "recommended_value": "Critical vendors reassessed every six months; others annually.",
+              "map_nist_csf2": "GV.SC-07, GV.SC-10",
+              "map_nist_sp800_53": "SR-6, SA-9, CP-2",
+              "map_nist_ai_rmf": "GOVERN 6.2, MANAGE 3.1",
+              "map_owasp_llm_2025": "LLM03",
+              "map_owasp_agentic_2026": "none"
             },
             {
               "id": "GVN-TP-04",
@@ -337,7 +432,12 @@
               "extends": "Third-party risk management",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "GV.SC-07",
+              "map_nist_sp800_53": "SR-4, SR-8",
+              "map_nist_ai_rmf": "MAP 4.1, MANAGE 3.1",
+              "map_owasp_llm_2025": "LLM03",
+              "map_owasp_agentic_2026": "none"
             }
           ]
         },
@@ -358,7 +458,12 @@
               "extends": "Security awareness and training",
               "profiles": "Consumed, Configured, Built",
               "essentials": "Yes",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "PR.AT-01",
+              "map_nist_sp800_53": "AT-2, AT-4",
+              "map_nist_ai_rmf": "GOVERN 2.2",
+              "map_owasp_llm_2025": "LLM09",
+              "map_owasp_agentic_2026": "ASI09"
             },
             {
               "id": "GVN-WF-02",
@@ -373,7 +478,12 @@
               "extends": "Security awareness and training",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "PR.AT-02",
+              "map_nist_sp800_53": "AT-3, AT-4",
+              "map_nist_ai_rmf": "GOVERN 2.2",
+              "map_owasp_llm_2025": "none",
+              "map_owasp_agentic_2026": "none"
             }
           ]
         }
@@ -401,7 +511,12 @@
               "extends": "Asset inventory",
               "profiles": "Consumed, Configured, Built",
               "essentials": "Yes",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "ID.AM-01, ID.AM-02",
+              "map_nist_sp800_53": "CM-8, PM-5",
+              "map_nist_ai_rmf": "GOVERN 1.6",
+              "map_owasp_llm_2025": "none",
+              "map_owasp_agentic_2026": "none"
             },
             {
               "id": "INV-AS-02",
@@ -416,7 +531,12 @@
               "extends": "Asset inventory",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "ID.AM-02, ID.AM-04",
+              "map_nist_sp800_53": "CM-8, SR-4",
+              "map_nist_ai_rmf": "GOVERN 1.6",
+              "map_owasp_llm_2025": "LLM03",
+              "map_owasp_agentic_2026": "none"
             },
             {
               "id": "INV-AS-03",
@@ -431,7 +551,12 @@
               "extends": "Asset inventory",
               "profiles": "Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "ID.AM-08",
+              "map_nist_sp800_53": "MP-6, SI-12",
+              "map_nist_ai_rmf": "GOVERN 1.7",
+              "map_owasp_llm_2025": "none",
+              "map_owasp_agentic_2026": "none"
             }
           ]
         },
@@ -452,7 +577,12 @@
               "extends": "",
               "profiles": "Consumed, Configured, Built",
               "essentials": "Yes",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "ID.AM-01, ID.AM-02",
+              "map_nist_sp800_53": "CM-8, AC-2",
+              "map_nist_ai_rmf": "GOVERN 1.6, MANAGE 2.4",
+              "map_owasp_llm_2025": "none",
+              "map_owasp_agentic_2026": "ASI10"
             },
             {
               "id": "INV-AG-02",
@@ -467,7 +597,12 @@
               "extends": "",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "ID.AM-02",
+              "map_nist_sp800_53": "CM-8",
+              "map_nist_ai_rmf": "GOVERN 1.6",
+              "map_owasp_llm_2025": "none",
+              "map_owasp_agentic_2026": "ASI04"
             }
           ]
         },
@@ -488,7 +623,12 @@
               "extends": "Asset inventory",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "DE.CM-01, DE.CM-09",
+              "map_nist_sp800_53": "CM-8, SI-4, AC-20",
+              "map_nist_ai_rmf": "GOVERN 1.6",
+              "map_owasp_llm_2025": "LLM02",
+              "map_owasp_agentic_2026": "ASI10"
             },
             {
               "id": "INV-SH-02",
@@ -503,7 +643,12 @@
               "extends": "Identity and access management",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": "Discovery results reviewed monthly; unapproved tools blocked or approved within 30 days."
+              "recommended_value": "Discovery results reviewed monthly; unapproved tools blocked or approved within 30 days.",
+              "map_nist_csf2": "PR.AA-01, PR.AA-05",
+              "map_nist_sp800_53": "AC-2, IA-5",
+              "map_nist_ai_rmf": "GOVERN 1.6, MEASURE 2.7",
+              "map_owasp_llm_2025": "none",
+              "map_owasp_agentic_2026": "ASI03"
             }
           ]
         },
@@ -524,7 +669,12 @@
               "extends": "Data protection",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "ID.AM-03, ID.AM-07",
+              "map_nist_sp800_53": "PL-2, SI-12",
+              "map_nist_ai_rmf": "MAP 1.1, GOVERN 1.6",
+              "map_owasp_llm_2025": "LLM02",
+              "map_owasp_agentic_2026": "none"
             },
             {
               "id": "INV-DF-02",
@@ -539,7 +689,12 @@
               "extends": "Software supply chain security",
               "profiles": "Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "ID.AM-02, ID.AM-03",
+              "map_nist_sp800_53": "CM-8, SR-4",
+              "map_nist_ai_rmf": "GOVERN 1.6, MAP 4.1",
+              "map_owasp_llm_2025": "LLM03",
+              "map_owasp_agentic_2026": "ASI04"
             }
           ]
         }
@@ -567,7 +722,12 @@
               "extends": "",
               "profiles": "Consumed, Configured, Built",
               "essentials": "Yes",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "PR.AA-01, PR.AA-03",
+              "map_nist_sp800_53": "IA-9, AC-2, IA-5",
+              "map_nist_ai_rmf": "MEASURE 2.7",
+              "map_owasp_llm_2025": "none",
+              "map_owasp_agentic_2026": "ASI03"
             },
             {
               "id": "DEL-ID-02",
@@ -582,7 +742,12 @@
               "extends": "Identity and access management",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "PR.AA-01",
+              "map_nist_sp800_53": "IA-5, IA-9, AC-6",
+              "map_nist_ai_rmf": "MEASURE 2.7",
+              "map_owasp_llm_2025": "LLM07",
+              "map_owasp_agentic_2026": "ASI03"
             },
             {
               "id": "DEL-ID-03",
@@ -597,7 +762,12 @@
               "extends": "",
               "profiles": "Consumed, Configured, Built",
               "essentials": "Yes",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "PR.AA-05, PR.PS-01",
+              "map_nist_sp800_53": "CM-7, AC-6",
+              "map_nist_ai_rmf": "MEASURE 2.7",
+              "map_owasp_llm_2025": "LLM06",
+              "map_owasp_agentic_2026": "ASI03"
             },
             {
               "id": "DEL-ID-04",
@@ -612,7 +782,12 @@
               "extends": "",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "PR.IR-01",
+              "map_nist_sp800_53": "SC-39, SC-7",
+              "map_nist_ai_rmf": "MEASURE 2.7",
+              "map_owasp_llm_2025": "LLM06",
+              "map_owasp_agentic_2026": "ASI03"
             }
           ]
         },
@@ -633,7 +808,12 @@
               "extends": "",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "PR.AA-01, PR.PS-04",
+              "map_nist_sp800_53": "AU-2, AU-3, IA-9",
+              "map_nist_ai_rmf": "MEASURE 2.8, MEASURE 2.7",
+              "map_owasp_llm_2025": "none",
+              "map_owasp_agentic_2026": "ASI03"
             },
             {
               "id": "DEL-DG-02",
@@ -648,7 +828,12 @@
               "extends": "",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "PR.AA-05",
+              "map_nist_sp800_53": "AC-3, AC-6, CA-2",
+              "map_nist_ai_rmf": "MEASURE 2.7",
+              "map_owasp_llm_2025": "LLM06",
+              "map_owasp_agentic_2026": "ASI03"
             },
             {
               "id": "DEL-DG-03",
@@ -663,7 +848,12 @@
               "extends": "",
               "profiles": "Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "PR.AA-03, PR.AA-05",
+              "map_nist_sp800_53": "IA-9, SC-8, AC-6",
+              "map_nist_ai_rmf": "MEASURE 2.7",
+              "map_owasp_llm_2025": "LLM06, LLM01",
+              "map_owasp_agentic_2026": "ASI07, ASI08"
             },
             {
               "id": "DEL-DG-04",
@@ -678,7 +868,12 @@
               "extends": "Identity and access management",
               "profiles": "Consumed, Configured, Built",
               "essentials": "Yes",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "PR.AA-05, PR.PS-05",
+              "map_nist_sp800_53": "CM-11, AC-20, AC-6",
+              "map_nist_ai_rmf": "MEASURE 2.7",
+              "map_owasp_llm_2025": "none",
+              "map_owasp_agentic_2026": "ASI03"
             }
           ]
         },
@@ -699,7 +894,12 @@
               "extends": "Identity and access management",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "PR.AA-05",
+              "map_nist_sp800_53": "AC-6, AC-3",
+              "map_nist_ai_rmf": "MEASURE 2.7, MAP 3.5",
+              "map_owasp_llm_2025": "LLM06",
+              "map_owasp_agentic_2026": "ASI03, ASI02"
             },
             {
               "id": "DEL-LA-02",
@@ -714,7 +914,12 @@
               "extends": "Identity and access management",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "PR.AA-05, PR.AA-01",
+              "map_nist_sp800_53": "AC-5, AC-6, AC-2",
+              "map_nist_ai_rmf": "MEASURE 2.7",
+              "map_owasp_llm_2025": "LLM06",
+              "map_owasp_agentic_2026": "ASI03, ASI10"
             },
             {
               "id": "DEL-LA-03",
@@ -729,7 +934,12 @@
               "extends": "",
               "profiles": "Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "GV.PO-01, PR.AA-05",
+              "map_nist_sp800_53": "PL-2, AC-6",
+              "map_nist_ai_rmf": "MAP 3.5, GOVERN 3.2",
+              "map_owasp_llm_2025": "LLM06",
+              "map_owasp_agentic_2026": "ASI02"
             },
             {
               "id": "DEL-LA-04",
@@ -744,7 +954,12 @@
               "extends": "",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "PR.PS-05, DE.CM-09",
+              "map_nist_sp800_53": "CM-7, SI-4",
+              "map_nist_ai_rmf": "MEASURE 2.7, MANAGE 2.4",
+              "map_owasp_llm_2025": "LLM06",
+              "map_owasp_agentic_2026": "ASI10"
             }
           ]
         },
@@ -765,7 +980,12 @@
               "extends": "",
               "profiles": "Consumed, Configured, Built",
               "essentials": "Yes",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "PR.AA-05, GV.PO-01",
+              "map_nist_sp800_53": "AC-6, AC-3, CM-7",
+              "map_nist_ai_rmf": "MAP 3.5, GOVERN 3.2",
+              "map_owasp_llm_2025": "LLM06",
+              "map_owasp_agentic_2026": "ASI02, ASI08"
             },
             {
               "id": "DEL-AP-02",
@@ -780,7 +1000,12 @@
               "extends": "",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "PR.AA-03, PR.AA-05",
+              "map_nist_sp800_53": "AU-10, SC-23, AC-3",
+              "map_nist_ai_rmf": "MAP 3.5, MEASURE 2.7",
+              "map_owasp_llm_2025": "LLM01, LLM06",
+              "map_owasp_agentic_2026": "ASI09, ASI01"
             },
             {
               "id": "DEL-AP-03",
@@ -795,7 +1020,12 @@
               "extends": "",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": "Approval records reviewed quarterly for rubber-stamping; any approver above 95 percent approval rate is sampled."
+              "recommended_value": "Approval records reviewed quarterly for rubber-stamping; any approver above 95 percent approval rate is sampled.",
+              "map_nist_csf2": "PR.AA-05, DE.CM-03",
+              "map_nist_sp800_53": "AC-6, AU-6, AC-3",
+              "map_nist_ai_rmf": "MAP 3.5, GOVERN 3.2",
+              "map_owasp_llm_2025": "LLM06",
+              "map_owasp_agentic_2026": "ASI09"
             },
             {
               "id": "DEL-AP-04",
@@ -810,7 +1040,12 @@
               "extends": "",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "GV.OC-03",
+              "map_nist_sp800_53": "PM-22, PM-28",
+              "map_nist_ai_rmf": "GOVERN 5.2, MAP 3.5",
+              "map_owasp_llm_2025": "none",
+              "map_owasp_agentic_2026": "none"
             },
             {
               "id": "DEL-AP-05",
@@ -825,7 +1060,12 @@
               "extends": "",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": "Approver sessions expire within one working day and after 30 minutes idle."
+              "recommended_value": "Approver sessions expire within one working day and after 30 minutes idle.",
+              "map_nist_csf2": "PR.AA-03, PR.AA-05",
+              "map_nist_sp800_53": "IA-2, IA-11, AU-3",
+              "map_nist_ai_rmf": "MEASURE 2.7, MAP 3.5",
+              "map_owasp_llm_2025": "LLM06",
+              "map_owasp_agentic_2026": "ASI09, ASI03"
             }
           ]
         },
@@ -846,7 +1086,12 @@
               "extends": "Identity and access management",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "PR.AA-05",
+              "map_nist_sp800_53": "AC-2, AC-6",
+              "map_nist_ai_rmf": "GOVERN 1.5, MEASURE 2.7",
+              "map_owasp_llm_2025": "none",
+              "map_owasp_agentic_2026": "ASI03"
             },
             {
               "id": "DEL-LC-02",
@@ -861,7 +1106,12 @@
               "extends": "Identity and access management",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": "Identity disabled within 24 hours of purpose end or owner departure; deleted after 30 days."
+              "recommended_value": "Identity disabled within 24 hours of purpose end or owner departure; deleted after 30 days.",
+              "map_nist_csf2": "PR.AA-01, ID.AM-08",
+              "map_nist_sp800_53": "AC-2, PS-4, PS-5",
+              "map_nist_ai_rmf": "GOVERN 1.7, MANAGE 2.4",
+              "map_owasp_llm_2025": "none",
+              "map_owasp_agentic_2026": "ASI10, ASI03"
             }
           ]
         }
@@ -889,7 +1139,12 @@
               "extends": "Secure configuration management",
               "profiles": "Consumed, Configured, Built",
               "essentials": "Yes",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "PR.PS-01",
+              "map_nist_sp800_53": "CM-6, CM-2",
+              "map_nist_ai_rmf": "MEASURE 2.7, MEASURE 2.10",
+              "map_owasp_llm_2025": "LLM02",
+              "map_owasp_agentic_2026": "none"
             },
             {
               "id": "HRD-CF-02",
@@ -904,7 +1159,12 @@
               "extends": "Identity and access management",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "PR.AA-01, PR.AA-05, PR.PS-04",
+              "map_nist_sp800_53": "IA-2, CM-5, AU-2",
+              "map_nist_ai_rmf": "MEASURE 2.7",
+              "map_owasp_llm_2025": "none",
+              "map_owasp_agentic_2026": "ASI03"
             },
             {
               "id": "HRD-CF-03",
@@ -919,7 +1179,12 @@
               "extends": "Secure configuration management",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": "Platform settings compared to baseline quarterly and within one week of a vendor release note that touches sharing, data, connectors, or admin settings."
+              "recommended_value": "Platform settings compared to baseline quarterly and within one week of a vendor release note that touches sharing, data, connectors, or admin settings.",
+              "map_nist_csf2": "PR.PS-01, DE.CM-09",
+              "map_nist_sp800_53": "CM-6, CA-7",
+              "map_nist_ai_rmf": "MEASURE 2.7, MANAGE 4.1",
+              "map_owasp_llm_2025": "none",
+              "map_owasp_agentic_2026": "none"
             },
             {
               "id": "HRD-CF-04",
@@ -934,7 +1199,12 @@
               "extends": "Secure configuration management",
               "profiles": "Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "PR.AA-03, PR.IR-01",
+              "map_nist_sp800_53": "IA-2, SC-7, AC-3",
+              "map_nist_ai_rmf": "MEASURE 2.7",
+              "map_owasp_llm_2025": "LLM10",
+              "map_owasp_agentic_2026": "none"
             },
             {
               "id": "HRD-CF-05",
@@ -949,7 +1219,12 @@
               "extends": "",
               "profiles": "Consumed, Configured, Built",
               "essentials": "Yes",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "PR.PS-01, ID.RA-07",
+              "map_nist_sp800_53": "CM-7, CM-3",
+              "map_nist_ai_rmf": "MANAGE 3.1, MAP 4.2",
+              "map_owasp_llm_2025": "none",
+              "map_owasp_agentic_2026": "none"
             },
             {
               "id": "HRD-CF-06",
@@ -964,7 +1239,12 @@
               "extends": "Secure configuration management",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "PR.PS-01, PR.PS-05",
+              "map_nist_sp800_53": "CM-6, CM-7, CM-11",
+              "map_nist_ai_rmf": "MEASURE 2.7",
+              "map_owasp_llm_2025": "LLM01, LLM06",
+              "map_owasp_agentic_2026": "ASI05, ASI04"
             }
           ]
         },
@@ -985,7 +1265,12 @@
               "extends": "Software supply chain security",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "PR.PS-05, GV.SC-06",
+              "map_nist_sp800_53": "CM-11, CM-7, SR-6",
+              "map_nist_ai_rmf": "MAP 4.1, MAP 4.2",
+              "map_owasp_llm_2025": "LLM03",
+              "map_owasp_agentic_2026": "ASI04"
             },
             {
               "id": "HRD-SC-02",
@@ -1000,7 +1285,12 @@
               "extends": "Software supply chain security",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": "Unpinnable remote servers reassessed quarterly."
+              "recommended_value": "Unpinnable remote servers reassessed quarterly.",
+              "map_nist_csf2": "PR.PS-01, PR.PS-02",
+              "map_nist_sp800_53": "SI-7, CM-14, CM-3",
+              "map_nist_ai_rmf": "MANAGE 3.1, MEASURE 2.7",
+              "map_owasp_llm_2025": "LLM03, LLM01",
+              "map_owasp_agentic_2026": "ASI04, ASI01"
             },
             {
               "id": "HRD-SC-03",
@@ -1015,7 +1305,12 @@
               "extends": "Software supply chain security",
               "profiles": "Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "GV.SC-06, PR.PS-02",
+              "map_nist_sp800_53": "SR-4, SR-11, SI-7",
+              "map_nist_ai_rmf": "MAP 4.1, MANAGE 3.2",
+              "map_owasp_llm_2025": "LLM03, LLM04",
+              "map_owasp_agentic_2026": "ASI04"
             },
             {
               "id": "HRD-SC-04",
@@ -1030,7 +1325,12 @@
               "extends": "Software supply chain security",
               "profiles": "Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "PR.PS-02, DE.CM-09",
+              "map_nist_sp800_53": "SI-7, SI-3, SC-39",
+              "map_nist_ai_rmf": "MEASURE 2.7, MANAGE 3.2",
+              "map_owasp_llm_2025": "LLM03",
+              "map_owasp_agentic_2026": "ASI04, ASI05"
             }
           ]
         },
@@ -1051,7 +1351,12 @@
               "extends": "Data protection",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "PR.AA-05, ID.AM-07",
+              "map_nist_sp800_53": "AC-3, AC-16",
+              "map_nist_ai_rmf": "MEASURE 2.7, MEASURE 2.10",
+              "map_owasp_llm_2025": "LLM02",
+              "map_owasp_agentic_2026": "none"
             },
             {
               "id": "HRD-DP-02",
@@ -1066,7 +1371,12 @@
               "extends": "",
               "profiles": "Consumed, Configured, Built",
               "essentials": "Yes",
-              "recommended_value": "Restricted-account test before enablement and after any permission model change."
+              "recommended_value": "Restricted-account test before enablement and after any permission model change.",
+              "map_nist_csf2": "PR.AA-05",
+              "map_nist_sp800_53": "AC-3, AC-6",
+              "map_nist_ai_rmf": "MEASURE 2.7, MEASURE 2.10",
+              "map_owasp_llm_2025": "LLM02, LLM08",
+              "map_owasp_agentic_2026": "none"
             },
             {
               "id": "HRD-DP-03",
@@ -1081,7 +1391,12 @@
               "extends": "Privacy program",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "GV.OC-03, ID.RA-05",
+              "map_nist_sp800_53": "RA-8, PT-2",
+              "map_nist_ai_rmf": "MEASURE 2.10, GOVERN 1.1",
+              "map_owasp_llm_2025": "LLM02",
+              "map_owasp_agentic_2026": "none"
             },
             {
               "id": "HRD-DP-04",
@@ -1096,7 +1411,12 @@
               "extends": "Data protection",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "GV.OC-03, ID.AM-08",
+              "map_nist_sp800_53": "SI-12, AU-11, MP-6",
+              "map_nist_ai_rmf": "MEASURE 2.10, GOVERN 1.7",
+              "map_owasp_llm_2025": "LLM02",
+              "map_owasp_agentic_2026": "none"
             },
             {
               "id": "HRD-DP-05",
@@ -1111,7 +1431,12 @@
               "extends": "",
               "profiles": "Consumed, Configured, Built",
               "essentials": "Yes",
-              "recommended_value": "Overshared means shared with the whole organization or by anyone-with-link and containing HR, finance, legal, executive, or client data. Review repeated quarterly."
+              "recommended_value": "Overshared means shared with the whole organization or by anyone-with-link and containing HR, finance, legal, executive, or client data. Review repeated quarterly.",
+              "map_nist_csf2": "PR.AA-05",
+              "map_nist_sp800_53": "AC-6, AC-3",
+              "map_nist_ai_rmf": "MEASURE 2.10, MEASURE 2.7",
+              "map_owasp_llm_2025": "LLM02, LLM08",
+              "map_owasp_agentic_2026": "none"
             },
             {
               "id": "HRD-DP-06",
@@ -1126,7 +1451,12 @@
               "extends": "Data protection",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "PR.DS-02, DE.CM-01",
+              "map_nist_sp800_53": "AC-4, SC-7, SI-4",
+              "map_nist_ai_rmf": "MEASURE 2.10",
+              "map_owasp_llm_2025": "LLM02",
+              "map_owasp_agentic_2026": "none"
             },
             {
               "id": "HRD-DP-07",
@@ -1141,7 +1471,12 @@
               "extends": "Data protection",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "PR.IR-01, PR.AA-05",
+              "map_nist_sp800_53": "AC-20, SC-7, AC-4",
+              "map_nist_ai_rmf": "MEASURE 2.10",
+              "map_owasp_llm_2025": "LLM02",
+              "map_owasp_agentic_2026": "none"
             },
             {
               "id": "HRD-DP-08",
@@ -1156,7 +1491,12 @@
               "extends": "Data protection",
               "profiles": "Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "PR.DS-01, PR.AA-05, ID.AM-07",
+              "map_nist_sp800_53": "SC-28, AC-3, SC-4",
+              "map_nist_ai_rmf": "MEASURE 2.10, MEASURE 2.7",
+              "map_owasp_llm_2025": "LLM08, LLM02",
+              "map_owasp_agentic_2026": "ASI06"
             }
           ]
         },
@@ -1177,7 +1517,12 @@
               "extends": "Third-party risk management",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "GV.SC-06",
+              "map_nist_sp800_53": "SR-4, SA-4",
+              "map_nist_ai_rmf": "MAP 4.1, GOVERN 6.1",
+              "map_owasp_llm_2025": "LLM03",
+              "map_owasp_agentic_2026": "ASI04"
             },
             {
               "id": "HRD-PV-02",
@@ -1192,7 +1537,12 @@
               "extends": "",
               "profiles": "Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "ID.AM-07, GV.OC-03",
+              "map_nist_sp800_53": "SR-4, CM-8",
+              "map_nist_ai_rmf": "MAP 4.1, GOVERN 1.6",
+              "map_owasp_llm_2025": "LLM04, LLM03",
+              "map_owasp_agentic_2026": "none"
             },
             {
               "id": "HRD-PV-03",
@@ -1207,7 +1557,12 @@
               "extends": "",
               "profiles": "Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "PR.DS-01, PR.PS-06",
+              "map_nist_sp800_53": "SI-10, SI-7",
+              "map_nist_ai_rmf": "MEASURE 2.7, MEASURE 2.1",
+              "map_owasp_llm_2025": "LLM04, LLM01",
+              "map_owasp_agentic_2026": "none"
             },
             {
               "id": "HRD-PV-04",
@@ -1222,7 +1577,12 @@
               "extends": "",
               "profiles": "Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "PR.DS-01, ID.AM-07",
+              "map_nist_sp800_53": "SR-4, SI-7, CM-2",
+              "map_nist_ai_rmf": "MEASURE 2.8, MAP 2.3",
+              "map_owasp_llm_2025": "LLM04, LLM03",
+              "map_owasp_agentic_2026": "none"
             }
           ]
         },
@@ -1243,7 +1603,12 @@
               "extends": "Data protection",
               "profiles": "Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "PR.DS-01, PR.AA-05",
+              "map_nist_sp800_53": "SC-28, AC-3, SC-12",
+              "map_nist_ai_rmf": "MEASURE 2.7",
+              "map_owasp_llm_2025": "none",
+              "map_owasp_agentic_2026": "none"
             }
           ]
         },
@@ -1264,7 +1629,12 @@
               "extends": "Secure development lifecycle",
               "profiles": "Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "PR.PS-01",
+              "map_nist_sp800_53": "CM-3, CM-2",
+              "map_nist_ai_rmf": "MEASURE 2.7, GOVERN 1.4",
+              "map_owasp_llm_2025": "none",
+              "map_owasp_agentic_2026": "none"
             },
             {
               "id": "HRD-DV-02",
@@ -1279,7 +1649,12 @@
               "extends": "Secure development lifecycle",
               "profiles": "Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "PR.PS-06, ID.RA-03",
+              "map_nist_sp800_53": "SA-3, SA-11, SA-15",
+              "map_nist_ai_rmf": "MEASURE 2.7, MAP 5.1",
+              "map_owasp_llm_2025": "none",
+              "map_owasp_agentic_2026": "none"
             },
             {
               "id": "HRD-DV-03",
@@ -1294,7 +1669,12 @@
               "extends": "Secure development lifecycle",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "PR.PS-06, PR.PS-05",
+              "map_nist_sp800_53": "SA-11, SR-3, SA-15",
+              "map_nist_ai_rmf": "MEASURE 2.7",
+              "map_owasp_llm_2025": "LLM03, LLM05",
+              "map_owasp_agentic_2026": "ASI04"
             },
             {
               "id": "HRD-DV-04",
@@ -1309,7 +1689,12 @@
               "extends": "",
               "profiles": "Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "PR.AA-05, PR.PS-06",
+              "map_nist_sp800_53": "IA-5, AC-3, SA-11",
+              "map_nist_ai_rmf": "MEASURE 2.7",
+              "map_owasp_llm_2025": "LLM07, LLM06",
+              "map_owasp_agentic_2026": "ASI03"
             },
             {
               "id": "HRD-DV-05",
@@ -1324,7 +1709,12 @@
               "extends": "Secure development lifecycle",
               "profiles": "Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "PR.AA-03, PR.AA-05",
+              "map_nist_sp800_53": "IA-9, AC-3, AC-6",
+              "map_nist_ai_rmf": "MEASURE 2.7",
+              "map_owasp_llm_2025": "none",
+              "map_owasp_agentic_2026": "ASI03, ASI07"
             }
           ]
         }
@@ -1352,7 +1742,12 @@
               "extends": "",
               "profiles": "Consumed, Configured, Built",
               "essentials": "Yes",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "PR.AA-05, PR.PS-01",
+              "map_nist_sp800_53": "AC-6, CM-7, AC-5",
+              "map_nist_ai_rmf": "MEASURE 2.7, MANAGE 1.3",
+              "map_owasp_llm_2025": "LLM01, LLM06",
+              "map_owasp_agentic_2026": "ASI01, ASI02"
             },
             {
               "id": "DEF-IN-02",
@@ -1367,7 +1762,12 @@
               "extends": "",
               "profiles": "Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "PR.PS-06, PR.PS-01",
+              "map_nist_sp800_53": "SI-10, SA-8",
+              "map_nist_ai_rmf": "MEASURE 2.7, MANAGE 1.3",
+              "map_owasp_llm_2025": "LLM01",
+              "map_owasp_agentic_2026": "ASI01"
             },
             {
               "id": "DEF-IN-03",
@@ -1382,7 +1782,12 @@
               "extends": "",
               "profiles": "Built",
               "essentials": "No",
-              "recommended_value": "Injection pattern lists updated monthly."
+              "recommended_value": "Injection pattern lists updated monthly.",
+              "map_nist_csf2": "DE.CM-09, ID.IM-02",
+              "map_nist_sp800_53": "SI-10, SI-4",
+              "map_nist_ai_rmf": "MEASURE 2.7, MEASURE 2.13",
+              "map_owasp_llm_2025": "LLM01",
+              "map_owasp_agentic_2026": "ASI01"
             }
           ]
         },
@@ -1403,7 +1808,12 @@
               "extends": "Secure development lifecycle",
               "profiles": "Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "PR.PS-06",
+              "map_nist_sp800_53": "SI-10, SI-15, SA-8",
+              "map_nist_ai_rmf": "MEASURE 2.7",
+              "map_owasp_llm_2025": "LLM05",
+              "map_owasp_agentic_2026": "ASI05"
             },
             {
               "id": "DEF-OU-02",
@@ -1418,7 +1828,12 @@
               "extends": "Data protection",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "PR.DS-02, DE.CM-09",
+              "map_nist_sp800_53": "SI-15, AC-4",
+              "map_nist_ai_rmf": "MEASURE 2.10, MEASURE 2.7",
+              "map_owasp_llm_2025": "LLM02",
+              "map_owasp_agentic_2026": "none"
             },
             {
               "id": "DEF-OU-03",
@@ -1433,7 +1848,12 @@
               "extends": "",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "GV.PO-01, PR.PS-01",
+              "map_nist_sp800_53": "SI-15, AU-2",
+              "map_nist_ai_rmf": "MEASURE 2.6, MANAGE 2.2",
+              "map_owasp_llm_2025": "none",
+              "map_owasp_agentic_2026": "none"
             },
             {
               "id": "DEF-OU-04",
@@ -1448,7 +1868,12 @@
               "extends": "",
               "profiles": "Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "PR.PS-01, PR.IR-01, PR.AA-05",
+              "map_nist_sp800_53": "SC-39, SI-10, AC-6",
+              "map_nist_ai_rmf": "MANAGE 1.3, MEASURE 2.7",
+              "map_owasp_llm_2025": "LLM05, LLM06",
+              "map_owasp_agentic_2026": "ASI05"
             },
             {
               "id": "DEF-OU-05",
@@ -1463,7 +1888,12 @@
               "extends": "",
               "profiles": "Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "DE.CM-09, GV.PO-01",
+              "map_nist_sp800_53": "SI-10, SI-4, AU-2",
+              "map_nist_ai_rmf": "MEASURE 2.7, MEASURE 2.6",
+              "map_owasp_llm_2025": "LLM07, LLM01",
+              "map_owasp_agentic_2026": "none"
             }
           ]
         },
@@ -1484,7 +1914,12 @@
               "extends": "Network security",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "PR.IR-01",
+              "map_nist_sp800_53": "SC-7, AC-4, CM-7",
+              "map_nist_ai_rmf": "MEASURE 2.7, MANAGE 1.3",
+              "map_owasp_llm_2025": "LLM06",
+              "map_owasp_agentic_2026": "ASI02"
             },
             {
               "id": "DEF-TL-02",
@@ -1499,7 +1934,12 @@
               "extends": "",
               "profiles": "Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "PR.IR-04, PR.PS-01",
+              "map_nist_sp800_53": "SC-5, SC-6",
+              "map_nist_ai_rmf": "MEASURE 2.7, MANAGE 2.2",
+              "map_owasp_llm_2025": "LLM10",
+              "map_owasp_agentic_2026": "ASI08"
             },
             {
               "id": "DEF-TL-03",
@@ -1514,7 +1954,12 @@
               "extends": "",
               "profiles": "Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "PR.AA-05, PR.PS-01",
+              "map_nist_sp800_53": "AC-3, AC-6",
+              "map_nist_ai_rmf": "MEASURE 2.7, MANAGE 1.3",
+              "map_owasp_llm_2025": "LLM06",
+              "map_owasp_agentic_2026": "ASI02, ASI03"
             },
             {
               "id": "DEF-TL-04",
@@ -1529,7 +1974,12 @@
               "extends": "",
               "profiles": "Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "PR.AA-03, PR.IR-04, DE.CM-09",
+              "map_nist_sp800_53": "IA-8, SC-5, SI-4",
+              "map_nist_ai_rmf": "MEASURE 2.7, MEASURE 2.4",
+              "map_owasp_llm_2025": "LLM10",
+              "map_owasp_agentic_2026": "none"
             },
             {
               "id": "DEF-TL-05",
@@ -1544,7 +1994,12 @@
               "extends": "",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "PR.IR-01, PR.AA-05, PR.PS-01",
+              "map_nist_sp800_53": "SC-39, AC-6, CM-7",
+              "map_nist_ai_rmf": "MEASURE 2.7, MANAGE 1.3",
+              "map_owasp_llm_2025": "LLM06",
+              "map_owasp_agentic_2026": "ASI05"
             },
             {
               "id": "DEF-TL-06",
@@ -1559,7 +2014,12 @@
               "extends": "",
               "profiles": "Consumed, Configured, Built",
               "essentials": "Yes",
-              "recommended_value": "Halt within 15 minutes for high-risk agents, one hour for others; step limit at 10 times normal run length; halt test annually."
+              "recommended_value": "Halt within 15 minutes for high-risk agents, one hour for others; step limit at 10 times normal run length; halt test annually.",
+              "map_nist_csf2": "PR.PS-01, RS.MI-01, ID.IM-02",
+              "map_nist_sp800_53": "SI-17, SC-24, IR-4",
+              "map_nist_ai_rmf": "MANAGE 2.4, MANAGE 2.3",
+              "map_owasp_llm_2025": "LLM06, LLM10",
+              "map_owasp_agentic_2026": "ASI10, ASI08"
             }
           ]
         },
@@ -1580,7 +2040,12 @@
               "extends": "",
               "profiles": "Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "PR.AA-05, PR.DS-01",
+              "map_nist_sp800_53": "AC-3, CM-5, AU-2",
+              "map_nist_ai_rmf": "MEASURE 2.7, MAP 2.3",
+              "map_owasp_llm_2025": "LLM04, LLM08",
+              "map_owasp_agentic_2026": "ASI06"
             },
             {
               "id": "DEF-PS-02",
@@ -1595,7 +2060,12 @@
               "extends": "",
               "profiles": "Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "ID.AM-07, PR.DS-01",
+              "map_nist_sp800_53": "AC-16, SR-4",
+              "map_nist_ai_rmf": "MAP 2.3, MEASURE 2.7",
+              "map_owasp_llm_2025": "LLM08, LLM04",
+              "map_owasp_agentic_2026": "ASI06"
             },
             {
               "id": "DEF-PS-03",
@@ -1610,7 +2080,12 @@
               "extends": "",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "PR.AA-05, PR.DS-01",
+              "map_nist_sp800_53": "AC-3, SI-10",
+              "map_nist_ai_rmf": "MEASURE 2.7, MEASURE 2.10",
+              "map_owasp_llm_2025": "LLM01",
+              "map_owasp_agentic_2026": "ASI06"
             },
             {
               "id": "DEF-PS-04",
@@ -1625,7 +2100,12 @@
               "extends": "",
               "profiles": "Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "PR.DS-01, DE.AE-02",
+              "map_nist_sp800_53": "SI-7, SI-10",
+              "map_nist_ai_rmf": "MEASURE 2.7, MEASURE 3.3",
+              "map_owasp_llm_2025": "LLM04",
+              "map_owasp_agentic_2026": "none"
             }
           ]
         }
@@ -1653,7 +2133,12 @@
               "extends": "Logging and monitoring",
               "profiles": "Consumed, Configured, Built",
               "essentials": "Yes",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "PR.PS-04, DE.CM-09",
+              "map_nist_sp800_53": "AU-2, AU-11, AU-12",
+              "map_nist_ai_rmf": "MEASURE 2.8, MANAGE 4.1",
+              "map_owasp_llm_2025": "none",
+              "map_owasp_agentic_2026": "none"
             },
             {
               "id": "MTR-LG-02",
@@ -1668,7 +2153,12 @@
               "extends": "Logging and monitoring",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "PR.PS-04, PR.DS-01",
+              "map_nist_sp800_53": "AU-2, AU-9",
+              "map_nist_ai_rmf": "MEASURE 2.8, MEASURE 2.10",
+              "map_owasp_llm_2025": "none",
+              "map_owasp_agentic_2026": "none"
             },
             {
               "id": "MTR-LG-03",
@@ -1683,7 +2173,12 @@
               "extends": "Logging and monitoring",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "DE.AE-03, PR.PS-04",
+              "map_nist_sp800_53": "AU-6, SI-4",
+              "map_nist_ai_rmf": "MEASURE 2.4, MANAGE 4.1",
+              "map_owasp_llm_2025": "none",
+              "map_owasp_agentic_2026": "none"
             },
             {
               "id": "MTR-LG-04",
@@ -1698,7 +2193,12 @@
               "extends": "",
               "profiles": "Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "PR.PS-04, PR.AA-01",
+              "map_nist_sp800_53": "AU-3, AU-10, AU-12",
+              "map_nist_ai_rmf": "MEASURE 2.8",
+              "map_owasp_llm_2025": "none",
+              "map_owasp_agentic_2026": "ASI03, ASI07"
             },
             {
               "id": "MTR-LG-05",
@@ -1713,7 +2213,12 @@
               "extends": "Logging and monitoring",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "PR.PS-04, PR.AA-05",
+              "map_nist_sp800_53": "AU-9, AC-6",
+              "map_nist_ai_rmf": "MEASURE 2.7, MEASURE 2.8",
+              "map_owasp_llm_2025": "none",
+              "map_owasp_agentic_2026": "ASI10, ASI03"
             }
           ]
         },
@@ -1734,7 +2239,12 @@
               "extends": "Logging and monitoring",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": "Baselines refreshed quarterly and after any change to an agent's tools or scope."
+              "recommended_value": "Baselines refreshed quarterly and after any change to an agent's tools or scope.",
+              "map_nist_csf2": "DE.CM-09, DE.AE-02",
+              "map_nist_sp800_53": "SI-4, AU-6",
+              "map_nist_ai_rmf": "MEASURE 2.4, MANAGE 4.1",
+              "map_owasp_llm_2025": "LLM01",
+              "map_owasp_agentic_2026": "ASI01, ASI10"
             },
             {
               "id": "MTR-BH-02",
@@ -1749,7 +2259,12 @@
               "extends": "",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "DE.CM-09, DE.CM-03",
+              "map_nist_sp800_53": "SI-4, AU-6",
+              "map_nist_ai_rmf": "MEASURE 2.4, MEASURE 3.1",
+              "map_owasp_llm_2025": "LLM06",
+              "map_owasp_agentic_2026": "ASI10, ASI02"
             },
             {
               "id": "MTR-BH-03",
@@ -1764,7 +2279,12 @@
               "extends": "Logging and monitoring",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "DE.AE-06, RS.MA-02",
+              "map_nist_sp800_53": "IR-4, IR-5, SI-4",
+              "map_nist_ai_rmf": "MANAGE 4.1",
+              "map_owasp_llm_2025": "none",
+              "map_owasp_agentic_2026": "none"
             }
           ]
         },
@@ -1785,7 +2305,12 @@
               "extends": "Change management",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "ID.RA-07, PR.PS-02",
+              "map_nist_sp800_53": "CM-3, CM-2",
+              "map_nist_ai_rmf": "MANAGE 3.2, MANAGE 4.1",
+              "map_owasp_llm_2025": "LLM03",
+              "map_owasp_agentic_2026": "ASI04"
             },
             {
               "id": "MTR-DR-02",
@@ -1800,7 +2325,12 @@
               "extends": "",
               "profiles": "Built",
               "essentials": "No",
-              "recommended_value": "Test set run monthly and after any model or prompt change."
+              "recommended_value": "Test set run monthly and after any model or prompt change.",
+              "map_nist_csf2": "ID.IM-02, ID.RA-07",
+              "map_nist_sp800_53": "SA-11, CM-4",
+              "map_nist_ai_rmf": "MEASURE 2.3, MEASURE 2.5",
+              "map_owasp_llm_2025": "LLM09",
+              "map_owasp_agentic_2026": "none"
             },
             {
               "id": "MTR-DR-03",
@@ -1815,7 +2345,12 @@
               "extends": "",
               "profiles": "Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "ID.IM-02, PR.PS-01",
+              "map_nist_sp800_53": "CA-7, CM-3",
+              "map_nist_ai_rmf": "MEASURE 2.3, MANAGE 2.3",
+              "map_owasp_llm_2025": "LLM09",
+              "map_owasp_agentic_2026": "none"
             },
             {
               "id": "MTR-DR-04",
@@ -1830,7 +2365,12 @@
               "extends": "",
               "profiles": "Configured, Built",
               "essentials": "No",
-              "recommended_value": "Retrieval sources scanned weekly."
+              "recommended_value": "Retrieval sources scanned weekly.",
+              "map_nist_csf2": "DE.CM-09, PR.DS-01",
+              "map_nist_sp800_53": "SI-7, SI-4",
+              "map_nist_ai_rmf": "MEASURE 2.7, MEASURE 2.4",
+              "map_owasp_llm_2025": "LLM04, LLM08",
+              "map_owasp_agentic_2026": "ASI06"
             }
           ]
         },
@@ -1851,7 +2391,12 @@
               "extends": "Vulnerability management",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "ID.RA-01, PR.PS-02",
+              "map_nist_sp800_53": "RA-5, SI-2",
+              "map_nist_ai_rmf": "MEASURE 2.7, MANAGE 3.1",
+              "map_owasp_llm_2025": "LLM03",
+              "map_owasp_agentic_2026": "ASI04"
             },
             {
               "id": "MTR-VM-02",
@@ -1866,7 +2411,12 @@
               "extends": "Threat intelligence",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": "AI vulnerability advisories reviewed weekly."
+              "recommended_value": "AI vulnerability advisories reviewed weekly.",
+              "map_nist_csf2": "ID.RA-02, ID.RA-03",
+              "map_nist_sp800_53": "PM-16, RA-3",
+              "map_nist_ai_rmf": "MEASURE 3.1, MAP 5.1",
+              "map_owasp_llm_2025": "none",
+              "map_owasp_agentic_2026": "none"
             }
           ]
         },
@@ -1887,7 +2437,12 @@
               "extends": "Incident response",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "ID.RA-08, RS.MA-02",
+              "map_nist_sp800_53": "IR-6, IR-5",
+              "map_nist_ai_rmf": "GOVERN 5.1, MEASURE 3.3",
+              "map_owasp_llm_2025": "none",
+              "map_owasp_agentic_2026": "none"
             },
             {
               "id": "MTR-TS-02",
@@ -1902,7 +2457,12 @@
               "extends": "Security testing",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "ID.IM-02, PR.PS-06",
+              "map_nist_sp800_53": "SA-11, CA-8",
+              "map_nist_ai_rmf": "MEASURE 2.7, MEASURE 1.1",
+              "map_owasp_llm_2025": "LLM01, LLM06",
+              "map_owasp_agentic_2026": "ASI01, ASI02"
             },
             {
               "id": "MTR-TS-03",
@@ -1917,7 +2477,12 @@
               "extends": "Security testing",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": "High-risk systems red-teamed annually; others every two years."
+              "recommended_value": "High-risk systems red-teamed annually; others every two years.",
+              "map_nist_csf2": "ID.IM-02, ID.RA-01",
+              "map_nist_sp800_53": "CA-8, CA-2",
+              "map_nist_ai_rmf": "MEASURE 1.3, MEASURE 2.7",
+              "map_owasp_llm_2025": "none",
+              "map_owasp_agentic_2026": "none"
             }
           ]
         }
@@ -1945,7 +2510,12 @@
               "extends": "Incident response",
               "profiles": "Consumed, Configured, Built",
               "essentials": "Yes",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "ID.IM-04, RS.MA-03, DE.AE-08",
+              "map_nist_sp800_53": "IR-8, IR-4, IR-5",
+              "map_nist_ai_rmf": "MANAGE 4.1, MANAGE 4.3",
+              "map_owasp_llm_2025": "none",
+              "map_owasp_agentic_2026": "none"
             },
             {
               "id": "RSP-PL-02",
@@ -1960,7 +2530,12 @@
               "extends": "Incident response",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "ID.IM-02",
+              "map_nist_sp800_53": "IR-3, IR-2",
+              "map_nist_ai_rmf": "MANAGE 4.1, MANAGE 2.4",
+              "map_owasp_llm_2025": "none",
+              "map_owasp_agentic_2026": "ASI10"
             }
           ]
         },
@@ -1981,7 +2556,12 @@
               "extends": "Incident response",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "RS.AN-03, PR.PS-04",
+              "map_nist_sp800_53": "IR-4, AU-6, AU-3",
+              "map_nist_ai_rmf": "MEASURE 2.8, MANAGE 4.1",
+              "map_owasp_llm_2025": "none",
+              "map_owasp_agentic_2026": "none"
             },
             {
               "id": "RSP-IV-02",
@@ -1996,7 +2576,12 @@
               "extends": "Incident response",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "RS.AN-07, RS.AN-06",
+              "map_nist_sp800_53": "IR-4, AU-9, AU-11",
+              "map_nist_ai_rmf": "MEASURE 2.8, MANAGE 4.1",
+              "map_owasp_llm_2025": "none",
+              "map_owasp_agentic_2026": "none"
             }
           ]
         },
@@ -2017,7 +2602,12 @@
               "extends": "Incident response",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "RS.MI-01, RS.MI-02, ID.IM-04",
+              "map_nist_sp800_53": "IR-4, AC-2",
+              "map_nist_ai_rmf": "MANAGE 2.4, MANAGE 4.1",
+              "map_owasp_llm_2025": "LLM06",
+              "map_owasp_agentic_2026": "ASI10, ASI03"
             },
             {
               "id": "RSP-CN-02",
@@ -2032,7 +2622,12 @@
               "extends": "Business continuity and disaster recovery",
               "profiles": "Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "PR.DS-11, RC.RP-01",
+              "map_nist_sp800_53": "CP-9, CP-10, CM-2",
+              "map_nist_ai_rmf": "MANAGE 2.3, MANAGE 4.1",
+              "map_owasp_llm_2025": "none",
+              "map_owasp_agentic_2026": "none"
             },
             {
               "id": "RSP-CN-03",
@@ -2047,7 +2642,12 @@
               "extends": "",
               "profiles": "Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "RS.MI-02, RC.RP-02",
+              "map_nist_sp800_53": "IR-4, CP-10, SI-7",
+              "map_nist_ai_rmf": "MANAGE 2.3, MANAGE 4.1",
+              "map_owasp_llm_2025": "LLM04, LLM08",
+              "map_owasp_agentic_2026": "ASI06"
             },
             {
               "id": "RSP-CN-04",
@@ -2062,7 +2662,12 @@
               "extends": "",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "RC.RP-05, RC.RP-04",
+              "map_nist_sp800_53": "IR-4, CP-10, CA-7",
+              "map_nist_ai_rmf": "MANAGE 2.3, MANAGE 4.1",
+              "map_owasp_llm_2025": "none",
+              "map_owasp_agentic_2026": "ASI10, ASI08"
             }
           ]
         },
@@ -2083,7 +2688,12 @@
               "extends": "Business continuity and disaster recovery",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "GV.OC-04, ID.AM-05, PR.IR-03",
+              "map_nist_sp800_53": "CP-2, CP-3, RA-9",
+              "map_nist_ai_rmf": "GOVERN 6.2, MANAGE 2.3",
+              "map_owasp_llm_2025": "none",
+              "map_owasp_agentic_2026": "none"
             },
             {
               "id": "RSP-BC-02",
@@ -2098,7 +2708,12 @@
               "extends": "Business continuity and disaster recovery",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "ID.IM-02, PR.IR-03",
+              "map_nist_sp800_53": "CP-4, CP-2",
+              "map_nist_ai_rmf": "GOVERN 6.2, MANAGE 2.3",
+              "map_owasp_llm_2025": "none",
+              "map_owasp_agentic_2026": "none"
             }
           ]
         },
@@ -2119,7 +2734,12 @@
               "extends": "Incident response",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "RS.CO-02, GV.OC-03",
+              "map_nist_sp800_53": "IR-6, SR-8",
+              "map_nist_ai_rmf": "MANAGE 4.3, GOVERN 4.3",
+              "map_owasp_llm_2025": "none",
+              "map_owasp_agentic_2026": "none"
             },
             {
               "id": "RSP-IM-02",
@@ -2134,7 +2754,12 @@
               "extends": "Incident response",
               "profiles": "Consumed, Configured, Built",
               "essentials": "No",
-              "recommended_value": ""
+              "recommended_value": "",
+              "map_nist_csf2": "ID.IM-03, ID.IM-02",
+              "map_nist_sp800_53": "IR-4, CA-5",
+              "map_nist_ai_rmf": "MANAGE 4.2, MANAGE 4.1",
+              "map_owasp_llm_2025": "none",
+              "map_owasp_agentic_2026": "none"
             }
           ]
         }
