@@ -8,4 +8,6 @@ The name "ACTOR" as applied to this AI security framework identifies the officia
 - You may cite ACTOR control IDs, such as ACTOR DEL-ID-01, when referring to the official controls.
 - Please do not publish a modified version under the ACTOR name, or imply that a modified version is official or endorsed, without permission.
 
+ACTOR was developed independently and is not affiliated with other projects that use the same name. This guidance applies only to the framework in this repository.
+
 Questions about use of the name can be raised through an issue in this repository.

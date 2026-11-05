@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ACTOR AI Security Framework | AI Controls for Trust, Oversight, and Resilience</title>
+<meta name="description" content="ACTOR is a free, open, tool-neutral AI security framework. 134 controls for AI agents, models, data, platforms, and AI use, mapped to NIST CSF 2.0, SP 800-53, the NIST AI RMF, and OWASP.">
+<meta name="author" content="Robert Fernandes">
+<meta name="keywords" content="ACTOR AI Security Framework, AI security framework, AI security controls, agentic AI security, AI agent security controls, AI governance, NIST AI RMF mapping, OWASP Agentic Top 10, LLM security">
+<link rel="canonical" href="https://actor-ai-security.github.io/actor-framework/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ACTOR AI Security Framework">
+<meta property="og:title" content="ACTOR AI Security Framework">
+<meta property="og:description" content="AI Controls for Trust, Oversight, and Resilience. A free, open, tool-neutral control framework for AI agents, models, data, and platforms.">
+<meta property="og:url" content="https://actor-ai-security.github.io/actor-framework/">
+<meta property="og:image" content="https://actor-ai-security.github.io/actor-framework/social-preview.png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="640">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ACTOR AI Security Framework">
+<meta name="twitter:description" content="AI Controls for Trust, Oversight, and Resilience. 134 open controls for securing AI.">
+<meta name="twitter:image" content="https://actor-ai-security.github.io/actor-framework/social-preview.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "ACTOR AI Security Framework",
+  "alternateName": "ACTOR: AI Controls for Trust, Oversight, and Resilience",
+  "description": "A free, open, tool-neutral security control framework for AI agents, models, data, AI platforms, and AI use. 134 controls mapped to NIST CSF 2.0, SP 800-53, the NIST AI RMF, and OWASP.",
+  "url": "https://actor-ai-security.github.io/actor-framework/",
+  "sameAs": ["https://github.com/ACTOR-AI-Security/actor-framework"],
+  "version": "0.1.2",
+  "datePublished": "2026-10-23",
+  "dateModified": "2026-11-04",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "inLanguage": "en",
+  "keywords": "AI security, AI security controls, agentic AI security, AI governance",
+  "author": {
+    "@type": "Person",
+    "name": "Robert Fernandes",
+    "sameAs": ["https://www.linkedin.com/in/robert-fernandes-cybersecurity"]
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --ink: #141414;
+    --muted: #555;
+    --line: #e6e6e6;
+    --soft: #f6f6f4;
+    --gold: #f5b700;
+    --gold-dark: #b98a00;
+    --max: 1080px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: Inter, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    background: #fff;
+    line-height: 1.6;
+    font-size: 17px;
+  }
+  a { color: var(--ink); text-decoration-color: var(--gold); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+  a:hover { color: var(--gold-dark); }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+  h1, h2, h3 { font-family: Montserrat, Inter, sans-serif; line-height: 1.15; letter-spacing: -0.01em; }
+  h2 { font-size: 30px; font-weight: 800; margin: 0 0 12px; }
+  h3 { font-size: 18px; font-weight: 700; margin: 0 0 6px; }
+  p { margin: 0 0 14px; }
+  .eyebrow {
+    font-family: Montserrat, sans-serif; font-weight: 700; font-size: 13px;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px;
+  }
+
+  header.top { border-bottom: 1px solid var(--line); }
+  header.top .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .brand { font-family: Montserrat, sans-serif; font-weight: 800; font-size: 20px; text-decoration: none; letter-spacing: 0.04em; }
+  .brand span { color: var(--gold); }
+  nav a { margin-left: 22px; font-size: 15px; font-weight: 500; text-decoration: none; }
+  nav a:hover { text-decoration: underline; text-decoration-color: var(--gold); }
+
+  .hero { padding: 72px 0 64px; }
+  .hero h1 { font-size: clamp(40px, 7vw, 76px); font-weight: 800; margin: 0 0 6px; }
+  .hero h1 .gold { color: var(--gold); display: block; }
+  .hero .expansion { font-family: Montserrat, sans-serif; font-weight: 700; font-size: clamp(18px, 2.4vw, 24px); margin: 18px 0 20px; }
+  .hero .lede { font-size: 19px; max-width: 720px; color: #2a2a2a; }
+  .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+  .btn {
+    display: inline-block; padding: 13px 22px; border-radius: 6px; font-weight: 600;
+    text-decoration: none; border: 2px solid var(--ink); font-size: 16px;
+  }
+  .btn.primary { background: var(--gold); border-color: var(--gold); color: var(--ink); }
+  .btn.primary:hover { background: #ffc81f; color: var(--ink); }
+  .btn:hover { color: var(--ink); background: var(--soft); }
+  .status {
+    margin-top: 28px; display: inline-block; background: var(--soft); border-left: 4px solid var(--gold);
+    padding: 10px 14px; font-size: 15px;
+  }
+
+  section { padding: 64px 0; border-top: 1px solid var(--line); }
+  section.alt { background: var(--soft); }
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 28px; }
+  .stat { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 18px; }
+  .stat b { display: block; font-family: Montserrat, sans-serif; font-size: 34px; font-weight: 800; }
+  .stat span { color: var(--muted); font-size: 14px; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 24px; }
+  .card { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 20px; }
+  .card .code { font-family: Montserrat, sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 0.12em; color: var(--gold-dark); }
+  .card p { color: #333; font-size: 15.5px; margin: 0; }
+  .card .count { margin-top: 10px; font-size: 13.5px; color: var(--muted); }
+
+  ul.points { padding: 0; list-style: none; margin: 20px 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px 28px; }
+  ul.points li { padding-left: 22px; position: relative; }
+  ul.points li::before { content: ""; position: absolute; left: 0; top: 9px; width: 10px; height: 10px; background: var(--gold); }
+
+  table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 15.5px; background: #fff; }
+  th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { font-family: Montserrat, sans-serif; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+
+  ol.steps { margin: 20px 0 0; padding-left: 22px; }
+  ol.steps li { margin-bottom: 12px; }
+
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  .cite { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 14px; background: #fff; border: 1px solid var(--line); border-radius: 6px; padding: 14px; }
+
+  footer { padding: 40px 0 56px; border-top: 1px solid var(--line); font-size: 14.5px; color: var(--muted); }
+  footer p { margin: 0 0 8px; }
+
+  @media (max-width: 760px) {
+    nav { display: none; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .two { grid-template-columns: 1fr; }
+    section { padding: 48px 0; }
+    .hero { padding: 48px 0; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#">ACTOR<span>.</span></a>
+    <nav aria-label="Main">
+      <a href="#functions">Functions</a>
+      <a href="#start">Get started</a>
+      <a href="#comment">Comment</a>
+      <a href="https://github.com/ACTOR-AI-Security/actor-framework">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Free and open AI security framework</div>
+      <h1>ACTOR AI Security <span class="gold">Framework</span></h1>
+      <p class="expansion">AI Controls for Trust, Oversight, and Resilience</p>
+      <p class="lede">ACTOR is an open, tool-neutral security control framework for the full AI estate: agents, models, the data they learn from and read, AI platforms, and how people use AI. It adds the controls AI needs alongside the framework you already run.</p>
+      <div class="cta">
+        <a class="btn primary" href="https://github.com/ACTOR-AI-Security/actor-framework/blob/main/FRAMEWORK.md">Read the framework</a>
+        <a class="btn" href="https://github.com/ACTOR-AI-Security/actor-framework/blob/main/controls/actor-controls.csv">Download the controls (CSV)</a>
+      </div>
+      <div class="status"><strong>v0.1.2 public draft for comment.</strong> The comment period is open until January 15, 2027.</div>
+    </div>
+  </div>
+
+  <section class="alt" aria-labelledby="why">
+    <div class="wrap">
+      <h2 id="why">Why AI needs its own controls</h2>
+      <p>Current frameworks were built to secure people and conventional systems. AI is neither. An agent acts like a user, but it is not a person. A model runs like software, but its behavior is not deterministic. Both can be manipulated by the content they read, and both change over time.</p>
+      <p>ACTOR treats AI as its own class of actor. Agents get their own identity, delegated authority, supervision, and offboarding. Controls assume manipulation and misbehavior, and limit what a compromised AI can do.</p>
+      <div class="stats">
+        <div class="stat"><b>134</b><span>controls</span></div>
+        <div class="stat"><b>7</b><span>functions</span></div>
+        <div class="stat"><b>3</b><span>implementation tiers</span></div>
+        <div class="stat"><b>18</b><span>Essentials to start with</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="functions" aria-labelledby="functions-h">
+    <div class="wrap">
+      <h2 id="functions-h">Seven functions</h2>
+      <p>Govern sets direction for all of them. The other six run as a loop. A new tool, a model update, detected drift, or an incident sends a system back through the cycle.</p>
+      <div class="grid">
+        <div class="card"><div class="code">GVN</div><h3>Govern</h3><p>Who is accountable for AI risk, what uses are allowed, and how AI risk is classified.</p><div class="count">22 controls</div></div>
+        <div class="card"><div class="code">INV</div><h3>Inventory</h3><p>What AI exists, who owns it, and what it can reach.</p><div class="count">9 controls</div></div>
+        <div class="card"><div class="code">DEL</div><h3>Delegate</h3><p>Agents as security principals, with their own identity, least authority, and human approval for high-impact actions.</p><div class="count">22 controls</div></div>
+        <div class="card"><div class="code">HRD</div><h3>Harden</h3><p>Secure platform configuration, a trusted supply chain, protected data with known provenance, and secure development.</p><div class="count">32 controls</div></div>
+        <div class="card"><div class="code">DEF</div><h3>Defend</h3><p>Protects AI while it runs, and limits what a manipulated model or agent can reach and do.</p><div class="count">19 controls</div></div>
+        <div class="card"><div class="code">MTR</div><h3>Monitor</h3><p>Logging, agent behavior baselines, model drift, vulnerability management, and ongoing adversarial testing.</p><div class="count">18 controls</div></div>
+        <div class="card"><div class="code">RSP</div><h3>Respond</h3><p>AI incident response: revoke agent authority, roll back models, prompts, or data, and keep critical processes running.</p><div class="count">12 controls</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt" aria-labelledby="diff">
+    <div class="wrap">
+      <h2 id="diff">What makes ACTOR different</h2>
+      <ul class="points">
+        <li><strong>Agents are security principals.</strong> Every agent is identifiable as itself, with delegated authority and a human owner. Agents never sign in with a person's credentials.</li>
+        <li><strong>Humans hold authority, agents hold capability.</strong> High-impact actions need a human approval the agent cannot satisfy.</li>
+        <li><strong>Assume manipulation and misbehavior.</strong> Controls limit what a manipulated or misbehaving AI can do, not only whether it happens.</li>
+        <li><strong>An overlay, not a new program.</strong> Most controls extend practices you already run, such as vendor risk, incident response, and identity management.</li>
+        <li><strong>Works for vendor AI too.</strong> Controls say how to meet them when a vendor runs the AI, not only when you build it yourself.</li>
+        <li><strong>Tiered and testable.</strong> Foundational, Managed, and Advanced tiers. Every control is written so an auditor can test it.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="start" aria-labelledby="start-h">
+    <div class="wrap">
+      <h2 id="start-h">Where to start</h2>
+      <ol class="steps">
+        <li><strong>Pick your deployment profile.</strong> Consumed (you use vendor AI as delivered), Configured (you also build agents or assistants on vendor platforms), or Built (you also develop or host your own AI).</li>
+        <li><strong>Start with the 18 ACTOR Essentials.</strong> They address the most common AI failures for organizations that mainly use vendor AI.</li>
+        <li><strong>Work through your tier.</strong> Controls marked Extends add AI scope to something you already do. Controls marked New are AI-specific work.</li>
+      </ol>
+      <table>
+        <thead><tr><th>Profile</th><th>Who it fits</th><th>Controls</th></tr></thead>
+        <tbody>
+          <tr><td>Consumed</td><td>Uses vendor AI products as delivered, such as AI assistants in productivity suites</td><td>93</td></tr>
+          <tr><td>Configured</td><td>Also builds agents, assistants, knowledge bases, or workflows on a vendor platform</td><td>109</td></tr>
+          <tr><td>Built</td><td>Also develops or hosts its own AI systems</td><td>134</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="alt" aria-labelledby="map">
+    <div class="wrap">
+      <h2 id="map">Mapped to the frameworks you already use</h2>
+      <p>Every control maps to NIST CSF 2.0, NIST SP 800-53 Rev 5, the NIST AI RMF 1.0, the OWASP Top 10 for LLM Applications (2025), and the OWASP Top 10 for Agentic Applications (2026). Reuse your existing audits and evidence.</p>
+      <p>ACTOR also maps to the ten design tenets for agent identity, authentication, and authorization that NIST published in October 2026.</p>
+      <div class="cta">
+        <a class="btn" href="https://github.com/ACTOR-AI-Security/actor-framework/blob/main/controls/actor-crosswalk.csv">Control crosswalk (CSV)</a>
+        <a class="btn" href="https://github.com/ACTOR-AI-Security/actor-framework/blob/main/controls/actor-controls.json">Control data (JSON)</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="comment" aria-labelledby="comment-h">
+    <div class="wrap two">
+      <div>
+        <h2 id="comment-h">Comment on the draft</h2>
+        <p>ACTOR is published as a draft so practitioners can shape it. Feedback received by January 15, 2027 will shape v0.2. Every comment is read.</p>
+        <div class="cta">
+          <a class="btn primary" href="https://github.com/ACTOR-AI-Security/actor-framework/issues/new/choose">Open an issue</a>
+          <a class="btn" href="https://github.com/ACTOR-AI-Security/actor-framework/blob/main/CONTRIBUTING.md">How to contribute</a>
+        </div>
+        <p style="margin-top:16px;font-size:15px;color:var(--muted)">No GitHub account? Contact <a href="https://www.linkedin.com/in/robert-fernandes-cybersecurity">Robert Fernandes on LinkedIn</a>.</p>
+      </div>
+      <div>
+        <h2>Cite ACTOR</h2>
+        <p>Put the framework name before the control ID, for example ACTOR DEL-ID-01.</p>
+        <div class="cite">Fernandes, R. (2026). ACTOR: AI Controls for Trust, Oversight, and Resilience (Version 0.1.2). https://github.com/ACTOR-AI-Security/actor-framework</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt" aria-labelledby="book">
+    <div class="wrap">
+      <h2 id="book">The companion book</h2>
+      <p><em>The AI Security and Governance Field Guide: Protecting Your Organization in the Age of AI</em> is based on the ACTOR AI Security Framework. It gives leaders checklists, templates, and a 90-day plan to adopt AI with confidence.</p>
+      <!-- BOOK_LINK -->
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong>ACTOR AI Security Framework</strong> by <a href="https://www.linkedin.com/in/robert-fernandes-cybersecurity">Robert Fernandes</a>. Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</p>
+    <p>ACTOR (AI Controls for Trust, Oversight, and Resilience) was developed independently and is not affiliated with other projects that use the ACTOR name.</p>
+  </div>
+</footer>
+
+</body>
+</html>

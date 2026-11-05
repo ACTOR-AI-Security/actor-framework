@@ -1,12 +1,14 @@
-# ACTOR
+# ACTOR AI Security Framework
 
 **AI Controls for Trust, Oversight, and Resilience**
+
+Website: [actor-ai-security.github.io/actor-framework](https://actor-ai-security.github.io/actor-framework/)
 
 ACTOR is an open, tool-neutral security control framework for the full AI estate: agents, models, the data they learn from and read, AI platforms, and how people use AI.
 
 Its premise is simple. AI is a new class of actor. An agent acts like a user but is not a person. A model runs like software but is not deterministic. Both can be manipulated by what they read, agents can act beyond their instructions, and both change over time. Existing frameworks secure people and conventional systems, and they remain essential. ACTOR adds the controls AI needs alongside them, and governs the people who use, build, and oversee it.
 
-> **Status: v0.1.1 public draft for comment.** The comment period is open until **January 15, 2027**. Feedback received by then will shape v0.2. See [How to comment](#how-to-comment).
+> **Status: v0.1.2 public draft for comment.** The comment period is open until **January 15, 2027**. Feedback received by then will shape v0.2. See [How to comment](#how-to-comment).
 
 ### [Read the full framework](FRAMEWORK.md)
 
@@ -24,16 +26,16 @@ Its premise is simple. AI is a new class of actor. An agent acts like a user but
 
 ## At a glance
 
-125 controls across seven functions: 50 Foundational, 64 Managed, 11 Advanced.
+134 controls across seven functions: 50 Foundational, 70 Managed, 14 Advanced.
 
 | Function | Code | Controls |
 | --- | --- | --- |
 | Govern | GVN | 22 |
 | Inventory | INV | 9 |
-| Delegate | DEL | 19 |
-| Harden | HRD | 28 |
-| Defend | DEF | 18 |
-| Monitor | MTR | 17 |
+| Delegate | DEL | 22 |
+| Harden | HRD | 32 |
+| Defend | DEF | 19 |
+| Monitor | MTR | 18 |
 | Respond | RSP | 12 |
 
 ## Where to start
@@ -81,5 +83,9 @@ The ACTOR framework text and control data are licensed under [Creative Commons A
 Suggested attribution: "ACTOR Framework by Robert Fernandes, licensed under CC BY 4.0."
 
 The ACTOR name identifies the official framework. See [TRADEMARK.md](TRADEMARK.md).
+
+## About the name
+
+ACTOR (AI Controls for Trust, Oversight, and Resilience) was developed independently and first published in this repository in October 2026. It is not affiliated with other projects that use the ACTOR name.
 
 Created by Robert Fernandes.
