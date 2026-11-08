@@ -19,6 +19,7 @@ A maintenance release during the comment period. No control IDs changed and no c
 - HRD-CF-04 now covers the data stores behind AI systems: vector databases, caches, message queues, and storage for training data and model files.
 - HRD-DP-06 and DEF-OU-02 now check text inside files, images, and audio, where the tool can extract it.
 - New definition: task mandate.
+- The term session agent is retired. DEL-ID-01, DEL-ID-03, and DEL-ID-04 now name browsing, desktop, and coding agents directly, and the definitions define each. The scope is unchanged: agents that operate inside a person's signed-in browser, desktop, or terminal.
 - New informative mapping of the NIST agent identity design tenets to ACTOR controls, in the Standards mapping section.
 - New view of ACTOR controls organized by NIST CSF 2.0 category and subcategory, so organizations running a CSF program can place ACTOR controls in their existing profile.
 - New six-step procedure in the adoption section for adding ACTOR to an existing control program, using the Extends table, the crosswalk, and the CSF view.
