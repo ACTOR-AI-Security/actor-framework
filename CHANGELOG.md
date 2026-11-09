@@ -18,12 +18,14 @@ A maintenance release during the comment period. No control IDs changed and no c
 - New MTR-LG-06 (Managed): sensitive data is removed or masked before it reaches observability, analytics, or debugging tools, and debug captures and traces are deleted on a set schedule.
 - HRD-CF-04 now covers the data stores behind AI systems: vector databases, caches, message queues, and storage for training data and model files.
 - HRD-DP-06 and DEF-OU-02 now check text inside files, images, and audio, where the tool can extract it.
+- New MTR-BH-04 (Managed): decoy credentials, records, or files are placed where AI systems and agents can reach them but have no reason to use them, and any access alerts and is investigated. Prompted by the SANS SEC530 checklist "Zero Trust for AI Agents" (Valenzuela, 2026).
+- HRD-DV-02 now also requires agents the organization configures or acquires to be threat modeled against a recognized agentic threat list, such as the OWASP Top 10 for Agentic Applications, before deployment. It applies to the Configured profile as well as Built.
 - New definition: task mandate.
 - The term session agent is retired. DEL-ID-01, DEL-ID-03, and DEL-ID-04 now name browsing, desktop, and coding agents directly, and the definitions define each. The scope is unchanged: agents that operate inside a person's signed-in browser, desktop, or terminal.
 - New informative mapping of the NIST agent identity design tenets to ACTOR controls, in the Standards mapping section.
 - New view of ACTOR controls organized by NIST CSF 2.0 category and subcategory, so organizations running a CSF program can place ACTOR controls in their existing profile.
 - New six-step procedure in the adoption section for adding ACTOR to an existing control program, using the Extends table, the crosswalk, and the CSF view.
-- Control count is 134: 50 Foundational, 70 Managed, 14 Advanced. Profiles: Consumed 93, Configured 109, Built 134.
+- Control count is 135: 50 Foundational, 71 Managed, 14 Advanced. Profiles: Consumed 94, Configured 110, Built 135.
 
 ## v0.1.1 (2026-10-30)
 
@@ -98,6 +100,6 @@ To make adoption proportional:
 Before review, overlapping controls were consolidated so each requirement appears once and can be assessed once. Merges: pre-deployment review and risk assessment (GVN-RK-02), action risk levels and approval thresholds (DEL-AP-01), single-action approvals and approval fatigue (DEL-AP-03), platform identity and administrator access (HRD-CF-02), model integrity and safe loading (HRD-SC-04), data intake and quarantine (HRD-PV-03), dataset versioning and lineage (HRD-PV-04), contributor control and change logging (DEF-PS-01), evaluation after updates (MTR-DR-02), pre-release and ongoing adversarial testing (MTR-TS-02, later split into MTR-TS-02 and MTR-TS-03), containment runbooks (RSP-CN-01), and backup, rollback, and restore (RSP-CN-02).
 
 - Seven functions: Govern, Inventory, Delegate, Harden, Defend, Monitor, Respond.
-- 134 controls: 50 Foundational, 70 Managed, 14 Advanced.
+- 135 controls: 50 Foundational, 71 Managed, 14 Advanced.
 - Function-level mapping to NIST CSF 2.0, NIST AI RMF, and the OWASP LLM Top 10 (2025).
 - Machine-readable control data in CSV and JSON.

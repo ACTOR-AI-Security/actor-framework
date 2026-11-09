@@ -26,7 +26,7 @@ Its premise is simple. AI is a new class of actor. An agent acts like a user but
 
 ## At a glance
 
-134 controls across seven functions: 50 Foundational, 70 Managed, 14 Advanced.
+135 controls across seven functions: 50 Foundational, 71 Managed, 14 Advanced.
 
 | Function | Code | Controls |
 | --- | --- | --- |
@@ -35,7 +35,7 @@ Its premise is simple. AI is a new class of actor. An agent acts like a user but
 | Delegate | DEL | 22 |
 | Harden | HRD | 32 |
 | Defend | DEF | 19 |
-| Monitor | MTR | 18 |
+| Monitor | MTR | 19 |
 | Respond | RSP | 12 |
 
 ## Where to start

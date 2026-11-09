@@ -1782,19 +1782,19 @@
               "function": "Harden",
               "category_code": "HRD-DV",
               "category": "Secure development",
-              "statement": "Internally built AI systems follow a secure development lifecycle that includes threat modeling for AI-specific threats.",
+              "statement": "AI systems the organization builds follow a secure development lifecycle that includes threat modeling for AI-specific threats. Agents the organization configures or acquires are threat modeled against a recognized agentic threat list, such as the OWASP Top 10 for Agentic Applications, before deployment.",
               "applies_to": "All",
               "tier": "Managed",
               "relation": "Extends",
               "extends": "Secure development lifecycle",
-              "profiles": "Built",
+              "profiles": "Configured, Built",
               "essentials": "No",
               "recommended_value": "",
               "map_nist_csf2": "PR.PS-06, ID.RA-03",
-              "map_nist_sp800_53": "SA-3, SA-11, SA-15",
+              "map_nist_sp800_53": "SA-3, SA-11, SA-15, RA-3",
               "map_nist_ai_rmf": "MEASURE 2.7, MAP 5.1",
               "map_owasp_llm_2025": "none",
-              "map_owasp_agentic_2026": "none"
+              "map_owasp_agentic_2026": "ASI01 to ASI10"
             },
             {
               "id": "HRD-DV-03",
@@ -2465,6 +2465,26 @@
               "map_nist_ai_rmf": "MANAGE 4.1",
               "map_owasp_llm_2025": "none",
               "map_owasp_agentic_2026": "none"
+            },
+            {
+              "id": "MTR-BH-04",
+              "function_code": "MTR",
+              "function": "Monitor",
+              "category_code": "MTR-BH",
+              "category": "Behavior baselines",
+              "statement": "Decoy credentials, records, or files are placed where AI systems and agents can reach them but have no legitimate reason to use them, and any access to a decoy generates an alert that is investigated as a possible scope violation or compromise.",
+              "applies_to": "All",
+              "tier": "Managed",
+              "relation": "New",
+              "extends": "",
+              "profiles": "Consumed, Configured, Built",
+              "essentials": "No",
+              "recommended_value": "",
+              "map_nist_csf2": "DE.CM-09, DE.AE-02",
+              "map_nist_sp800_53": "SC-26, SI-4",
+              "map_nist_ai_rmf": "MEASURE 2.7",
+              "map_owasp_llm_2025": "LLM06",
+              "map_owasp_agentic_2026": "ASI03, ASI10"
             }
           ]
         },

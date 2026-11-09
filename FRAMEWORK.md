@@ -264,7 +264,7 @@ Harden reduces the attack surface before anything runs: secure platform configur
 | HRD-MP-02 | Before release, models the organization trains or fine-tunes on sensitive data are tested, using documented tests, for whether the model reproduces training records or reveals whether a given record was in its training data. Results are recorded. A model that fails the documented threshold is not released until the cause is fixed, for example by removing the data, retraining, or using privacy-preserving training. | Models | Advanced |
 | **HRD-DV Secure development** | | | |
 | HRD-DV-01 | System prompts, agent instructions, and agent tool configurations are version-controlled and changed through review. Where the platform has no version history, configurations are exported or recorded before each change. | Agents | Managed |
-| HRD-DV-02 | Internally built AI systems follow a secure development lifecycle that includes threat modeling for AI-specific threats. | All | Managed |
+| HRD-DV-02 | AI systems the organization builds follow a secure development lifecycle that includes threat modeling for AI-specific threats. Agents the organization configures or acquires are threat modeled against a recognized agentic threat list, such as the OWASP Top 10 for Agentic Applications, before deployment. | All | Managed |
 | HRD-DV-03 | (a) All code, including AI-generated code, goes through the same review, testing, and scanning before merge. (b) Automated checks confirm that each new dependency exists in an approved package registry and comes from a trusted source. (c) Applications and scripts built with AI by people outside a development team are reviewed by a qualified person before they process company data, connect to company systems, or are shared beyond their creator. | Use | Foundational |
 | HRD-DV-04 | System prompts contain no credentials, secrets, or sensitive data. Access control, authorization, and other security decisions are enforced outside the model and do not depend on the system prompt staying confidential. System prompts are reviewed for this before deployment. | Agents | Foundational |
 | HRD-DV-05 | MCP servers and other tool servers the organization exposes authenticate each client, accept only tokens issued for that server, never pass client tokens through to downstream systems, and authorize each tool call for the calling user or agent. | Agents | Managed |
@@ -316,6 +316,7 @@ Monitor watches AI for the life of the system. It covers logging, agent behavior
 | MTR-BH-01 | Documented detection rules alert on indicators of manipulation, such as unexpected resources, scope creep, and unprompted requests for sensitive data. Rule effectiveness is reviewed at a frequency the organization defines and documents. | Agents | Managed |
 | MTR-BH-02 | Each agent has a documented behavior baseline covering systems accessed, volume, timing, and tools. Deviations beyond documented thresholds generate alerts. | Agents | Advanced |
 | MTR-BH-03 | AI security alerts are routed to the security operations function with defined triage and escalation procedures. | All | Managed |
+| MTR-BH-04 | Decoy credentials, records, or files are placed where AI systems and agents can reach them but have no legitimate reason to use them, and any access to a decoy generates an alert that is investigated as a possible scope violation or compromise. | All | Managed |
 | **MTR-DR Drift and integrity** | | | |
 | MTR-DR-01 | Provider model changes are tracked as change events. Where a provider allows model versions to be pinned, they are pinned and changed through review. Where it does not, provider release notes are monitored and changes are reviewed according to the system's risk rating. Changes to the organization's own prompts, instructions, and tool configurations are covered by HRD-DV-01. | Models | Foundational |
 | MTR-DR-02 | Production models the organization deploys or pins are evaluated against a defined test set at a frequency the organization defines and documents. After any model, training, or data update, the model passes the same evaluation before release to production. For vendor-managed models that change without notice, the test set is run after announced changes and on a documented schedule. | Models | Managed |
@@ -355,7 +356,7 @@ Respond adapts incident response to AI. The evidence is prompts, context, and to
 
 ## Implementation tiers
 
-Every control carries a tier, so organizations adopt the framework in stages. v0.1.2 has 134 controls: 50 Foundational, 70 Managed, and 14 Advanced.
+Every control carries a tier, so organizations adopt the framework in stages. v0.1.2 has 135 controls: 50 Foundational, 71 Managed, and 14 Advanced.
 
 | Tier | Intended for | What it achieves |
 | --- | --- | --- |
@@ -396,13 +397,13 @@ ACTOR is an overlay. It is designed to be added to the framework an organization
 
 | Profile | Description | Controls that apply |
 | --- | --- | --- |
-| Consumed | Uses vendor AI products as delivered, such as AI assistants in productivity suites, chat assistants, and AI features in existing software | 93 |
-| Configured | Also builds agents, assistants, knowledge bases, or workflows on a vendor platform | 109 |
-| Built | Also develops or hosts its own AI systems, including applications on model APIs, retrieval pipelines, self-hosted models, and tool servers | 134 |
+| Consumed | Uses vendor AI products as delivered, such as AI assistants in productivity suites, chat assistants, and AI features in existing software | 94 |
+| Configured | Also builds agents, assistants, knowledge bases, or workflows on a vendor platform | 111 |
+| Built | Also develops or hosts its own AI systems, including applications on model APIs, retrieval pipelines, self-hosted models, and tool servers | 135 |
 
-An organization that only consumes vendor AI has 93 applicable controls, 47 of them Foundational.
+An organization that only consumes vendor AI has 94 applicable controls, 47 of them Foundational.
 
-**New and Extends.** Each control is marked as New, meaning AI-specific work with no usual equivalent, or Extends, meaning it adds AI scope to a practice most security programs already run. For a Consumed organization, 67 of its 93 applicable controls extend existing practices, and 29 of its 47 Foundational controls do. Extends controls are best implemented by updating the existing policy, procedure, or control rather than creating a new one.
+**New and Extends.** Each control is marked as New, meaning AI-specific work with no usual equivalent, or Extends, meaning it adds AI scope to a practice most security programs already run. For a Consumed organization, 67 of its 94 applicable controls extend existing practices, and 29 of its 47 Foundational controls do. Extends controls are best implemented by updating the existing policy, procedure, or control rather than creating a new one.
 
 | Existing practice | ACTOR controls that extend it |
 | --- | --- |
@@ -429,7 +430,7 @@ An organization that only consumes vendor AI has 93 applicable controls, 47 of t
 | Threat intelligence | MTR-VM-02 |
 | Vulnerability management | MTR-VM-01 |
 
-New controls: GVN-PO-04, GVN-CO-02, INV-AG-01, INV-AG-02, DEL-ID-01, DEL-ID-03, DEL-ID-04, DEL-ID-05, DEL-DG-01, DEL-DG-02, DEL-DG-03, DEL-DG-05, DEL-LA-03, DEL-LA-04, DEL-AP-01, DEL-AP-02, DEL-AP-03, DEL-AP-04, DEL-AP-05, HRD-CF-05, HRD-DP-02, HRD-DP-05, HRD-DP-10, HRD-PV-02, HRD-PV-03, HRD-PV-04, HRD-PV-05, HRD-MP-02, HRD-DV-04, DEF-IN-01, DEF-IN-02, DEF-IN-03, DEF-OU-03, DEF-OU-04, DEF-OU-05, DEF-TL-02, DEF-TL-03, DEF-TL-04, DEF-TL-05, DEF-TL-06, DEF-TL-07, DEF-PS-01, DEF-PS-02, DEF-PS-03, DEF-PS-04, MTR-LG-04, MTR-BH-02, MTR-DR-02, MTR-DR-03, MTR-DR-04, RSP-CN-03, RSP-CN-04.
+New controls: GVN-PO-04, GVN-CO-02, INV-AG-01, INV-AG-02, DEL-ID-01, DEL-ID-03, DEL-ID-04, DEL-ID-05, DEL-DG-01, DEL-DG-02, DEL-DG-03, DEL-DG-05, DEL-LA-03, DEL-LA-04, DEL-AP-01, DEL-AP-02, DEL-AP-03, DEL-AP-04, DEL-AP-05, HRD-CF-05, HRD-DP-02, HRD-DP-05, HRD-DP-10, HRD-PV-02, HRD-PV-03, HRD-PV-04, HRD-PV-05, HRD-MP-02, HRD-DV-04, DEF-IN-01, DEF-IN-02, DEF-IN-03, DEF-OU-03, DEF-OU-04, DEF-OU-05, DEF-TL-02, DEF-TL-03, DEF-TL-04, DEF-TL-05, DEF-TL-06, DEF-TL-07, DEF-PS-01, DEF-PS-02, DEF-PS-03, DEF-PS-04, MTR-LG-04, MTR-BH-02, MTR-BH-04, MTR-DR-02, MTR-DR-03, MTR-DR-04, RSP-CN-03, RSP-CN-04.
 
 The control data files carry these as the relation, extends, profiles, and essentials fields.
 
@@ -569,7 +570,7 @@ Mappings are informative. They show topical alignment, not equivalence, and meet
 | HRD-MP-01 | PR.DS-01, PR.AA-05 | SC-28, AC-3, SC-12 | MEASURE 2.7 | none | none |
 | HRD-MP-02 | ID.RA-01, PR.DS-01 | SA-11, RA-3 | MEASURE 2.10, MEASURE 2.7 | LLM02 | none |
 | HRD-DV-01 | PR.PS-01 | CM-3, CM-2 | MEASURE 2.7, GOVERN 1.4 | none | none |
-| HRD-DV-02 | PR.PS-06, ID.RA-03 | SA-3, SA-11, SA-15 | MEASURE 2.7, MAP 5.1 | none | none |
+| HRD-DV-02 | PR.PS-06, ID.RA-03 | SA-3, SA-11, SA-15, RA-3 | MEASURE 2.7, MAP 5.1 | none | ASI01 to ASI10 |
 | HRD-DV-03 | PR.PS-06, PR.PS-05 | SA-11, SR-3, SA-15 | MEASURE 2.7 | LLM03, LLM05 | ASI04 |
 | HRD-DV-04 | PR.AA-05, PR.PS-06 | IA-5, AC-3, SA-11 | MEASURE 2.7 | LLM07, LLM06 | ASI03 |
 | HRD-DV-05 | PR.AA-03, PR.AA-05 | IA-9, AC-3, AC-6 | MEASURE 2.7 | none | ASI03, ASI07 |
@@ -601,6 +602,7 @@ Mappings are informative. They show topical alignment, not equivalence, and meet
 | MTR-BH-01 | DE.CM-09, DE.AE-02 | SI-4, AU-6 | MEASURE 2.4, MANAGE 4.1 | LLM01 | ASI01, ASI10 |
 | MTR-BH-02 | DE.CM-09, DE.CM-03 | SI-4, AU-6 | MEASURE 2.4, MEASURE 3.1 | LLM06 | ASI10, ASI02 |
 | MTR-BH-03 | DE.AE-06, RS.MA-02 | IR-4, IR-5, SI-4 | MANAGE 4.1 | none | none |
+| MTR-BH-04 | DE.CM-09, DE.AE-02 | SC-26, SI-4 | MEASURE 2.7 | LLM06 | ASI03, ASI10 |
 | MTR-DR-01 | ID.RA-07, PR.PS-02 | CM-3, CM-2 | MANAGE 3.2, MANAGE 4.1 | LLM03 | ASI04 |
 | MTR-DR-02 | ID.IM-02, ID.RA-07 | SA-11, CM-4 | MEASURE 2.3, MEASURE 2.5 | LLM09 | none |
 | MTR-DR-03 | ID.IM-02, PR.PS-01 | CA-7, CM-3 | MEASURE 2.3, MANAGE 2.3 | LLM09 | none |
@@ -683,13 +685,13 @@ Organizations that run a CSF 2.0 program can use this view to place ACTOR contro
 | PR.PS Platform Security | PR.PS-04 | GVN-CO-03, DEL-DG-01, HRD-CF-02, MTR-LG-01, MTR-LG-02, MTR-LG-03, MTR-LG-04, MTR-LG-05, MTR-LG-06, RSP-IV-01 |
 | PR.PS Platform Security | PR.PS-05 | DEL-DG-04, DEL-LA-04, HRD-CF-06, HRD-SC-01, HRD-DV-03 |
 | PR.PS Platform Security | PR.PS-06 | HRD-PV-03, HRD-DV-02, HRD-DV-03, HRD-DV-04, DEF-IN-02, DEF-OU-01, MTR-TS-02 |
-| DE.AE Adverse Event Analysis | DE.AE-02 | DEF-PS-04, MTR-BH-01 |
+| DE.AE Adverse Event Analysis | DE.AE-02 | DEF-PS-04, MTR-BH-01, MTR-BH-04 |
 | DE.AE Adverse Event Analysis | DE.AE-03 | MTR-LG-03 |
 | DE.AE Adverse Event Analysis | DE.AE-06 | MTR-BH-03 |
 | DE.AE Adverse Event Analysis | DE.AE-08 | RSP-PL-01 |
 | DE.CM Continuous Monitoring | DE.CM-01 | INV-SH-01, HRD-DP-06 |
 | DE.CM Continuous Monitoring | DE.CM-03 | DEL-AP-03, MTR-BH-02 |
-| DE.CM Continuous Monitoring | DE.CM-09 | INV-SH-01, DEL-LA-04, HRD-CF-03, HRD-SC-04, DEF-IN-03, DEF-OU-02, DEF-OU-05, DEF-TL-04, MTR-LG-01, MTR-BH-01, MTR-BH-02, MTR-DR-04 |
+| DE.CM Continuous Monitoring | DE.CM-09 | INV-SH-01, DEL-LA-04, HRD-CF-03, HRD-SC-04, DEF-IN-03, DEF-OU-02, DEF-OU-05, DEF-TL-04, MTR-LG-01, MTR-BH-01, MTR-BH-02, MTR-BH-04, MTR-DR-04 |
 | RS.AN Incident Analysis | RS.AN-03 | RSP-IV-01 |
 | RS.AN Incident Analysis | RS.AN-06 | RSP-IV-02 |
 | RS.AN Incident Analysis | RS.AN-07 | RSP-IV-02 |
