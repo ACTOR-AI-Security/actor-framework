@@ -72,6 +72,10 @@ Read [CONTRIBUTING.md](CONTRIBUTING.md) before commenting. It explains what make
 | [TRADEMARK.md](TRADEMARK.md) | Use of the ACTOR name |
 | [LICENSE](LICENSE) | CC BY 4.0 license |
 
+## Companion book
+
+*The AI Security and Governance Field Guide: Protecting Your Organization in the Age of AI* (Robert Fernandes, 2026) is based on ACTOR. It gives leaders checklists, templates, and a 90-day plan. Available in paperback and Kindle: [Buy on Amazon](https://www.amazon.com/dp/B0HRRT5Q2H).
+
 ## Citing ACTOR
 
 Cite controls with the framework name before the ID, for example **ACTOR DEL-ID-01**. See [CITATION.cff](CITATION.cff) for a formal citation.
