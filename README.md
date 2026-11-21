@@ -38,6 +38,34 @@ Its premise is simple. AI is a new class of actor. An agent acts like a user but
 | Monitor | MTR | 19 |
 | Respond | RSP | 12 |
 
+## Two kinds of controls: New and Extends
+
+Every ACTOR control is tagged as one of two kinds.
+
+**Extends (82 controls).** These add AI scope to a security practice most organizations already run. Each one names the existing practice: identity and access management, data protection, incident response, logging and monitoring, third-party risk, secure development, and so on. You meet an Extends control by updating the policy, procedure, or technical control you already have, not by creating a parallel AI version of it. The evidence for the existing control, updated to show AI in scope, is the evidence for the ACTOR control.
+
+For example, DEL-LC-02 extends offboarding. You do not write an AI offboarding procedure. You add agents, their tokens, their connectors, and their scheduled tasks to the leaver checklist you already use. MTR-LG-01 extends logging: agent actions and tool calls go into the log pipeline and SIEM you already run, with the acting identity recorded.
+
+Extends controls are still specific. "Include AI in your IAM program" would not get an organization to agents holding no permission to change their own roles (DEL-LA-02) or to agents being unable to touch the logs that watch them (MTR-LG-05). Each Extends control states exactly what AI adds to the existing practice, so the person who owns that practice knows what to change.
+
+**New (53 controls).** These are AI-specific work with no usual equivalent in an existing program: agent identity and delegation, action risk levels and human approval, untrusted content handling, behavior baselines for agents, halt mechanisms, and similar. These are the controls that make ACTOR a framework rather than a checklist of additions.
+
+| Existing practice | Extends controls |
+| --- | --- |
+| Identity and access management | 9 |
+| Data protection | 9 |
+| Incident response | 8 |
+| Logging and monitoring | 7 |
+| Asset inventory | 5 |
+| Third-party risk management | 5 |
+| Software supply chain security | 5 |
+| Secure development lifecycle | 5 |
+| Risk management and exceptions | 4 |
+| Secure configuration management | 4 |
+| Twelve other practices | 21 |
+
+For a Consumed organization, 67 of its 94 applicable controls are Extends. Most of the work is updating what you have. The `relation` and `extends` fields in the control spreadsheet carry these tags, so you can sort the Extends controls by the practice they belong to and hand each group to the person who owns it.
+
 ## Where to start
 
 1. **Pick your deployment profile.** Consumed (you use vendor AI as delivered), Configured (you also build agents or assistants on vendor platforms), or Built (you also develop or host your own AI). Controls outside your profile do not apply.
